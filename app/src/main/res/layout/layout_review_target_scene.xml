@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/scene_container"
+    android:layout_width="match_parent"
+    android:layout_height="44dp"
+    android:layout_gravity="top|center_vertical|center_horizontal|center"
+    android:visibility="visible"
+    app:layout_constraintTop_toBottomOf="@+id/rating_bar">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/punctual_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="48dp"
+        android:layout_marginTop="@dimen/padding24"
+        app:layout_constraintLeft_toLeftOf="0"
+        app:layout_constraintRight_toLeftOf="@+id/regular_image"
+        app:layout_constraintTop_toBottomOf="@+id/text_reccomed"
+        app:srcCompat="@drawable/ic_punctual_unselected" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/regular_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/punctual_image"
+        app:layout_constraintLeft_toRightOf="@+id/punctual_image"
+        app:layout_constraintRight_toRightOf="@+id/service_image"
+        app:layout_constraintTop_toTopOf="@+id/punctual_image"
+        app:srcCompat="@drawable/ic_regualr_unselect" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/service_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/punctual_image"
+        app:layout_constraintLeft_toRightOf="@+id/regular_image"
+        app:layout_constraintRight_toLeftOf="@+id/atitude_image"
+        app:layout_constraintTop_toTopOf="@+id/punctual_image"
+        app:srcCompat="@drawable/ic_service_unselect" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/atitude_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="48dp"
+        app:layout_constraintBottom_toBottomOf="@+id/service_image"
+        app:layout_constraintLeft_toRightOf="@+id/service_image"
+        app:layout_constraintRight_toRightOf="0"
+        app:layout_constraintTop_toTopOf="@+id/service_image"
+        app:srcCompat="@drawable/ic_attitude_unselected" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/punctual_check"
+        android:layout_width="19dp"
+        android:layout_height="wrap_content"
+        android:visibility="invisible"
+        app:layout_constraintRight_toRightOf="@+id/punctual_image"
+        app:layout_constraintTop_toTopOf="@+id/punctual_image" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/regular_check"
+        android:layout_width="19dp"
+        android:layout_height="wrap_content"
+        android:visibility="invisible"
+        app:layout_constraintRight_toRightOf="@+id/regular_image"
+        app:layout_constraintTop_toTopOf="@+id/regular_image" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/service_check"
+        android:layout_width="19dp"
+        android:layout_height="wrap_content"
+        android:visibility="invisible"
+        app:layout_constraintRight_toRightOf="@+id/service_image"
+        app:layout_constraintTop_toTopOf="@+id/service_image" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/atituder_check"
+        android:layout_width="19dp"
+        android:layout_height="wrap_content"
+        android:visibility="invisible"
+        app:layout_constraintRight_toRightOf="@+id/atitude_image"
+        app:layout_constraintTop_toTopOf="@+id/atitude_image" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/punctual_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_6"
+        android:gravity="center_horizontal"
+        android:letterSpacing="0.07"
+        android:lineSpacingExtra="2sp"
+        android:text="Very Punctual"
+        android:textColor="@color/charcoal_grey_30"
+        android:textSize="@dimen/textSize_12"
+        android:textStyle="bold"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/service_image"
+        app:layout_constraintLeft_toLeftOf="@+id/punctual_image"
+        app:layout_constraintRight_toRightOf="@+id/punctual_image"
+        app:layout_constraintTop_toBottomOf="@+id/punctual_image"
+        app:layout_constraintVertical_bias="0" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/regular_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_6"
+        android:gravity="center_horizontal"
+        android:letterSpacing="0.07"
+        android:lineSpacingExtra="2sp"
+        android:text="Quite Regular"
+        android:textColor="@color/charcoal_grey_30"
+        android:textSize="@dimen/textSize_12"
+        android:textStyle="bold"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/atitude_image"
+        app:layout_constraintLeft_toLeftOf="@+id/regular_image"
+        app:layout_constraintRight_toRightOf="@+id/regular_image"
+        app:layout_constraintTop_toBottomOf="@+id/regular_image"
+        app:layout_constraintVertical_bias="0" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/service_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_6"
+        android:gravity="center_horizontal"
+        android:letterSpacing="0.07"
+        android:lineSpacingExtra="2sp"
+        android:text="Execptional Service"
+        android:textColor="@color/charcoal_grey_30"
+        android:textSize="@dimen/textSize_12"
+        android:textStyle="bold"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="0"
+        app:layout_constraintLeft_toLeftOf="@+id/service_image"
+        app:layout_constraintRight_toRightOf="@+id/service_image"
+        app:layout_constraintTop_toBottomOf="@+id/service_image"
+        app:layout_constraintVertical_bias="0" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/atitude_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_6"
+        android:gravity="center_horizontal"
+        android:letterSpacing="0.07"
+        android:lineSpacingExtra="2sp"
+        android:text="Great Attitude"
+        android:textColor="@color/charcoal_grey_30"
+        android:textSize="@dimen/textSize_12"
+        android:textStyle="bold"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="0"
+        app:layout_constraintLeft_toLeftOf="@+id/atitude_image"
+        app:layout_constraintRight_toRightOf="@+id/atitude_image"
+        app:layout_constraintTop_toBottomOf="@+id/atitude_image"
+        app:layout_constraintVertical_bias="0" />
+
+    <View
+        android:id="@+id/scene_click"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clickable="true" />
+</androidx.constraintlayout.widget.ConstraintLayout>

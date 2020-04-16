@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    android:id="@+id/accessDeniedRL"
+    android:background="@color/white_transparent"
+    android:visibility="gone"
+    android:clickable="true"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:elevation="1dp">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:id="@+id/messageLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true">
+
+        <ImageView
+            android:layout_gravity="center_horizontal"
+            android:id="@+id/imgError"
+            android:layout_width="115dp"
+            android:layout_height="115dp"
+            android:src="0x7f0802da" />
+
+        <TextView
+            android:textSize="18sp"
+            android:textColor="#f9533e"
+            android:layout_gravity="center_horizontal"
+            android:id="@+id/errorTitleView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="@string/access_denied"
+            android:lineSpacingExtra="9sp" />
+
+        <TextView
+            android:textSize="14sp"
+            android:textColor="@color/charcoal_grey_80"
+            android:gravity="center"
+            android:layout_gravity="center_horizontal"
+            android:id="@+id/errorMessageView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="20dp"
+            android:text="@string/contact_denied_permission"
+            android:lineSpacingExtra="7sp" />
+
+        <Button
+            android:layout_gravity="center_horizontal"
+            android:id="@+id/AllowButton"
+            android:padding="10dp"
+            android:clickable="true"
+            android:layout_width="160dp"
+            android:layout_height="56dp"
+            android:layout_marginTop="20dp"
+            android:text="@string/allow"
+            style="@style/lightred_boundary_no_fill_button" />
+    </LinearLayout>
+</RelativeLayout>

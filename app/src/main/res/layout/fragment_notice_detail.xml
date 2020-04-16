@@ -1,28 +1,202 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:aapt="http://schemas.android.com/aapt" android:id="@+id/baseLayout" android:paddingTop="@dimen/app_bar_padding" android:clickable="true" android:layout_width="match_parent" android:layout_height="match_parent">
-    <RelativeLayout android:id="@+id/blurView" android:background="@color/charcoal_grey_two_90" android:visibility="visible" android:layout_width="match_parent" android:layout_height="match_parent"/>
-    <androidx.constraintlayout.widget.ConstraintLayout android:background="@drawable/round_border_white_fill" android:padding="16dp" android:clickable="true" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginLeft="32dp" android:layout_marginRight="32dp" android:elevation="20dp" app:layout_constraintBottom_toBottomOf="0" app:layout_constraintLeft_toLeftOf="0" app:layout_constraintRight_toRightOf="0" app:layout_constraintTop_toTopOf="0">
-        <ScrollView android:scrollbars="vertical" android:layout_width="match_parent" android:layout_height="wrap_content" app:layout_constraintTop_toTopOf="0">
-            <androidx.constraintlayout.widget.ConstraintLayout android:id="@+id/notice_header" android:visibility="gone" android:layout_width="match_parent" android:layout_height="wrap_content">
-                <TextView android:textSize="18sp" android:textColor="@color/charcoal_grey" android:ellipsize="end" android:id="@+id/titleView" android:layout_width="wrap_content" android:layout_height="wrap_content" android:lineSpacingExtra="9sp" app:layout_constrainedWidth="true" app:layout_constraintLeft_toLeftOf="0" app:layout_constraintTop_toTopOf="0"/>
-                <TextView android:textSize="13sp" android:textColor="@color/charcoal_grey_50" android:id="@+id/dateTimeView" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="3dp" android:lineSpacingExtra="6sp" android:letterSpacing="0.07" app:layout_constraintLeft_toLeftOf="0" app:layout_constraintTop_toBottomOf="@+id/titleView"/>
-                <ImageView android:id="@+id/attachmentImage" android:clickable="true" android:layout_width="24dp" android:layout_height="24dp" android:layout_marginTop="10dp" android:src="0x7f0800e1" app:layout_constraintLeft_toLeftOf="0" app:layout_constraintTop_toBottomOf="@+id/dateTimeView"/>
-                <TextView android:textSize="16sp" android:textColor="@color/light_red" android:ellipsize="end" android:id="@+id/attachmentName" android:padding="5dp" android:clickable="true" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginLeft="26dp" android:layout_marginTop="5dp" android:maxLines="2" app:layout_constraintLeft_toLeftOf="0" app:layout_constraintTop_toBottomOf="@+id/dateTimeView"/>
-                <TextView android:textSize="16sp" android:textColor="@color/charcoal_grey_80" android:autoLink="web" android:linksClickable="true" android:id="@+id/descView" android:scrollbars="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="10dp" android:maxLines="13" android:lineSpacingExtra="8sp" app:layout_constraintLeft_toLeftOf="0" app:layout_constraintTop_toBottomOf="@+id/attachmentName"/>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/baseLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clickable="true"
+    android:paddingTop="@dimen/app_bar_padding">
+
+    <RelativeLayout
+        android:id="@+id/blurView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/charcoal_grey_two_90"
+        android:visibility="visible" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="32dp"
+        android:layout_marginRight="32dp"
+        android:background="@drawable/round_border_white_fill"
+        android:clickable="true"
+        android:elevation="20dp"
+        android:padding="16dp"
+        app:layout_constraintBottom_toBottomOf="0"
+        app:layout_constraintLeft_toLeftOf="0"
+        app:layout_constraintRight_toRightOf="0"
+        app:layout_constraintTop_toTopOf="0">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scrollbars="vertical"
+            app:layout_constraintTop_toTopOf="0">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/notice_header"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone">
+
+                <TextView
+                    android:id="@+id/titleView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:lineSpacingExtra="9sp"
+                    android:textColor="@color/charcoal_grey"
+                    android:textSize="18sp"
+                    app:layout_constrainedWidth="true"
+                    app:layout_constraintLeft_toLeftOf="0"
+                    app:layout_constraintTop_toTopOf="0" />
+
+                <TextView
+                    android:id="@+id/dateTimeView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="3dp"
+                    android:letterSpacing="0.07"
+                    android:lineSpacingExtra="6sp"
+                    android:textColor="@color/charcoal_grey_50"
+                    android:textSize="13sp"
+                    app:layout_constraintLeft_toLeftOf="0"
+                    app:layout_constraintTop_toBottomOf="@+id/titleView" />
+
+                <ImageView
+                    android:id="@+id/attachmentImage"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_marginTop="10dp"
+                    android:clickable="true"
+                    android:src="0x7f0800e1"
+                    app:layout_constraintLeft_toLeftOf="0"
+                    app:layout_constraintTop_toBottomOf="@+id/dateTimeView" />
+
+                <TextView
+                    android:id="@+id/attachmentName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="26dp"
+                    android:layout_marginTop="5dp"
+                    android:clickable="true"
+                    android:ellipsize="end"
+                    android:maxLines="2"
+                    android:padding="5dp"
+                    android:textColor="@color/light_red"
+                    android:textSize="16sp"
+                    app:layout_constraintLeft_toLeftOf="0"
+                    app:layout_constraintTop_toBottomOf="@+id/dateTimeView" />
+
+                <TextView
+                    android:id="@+id/descView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:autoLink="web"
+                    android:lineSpacingExtra="8sp"
+                    android:linksClickable="true"
+                    android:maxLines="13"
+                    android:scrollbars="vertical"
+                    android:textColor="@color/charcoal_grey_80"
+                    android:textSize="16sp"
+                    app:layout_constraintLeft_toLeftOf="0"
+                    app:layout_constraintTop_toBottomOf="@+id/attachmentName" />
             </androidx.constraintlayout.widget.ConstraintLayout>
         </ScrollView>
-        <androidx.constraintlayout.widget.ConstraintLayout android:id="@+id/guard_message_layout" android:visibility="visible" android:layout_width="match_parent" android:layout_height="0dp">
-            <androidx.constraintlayout.widget.ConstraintLayout android:id="@+id/header_layout1" android:layout_width="match_parent" android:layout_height="wrap_content">
-                <androidx.appcompat.widget.AppCompatImageView android:id="@+id/icon_message_guard" android:layout_width="50dp" android:layout_height="50dp" app:srcCompat="0x7f080214"/>
-                <androidx.appcompat.widget.AppCompatTextView android:textSize="@dimen/textSize_18" android:textColor="@color/charcoal_grey" android:id="@+id/guard_message_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/normalPadding" android:text="Message to Guard" app:layout_constraintLeft_toRightOf="@+id/icon_message_guard"/>
-                <androidx.appcompat.widget.AppCompatTextView android:textSize="@dimen/textSize_13" android:textColor="@color/charcoal_grey_50" android:id="@+id/guard_message_time" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/normalPadding" android:layout_marginTop="8dp" app:layout_constraintLeft_toRightOf="@+id/icon_message_guard" app:layout_constraintTop_toBottomOf="@+id/guard_message_text"/>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/guard_message_layout"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:visibility="visible">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/header_layout1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/icon_message_guard"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    app:srcCompat="0x7f080214" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/guard_message_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/normalPadding"
+                    android:text="Message to Guard"
+                    android:textColor="@color/charcoal_grey"
+                    android:textSize="@dimen/textSize_18"
+                    app:layout_constraintLeft_toRightOf="@+id/icon_message_guard" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/guard_message_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/normalPadding"
+                    android:layout_marginTop="8dp"
+                    android:textColor="@color/charcoal_grey_50"
+                    android:textSize="@dimen/textSize_13"
+                    app:layout_constraintLeft_toRightOf="@+id/icon_message_guard"
+                    app:layout_constraintTop_toBottomOf="@+id/guard_message_text" />
             </androidx.constraintlayout.widget.ConstraintLayout>
-            <androidx.constraintlayout.widget.ConstraintLayout android:id="@+id/header_layout2" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/mediumPadding" app:layout_constraintTop_toBottomOf="@+id/header_layout1">
-                <androidx.appcompat.widget.AppCompatImageView android:id="@+id/icon_messagedby" android:layout_width="18dp" android:layout_height="18dp" android:layout_marginLeft="@dimen/extraSmallPadding" app:layout_constraintLeft_toLeftOf="0" app:srcCompat="@drawable/ic_user_grey"/>
-                <androidx.appcompat.widget.AppCompatTextView android:textSize="@dimen/textSize_16" android:textColor="@color/charcoal_grey_80" android:ellipsize="end" android:id="@+id/messagedby_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/normalPadding" app:layout_constraintLeft_toRightOf="@+id/icon_messagedby"/>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/header_layout2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/mediumPadding"
+                app:layout_constraintTop_toBottomOf="@+id/header_layout1">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/icon_messagedby"
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:layout_marginLeft="@dimen/extraSmallPadding"
+                    app:layout_constraintLeft_toLeftOf="0"
+                    app:srcCompat="@drawable/ic_user_grey" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/messagedby_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/normalPadding"
+                    android:ellipsize="end"
+                    android:textColor="@color/charcoal_grey_80"
+                    android:textSize="@dimen/textSize_16"
+                    app:layout_constraintLeft_toRightOf="@+id/icon_messagedby" />
             </androidx.constraintlayout.widget.ConstraintLayout>
-            <androidx.appcompat.widget.AppCompatTextView android:textSize="16sp" android:textColor="@color/charcoal_grey_80" android:id="@+id/descViewMessage" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/extraSmallPadding" android:layout_marginTop="10dp" android:maxLines="15" android:lineSpacingExtra="8sp" app:layout_constraintLeft_toLeftOf="0" app:layout_constraintTop_toBottomOf="@+id/header_layout2"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/descViewMessage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/extraSmallPadding"
+                android:layout_marginTop="10dp"
+                android:lineSpacingExtra="8sp"
+                android:maxLines="15"
+                android:textColor="@color/charcoal_grey_80"
+                android:textSize="16sp"
+                app:layout_constraintLeft_toLeftOf="0"
+                app:layout_constraintTop_toBottomOf="@+id/header_layout2" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
-    <ImageView android:id="@+id/closeImageView" android:padding="15dp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="12dp" android:layout_marginTop="5dp" android:layout_marginStart="12dp" android:elevation="10dp" app:layout_constraintStart_toStartOf="0" app:layout_constraintTop_toTopOf="0" app:srcCompat="0x7f08018a"/>
+
+    <ImageView
+        android:id="@+id/closeImageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginTop="5dp"
+        android:elevation="10dp"
+        android:padding="15dp"
+        app:layout_constraintStart_toStartOf="0"
+        app:layout_constraintTop_toTopOf="0"
+        app:srcCompat="0x7f08018a" />
 </androidx.constraintlayout.widget.ConstraintLayout>

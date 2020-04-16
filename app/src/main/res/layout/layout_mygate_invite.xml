@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    android:background="@drawable/img_invite_backgd"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:id="@+id/viewToBitmap"
+        android:background="@color/white"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="115dp">
+
+        <TextView
+            android:textSize="16sp"
+            android:textColor="#33414e"
+            android:gravity="center_horizontal"
+            android:layout_gravity="center_horizontal"
+            android:id="@+id/visitText"
+            android:padding="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:text="You got invitation from Society manager commons area Mahesh to visit the haunted house to get scared lunkad sky belvedere" />
+
+        <ImageView
+            android:layout_gravity="center_horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:src="0x7f080225" />
+
+        <TextView
+            android:textSize="16sp"
+            android:textColor="#33414e"
+            android:gravity="center_horizontal"
+            android:layout_gravity="center_horizontal"
+            android:id="@+id/otpAtGateView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="10dp"
+            android:text="@string/otp_usage_gate" />
+
+        <TextView
+            android:textSize="44sp"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            android:gravity="center"
+            android:layout_gravity="center_horizontal"
+            android:id="@+id/visitCode"
+            android:background="@drawable/layer_ic_img_passcode_backgd"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="10dp"
+            android:text="12345678" />
+
+        <TextView
+            android:textSize="14sp"
+            android:textStyle="italic"
+            android:textColor="#33414e"
+            android:gravity="center_horizontal"
+            android:layout_gravity="center_horizontal"
+            android:id="@+id/passcodeAdviceView"
+            android:padding="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:text="@string/security_text_share" />
+
+        <TextView
+            android:textSize="16sp"
+            android:textStyle="italic"
+            android:textColor="@color/white"
+            android:gravity="center"
+            android:background="#33414e"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:text="www.mygate.com" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="80dp"
+        android:layout_centerHorizontal="true">
+
+        <TextView
+            android:textSize="40sp"
+            android:textColor="@color/MGRed"
+            android:background="@drawable/item_border_invite"
+            android:paddingLeft="20dp"
+            android:paddingTop="5dp"
+            android:paddingRight="20dp"
+            android:paddingBottom="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Invitation" />
+    </RelativeLayout>
+</RelativeLayout>

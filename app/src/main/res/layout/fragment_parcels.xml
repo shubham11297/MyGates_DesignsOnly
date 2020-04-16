@@ -1,54 +1,591 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:aapt="http://schemas.android.com/aapt" android:id="@+id/main_content" android:paddingTop="@dimen/app_bar_padding" android:clickable="true" android:layout_width="match_parent" android:layout_height="match_parent">
-    <androidx.constraintlayout.widget.ConstraintLayout android:id="@+id/parent" android:background="@color/transparent" android:clickable="true" android:layout_width="match_parent" android:layout_height="match_parent">
-        <RelativeLayout android:id="@+id/blurView" android:background="@color/charcoal_grey_two_90" android:visibility="visible" android:layout_width="match_parent" android:layout_height="match_parent"/>
-        <androidx.constraintlayout.widget.ConstraintLayout android:layout_width="match_parent" android:layout_height="wrap_content" app:layout_constraintBottom_toBottomOf="0" app:layout_constraintEnd_toEndOf="0" app:layout_constraintStart_toStartOf="0" app:layout_constraintTop_toTopOf="0">
-            <androidx.constraintlayout.widget.ConstraintLayout android:id="@+id/constraintLayout2" android:visibility="visible" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginLeft="8dp" android:layout_marginTop="8dp" android:layout_marginRight="8dp" android:layout_marginStart="8dp" android:layout_marginEnd="8dp" app:layout_constraintEnd_toEndOf="0" app:layout_constraintStart_toStartOf="0" app:layout_constraintTop_toTopOf="0">
-                <ImageView android:id="@+id/close" android:paddingLeft="5dp" android:paddingRight="5dp" android:paddingBottom="5dp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="11dp" android:layout_marginTop="5dp" android:layout_marginStart="16dp" app:layout_constraintBottom_toBottomOf="@+id/textView33" app:layout_constraintStart_toStartOf="0" app:layout_constraintTop_toTopOf="@+id/textView33" app:srcCompat="0x7f08018a"/>
-                <TextView android:textSize="@dimen/spec_heading" android:textColor="@color/white" android:id="@+id/textView33" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="8dp" android:layout_marginTop="12dp" android:layout_marginRight="8dp" android:layout_marginBottom="20dp" android:text="Parcel" android:lineSpacingExtra="10sp" android:layout_marginStart="8dp" android:layout_marginEnd="8dp" app:layout_constraintBottom_toBottomOf="0" app:layout_constraintEnd_toEndOf="0" app:layout_constraintStart_toStartOf="0" app:layout_constraintTop_toTopOf="0"/>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main_content"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clickable="true"
+    android:paddingTop="@dimen/app_bar_padding">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/parent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/transparent"
+        android:clickable="true">
+
+        <RelativeLayout
+            android:id="@+id/blurView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/charcoal_grey_two_90"
+            android:visibility="visible" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="0"
+            app:layout_constraintEnd_toEndOf="0"
+            app:layout_constraintStart_toStartOf="0"
+            app:layout_constraintTop_toTopOf="0">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constraintLayout2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                android:visibility="visible"
+                app:layout_constraintEnd_toEndOf="0"
+                app:layout_constraintStart_toStartOf="0"
+                app:layout_constraintTop_toTopOf="0">
+
+                <ImageView
+                    android:id="@+id/close"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginLeft="11dp"
+                    android:layout_marginTop="5dp"
+                    android:paddingLeft="5dp"
+                    android:paddingRight="5dp"
+                    android:paddingBottom="5dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/textView33"
+                    app:layout_constraintStart_toStartOf="0"
+                    app:layout_constraintTop_toTopOf="@+id/textView33"
+                    app:srcCompat="0x7f08018a" />
+
+                <TextView
+                    android:id="@+id/textView33"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginRight="8dp"
+                    android:layout_marginBottom="20dp"
+                    android:lineSpacingExtra="10sp"
+                    android:text="Parcel"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/spec_heading"
+                    app:layout_constraintBottom_toBottomOf="0"
+                    app:layout_constraintEnd_toEndOf="0"
+                    app:layout_constraintStart_toStartOf="0"
+                    app:layout_constraintTop_toTopOf="0" />
             </androidx.constraintlayout.widget.ConstraintLayout>
-            <androidx.constraintlayout.widget.ConstraintLayout android:id="@+id/cl2" android:background="@drawable/round_corners_white_20" android:clickable="true" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginLeft="30dp" android:layout_marginRight="30dp" android:layout_marginStart="30dp" android:layout_marginEnd="30dp" app:layout_constraintEnd_toEndOf="0" app:layout_constraintStart_toStartOf="0" app:layout_constraintTop_toBottomOf="@+id/constraintLayout2">
-                <ImageView android:id="@+id/imageView33" android:visibility="gone" android:layout_width="100dp" android:layout_height="100dp" android:layout_marginLeft="8dp" android:layout_marginTop="16dp" android:layout_marginRight="8dp" android:layout_marginStart="8dp" android:layout_marginEnd="8dp" app:layout_constraintEnd_toEndOf="0" app:layout_constraintStart_toStartOf="0" app:layout_constraintTop_toTopOf="0" app:srcCompat="0x7f08023d"/>
-                <androidx.constraintlayout.widget.ConstraintLayout android:id="@+id/constraintLayout4" android:visibility="visible" android:layout_width="match_parent" android:layout_height="110dp" android:layout_marginTop="8dp" app:layout_constraintTop_toBottomOf="@+id/imageView33">
-                    <androidx.appcompat.widget.AppCompatTextView android:ellipsize="end" android:gravity="center_horizontal" android:id="@+id/textView47" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_marginLeft="8dp" android:layout_marginTop="10dp" android:layout_marginRight="8dp" android:maxLines="2" android:layout_marginStart="8dp" android:layout_marginEnd="8dp" app:layout_constraintEnd_toEndOf="0" app:layout_constraintStart_toStartOf="0"/>
-                    <androidx.recyclerview.widget.RecyclerView android:id="@+id/ParcelImagesRecycleView" android:visibility="visible" android:layout_width="wrap_content" android:layout_height="70dp" android:layout_marginLeft="20dp" android:layout_marginTop="12dp" android:layout_marginRight="20dp" android:layout_marginStart="20dp" android:layout_marginEnd="20dp" app:layout_constraintLeft_toLeftOf="0" app:layout_constraintRight_toRightOf="0" app:layout_constraintTop_toBottomOf="@+id/textView47"/>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/cl2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginEnd="30dp"
+                android:layout_marginRight="30dp"
+                android:background="@drawable/round_corners_white_20"
+                android:clickable="true"
+                app:layout_constraintEnd_toEndOf="0"
+                app:layout_constraintStart_toStartOf="0"
+                app:layout_constraintTop_toBottomOf="@+id/constraintLayout2">
+
+                <ImageView
+                    android:id="@+id/imageView33"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginRight="8dp"
+                    android:visibility="gone"
+                    app:layout_constraintEnd_toEndOf="0"
+                    app:layout_constraintStart_toStartOf="0"
+                    app:layout_constraintTop_toTopOf="0"
+                    app:srcCompat="0x7f08023d" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/constraintLayout4"
+                    android:layout_width="match_parent"
+                    android:layout_height="110dp"
+                    android:layout_marginTop="8dp"
+                    android:visibility="visible"
+                    app:layout_constraintTop_toBottomOf="@+id/imageView33">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/textView47"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="8dp"
+                        android:layout_marginRight="8dp"
+                        android:ellipsize="end"
+                        android:gravity="center_horizontal"
+                        android:maxLines="2"
+                        app:layout_constraintEnd_toEndOf="0"
+                        app:layout_constraintStart_toStartOf="0" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/ParcelImagesRecycleView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="70dp"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="12dp"
+                        android:layout_marginEnd="20dp"
+                        android:layout_marginRight="20dp"
+                        android:visibility="visible"
+                        app:layout_constraintLeft_toLeftOf="0"
+                        app:layout_constraintRight_toRightOf="0"
+                        app:layout_constraintTop_toBottomOf="@+id/textView47" />
                 </androidx.constraintlayout.widget.ConstraintLayout>
-                <androidx.appcompat.widget.AppCompatTextView android:textSize="18sp" android:textColor="@color/charcoal_grey" android:gravity="center_horizontal" android:id="@+id/textView48" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:text="Parcel" android:lineSpacingExtra="9sp" app:layout_constraintEnd_toEndOf="0" app:layout_constraintStart_toStartOf="0" app:layout_constraintTop_toBottomOf="@+id/constraintLayout4"/>
-                <androidx.appcompat.widget.AppCompatTextView android:textSize="10sp" android:textStyle="bold" android:textColor="@color/white" android:gravity="center_horizontal" android:id="@+id/textView42" android:background="@drawable/round_pale_teal" android:paddingLeft="10dp" android:paddingTop="3dp" android:paddingRight="10dp" android:paddingBottom="3dp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:textAllCaps="true" android:letterSpacing="0.13" app:layout_constraintEnd_toEndOf="0" app:layout_constraintStart_toStartOf="0" app:layout_constraintTop_toBottomOf="@+id/textView48"/>
-                <androidx.constraintlayout.widget.ConstraintLayout android:id="@+id/collectCL" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="10dp" app:layout_constraintEnd_toEndOf="0" app:layout_constraintStart_toStartOf="0" app:layout_constraintTop_toBottomOf="@+id/textView42">
-                    <TextView android:textSize="20sp" android:textColor="@color/light_red" android:gravity="center_horizontal" android:id="@+id/collectionCode" android:background="@drawable/dotted_red" android:paddingLeft="10dp" android:paddingTop="6dp" android:paddingRight="10dp" android:paddingBottom="6dp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="4dp" android:letterSpacing="0.07" app:layout_constraintBottom_toBottomOf="0" app:layout_constraintEnd_toEndOf="0" app:layout_constraintLeft_toLeftOf="0" app:layout_constraintRight_toRightOf="0" app:layout_constraintStart_toStartOf="0" app:layout_constraintTop_toTopOf="0"/>
-                    <ImageView android:id="@+id/info" android:padding="5dp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="8dp" android:layout_marginStart="8dp" app:layout_constraintBottom_toBottomOf="@+id/collectionCode" app:layout_constraintStart_toEndOf="@+id/collectionCode" app:layout_constraintTop_toTopOf="@+id/collectionCode" app:srcCompat="0x7f0801da"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/textView48"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:gravity="center_horizontal"
+                    android:lineSpacingExtra="9sp"
+                    android:text="Parcel"
+                    android:textColor="@color/charcoal_grey"
+                    android:textSize="18sp"
+                    app:layout_constraintEnd_toEndOf="0"
+                    app:layout_constraintStart_toStartOf="0"
+                    app:layout_constraintTop_toBottomOf="@+id/constraintLayout4" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/textView42"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/round_pale_teal"
+                    android:gravity="center_horizontal"
+                    android:letterSpacing="0.13"
+                    android:paddingLeft="10dp"
+                    android:paddingTop="3dp"
+                    android:paddingRight="10dp"
+                    android:paddingBottom="3dp"
+                    android:textAllCaps="true"
+                    android:textColor="@color/white"
+                    android:textSize="10sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="0"
+                    app:layout_constraintStart_toStartOf="0"
+                    app:layout_constraintTop_toBottomOf="@+id/textView48" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/collectCL"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    app:layout_constraintEnd_toEndOf="0"
+                    app:layout_constraintStart_toStartOf="0"
+                    app:layout_constraintTop_toBottomOf="@+id/textView42">
+
+                    <TextView
+                        android:id="@+id/collectionCode"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="4dp"
+                        android:background="@drawable/dotted_red"
+                        android:gravity="center_horizontal"
+                        android:letterSpacing="0.07"
+                        android:paddingLeft="10dp"
+                        android:paddingTop="6dp"
+                        android:paddingRight="10dp"
+                        android:paddingBottom="6dp"
+                        android:textColor="@color/light_red"
+                        android:textSize="20sp"
+                        app:layout_constraintBottom_toBottomOf="0"
+                        app:layout_constraintEnd_toEndOf="0"
+                        app:layout_constraintLeft_toLeftOf="0"
+                        app:layout_constraintRight_toRightOf="0"
+                        app:layout_constraintStart_toStartOf="0"
+                        app:layout_constraintTop_toTopOf="0" />
+
+                    <ImageView
+                        android:id="@+id/info"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginLeft="8dp"
+                        android:padding="5dp"
+                        app:layout_constraintBottom_toBottomOf="@+id/collectionCode"
+                        app:layout_constraintStart_toEndOf="@+id/collectionCode"
+                        app:layout_constraintTop_toTopOf="@+id/collectionCode"
+                        app:srcCompat="0x7f0801da" />
                 </androidx.constraintlayout.widget.ConstraintLayout>
-                <androidx.constraintlayout.widget.ConstraintLayout android:id="@+id/collectionCodeLayout" android:paddingTop="@dimen/smallPadding" android:paddingBottom="@dimen/smallPadding" android:visibility="gone" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="15dp" app:layout_constraintTop_toBottomOf="@+id/collectCL">
-                    <View android:background="@color/white_two" android:layout_width="0dp" android:layout_height="1dp" app:layout_constraintEnd_toEndOf="0" app:layout_constraintStart_toStartOf="0"/>
-                    <TextView android:textSize="@dimen/textSize_13" android:textColor="@color/charcoal_grey_50" android:id="@+id/receivedDate" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="20dp" android:layout_marginTop="8dp" android:lineSpacingExtra="6sp" android:layout_marginStart="20dp" android:letterSpacing="0.07" app:layout_constraintStart_toStartOf="0" app:layout_constraintTop_toTopOf="0"/>
-                    <ImageView android:id="@+id/img1" android:layout_width="18dp" android:layout_height="18dp" android:layout_marginLeft="20dp" android:layout_marginStart="20dp" app:layout_constraintBottom_toBottomOf="@+id/textView51" app:layout_constraintStart_toStartOf="0" app:layout_constraintTop_toTopOf="@+id/textView51" app:srcCompat="@drawable/ic_user_grey"/>
-                    <TextView android:textSize="16sp" android:textColor="#cc3c3c4b" android:ellipsize="end" android:id="@+id/textView51" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_marginLeft="8dp" android:layout_marginTop="8dp" android:layout_marginRight="8dp" android:singleLine="true" android:lineSpacingExtra="8sp" app:layout_constrainedWidth="true" app:layout_constraintLeft_toRightOf="@+id/img1" app:layout_constraintRight_toRightOf="0" app:layout_constraintTop_toBottomOf="@+id/receivedDate"/>
-                    <ImageView android:id="@+id/img2" android:layout_width="18dp" android:layout_height="18dp" android:layout_marginLeft="20dp" android:layout_marginStart="20dp" app:layout_constraintBottom_toBottomOf="@+id/textView52" app:layout_constraintStart_toStartOf="0" app:layout_constraintTop_toTopOf="@+id/textView52" app:srcCompat="@drawable/ic_user_grey"/>
-                    <TextView android:textSize="16sp" android:textColor="#cc3c3c4b" android:ellipsize="end" android:id="@+id/textView52" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_marginLeft="8dp" android:layout_marginTop="8dp" android:layout_marginRight="8dp" android:lineSpacingExtra="8sp" app:layout_constraintBottom_toBottomOf="0" app:layout_constraintLeft_toRightOf="@+id/img2" app:layout_constraintRight_toRightOf="0" app:layout_constraintTop_toBottomOf="@+id/textView51"/>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/collectionCodeLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:paddingTop="@dimen/smallPadding"
+                    android:paddingBottom="@dimen/smallPadding"
+                    android:visibility="gone"
+                    app:layout_constraintTop_toBottomOf="@+id/collectCL">
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="1dp"
+                        android:background="@color/white_two"
+                        app:layout_constraintEnd_toEndOf="0"
+                        app:layout_constraintStart_toStartOf="0" />
+
+                    <TextView
+                        android:id="@+id/receivedDate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="8dp"
+                        android:letterSpacing="0.07"
+                        android:lineSpacingExtra="6sp"
+                        android:textColor="@color/charcoal_grey_50"
+                        android:textSize="@dimen/textSize_13"
+                        app:layout_constraintStart_toStartOf="0"
+                        app:layout_constraintTop_toTopOf="0" />
+
+                    <ImageView
+                        android:id="@+id/img1"
+                        android:layout_width="18dp"
+                        android:layout_height="18dp"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginLeft="20dp"
+                        app:layout_constraintBottom_toBottomOf="@+id/textView51"
+                        app:layout_constraintStart_toStartOf="0"
+                        app:layout_constraintTop_toTopOf="@+id/textView51"
+                        app:srcCompat="@drawable/ic_user_grey" />
+
+                    <TextView
+                        android:id="@+id/textView51"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginRight="8dp"
+                        android:ellipsize="end"
+                        android:lineSpacingExtra="8sp"
+                        android:singleLine="true"
+                        android:textColor="#cc3c3c4b"
+                        android:textSize="16sp"
+                        app:layout_constrainedWidth="true"
+                        app:layout_constraintLeft_toRightOf="@+id/img1"
+                        app:layout_constraintRight_toRightOf="0"
+                        app:layout_constraintTop_toBottomOf="@+id/receivedDate" />
+
+                    <ImageView
+                        android:id="@+id/img2"
+                        android:layout_width="18dp"
+                        android:layout_height="18dp"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginLeft="20dp"
+                        app:layout_constraintBottom_toBottomOf="@+id/textView52"
+                        app:layout_constraintStart_toStartOf="0"
+                        app:layout_constraintTop_toTopOf="@+id/textView52"
+                        app:srcCompat="@drawable/ic_user_grey" />
+
+                    <TextView
+                        android:id="@+id/textView52"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginRight="8dp"
+                        android:ellipsize="end"
+                        android:lineSpacingExtra="8sp"
+                        android:textColor="#cc3c3c4b"
+                        android:textSize="16sp"
+                        app:layout_constraintBottom_toBottomOf="0"
+                        app:layout_constraintLeft_toRightOf="@+id/img2"
+                        app:layout_constraintRight_toRightOf="0"
+                        app:layout_constraintTop_toBottomOf="@+id/textView51" />
                 </androidx.constraintlayout.widget.ConstraintLayout>
-                <View android:id="@+id/sep1" android:background="@color/white_two" android:layout_width="match_parent" android:layout_height="1dp" android:layout_marginTop="10dp" app:layout_constraintTop_toBottomOf="@+id/collectionCodeLayout"/>
-                <androidx.appcompat.widget.AppCompatTextView android:textSize="@dimen/textSize_13" android:textColor="@color/charcoal_grey_50" android:id="@+id/deliveredDate" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="20dp" android:layout_marginTop="8dp" android:lineSpacingExtra="6sp" android:layout_marginStart="20dp" android:letterSpacing="0.07" app:layout_constraintStart_toStartOf="0" app:layout_constraintTop_toBottomOf="@+id/sep1"/>
-                <com.mygate.user.common.p011ui.CircularImageView android:id="@+id/img3" android:layout_width="18dp" android:layout_height="18dp" android:layout_marginLeft="20dp" android:layout_marginTop="2dp" android:layout_marginStart="20dp" app:layout_constraintBottom_toBottomOf="@+id/textView53" app:layout_constraintStart_toStartOf="0" app:layout_constraintTop_toTopOf="@+id/textView53" app:srcCompat="@drawable/ic_user_grey"/>
-                <androidx.appcompat.widget.AppCompatTextView android:textSize="16sp" android:textColor="#cc3c3c4b" android:ellipsize="end" android:id="@+id/textView53" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_marginLeft="8dp" android:layout_marginTop="8dp" android:layout_marginRight="8dp" android:maxLines="1" android:singleLine="true" android:lineSpacingExtra="8sp" app:layout_constrainedWidth="true" app:layout_constraintLeft_toRightOf="@+id/img3" app:layout_constraintRight_toRightOf="0" app:layout_constraintTop_toBottomOf="@+id/deliveredDate"/>
-                <com.mygate.user.common.p011ui.CircularImageView android:id="@+id/img4" android:layout_width="18dp" android:layout_height="18dp" android:layout_marginLeft="20dp" android:layout_marginTop="2dp" android:layout_marginStart="20dp" app:layout_constraintBottom_toBottomOf="@+id/textView54" app:layout_constraintStart_toStartOf="0" app:layout_constraintTop_toTopOf="@+id/textView54" app:srcCompat="@drawable/ic_default_company"/>
-                <androidx.appcompat.widget.AppCompatTextView android:textSize="16sp" android:textColor="#cc3c3c4b" android:ellipsize="end" android:id="@+id/textView54" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_marginLeft="8dp" android:layout_marginTop="8dp" android:layout_marginRight="8dp" android:singleLine="true" android:lineSpacingExtra="8sp" app:layout_constrainedWidth="true" app:layout_constraintLeft_toRightOf="@+id/img4" app:layout_constraintRight_toRightOf="0" app:layout_constraintTop_toBottomOf="@+id/textView53"/>
-                <com.mygate.user.common.p011ui.CircularImageView android:id="@+id/img5" android:layout_width="18dp" android:layout_height="18dp" android:layout_marginLeft="20dp" android:layout_marginTop="2dp" android:layout_marginStart="20dp" app:layout_constraintBottom_toBottomOf="@+id/textView55" app:layout_constraintStart_toStartOf="0" app:layout_constraintTop_toTopOf="@+id/textView55" app:srcCompat="@drawable/ic_user_grey"/>
-                <androidx.appcompat.widget.AppCompatTextView android:textSize="16sp" android:textColor="#cc3c3c4b" android:ellipsize="end" android:id="@+id/textView55" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_marginLeft="8dp" android:layout_marginTop="8dp" android:layout_marginRight="8dp" android:singleLine="true" android:lineSpacingExtra="8sp" app:layout_constrainedWidth="true" app:layout_constraintLeft_toRightOf="@+id/img4" app:layout_constraintRight_toRightOf="0" app:layout_constraintTop_toBottomOf="@+id/textView54"/>
-                <com.mygate.user.common.p011ui.CircularImageView android:id="@+id/img6" android:layout_width="18dp" android:layout_height="18dp" android:layout_marginLeft="20dp" android:layout_marginTop="2dp" android:layout_marginStart="20dp" app:layout_constraintBottom_toBottomOf="@+id/approvedBy" app:layout_constraintStart_toStartOf="0" app:layout_constraintTop_toTopOf="@+id/approvedBy" app:srcCompat="@drawable/ic_user_grey"/>
-                <androidx.appcompat.widget.AppCompatTextView android:textSize="16sp" android:textColor="#cc3c3c4b" android:ellipsize="end" android:id="@+id/approvedBy" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_marginLeft="8dp" android:layout_marginTop="8dp" android:layout_marginRight="8dp" android:maxLines="1" android:singleLine="true" android:lineSpacingExtra="8sp" app:layout_constrainedWidth="true" app:layout_constraintBottom_toTopOf="@+id/whitespace_view" app:layout_constraintLeft_toRightOf="@+id/img4" app:layout_constraintRight_toRightOf="0" app:layout_constraintTop_toBottomOf="@+id/textView55"/>
-                <androidx.appcompat.widget.AppCompatImageView android:id="@+id/callParcel" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="8dp" android:layout_marginRight="16dp" android:layout_marginStart="8dp" android:layout_marginEnd="16dp" app:layout_constraintBottom_toBottomOf="@+id/textView53" app:layout_constraintEnd_toEndOf="0" app:layout_constraintHorizontal_bias="1" app:layout_constraintStart_toEndOf="@+id/textView53" app:layout_constraintTop_toTopOf="@+id/textView53" app:srcCompat="@drawable/ic_call_green_big"/>
-                <View android:id="@+id/whitespace_view" android:background="@drawable/bottom_bg_half_round" android:layout_width="match_parent" android:layout_height="20dp" app:layout_constraintBottom_toTopOf="@+id/markCollected" app:layout_constraintTop_toBottomOf="@+id/approvedBy"/>
-                <androidx.constraintlayout.widget.ConstraintLayout android:id="@+id/markCollected" android:background="@drawable/bottom_corner_rounded_background20" android:visibility="gone" android:layout_width="match_parent" android:layout_height="50dp" app:layout_constraintEnd_toEndOf="0" app:layout_constraintStart_toStartOf="0" app:layout_constraintTop_toBottomOf="@+id/whitespace_view">
-                    <androidx.appcompat.widget.AppCompatImageView android:id="@+id/done_icon" android:layout_width="18dp" android:layout_height="18dp" app:layout_constraintBottom_toBottomOf="0" app:layout_constraintHorizontal_chainStyle="2" app:layout_constraintLeft_toLeftOf="0" app:layout_constraintRight_toLeftOf="@+id/shareText" app:layout_constraintTop_toTopOf="0" app:srcCompat="@drawable/ic_done"/>
-                    <androidx.appcompat.widget.AppCompatTextView android:textSize="@dimen/spec_subheading" android:textColor="@color/white" android:id="@+id/shareText" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="16dp" android:layout_marginRight="8dp" android:text="Mark as Collected" android:maxLines="1" android:singleLine="true" android:layout_marginStart="8dp" android:layout_marginEnd="8dp" app:layout_constraintBottom_toBottomOf="0" app:layout_constraintLeft_toRightOf="@+id/done_icon" app:layout_constraintRight_toRightOf="0" app:layout_constraintTop_toTopOf="0"/>
+
+                <View
+                    android:id="@+id/sep1"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@color/white_two"
+                    app:layout_constraintTop_toBottomOf="@+id/collectionCodeLayout" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/deliveredDate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="8dp"
+                    android:letterSpacing="0.07"
+                    android:lineSpacingExtra="6sp"
+                    android:textColor="@color/charcoal_grey_50"
+                    android:textSize="@dimen/textSize_13"
+                    app:layout_constraintStart_toStartOf="0"
+                    app:layout_constraintTop_toBottomOf="@+id/sep1" />
+
+                <com.mygate.user.common.p011ui.CircularImageView
+                    android:id="@+id/img3"
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="2dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/textView53"
+                    app:layout_constraintStart_toStartOf="0"
+                    app:layout_constraintTop_toTopOf="@+id/textView53"
+                    app:srcCompat="@drawable/ic_user_grey" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/textView53"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginRight="8dp"
+                    android:ellipsize="end"
+                    android:lineSpacingExtra="8sp"
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    android:textColor="#cc3c3c4b"
+                    android:textSize="16sp"
+                    app:layout_constrainedWidth="true"
+                    app:layout_constraintLeft_toRightOf="@+id/img3"
+                    app:layout_constraintRight_toRightOf="0"
+                    app:layout_constraintTop_toBottomOf="@+id/deliveredDate" />
+
+                <com.mygate.user.common.p011ui.CircularImageView
+                    android:id="@+id/img4"
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="2dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/textView54"
+                    app:layout_constraintStart_toStartOf="0"
+                    app:layout_constraintTop_toTopOf="@+id/textView54"
+                    app:srcCompat="@drawable/ic_default_company" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/textView54"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginRight="8dp"
+                    android:ellipsize="end"
+                    android:lineSpacingExtra="8sp"
+                    android:singleLine="true"
+                    android:textColor="#cc3c3c4b"
+                    android:textSize="16sp"
+                    app:layout_constrainedWidth="true"
+                    app:layout_constraintLeft_toRightOf="@+id/img4"
+                    app:layout_constraintRight_toRightOf="0"
+                    app:layout_constraintTop_toBottomOf="@+id/textView53" />
+
+                <com.mygate.user.common.p011ui.CircularImageView
+                    android:id="@+id/img5"
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="2dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/textView55"
+                    app:layout_constraintStart_toStartOf="0"
+                    app:layout_constraintTop_toTopOf="@+id/textView55"
+                    app:srcCompat="@drawable/ic_user_grey" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/textView55"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginRight="8dp"
+                    android:ellipsize="end"
+                    android:lineSpacingExtra="8sp"
+                    android:singleLine="true"
+                    android:textColor="#cc3c3c4b"
+                    android:textSize="16sp"
+                    app:layout_constrainedWidth="true"
+                    app:layout_constraintLeft_toRightOf="@+id/img4"
+                    app:layout_constraintRight_toRightOf="0"
+                    app:layout_constraintTop_toBottomOf="@+id/textView54" />
+
+                <com.mygate.user.common.p011ui.CircularImageView
+                    android:id="@+id/img6"
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="2dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/approvedBy"
+                    app:layout_constraintStart_toStartOf="0"
+                    app:layout_constraintTop_toTopOf="@+id/approvedBy"
+                    app:srcCompat="@drawable/ic_user_grey" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/approvedBy"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginRight="8dp"
+                    android:ellipsize="end"
+                    android:lineSpacingExtra="8sp"
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    android:textColor="#cc3c3c4b"
+                    android:textSize="16sp"
+                    app:layout_constrainedWidth="true"
+                    app:layout_constraintBottom_toTopOf="@+id/whitespace_view"
+                    app:layout_constraintLeft_toRightOf="@+id/img4"
+                    app:layout_constraintRight_toRightOf="0"
+                    app:layout_constraintTop_toBottomOf="@+id/textView55" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/callParcel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginRight="16dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/textView53"
+                    app:layout_constraintEnd_toEndOf="0"
+                    app:layout_constraintHorizontal_bias="1"
+                    app:layout_constraintStart_toEndOf="@+id/textView53"
+                    app:layout_constraintTop_toTopOf="@+id/textView53"
+                    app:srcCompat="@drawable/ic_call_green_big" />
+
+                <View
+                    android:id="@+id/whitespace_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="20dp"
+                    android:background="@drawable/bottom_bg_half_round"
+                    app:layout_constraintBottom_toTopOf="@+id/markCollected"
+                    app:layout_constraintTop_toBottomOf="@+id/approvedBy" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/markCollected"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:background="@drawable/bottom_corner_rounded_background20"
+                    android:visibility="gone"
+                    app:layout_constraintEnd_toEndOf="0"
+                    app:layout_constraintStart_toStartOf="0"
+                    app:layout_constraintTop_toBottomOf="@+id/whitespace_view">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/done_icon"
+                        android:layout_width="18dp"
+                        android:layout_height="18dp"
+                        app:layout_constraintBottom_toBottomOf="0"
+                        app:layout_constraintHorizontal_chainStyle="2"
+                        app:layout_constraintLeft_toLeftOf="0"
+                        app:layout_constraintRight_toLeftOf="@+id/shareText"
+                        app:layout_constraintTop_toTopOf="0"
+                        app:srcCompat="@drawable/ic_done" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/shareText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginEnd="8dp"
+                        android:layout_marginRight="8dp"
+                        android:maxLines="1"
+                        android:singleLine="true"
+                        android:text="Mark as Collected"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/spec_subheading"
+                        app:layout_constraintBottom_toBottomOf="0"
+                        app:layout_constraintLeft_toRightOf="@+id/done_icon"
+                        app:layout_constraintRight_toRightOf="0"
+                        app:layout_constraintTop_toTopOf="0" />
                 </androidx.constraintlayout.widget.ConstraintLayout>
-                <androidx.constraintlayout.widget.ConstraintLayout android:id="@+id/loader_layout" android:background="@drawable/round_corners_white_20" android:visibility="gone" android:layout_width="match_parent" android:layout_height="0dp" app:layout_constraintBottom_toBottomOf="0" app:layout_constraintTop_toTopOf="0">
-                    <ProgressBar android:id="@+id/progress_bar" android:visibility="visible" android:layout_width="40dp" android:layout_height="40dp" android:indeterminateDrawable="@drawable/indeterminate_progress_bar" android:layout_centerInParent="true" app:layout_constraintBottom_toBottomOf="@+id/guideline1" app:layout_constraintLeft_toLeftOf="0" app:layout_constraintRight_toRightOf="0" app:layout_constraintTop_toTopOf="@+id/guideline1"/>
-                    <androidx.constraintlayout.widget.Guideline android:orientation="horizontal" android:id="@+id/guideline1" android:layout_width="match_parent" android:layout_height="wrap_content" app:layout_constraintGuide_percent="0.5"/>
-                    <androidx.appcompat.widget.AppCompatImageView android:id="@+id/error_icon" android:visibility="gone" android:layout_width="80dp" android:layout_height="80dp" android:layout_marginBottom="@dimen/mediumPadding" app:layout_constraintBottom_toTopOf="@+id/error_message" app:layout_constraintLeft_toLeftOf="0" app:layout_constraintRight_toRightOf="0" app:srcCompat="0x7f0802da"/>
-                    <androidx.appcompat.widget.AppCompatTextView android:textSize="@dimen/textSize_15" android:textColor="@color/charcoal_grey_80" android:ellipsize="end" android:gravity="center" android:id="@+id/error_message" android:visibility="gone" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_marginLeft="20dp" android:layout_marginTop="10dp" android:layout_marginRight="20dp" android:lineSpacingExtra="7sp" app:layout_constrainedWidth="true" app:layout_constraintBottom_toBottomOf="@+id/guideline1" app:layout_constraintLeft_toLeftOf="0" app:layout_constraintRight_toRightOf="0" app:layout_constraintTop_toTopOf="@+id/guideline1"/>
-                    <androidx.appcompat.widget.AppCompatTextView android:textSize="@dimen/textSize_16" android:id="@+id/retry" android:visibility="gone" android:clickable="true" android:layout_width="150dp" android:layout_height="50dp" android:layout_marginTop="20dp" android:text="Retry" app:layout_constrainedWidth="true" app:layout_constraintLeft_toLeftOf="0" app:layout_constraintRight_toRightOf="0" app:layout_constraintTop_toBottomOf="@+id/error_message" style="@style/lightred_boundary_no_fill_button"/>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/loader_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:background="@drawable/round_corners_white_20"
+                    android:visibility="gone"
+                    app:layout_constraintBottom_toBottomOf="0"
+                    app:layout_constraintTop_toTopOf="0">
+
+                    <ProgressBar
+                        android:id="@+id/progress_bar"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_centerInParent="true"
+                        android:indeterminateDrawable="@drawable/indeterminate_progress_bar"
+                        android:visibility="visible"
+                        app:layout_constraintBottom_toBottomOf="@+id/guideline1"
+                        app:layout_constraintLeft_toLeftOf="0"
+                        app:layout_constraintRight_toRightOf="0"
+                        app:layout_constraintTop_toTopOf="@+id/guideline1" />
+
+                    <androidx.constraintlayout.widget.Guideline
+                        android:id="@+id/guideline1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        app:layout_constraintGuide_percent="0.5" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/error_icon"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:layout_marginBottom="@dimen/mediumPadding"
+                        android:visibility="gone"
+                        app:layout_constraintBottom_toTopOf="@+id/error_message"
+                        app:layout_constraintLeft_toLeftOf="0"
+                        app:layout_constraintRight_toRightOf="0"
+                        app:srcCompat="0x7f0802da" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/error_message"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginRight="20dp"
+                        android:ellipsize="end"
+                        android:gravity="center"
+                        android:lineSpacingExtra="7sp"
+                        android:textColor="@color/charcoal_grey_80"
+                        android:textSize="@dimen/textSize_15"
+                        android:visibility="gone"
+                        app:layout_constrainedWidth="true"
+                        app:layout_constraintBottom_toBottomOf="@+id/guideline1"
+                        app:layout_constraintLeft_toLeftOf="0"
+                        app:layout_constraintRight_toRightOf="0"
+                        app:layout_constraintTop_toTopOf="@+id/guideline1" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/retry"
+                        style="@style/lightred_boundary_no_fill_button"
+                        android:layout_width="150dp"
+                        android:layout_height="50dp"
+                        android:layout_marginTop="20dp"
+                        android:clickable="true"
+                        android:text="Retry"
+                        android:textSize="@dimen/textSize_16"
+                        android:visibility="gone"
+                        app:layout_constrainedWidth="true"
+                        app:layout_constraintLeft_toLeftOf="0"
+                        app:layout_constraintRight_toRightOf="0"
+                        app:layout_constraintTop_toBottomOf="@+id/error_message" />
                 </androidx.constraintlayout.widget.ConstraintLayout>
             </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.constraintlayout.widget.ConstraintLayout>

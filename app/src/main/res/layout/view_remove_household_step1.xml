@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    android:id="@+id/layout_step_1"
+    android:paddingBottom="20dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="20dp"
+    android:layout_marginRight="20dp">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:textSize="@dimen/textSize_15"
+        android:textColor="@color/charcoal_grey_50"
+        android:gravity="center_horizontal"
+        android:id="@+id/work_quality_button"
+        android:background="@drawable/round_corners_slate_grey"
+        android:paddingTop="@dimen/mediumPadding"
+        android:paddingBottom="@dimen/mediumPadding"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/reason_work_quality"
+        android:lineSpacingExtra="7sp"
+        style="@style/MGWhiteSmall" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:textSize="@dimen/textSize_15"
+        android:textColor="@color/charcoal_grey_50"
+        android:gravity="center_horizontal"
+        android:id="@+id/bad_behaviour_button"
+        android:background="@drawable/round_corners_slate_grey"
+        android:paddingTop="@dimen/mediumPadding"
+        android:paddingBottom="@dimen/mediumPadding"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/padding_16"
+        android:text="@string/reason_bad_behaviour"
+        android:lineSpacingExtra="7sp"
+        app:layout_constraintTop_toBottomOf="@+id/work_quality_button"
+        style="@style/MGWhiteSmall" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:textSize="@dimen/textSize_15"
+        android:textColor="@color/charcoal_grey_50"
+        android:gravity="center_horizontal"
+        android:id="@+id/service_not_required_button"
+        android:background="@drawable/round_corners_slate_grey"
+        android:paddingTop="@dimen/mediumPadding"
+        android:paddingBottom="@dimen/mediumPadding"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/padding_16"
+        android:text="@string/reason_service_not_required"
+        android:lineSpacingExtra="7sp"
+        app:layout_constraintTop_toBottomOf="@+id/bad_behaviour_button"
+        style="@style/MGWhiteSmall" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:textSize="@dimen/textSize_15"
+        android:textColor="@color/charcoal_grey_50"
+        android:gravity="center_horizontal"
+        android:id="@+id/others_button"
+        android:background="@drawable/round_corners_slate_grey"
+        android:paddingTop="@dimen/mediumPadding"
+        android:paddingBottom="@dimen/mediumPadding"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/padding_16"
+        android:text="@string/reason_others"
+        android:lineSpacingExtra="7sp"
+        app:layout_constraintTop_toBottomOf="@+id/service_not_required_button"
+        style="@style/MGWhiteSmall" />
+</androidx.constraintlayout.widget.ConstraintLayout>

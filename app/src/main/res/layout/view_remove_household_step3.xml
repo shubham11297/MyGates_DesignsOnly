@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/layout_step_3"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:visibility="gone">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/selected_reason_layout_step3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/selected_reason_bad_behaviour"
+            style="@style/MGWhiteSmall"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/normalPadding"
+            android:layout_marginRight="@dimen/padding_16"
+            android:gravity="left"
+            android:lineSpacingExtra="8sp"
+            android:paddingTop="@dimen/mediumPadding"
+            android:paddingBottom="@dimen/padding_16"
+            android:text="@string/reason_bad_behaviour"
+            android:textColor="@color/charcoal_grey"
+            android:textSize="@dimen/textSize_18"
+            app:layout_constraintLeft_toLeftOf="0" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            app:layout_constraintBottom_toBottomOf="0"
+            app:layout_constraintRight_toRightOf="0"
+            app:layout_constraintTop_toTopOf="0"
+            app:srcCompat="@drawable/ic_triangle_red" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/light_red"
+            app:layout_constraintTop_toBottomOf="@+id/selected_reason_bad_behaviour" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/specific_reason_step2_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="@dimen/padding_16"
+        android:layout_marginRight="20dp"
+        android:paddingBottom="@dimen/normalPadding"
+        app:layout_constraintTop_toBottomOf="@+id/selected_reason_layout_step3">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/icon_bad_behaviour"
+            android:layout_width="38dp"
+            android:layout_height="38dp"
+            app:layout_constraintLeft_toLeftOf="0"
+            app:layout_constraintRight_toLeftOf="@+id/text_bad_behaviour"
+            app:srcCompat="@drawable/ic_bad_behaviour_flag" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/text_bad_behaviour"
+            style="@style/MGWhiteSmall"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/padding_16"
+            android:gravity="left"
+            android:lineSpacingExtra="5sp"
+            android:paddingBottom="@dimen/normalPadding"
+            android:text="@string/bad_behaviour_message"
+            android:textColor="@color/coral_two"
+            android:textSize="@dimen/textSize_14"
+            app:layout_constraintLeft_toRightOf="@+id/icon_bad_behaviour"
+            app:layout_constraintRight_toRightOf="0" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/comment_bad_behaviour"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/normalPadding"
+            android:background="@drawable/round_spec_grey_no_fill"
+            android:focusable="true"
+            android:gravity="left"
+            android:hint="Write Comment..."
+            android:inputType="textMultiLine"
+            android:maxLines="3"
+            android:minLines="3"
+            android:padding="@dimen/normalPadding"
+            android:textSize="@dimen/textSize_16"
+            app:layout_constraintTop_toBottomOf="@+id/text_bad_behaviour" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/error_message_step3"
+            style="@style/MGWhiteSmall"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="left"
+            android:lineSpacingExtra="7sp"
+            android:paddingTop="@dimen/mediumPadding"
+            android:paddingBottom="@dimen/normalPadding"
+            android:text="@string/error_reason_comment"
+            android:textColor="@color/light_red"
+            android:textSize="@dimen/textSize_14"
+            android:visibility="gone"
+            app:layout_constraintLeft_toLeftOf="0"
+            app:layout_constraintTop_toBottomOf="@+id/comment_bad_behaviour" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

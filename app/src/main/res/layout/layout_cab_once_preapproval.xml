@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:textSize="18sp"
+        android:textColor="@color/charcoal_grey_80"
+        android:id="@+id/textView22"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginRight="20dp"
+        android:text="@string/allow_cab_label"
+        android:lineSpacingExtra="9sp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        app:layout_constraintEnd_toEndOf="0"
+        app:layout_constraintStart_toStartOf="0"
+        app:layout_constraintTop_toTopOf="0" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/intervalCL"
+        android:background="@drawable/rounded_light_red_no_fill"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        app:layout_constraintEnd_toEndOf="0"
+        app:layout_constraintStart_toStartOf="0"
+        app:layout_constraintTop_toBottomOf="@+id/textView22">
+
+        <TextView
+            android:textSize="15sp"
+            android:textColor="@color/light_red"
+            android:id="@+id/intervalCLText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:text="1 hour"
+            android:lineSpacingExtra="5sp"
+            app:layout_constraintBottom_toBottomOf="0"
+            app:layout_constraintStart_toStartOf="0"
+            app:layout_constraintTop_toTopOf="0" />
+
+        <ImageView
+            android:id="@+id/intervalCLImage"
+            android:layout_width="12dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="20dp"
+            app:layout_constraintBottom_toBottomOf="@+id/intervalCLText"
+            app:layout_constraintRight_toRightOf="0"
+            app:layout_constraintTop_toTopOf="@+id/intervalCLText"
+            app:srcCompat="@drawable/ic_triangle_red" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:textSize="18sp"
+        android:textColor="#cc3c3c4b"
+        android:id="@+id/numberOnceLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:text="Add last 4-digits of vehicle no"
+        android:lineSpacingExtra="12sp"
+        app:layout_constraintLeft_toLeftOf="0"
+        app:layout_constraintTop_toBottomOf="@+id/intervalCL" />
+
+    <com.chaos.view.PinView
+        android:textSize="30sp"
+        android:textColor="@color/light_red"
+        android:id="@+id/vehicleNumberBasic"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"
+        android:longClickable="false"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp"
+        android:maxLength="4"
+        android:digits="1234567890"
+        android:inputType="number"
+        android:textIsSelectable="false"
+        android:fontFamily="@font/ubuntu_light"
+        app:cursorColor="@color/coral_two"
+        app:cursorWidth="1dp"
+        app:hideLineWhenFilled="false"
+        app:itemCount="4"
+        app:itemHeight="50dp"
+        app:itemRadius="8dp"
+        app:itemSpacing="8dp"
+        app:itemWidth="50dp"
+        app:layout_constraintLeft_toLeftOf="0"
+        app:layout_constraintStart_toStartOf="0"
+        app:layout_constraintTop_toBottomOf="@+id/numberOnceLayout"
+        app:lineColor="@color/border_color_pin_view"
+        app:lineWidth="1dp"
+        app:viewType="0"
+        style="@style/PinWidget.PinView" />
+
+    <TextView
+        android:textSize="15sp"
+        android:textColor="@color/colorPrimary"
+        android:id="@+id/advanceOptions"
+        android:padding="5dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:text="@string/advanced_options"
+        app:layout_constraintLeft_toLeftOf="0"
+        app:layout_constraintRight_toRightOf="0"
+        app:layout_constraintTop_toBottomOf="@+id/vehicleNumberBasic" />
+
+    <RelativeLayout
+        android:id="@+id/deliveryOnceAdvanceLayout"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:elevation="1dp"
+        app:layout_constraintBottom_toTopOf="@+id/send"
+        app:layout_constraintEnd_toEndOf="0"
+        app:layout_constraintStart_toStartOf="0"
+        app:layout_constraintTop_toTopOf="0">
+
+        <include layout="@layout/layout_once_advance_preapproval" />
+    </RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

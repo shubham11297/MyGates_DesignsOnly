@@ -1,35 +1,290 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:aapt="http://schemas.android.com/aapt" android:id="@+id/baseLayout" android:paddingTop="@dimen/app_bar_padding" android:clickable="true" android:layout_width="match_parent" android:layout_height="match_parent">
-    <RelativeLayout android:id="@+id/blurView" android:background="@color/charcoal_grey_two_90" android:visibility="visible" android:layout_width="match_parent" android:layout_height="match_parent"/>
-    <LinearLayout android:orientation="vertical" android:layout_width="match_parent" android:layout_height="wrap_content" app:layout_constraintBottom_toBottomOf="0" app:layout_constraintLeft_toLeftOf="0" app:layout_constraintRight_toRightOf="0" app:layout_constraintTop_toTopOf="0">
-        <androidx.cardview.widget.CardView android:id="@+id/card_app_related" android:background="@color/white" android:clickable="true" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginLeft="24dp" android:layout_marginRight="24dp" android:layout_marginBottom="0dp" app:cardCornerRadius="12dp" app:cardElevation="3dp" app:cardUseCompatPadding="false" app:layout_constraintBottom_toTopOf="@+id/card_society_related" app:layout_constraintLeft_toLeftOf="0" app:layout_constraintRight_toRightOf="0" app:layout_constraintTop_toTopOf="0" app:layout_constraintVertical_bias="0">
-            <androidx.constraintlayout.widget.ConstraintLayout android:paddingLeft="@dimen/padding_16" android:paddingRight="@dimen/padding_16" android:paddingBottom="@dimen/padding_16" android:layout_width="match_parent" android:layout_height="wrap_content">
-                <androidx.appcompat.widget.AppCompatImageView android:id="@+id/img1" android:layout_width="45dp" android:layout_height="45dp" android:layout_marginTop="@dimen/padding_16" app:layout_constraintLeft_toLeftOf="0" app:layout_constraintTop_toTopOf="0" app:srcCompat="@drawable/ic_mygate_logo_circular"/>
-                <TextView android:textSize="18sp" android:textColor="@color/charcoal_grey" android:gravity="left" android:id="@+id/title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/padding_16" android:text="App-related issues?" android:lineSpacingExtra="9sp" app:layout_constraintBottom_toBottomOf="@+id/img1" app:layout_constraintLeft_toRightOf="@+id/img1" app:layout_constraintTop_toTopOf="@+id/img1"/>
-                <androidx.constraintlayout.widget.ConstraintLayout android:id="@+id/messageLayout" android:clickable="true" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="16dp" app:layout_constraintTop_toBottomOf="@+id/img1">
-                    <TextView android:textSize="16sp" android:textColor="@color/charcoal_grey_80" android:gravity="left" android:id="@+id/descriptionView" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Share your feedback and suggestions" android:lineSpacingExtra="8sp" app:layout_constraintLeft_toLeftOf="0" app:layout_constraintTop_toTopOf="0"/>
-                    <ImageView android:id="@+id/messgageImage" android:layout_width="22dp" android:layout_height="wrap_content" android:layout_marginTop="12dp" app:layout_constraintBottom_toBottomOf="0" app:layout_constraintLeft_toLeftOf="0" app:layout_constraintTop_toBottomOf="@+id/descriptionView" app:srcCompat="@drawable/ic_mail"/>
-                    <TextView android:textSize="16sp" android:textColor="@color/light_red" android:id="@+id/messageText" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="15dp" android:layout_marginBottom="2dp" android:text="Write to MyGate" android:lineSpacingExtra="8sp" app:layout_constraintBottom_toBottomOf="@+id/messgageImage" app:layout_constraintLeft_toRightOf="@+id/messgageImage" app:layout_constraintTop_toTopOf="@+id/messgageImage"/>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/baseLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clickable="true"
+    android:paddingTop="@dimen/app_bar_padding">
+
+    <RelativeLayout
+        android:id="@+id/blurView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/charcoal_grey_two_90"
+        android:visibility="visible" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="0"
+        app:layout_constraintLeft_toLeftOf="0"
+        app:layout_constraintRight_toRightOf="0"
+        app:layout_constraintTop_toTopOf="0">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_app_related"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="24dp"
+            android:layout_marginRight="24dp"
+            android:layout_marginBottom="0dp"
+            android:background="@color/white"
+            android:clickable="true"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="3dp"
+            app:cardUseCompatPadding="false"
+            app:layout_constraintBottom_toTopOf="@+id/card_society_related"
+            app:layout_constraintLeft_toLeftOf="0"
+            app:layout_constraintRight_toRightOf="0"
+            app:layout_constraintTop_toTopOf="0"
+            app:layout_constraintVertical_bias="0">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="@dimen/padding_16"
+                android:paddingRight="@dimen/padding_16"
+                android:paddingBottom="@dimen/padding_16">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/img1"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:layout_marginTop="@dimen/padding_16"
+                    app:layout_constraintLeft_toLeftOf="0"
+                    app:layout_constraintTop_toTopOf="0"
+                    app:srcCompat="@drawable/ic_mygate_logo_circular" />
+
+                <TextView
+                    android:id="@+id/title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/padding_16"
+                    android:gravity="left"
+                    android:lineSpacingExtra="9sp"
+                    android:text="App-related issues?"
+                    android:textColor="@color/charcoal_grey"
+                    android:textSize="18sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/img1"
+                    app:layout_constraintLeft_toRightOf="@+id/img1"
+                    app:layout_constraintTop_toTopOf="@+id/img1" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/messageLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:clickable="true"
+                    app:layout_constraintTop_toBottomOf="@+id/img1">
+
+                    <TextView
+                        android:id="@+id/descriptionView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="left"
+                        android:lineSpacingExtra="8sp"
+                        android:text="Share your feedback and suggestions"
+                        android:textColor="@color/charcoal_grey_80"
+                        android:textSize="16sp"
+                        app:layout_constraintLeft_toLeftOf="0"
+                        app:layout_constraintTop_toTopOf="0" />
+
+                    <ImageView
+                        android:id="@+id/messgageImage"
+                        android:layout_width="22dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        app:layout_constraintBottom_toBottomOf="0"
+                        app:layout_constraintLeft_toLeftOf="0"
+                        app:layout_constraintTop_toBottomOf="@+id/descriptionView"
+                        app:srcCompat="@drawable/ic_mail" />
+
+                    <TextView
+                        android:id="@+id/messageText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginBottom="2dp"
+                        android:lineSpacingExtra="8sp"
+                        android:text="Write to MyGate"
+                        android:textColor="@color/light_red"
+                        android:textSize="16sp"
+                        app:layout_constraintBottom_toBottomOf="@+id/messgageImage"
+                        app:layout_constraintLeft_toRightOf="@+id/messgageImage"
+                        app:layout_constraintTop_toTopOf="@+id/messgageImage" />
                 </androidx.constraintlayout.widget.ConstraintLayout>
-                <androidx.constraintlayout.widget.ConstraintLayout android:id="@+id/helpLayout" android:clickable="true" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/margin8" app:layout_constraintTop_toBottomOf="@+id/messageLayout">
-                    <TextView android:textSize="16sp" android:textColor="@color/charcoal_grey_80" android:gravity="left" android:id="@+id/helpView" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Visit our help centre to read FAQs" android:lineSpacingExtra="8sp" app:layout_constraintLeft_toLeftOf="0" app:layout_constraintTop_toTopOf="0"/>
-                    <ImageView android:id="@+id/helpImage" android:layout_width="22dp" android:layout_height="wrap_content" android:layout_marginTop="@dimen/padding_16" app:layout_constraintBottom_toBottomOf="0" app:layout_constraintLeft_toLeftOf="0" app:layout_constraintTop_toBottomOf="@+id/helpView" app:srcCompat="0x7f0801da"/>
-                    <TextView android:textSize="16sp" android:textColor="@color/light_red" android:id="@+id/helpText" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="15dp" android:layout_marginBottom="2dp" android:text="Go to Support" android:lineSpacingExtra="8sp" app:layout_constraintBottom_toBottomOf="@+id/helpImage" app:layout_constraintLeft_toRightOf="@+id/helpImage" app:layout_constraintTop_toTopOf="@+id/helpImage"/>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/helpLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin8"
+                    android:clickable="true"
+                    app:layout_constraintTop_toBottomOf="@+id/messageLayout">
+
+                    <TextView
+                        android:id="@+id/helpView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="left"
+                        android:lineSpacingExtra="8sp"
+                        android:text="Visit our help centre to read FAQs"
+                        android:textColor="@color/charcoal_grey_80"
+                        android:textSize="16sp"
+                        app:layout_constraintLeft_toLeftOf="0"
+                        app:layout_constraintTop_toTopOf="0" />
+
+                    <ImageView
+                        android:id="@+id/helpImage"
+                        android:layout_width="22dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/padding_16"
+                        app:layout_constraintBottom_toBottomOf="0"
+                        app:layout_constraintLeft_toLeftOf="0"
+                        app:layout_constraintTop_toBottomOf="@+id/helpView"
+                        app:srcCompat="0x7f0801da" />
+
+                    <TextView
+                        android:id="@+id/helpText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginBottom="2dp"
+                        android:lineSpacingExtra="8sp"
+                        android:text="Go to Support"
+                        android:textColor="@color/light_red"
+                        android:textSize="16sp"
+                        app:layout_constraintBottom_toBottomOf="@+id/helpImage"
+                        app:layout_constraintLeft_toRightOf="@+id/helpImage"
+                        app:layout_constraintTop_toTopOf="@+id/helpImage" />
                 </androidx.constraintlayout.widget.ConstraintLayout>
             </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.cardview.widget.CardView>
-        <androidx.cardview.widget.CardView android:id="@+id/card_society_related" android:background="@color/white" android:visibility="gone" android:clickable="true" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginLeft="24dp" android:layout_marginTop="@dimen/padding24" android:layout_marginRight="@dimen/padding24" app:cardCornerRadius="12dp" app:cardElevation="3dp" app:cardUseCompatPadding="false" app:layout_constraintBottom_toBottomOf="0" app:layout_constraintRight_toRightOf="0" app:layout_constraintTop_toBottomOf="@+id/card_app_related" app:layout_constraintVertical_bias="0">
-            <androidx.constraintlayout.widget.ConstraintLayout android:paddingLeft="@dimen/padding_16" android:paddingRight="@dimen/padding_16" android:paddingBottom="@dimen/padding_16" android:layout_width="match_parent" android:layout_height="wrap_content">
-                <androidx.appcompat.widget.AppCompatImageView android:id="@+id/img2" android:layout_width="45dp" android:layout_height="45dp" android:layout_marginTop="@dimen/padding_16" app:layout_constraintLeft_toLeftOf="0" app:layout_constraintTop_toTopOf="0" app:srcCompat="0x7f0801df"/>
-                <TextView android:textSize="18sp" android:textColor="@color/charcoal_grey" android:gravity="left" android:id="@+id/title_society" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/padding_16" android:text="Society-related issues?" android:lineSpacingExtra="9sp" app:layout_constraintBottom_toBottomOf="@+id/img2" app:layout_constraintLeft_toRightOf="@+id/img2" app:layout_constraintTop_toTopOf="@+id/img2"/>
-                <androidx.constraintlayout.widget.ConstraintLayout android:id="@+id/raiseCompLayout" android:clickable="true" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="16dp" app:layout_constraintTop_toBottomOf="@+id/img2">
-                    <TextView android:textSize="16sp" android:textColor="@color/charcoal_grey_80" android:gravity="left" android:id="@+id/societyRaiseCompView" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Get real-time updates from your facility manager" android:lineSpacingExtra="8sp" app:layout_constraintLeft_toLeftOf="0" app:layout_constraintTop_toTopOf="0"/>
-                    <ImageView android:id="@+id/raiseCompImage" android:layout_width="22dp" android:layout_height="wrap_content" android:layout_marginTop="12dp" app:layout_constraintBottom_toBottomOf="0" app:layout_constraintLeft_toLeftOf="0" app:layout_constraintTop_toBottomOf="@+id/societyRaiseCompView" app:srcCompat="@drawable/ic_feedback_complaint"/>
-                    <TextView android:textSize="16sp" android:textColor="@color/light_red" android:id="@+id/raiseCompText" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="15dp" android:layout_marginBottom="7dp" android:text="Raise a complaint " android:lineSpacingExtra="8sp" app:layout_constraintBottom_toBottomOf="@+id/raiseCompImage" app:layout_constraintLeft_toRightOf="@+id/raiseCompImage" app:layout_constraintTop_toTopOf="@+id/raiseCompImage"/>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_society_related"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="24dp"
+            android:layout_marginTop="@dimen/padding24"
+            android:layout_marginRight="@dimen/padding24"
+            android:background="@color/white"
+            android:clickable="true"
+            android:visibility="gone"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="3dp"
+            app:cardUseCompatPadding="false"
+            app:layout_constraintBottom_toBottomOf="0"
+            app:layout_constraintRight_toRightOf="0"
+            app:layout_constraintTop_toBottomOf="@+id/card_app_related"
+            app:layout_constraintVertical_bias="0">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="@dimen/padding_16"
+                android:paddingRight="@dimen/padding_16"
+                android:paddingBottom="@dimen/padding_16">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/img2"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:layout_marginTop="@dimen/padding_16"
+                    app:layout_constraintLeft_toLeftOf="0"
+                    app:layout_constraintTop_toTopOf="0"
+                    app:srcCompat="0x7f0801df" />
+
+                <TextView
+                    android:id="@+id/title_society"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/padding_16"
+                    android:gravity="left"
+                    android:lineSpacingExtra="9sp"
+                    android:text="Society-related issues?"
+                    android:textColor="@color/charcoal_grey"
+                    android:textSize="18sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/img2"
+                    app:layout_constraintLeft_toRightOf="@+id/img2"
+                    app:layout_constraintTop_toTopOf="@+id/img2" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/raiseCompLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:clickable="true"
+                    app:layout_constraintTop_toBottomOf="@+id/img2">
+
+                    <TextView
+                        android:id="@+id/societyRaiseCompView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="left"
+                        android:lineSpacingExtra="8sp"
+                        android:text="Get real-time updates from your facility manager"
+                        android:textColor="@color/charcoal_grey_80"
+                        android:textSize="16sp"
+                        app:layout_constraintLeft_toLeftOf="0"
+                        app:layout_constraintTop_toTopOf="0" />
+
+                    <ImageView
+                        android:id="@+id/raiseCompImage"
+                        android:layout_width="22dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        app:layout_constraintBottom_toBottomOf="0"
+                        app:layout_constraintLeft_toLeftOf="0"
+                        app:layout_constraintTop_toBottomOf="@+id/societyRaiseCompView"
+                        app:srcCompat="@drawable/ic_feedback_complaint" />
+
+                    <TextView
+                        android:id="@+id/raiseCompText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginBottom="7dp"
+                        android:lineSpacingExtra="8sp"
+                        android:text="Raise a complaint "
+                        android:textColor="@color/light_red"
+                        android:textSize="16sp"
+                        app:layout_constraintBottom_toBottomOf="@+id/raiseCompImage"
+                        app:layout_constraintLeft_toRightOf="@+id/raiseCompImage"
+                        app:layout_constraintTop_toTopOf="@+id/raiseCompImage" />
                 </androidx.constraintlayout.widget.ConstraintLayout>
             </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.cardview.widget.CardView>
     </LinearLayout>
-    <ImageView android:id="@+id/closeImageView" android:padding="15dp" android:clickable="true" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="6dp" android:layout_marginTop="5dp" android:layout_marginStart="6dp" android:elevation="10dp" app:layout_constraintStart_toStartOf="0" app:layout_constraintTop_toTopOf="0" app:srcCompat="0x7f08018a"/>
-    <TextView android:textSize="18sp" android:textColor="@color/white" android:gravity="center_horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Support &amp; Feedback" android:lineSpacingExtra="10sp" android:elevation="10dp" app:layout_constraintBottom_toBottomOf="@+id/closeImageView" app:layout_constraintLeft_toLeftOf="0" app:layout_constraintRight_toRightOf="0" app:layout_constraintTop_toTopOf="@+id/closeImageView"/>
+
+    <ImageView
+        android:id="@+id/closeImageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="6dp"
+        android:layout_marginLeft="6dp"
+        android:layout_marginTop="5dp"
+        android:clickable="true"
+        android:elevation="10dp"
+        android:padding="15dp"
+        app:layout_constraintStart_toStartOf="0"
+        app:layout_constraintTop_toTopOf="0"
+        app:srcCompat="0x7f08018a" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:elevation="10dp"
+        android:gravity="center_horizontal"
+        android:lineSpacingExtra="10sp"
+        android:text="Support &amp; Feedback"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/closeImageView"
+        app:layout_constraintLeft_toLeftOf="0"
+        app:layout_constraintRight_toRightOf="0"
+        app:layout_constraintTop_toTopOf="@+id/closeImageView" />
 </androidx.constraintlayout.widget.ConstraintLayout>

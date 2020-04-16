@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/layout_step_2"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:visibility="gone">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/selected_reason_layout_step2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/selected_reason_work_quality"
+            style="@style/MGWhiteSmall"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/normalPadding"
+            android:layout_marginRight="@dimen/padding_16"
+            android:gravity="left"
+            android:lineSpacingExtra="8sp"
+            android:paddingTop="@dimen/mediumPadding"
+            android:paddingBottom="@dimen/padding_16"
+            android:text="@string/reason_work_quality"
+            android:textColor="@color/charcoal_grey"
+            android:textSize="@dimen/textSize_18"
+            app:layout_constraintLeft_toLeftOf="0" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            app:layout_constraintBottom_toBottomOf="0"
+            app:layout_constraintRight_toRightOf="0"
+            app:layout_constraintTop_toTopOf="0"
+            app:srcCompat="@drawable/ic_triangle_red" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/light_red"
+            app:layout_constraintTop_toBottomOf="@+id/selected_reason_work_quality" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/specific_reason_step2_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        app:layout_constraintBottom_toBottomOf="0"
+        app:layout_constraintTop_toBottomOf="@+id/selected_reason_layout_step2">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/text_select_specific_reason"
+            style="@style/MGWhiteSmall"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="left"
+            android:lineSpacingExtra="7sp"
+            android:paddingTop="@dimen/mediumPadding"
+            android:paddingBottom="@dimen/padding_16"
+            android:text="@string/selected_specific_reason"
+            android:textColor="@color/charcoal_grey_30"
+            android:textSize="@dimen/textSize_14"
+            app:layout_constraintLeft_toLeftOf="0" />
+
+        <CheckBox
+            android:id="@+id/reason1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:button="@drawable/drawable_checkbox_selector"
+            android:lineSpacingExtra="8sp"
+            android:paddingLeft="@dimen/padding_16"
+            android:paddingTop="@dimen/lessSmallPadding"
+            android:paddingBottom="@dimen/lessSmallPadding"
+            android:text="@string/reason_specific_poor_work_quality"
+            android:textColor="@color/charcoal_grey_50"
+            android:textSize="@dimen/textSize_16"
+            app:layout_constraintTop_toBottomOf="@+id/text_select_specific_reason" />
+
+        <CheckBox
+            android:id="@+id/reason2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:button="@drawable/drawable_checkbox_selector"
+            android:lineSpacingExtra="8sp"
+            android:paddingLeft="@dimen/padding_16"
+            android:paddingTop="@dimen/lessSmallPadding"
+            android:paddingBottom="@dimen/lessSmallPadding"
+            android:text="@string/reason_specific_leaves"
+            android:textColor="@color/charcoal_grey_50"
+            android:textSize="@dimen/textSize_16"
+            app:layout_constraintTop_toBottomOf="@+id/reason1" />
+
+        <CheckBox
+            android:id="@+id/reason3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:button="@drawable/drawable_checkbox_selector"
+            android:lineSpacingExtra="8sp"
+            android:paddingLeft="@dimen/padding_16"
+            android:paddingTop="@dimen/lessSmallPadding"
+            android:paddingBottom="@dimen/lessSmallPadding"
+            android:text="@string/reason_specific_timing"
+            android:textColor="@color/charcoal_grey_50"
+            android:textSize="@dimen/textSize_16"
+            app:layout_constraintTop_toBottomOf="@+id/reason2" />
+
+        <CheckBox
+            android:id="@+id/reason4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:button="@drawable/drawable_checkbox_selector"
+            android:lineSpacingExtra="8sp"
+            android:paddingLeft="@dimen/padding_16"
+            android:paddingTop="@dimen/lessSmallPadding"
+            android:paddingBottom="@dimen/lessSmallPadding"
+            android:text="@string/reason_others"
+            android:textColor="@color/charcoal_grey_50"
+            android:textSize="@dimen/textSize_16"
+            app:layout_constraintTop_toBottomOf="@+id/reason3" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/comment_work_quality"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/mediumPadding"
+            android:background="@drawable/round_spec_grey_no_fill"
+            android:focusable="true"
+            android:gravity="left"
+            android:hint="Write Comment..."
+            android:inputType="textMultiLine"
+            android:maxLines="3"
+            android:minLines="3"
+            android:padding="@dimen/normalPadding"
+            android:textSize="@dimen/textSize_16"
+            android:visibility="gone"
+            app:layout_constraintTop_toBottomOf="@+id/reason4" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/error_message_step2"
+            style="@style/MGWhiteSmall"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:gravity="left"
+            android:lineSpacingExtra="7sp"
+            android:paddingTop="@dimen/mediumPadding"
+            android:paddingBottom="@dimen/normalPadding"
+            android:text="@string/error_reason_selection"
+            android:textColor="@color/light_red"
+            android:textSize="@dimen/textSize_14"
+            android:visibility="gone"
+            app:layout_constraintLeft_toLeftOf="0"
+            app:layout_constraintTop_toBottomOf="@+id/comment_work_quality" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

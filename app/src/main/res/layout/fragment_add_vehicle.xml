@@ -1,54 +1,380 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:aapt="http://schemas.android.com/aapt" android:layout_width="match_parent" android:layout_height="match_parent">
-    <RelativeLayout android:id="@+id/blurView" android:background="@color/charcoal_grey_two_90" android:visibility="visible" android:layout_width="match_parent" android:layout_height="match_parent"/>
-    <RelativeLayout android:layout_gravity="center" android:id="@+id/relLay" android:background="@android:color/transparent" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_marginLeft="30dp" android:layout_marginRight="30dp">
-        <LinearLayout android:orientation="vertical" android:id="@+id/addVehicleLayout" android:background="@android:color/transparent" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_centerInParent="true">
-            <RelativeLayout android:id="@+id/header_layout" android:layout_width="match_parent" android:layout_height="wrap_content">
-                <androidx.appcompat.widget.AppCompatTextView android:textSize="@dimen/spec_heading" android:textColor="@color/white" android:gravity="center" android:id="@+id/header" android:padding="15dp" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/add_vehicle"/>
-                <ImageView android:id="@+id/closeDialog" android:padding="8dp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:layout_marginBottom="8dp" app:srcCompat="0x7f08018a"/>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/blurView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/charcoal_grey_two_90"
+        android:visibility="visible" />
+
+    <RelativeLayout
+        android:id="@+id/relLay"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:background="@android:color/transparent">
+
+        <LinearLayout
+            android:id="@+id/addVehicleLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:background="@android:color/transparent"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:id="@+id/header_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/header"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:padding="15dp"
+                    android:text="@string/add_vehicle"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/spec_heading" />
+
+                <ImageView
+                    android:id="@+id/closeDialog"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:padding="8dp"
+                    app:srcCompat="0x7f08018a" />
             </RelativeLayout>
-            <androidx.core.widget.NestedScrollView android:id="@+id/mainRLScroll" android:background="@android:color/transparent" android:focusable="true" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_weight="1" android:layout_below="@+id/header_layout">
-                <LinearLayout android:orientation="vertical" android:id="@+id/mainRL" android:background="@drawable/dialog_bg_add_vehicle" android:layout_width="match_parent" android:layout_height="wrap_content">
-                    <LinearLayout android:orientation="vertical" android:id="@+id/limitReach" android:paddingLeft="20dp" android:paddingTop="10dp" android:paddingRight="20dp" android:visibility="gone" android:layout_width="match_parent" android:layout_height="wrap_content">
-                        <TextView android:textStyle="bold" android:textColor="@color/spec_orange" android:layout_gravity="center" android:id="@+id/vehLimitHeader" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="4 wheeler limit reached"/>
-                        <TextView android:gravity="center" android:layout_gravity="center" android:id="@+id/vehLimitText" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="10dp"/>
+
+            <androidx.core.widget.NestedScrollView
+                android:id="@+id/mainRLScroll"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/header_layout"
+                android:layout_weight="1"
+                android:background="@android:color/transparent"
+                android:focusable="true">
+
+                <LinearLayout
+                    android:id="@+id/mainRL"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/dialog_bg_add_vehicle"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:id="@+id/limitReach"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:paddingLeft="20dp"
+                        android:paddingTop="10dp"
+                        android:paddingRight="20dp"
+                        android:visibility="gone">
+
+                        <TextView
+                            android:id="@+id/vehLimitHeader"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="4 wheeler limit reached"
+                            android:textColor="@color/spec_orange"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/vehLimitText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="10dp"
+                            android:gravity="center" />
                     </LinearLayout>
-                    <RelativeLayout android:layout_gravity="center" android:id="@+id/addImg" android:background="@drawable/circular_white_two_filled" android:layout_width="130dp" android:layout_height="130dp" android:layout_marginTop="20dp">
-                        <ImageView android:id="@+id/dummyImg" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerInParent="true" app:srcCompat="@drawable/ic_add_photo"/>
-                        <com.mygate.user.common.p011ui.CircularImageView android:id="@+id/putImg" android:layout_width="130dp" android:layout_height="130dp"/>
-                        <TextView android:textSize="@dimen/textSize_13" android:textColor="@color/charcoal_grey" android:id="@+id/dummyText" android:background="@drawable/round_corner_yellow" android:paddingLeft="8dp" android:paddingTop="2dp" android:paddingRight="8dp" android:paddingBottom="2dp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="10dp" android:text="ADD" android:layout_alignParentBottom="true" android:layout_centerHorizontal="true" android:letterSpacing="0.07"/>
-                        <ProgressBar android:id="@+id/progressBarImage" android:visibility="gone" android:layout_width="32dp" android:layout_height="32dp" android:indeterminateDrawable="@drawable/indeterminate_progress_bar" android:layout_centerHorizontal="true" android:layout_centerVertical="true"/>
+
+                    <RelativeLayout
+                        android:id="@+id/addImg"
+                        android:layout_width="130dp"
+                        android:layout_height="130dp"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="20dp"
+                        android:background="@drawable/circular_white_two_filled">
+
+                        <ImageView
+                            android:id="@+id/dummyImg"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            app:srcCompat="@drawable/ic_add_photo" />
+
+                        <com.mygate.user.common.p011ui.CircularImageView
+                            android:id="@+id/putImg"
+                            android:layout_width="130dp"
+                            android:layout_height="130dp" />
+
+                        <TextView
+                            android:id="@+id/dummyText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentBottom="true"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginBottom="10dp"
+                            android:background="@drawable/round_corner_yellow"
+                            android:letterSpacing="0.07"
+                            android:paddingLeft="8dp"
+                            android:paddingTop="2dp"
+                            android:paddingRight="8dp"
+                            android:paddingBottom="2dp"
+                            android:text="ADD"
+                            android:textColor="@color/charcoal_grey"
+                            android:textSize="@dimen/textSize_13" />
+
+                        <ProgressBar
+                            android:id="@+id/progressBarImage"
+                            android:layout_width="32dp"
+                            android:layout_height="32dp"
+                            android:layout_centerHorizontal="true"
+                            android:layout_centerVertical="true"
+                            android:indeterminateDrawable="@drawable/indeterminate_progress_bar"
+                            android:visibility="gone" />
                     </RelativeLayout>
-                    <ImageView android:layout_gravity="center" android:id="@+id/typeImg" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="15dp" android:layout_marginTop="20dp" android:layout_marginRight="15dp" android:layout_marginBottom="8dp" app:srcCompat="0x7f08015b"/>
-                    <androidx.appcompat.widget.AppCompatEditText android:textSize="@dimen/textSize_16" android:textColorHint="@color/border_new" android:id="@+id/vehicleNumberEdit" android:background="@drawable/background_nofill_rounded_border_new_6dp" android:paddingTop="12dp" android:paddingBottom="12dp" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginLeft="14dp" android:layout_marginTop="24dp" android:layout_marginRight="14dp" android:hint="@string/vehicle_number_hint" android:ems="10" android:singleLine="true" android:maxLength="36" android:digits="abcdefghijklmnopqrstuvwxyz1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZ" android:lineSpacingExtra="8sp" android:paddingStart="18dp" android:paddingEnd="18dp" style="@style/MGEditTextBottomRedTextGrey"/>
-                    <androidx.appcompat.widget.AppCompatEditText android:textSize="@dimen/textSize_16" android:textColorHint="@color/border_new" android:id="@+id/nickNameEdit" android:background="@drawable/background_nofill_rounded_border_new_6dp" android:paddingTop="12dp" android:paddingBottom="12dp" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginLeft="14dp" android:layout_marginTop="16dp" android:layout_marginRight="14dp" android:layout_marginBottom="10dp" android:hint="@string/vehicle_name_hint" android:ems="10" android:singleLine="true" android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ- 0123456789_&apos;@." android:lineSpacingExtra="8sp" android:paddingStart="18dp" android:paddingEnd="18dp" style="@style/MGEditTextBottomRedTextGrey"/>
-                    <TextView android:textSize="14sp" android:textStyle="bold" android:textColor="@color/charcoal_grey" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="16dp" android:text="@string/type" android:layout_marginStart="14dp"/>
-                    <RelativeLayout android:id="@+id/twoWheelerRL" android:padding="10dp" android:visibility="visible" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginLeft="6dp" android:layout_marginTop="8dp">
-                        <RelativeLayout android:id="@+id/twoVehRL" android:layout_width="wrap_content" android:layout_height="wrap_content">
-                            <ImageView android:id="@+id/twoImg" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerVertical="true" app:srcCompat="0x7f0800cd"/>
-                            <ImageView android:id="@+id/infoTwoImg" android:visibility="invisible" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerVertical="true" app:srcCompat="0x7f0801da"/>
-                            <TextView android:id="@+id/twoVeh" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="12dp" android:text="2 Wheeler" android:layout_toRightOf="@+id/twoImg" android:layout_centerVertical="true"/>
+
+                    <ImageView
+                        android:id="@+id/typeImg"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginRight="15dp"
+                        android:layout_marginBottom="8dp"
+                        android:visibility="gone"
+                        app:srcCompat="0x7f08015b" />
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/vehicleNumberEdit"
+                        style="@style/MGEditTextBottomRedTextGrey"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="14dp"
+                        android:layout_marginTop="24dp"
+                        android:layout_marginRight="14dp"
+                        android:background="@drawable/background_nofill_rounded_border_new_6dp"
+                        android:digits="abcdefghijklmnopqrstuvwxyz1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+                        android:ems="10"
+                        android:hint="@string/vehicle_number_hint"
+                        android:lineSpacingExtra="8sp"
+                        android:maxLength="36"
+                        android:paddingStart="18dp"
+                        android:paddingTop="12dp"
+                        android:paddingEnd="18dp"
+                        android:paddingBottom="12dp"
+                        android:singleLine="true"
+                        android:textColorHint="@color/border_new"
+                        android:textSize="@dimen/textSize_16" />
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/nickNameEdit"
+                        style="@style/MGEditTextBottomRedTextGrey"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="14dp"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginRight="14dp"
+                        android:layout_marginBottom="10dp"
+                        android:background="@drawable/background_nofill_rounded_border_new_6dp"
+                        android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ- 0123456789_&apos;@."
+                        android:ems="10"
+                        android:hint="@string/vehicle_name_hint"
+                        android:lineSpacingExtra="8sp"
+                        android:paddingStart="18dp"
+                        android:paddingTop="12dp"
+                        android:paddingEnd="18dp"
+                        android:paddingBottom="12dp"
+                        android:singleLine="true"
+                        android:textColorHint="@color/border_new"
+                        android:textSize="@dimen/textSize_16" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="14dp"
+                        android:layout_marginTop="16dp"
+                        android:text="@string/type"
+                        android:textColor="@color/charcoal_grey"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+
+                    <RelativeLayout
+                        android:id="@+id/twoWheelerRL"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="6dp"
+                        android:layout_marginTop="8dp"
+                        android:padding="10dp"
+                        android:visibility="visible">
+
+                        <RelativeLayout
+                            android:id="@+id/twoVehRL"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+
+                            <ImageView
+                                android:id="@+id/twoImg"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                app:srcCompat="0x7f0800cd" />
+
+                            <ImageView
+                                android:id="@+id/infoTwoImg"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:visibility="invisible"
+                                app:srcCompat="0x7f0801da" />
+
+                            <TextView
+                                android:id="@+id/twoVeh"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:layout_marginLeft="12dp"
+                                android:layout_toRightOf="@+id/twoImg"
+                                android:text="2 Wheeler" />
                         </RelativeLayout>
-                        <TextView android:textSize="14sp" android:textColor="@color/charcoal_grey_30" android:id="@+id/twoVehLimitText" android:visibility="gone" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginLeft="30dp" android:layout_marginTop="5dp" android:layout_below="@+id/twoVehRL" android:lineSpacingExtra="7sp"/>
+
+                        <TextView
+                            android:id="@+id/twoVehLimitText"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/twoVehRL"
+                            android:layout_marginLeft="30dp"
+                            android:layout_marginTop="5dp"
+                            android:lineSpacingExtra="7sp"
+                            android:textColor="@color/charcoal_grey_30"
+                            android:textSize="14sp"
+                            android:visibility="gone" />
                     </RelativeLayout>
-                    <RelativeLayout android:id="@+id/fourWheelerRL" android:padding="10dp" android:visibility="visible" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginLeft="6dp" android:layout_marginBottom="10dp">
-                        <RelativeLayout android:id="@+id/fourVehRL" android:layout_width="match_parent" android:layout_height="wrap_content">
-                            <ImageView android:id="@+id/fourImg" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerVertical="true" app:srcCompat="0x7f0800cd"/>
-                            <ImageView android:id="@+id/infoFourImg" android:visibility="invisible" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerVertical="true" app:srcCompat="0x7f0801da"/>
-                            <TextView android:id="@+id/fourVeh" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="12dp" android:text="4 Wheeler" android:layout_toRightOf="@+id/fourImg" android:layout_centerVertical="true"/>
+
+                    <RelativeLayout
+                        android:id="@+id/fourWheelerRL"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="6dp"
+                        android:layout_marginBottom="10dp"
+                        android:padding="10dp"
+                        android:visibility="visible">
+
+                        <RelativeLayout
+                            android:id="@+id/fourVehRL"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <ImageView
+                                android:id="@+id/fourImg"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                app:srcCompat="0x7f0800cd" />
+
+                            <ImageView
+                                android:id="@+id/infoFourImg"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:visibility="invisible"
+                                app:srcCompat="0x7f0801da" />
+
+                            <TextView
+                                android:id="@+id/fourVeh"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:layout_marginLeft="12dp"
+                                android:layout_toRightOf="@+id/fourImg"
+                                android:text="4 Wheeler" />
                         </RelativeLayout>
-                        <TextView android:textSize="14sp" android:textColor="@color/charcoal_grey_30" android:id="@+id/fourVehLimitText" android:visibility="gone" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginLeft="30dp" android:layout_marginTop="5dp" android:layout_below="@+id/fourVehRL" android:lineSpacingExtra="7sp"/>
+
+                        <TextView
+                            android:id="@+id/fourVehLimitText"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/fourVehRL"
+                            android:layout_marginLeft="30dp"
+                            android:layout_marginTop="5dp"
+                            android:lineSpacingExtra="7sp"
+                            android:textColor="@color/charcoal_grey_30"
+                            android:textSize="14sp"
+                            android:visibility="gone" />
                     </RelativeLayout>
                 </LinearLayout>
             </androidx.core.widget.NestedScrollView>
-            <androidx.constraintlayout.widget.ConstraintLayout android:id="@+id/updateButton" android:background="@drawable/round_mgred_fill_button" android:layout_width="match_parent" android:layout_height="56dp">
-                <ImageView android:id="@+id/updateButtonIcon" android:layout_width="wrap_content" android:layout_height="wrap_content" app:layout_constraintBottom_toBottomOf="0" app:layout_constraintHorizontal_chainStyle="2" app:layout_constraintLeft_toLeftOf="0" app:layout_constraintRight_toLeftOf="@+id/updateButtonText" app:layout_constraintTop_toTopOf="0" app:srcCompat="0x7f08013e"/>
-                <TextView android:textSize="16sp" android:textStyle="bold" android:textColor="@color/white" android:id="@+id/updateButtonText" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/add" android:textAllCaps="true" android:layout_marginStart="6dp" app:layout_constraintBottom_toBottomOf="0" app:layout_constraintLeft_toRightOf="@+id/updateButtonIcon" app:layout_constraintRight_toRightOf="0" app:layout_constraintTop_toTopOf="0"/>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/updateButton"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:background="@drawable/round_mgred_fill_button">
+
+                <ImageView
+                    android:id="@+id/updateButtonIcon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintBottom_toBottomOf="0"
+                    app:layout_constraintHorizontal_chainStyle="2"
+                    app:layout_constraintLeft_toLeftOf="0"
+                    app:layout_constraintRight_toLeftOf="@+id/updateButtonText"
+                    app:layout_constraintTop_toTopOf="0"
+                    app:srcCompat="0x7f08013e" />
+
+                <TextView
+                    android:id="@+id/updateButtonText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="6dp"
+                    android:text="@string/add"
+                    android:textAllCaps="true"
+                    android:textColor="@color/white"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="0"
+                    app:layout_constraintLeft_toRightOf="@+id/updateButtonIcon"
+                    app:layout_constraintRight_toRightOf="0"
+                    app:layout_constraintTop_toTopOf="0" />
             </androidx.constraintlayout.widget.ConstraintLayout>
         </LinearLayout>
-        <include android:id="@+id/addConfirm" android:visibility="gone" android:layout_width="match_parent" android:layout_height="wrap_content" layout="@layout/fragment_confim_dialog"/>
+
+        <include
+            android:id="@+id/addConfirm"
+            layout="@layout/fragment_confim_dialog"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone" />
     </RelativeLayout>
-    <androidx.constraintlayout.widget.ConstraintLayout android:id="@+id/loader_layout" android:visibility="gone" android:clickable="true" android:layout_width="match_parent" android:layout_height="match_parent">
-        <ProgressBar android:id="@+id/progress_bar" android:padding="10dp" android:layout_width="50dp" android:layout_height="50dp" android:indeterminateDrawable="@drawable/indeterminate_progress_bar" app:layout_constraintBottom_toBottomOf="0" app:layout_constraintLeft_toLeftOf="0" app:layout_constraintRight_toRightOf="0" app:layout_constraintTop_toTopOf="0"/>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/loader_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clickable="true"
+        android:visibility="gone">
+
+        <ProgressBar
+            android:id="@+id/progress_bar"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:indeterminateDrawable="@drawable/indeterminate_progress_bar"
+            android:padding="10dp"
+            app:layout_constraintBottom_toBottomOf="0"
+            app:layout_constraintLeft_toLeftOf="0"
+            app:layout_constraintRight_toRightOf="0"
+            app:layout_constraintTop_toTopOf="0" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </RelativeLayout>

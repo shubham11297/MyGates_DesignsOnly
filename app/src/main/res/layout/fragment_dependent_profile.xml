@@ -1,39 +1,304 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:aapt="http://schemas.android.com/aapt" android:id="@+id/baseLayout" android:paddingTop="@dimen/app_bar_padding" android:clickable="true" android:layout_width="match_parent" android:layout_height="match_parent">
-    <RelativeLayout android:id="@+id/blurView" android:background="@color/charcoal_grey_two_90" android:visibility="visible" android:layout_width="match_parent" android:layout_height="match_parent"/>
-    <androidx.core.widget.NestedScrollView android:id="@+id/nestedScrollView" android:layout_width="match_parent" android:layout_height="wrap_content" android:fillViewport="true" app:layout_constraintBottom_toBottomOf="0" app:layout_constraintTop_toTopOf="0">
-        <androidx.constraintlayout.widget.ConstraintLayout android:clickable="true" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginLeft="32dp" android:layout_marginRight="32dp">
-            <androidx.constraintlayout.widget.ConstraintLayout android:id="@+id/descLayout" android:background="@drawable/dialog_bg_add_vehicle" android:layout_width="match_parent" android:layout_height="wrap_content" app:layout_constraintTop_toTopOf="0">
-                <ImageView android:id="@+id/editIcon" android:padding="10dp" android:layout_width="28dp" android:layout_height="28dp" android:layout_marginLeft="5dp" android:layout_marginTop="5dp" android:scaleType="center" app:layout_constraintLeft_toLeftOf="0" app:layout_constraintTop_toTopOf="0" app:srcCompat="@drawable/ic_edit"/>
-                <ImageView android:id="@+id/deleteIcon" android:padding="10dp" android:layout_width="28dp" android:layout_height="28dp" android:layout_marginTop="5dp" android:layout_marginRight="5dp" android:scaleType="center" app:layout_constraintRight_toRightOf="0" app:layout_constraintTop_toTopOf="0" app:srcCompat="@drawable/ic_delete_three"/>
-                <com.mygate.user.common.p011ui.CircularImageView android:id="@+id/userImage" android:layout_width="100dp" android:layout_height="100dp" android:layout_marginTop="25dp" app:layout_constraintLeft_toLeftOf="0" app:layout_constraintRight_toRightOf="0" app:layout_constraintTop_toTopOf="0" app:srcCompat="0x7f08019b"/>
-                <TextView android:textSize="18sp" android:textColor="@color/charcoal_grey" android:ellipsize="end" android:gravity="center_horizontal" android:id="@+id/userName" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginLeft="6dp" android:layout_marginTop="8dp" android:layout_marginRight="6dp" android:lineSpacingExtra="9sp" app:layout_constraintLeft_toLeftOf="0" app:layout_constraintRight_toRightOf="0" app:layout_constraintTop_toBottomOf="@+id/userImage"/>
-                <TextView android:textSize="20sp" android:textColor="@color/grapefruit_80" android:gravity="center_horizontal" android:id="@+id/passCodeView" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="5dp" android:layout_marginTop="6dp" android:letterSpacing="0.07" app:layout_constraintHorizontal_chainStyle="2" app:layout_constraintLeft_toLeftOf="0" app:layout_constraintRight_toLeftOf="@+id/passCodeHelpView" app:layout_constraintTop_toBottomOf="@+id/userName"/>
-                <TextView android:gravity="center" android:id="@+id/passCodeHelpView" android:background="0x7f0801da" android:layout_width="16dp" android:layout_height="16dp" android:layout_marginLeft="5dp" android:layout_marginTop="3dp" android:color="@color/charcoal_grey_30" app:layout_constraintBottom_toBottomOf="@+id/passCodeView" app:layout_constraintLeft_toRightOf="@+id/passCodeView" app:layout_constraintRight_toRightOf="0" app:layout_constraintTop_toTopOf="@+id/passCodeView"/>
-                <androidx.constraintlayout.widget.ConstraintLayout android:id="@+id/otherSettingView" android:background="@color/white_two" android:layout_width="match_parent" android:layout_height="50dp" android:layout_marginTop="20dp" app:layout_constraintTop_toBottomOf="@+id/passCodeHelpView">
-                    <TextView android:textSize="14sp" android:textStyle="bold" android:textColor="@color/black_30" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="15dp" android:text="When they exit" android:letterSpacing="0.07" app:layout_constraintBottom_toBottomOf="0" app:layout_constraintLeft_toLeftOf="0" app:layout_constraintTop_toTopOf="0"/>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/baseLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clickable="true"
+    android:paddingTop="@dimen/app_bar_padding">
+
+    <RelativeLayout
+        android:id="@+id/blurView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/charcoal_grey_two_90"
+        android:visibility="visible" />
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/nestedScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fillViewport="true"
+        app:layout_constraintBottom_toBottomOf="0"
+        app:layout_constraintTop_toTopOf="0">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="32dp"
+            android:layout_marginRight="32dp"
+            android:clickable="true">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/descLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/dialog_bg_add_vehicle"
+                app:layout_constraintTop_toTopOf="0">
+
+                <ImageView
+                    android:id="@+id/editIcon"
+                    android:layout_width="28dp"
+                    android:layout_height="28dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="5dp"
+                    android:padding="10dp"
+                    android:scaleType="center"
+                    app:layout_constraintLeft_toLeftOf="0"
+                    app:layout_constraintTop_toTopOf="0"
+                    app:srcCompat="@drawable/ic_edit" />
+
+                <ImageView
+                    android:id="@+id/deleteIcon"
+                    android:layout_width="28dp"
+                    android:layout_height="28dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="5dp"
+                    android:padding="10dp"
+                    android:scaleType="center"
+                    app:layout_constraintRight_toRightOf="0"
+                    app:layout_constraintTop_toTopOf="0"
+                    app:srcCompat="@drawable/ic_delete_three" />
+
+                <com.mygate.user.common.p011ui.CircularImageView
+                    android:id="@+id/userImage"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_marginTop="25dp"
+                    app:layout_constraintLeft_toLeftOf="0"
+                    app:layout_constraintRight_toRightOf="0"
+                    app:layout_constraintTop_toTopOf="0"
+                    app:srcCompat="0x7f08019b" />
+
+                <TextView
+                    android:id="@+id/userName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="6dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginRight="6dp"
+                    android:ellipsize="end"
+                    android:gravity="center_horizontal"
+                    android:lineSpacingExtra="9sp"
+                    android:textColor="@color/charcoal_grey"
+                    android:textSize="18sp"
+                    app:layout_constraintLeft_toLeftOf="0"
+                    app:layout_constraintRight_toRightOf="0"
+                    app:layout_constraintTop_toBottomOf="@+id/userImage" />
+
+                <TextView
+                    android:id="@+id/passCodeView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="6dp"
+                    android:gravity="center_horizontal"
+                    android:letterSpacing="0.07"
+                    android:textColor="@color/grapefruit_80"
+                    android:textSize="20sp"
+                    app:layout_constraintHorizontal_chainStyle="2"
+                    app:layout_constraintLeft_toLeftOf="0"
+                    app:layout_constraintRight_toLeftOf="@+id/passCodeHelpView"
+                    app:layout_constraintTop_toBottomOf="@+id/userName" />
+
+                <TextView
+                    android:id="@+id/passCodeHelpView"
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="3dp"
+                    android:background="0x7f0801da"
+                    android:color="@color/charcoal_grey_30"
+                    android:gravity="center"
+                    app:layout_constraintBottom_toBottomOf="@+id/passCodeView"
+                    app:layout_constraintLeft_toRightOf="@+id/passCodeView"
+                    app:layout_constraintRight_toRightOf="0"
+                    app:layout_constraintTop_toTopOf="@+id/passCodeView" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/otherSettingView"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="20dp"
+                    android:background="@color/white_two"
+                    app:layout_constraintTop_toBottomOf="@+id/passCodeHelpView">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="15dp"
+                        android:letterSpacing="0.07"
+                        android:text="When they exit"
+                        android:textColor="@color/black_30"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="0"
+                        app:layout_constraintLeft_toLeftOf="0"
+                        app:layout_constraintTop_toTopOf="0" />
                 </androidx.constraintlayout.widget.ConstraintLayout>
-                <RadioGroup android:orientation="vertical" android:id="@+id/buttonGroup" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginLeft="7dp" android:layout_marginTop="5dp" app:layout_constraintTop_toBottomOf="@+id/otherSettingView">
-                    <RadioButton android:textSize="16sp" android:textColor="@color/charcoal_grey_80" android:id="@+id/requirePermButton" android:paddingLeft="10dp" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Require my permission" android:lineSpacingExtra="8sp"/>
-                    <RadioButton android:textSize="16sp" android:textColor="@color/charcoal_grey_80" android:id="@+id/sendNotifButton" android:paddingLeft="10dp" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="6dp" android:text="Send me notification" android:lineSpacingExtra="8sp"/>
-                    <RadioButton android:textSize="16sp" android:textColor="@color/charcoal_grey_80" android:id="@+id/doNothingButton" android:paddingLeft="10dp" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="6dp" android:text="Do nothing" android:lineSpacingExtra="8sp"/>
+
+                <RadioGroup
+                    android:id="@+id/buttonGroup"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="7dp"
+                    android:layout_marginTop="5dp"
+                    android:orientation="vertical"
+                    app:layout_constraintTop_toBottomOf="@+id/otherSettingView">
+
+                    <RadioButton
+                        android:id="@+id/requirePermButton"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:lineSpacingExtra="8sp"
+                        android:paddingLeft="10dp"
+                        android:text="Require my permission"
+                        android:textColor="@color/charcoal_grey_80"
+                        android:textSize="16sp" />
+
+                    <RadioButton
+                        android:id="@+id/sendNotifButton"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        android:lineSpacingExtra="8sp"
+                        android:paddingLeft="10dp"
+                        android:text="Send me notification"
+                        android:textColor="@color/charcoal_grey_80"
+                        android:textSize="16sp" />
+
+                    <RadioButton
+                        android:id="@+id/doNothingButton"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        android:lineSpacingExtra="8sp"
+                        android:paddingLeft="10dp"
+                        android:text="Do nothing"
+                        android:textColor="@color/charcoal_grey_80"
+                        android:textSize="16sp" />
                 </RadioGroup>
-                <View android:id="@+id/sep1" android:background="@color/white_two" android:layout_width="match_parent" android:layout_height="1dp" android:layout_marginTop="10dp" app:layout_constraintTop_toBottomOf="@+id/buttonGroup"/>
-                <androidx.constraintlayout.widget.ConstraintLayout android:id="@+id/exitLogView" android:layout_width="match_parent" android:layout_height="50dp" app:layout_constraintTop_toBottomOf="@+id/sep1">
-                    <ImageView android:id="@+id/addFlatIcon" android:layout_width="15dp" android:layout_height="15dp" android:layout_marginLeft="17dp" app:layout_constraintBottom_toBottomOf="0" app:layout_constraintLeft_toLeftOf="0" app:layout_constraintTop_toTopOf="0" app:srcCompat="@drawable/ic_action_log"/>
-                    <TextView android:textSize="16sp" android:textColor="@color/charcoal_grey_80" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="16dp" android:text="View Exit Log" android:lineSpacingExtra="8sp" app:layout_constraintBottom_toBottomOf="0" app:layout_constraintLeft_toRightOf="@+id/addFlatIcon" app:layout_constraintTop_toTopOf="0"/>
-                    <ImageView android:layout_width="24dp" android:layout_height="24dp" android:layout_marginRight="5dp" android:scaleType="centerInside" app:layout_constraintBottom_toBottomOf="0" app:layout_constraintRight_toRightOf="0" app:layout_constraintTop_toTopOf="0" app:srcCompat="0x7f0800cf"/>
+
+                <View
+                    android:id="@+id/sep1"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@color/white_two"
+                    app:layout_constraintTop_toBottomOf="@+id/buttonGroup" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/exitLogView"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    app:layout_constraintTop_toBottomOf="@+id/sep1">
+
+                    <ImageView
+                        android:id="@+id/addFlatIcon"
+                        android:layout_width="15dp"
+                        android:layout_height="15dp"
+                        android:layout_marginLeft="17dp"
+                        app:layout_constraintBottom_toBottomOf="0"
+                        app:layout_constraintLeft_toLeftOf="0"
+                        app:layout_constraintTop_toTopOf="0"
+                        app:srcCompat="@drawable/ic_action_log" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="16dp"
+                        android:lineSpacingExtra="8sp"
+                        android:text="View Exit Log"
+                        android:textColor="@color/charcoal_grey_80"
+                        android:textSize="16sp"
+                        app:layout_constraintBottom_toBottomOf="0"
+                        app:layout_constraintLeft_toRightOf="@+id/addFlatIcon"
+                        app:layout_constraintTop_toTopOf="0" />
+
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:layout_marginRight="5dp"
+                        android:scaleType="centerInside"
+                        app:layout_constraintBottom_toBottomOf="0"
+                        app:layout_constraintRight_toRightOf="0"
+                        app:layout_constraintTop_toTopOf="0"
+                        app:srcCompat="0x7f0800cf" />
                 </androidx.constraintlayout.widget.ConstraintLayout>
             </androidx.constraintlayout.widget.ConstraintLayout>
-            <androidx.constraintlayout.widget.ConstraintLayout android:id="@+id/updateButton" android:background="@drawable/round_mgred_fill_button" android:layout_width="0dp" android:layout_height="56dp" app:layout_constraintLeft_toLeftOf="@+id/descLayout" app:layout_constraintRight_toRightOf="@+id/descLayout" app:layout_constraintTop_toBottomOf="@+id/descLayout">
-                <ImageView android:id="@+id/updateButtonIcon" android:layout_width="wrap_content" android:layout_height="wrap_content" app:layout_constraintBottom_toBottomOf="0" app:layout_constraintHorizontal_chainStyle="2" app:layout_constraintLeft_toLeftOf="0" app:layout_constraintRight_toLeftOf="@+id/updateButtonText" app:layout_constraintTop_toTopOf="0" app:srcCompat="@drawable/ic_action_exit_white"/>
-                <TextView android:textSize="16sp" android:textColor="@color/white" android:id="@+id/updateButtonText" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="6dp" android:text="Allow Exit" app:layout_constraintBottom_toBottomOf="0" app:layout_constraintLeft_toRightOf="@+id/updateButtonIcon" app:layout_constraintRight_toRightOf="0" app:layout_constraintTop_toTopOf="0"/>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/updateButton"
+                android:layout_width="0dp"
+                android:layout_height="56dp"
+                android:background="@drawable/round_mgred_fill_button"
+                app:layout_constraintLeft_toLeftOf="@+id/descLayout"
+                app:layout_constraintRight_toRightOf="@+id/descLayout"
+                app:layout_constraintTop_toBottomOf="@+id/descLayout">
+
+                <ImageView
+                    android:id="@+id/updateButtonIcon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintBottom_toBottomOf="0"
+                    app:layout_constraintHorizontal_chainStyle="2"
+                    app:layout_constraintLeft_toLeftOf="0"
+                    app:layout_constraintRight_toLeftOf="@+id/updateButtonText"
+                    app:layout_constraintTop_toTopOf="0"
+                    app:srcCompat="@drawable/ic_action_exit_white" />
+
+                <TextView
+                    android:id="@+id/updateButtonText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="6dp"
+                    android:text="Allow Exit"
+                    android:textColor="@color/white"
+                    android:textSize="16sp"
+                    app:layout_constraintBottom_toBottomOf="0"
+                    app:layout_constraintLeft_toRightOf="@+id/updateButtonIcon"
+                    app:layout_constraintRight_toRightOf="0"
+                    app:layout_constraintTop_toTopOf="0" />
             </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.core.widget.NestedScrollView>
-    <RelativeLayout android:layout_width="match_parent" android:layout_height="0dp" app:layout_constraintBottom_toBottomOf="@+id/nestedScrollView" app:layout_constraintTop_toTopOf="@+id/nestedScrollView">
-        <include layout="@layout/layout_error_screen_fragment"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="@+id/nestedScrollView"
+        app:layout_constraintTop_toTopOf="@+id/nestedScrollView">
+
+        <include layout="@layout/layout_error_screen_fragment" />
     </RelativeLayout>
-    <ImageView android:id="@+id/closeImageView" android:padding="15dp" android:clickable="true" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="12dp" android:layout_marginTop="5dp" android:layout_marginStart="12dp" android:elevation="10dp" app:layout_constraintStart_toStartOf="0" app:layout_constraintTop_toTopOf="0" app:srcCompat="0x7f08018a"/>
-    <TextView android:textSize="18sp" android:textColor="@color/white" android:gravity="center_horizontal" android:id="@+id/titlelabel" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Kid" android:lineSpacingExtra="10sp" android:elevation="10dp" app:layout_constraintBottom_toBottomOf="@+id/closeImageView" app:layout_constraintLeft_toLeftOf="0" app:layout_constraintRight_toRightOf="0" app:layout_constraintTop_toTopOf="@+id/closeImageView"/>
+
+    <ImageView
+        android:id="@+id/closeImageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginTop="5dp"
+        android:clickable="true"
+        android:elevation="10dp"
+        android:padding="15dp"
+        app:layout_constraintStart_toStartOf="0"
+        app:layout_constraintTop_toTopOf="0"
+        app:srcCompat="0x7f08018a" />
+
+    <TextView
+        android:id="@+id/titlelabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:elevation="10dp"
+        android:gravity="center_horizontal"
+        android:lineSpacingExtra="10sp"
+        android:text="Kid"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/closeImageView"
+        app:layout_constraintLeft_toLeftOf="0"
+        app:layout_constraintRight_toRightOf="0"
+        app:layout_constraintTop_toTopOf="@+id/closeImageView" />
 </androidx.constraintlayout.widget.ConstraintLayout>

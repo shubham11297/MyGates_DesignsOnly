@@ -1,0 +1,304 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/labelDaysOfWeek"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="15dp"
+        android:lineSpacingExtra="12sp"
+        android:text="Select Days of Week"
+        android:textColor="@color/charcoal_grey_80"
+        android:textSize="16sp"
+        app:layout_constraintLeft_toLeftOf="0"
+        app:layout_constraintTop_toTopOf="0" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/daySelectionCL"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/rounded_light_red_no_fill"
+        app:layout_constraintEnd_toEndOf="0"
+        app:layout_constraintStart_toStartOf="0"
+        app:layout_constraintTop_toBottomOf="@+id/labelDaysOfWeek">
+
+        <TextView
+            android:id="@+id/dayCLText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:lineSpacingExtra="9sp"
+            android:text="All days of Week"
+            android:textColor="@color/light_red"
+            android:textSize="15sp"
+            app:layout_constraintBottom_toBottomOf="0"
+            app:layout_constraintStart_toStartOf="0"
+            app:layout_constraintTop_toTopOf="0" />
+
+        <ImageView
+            android:id="@+id/dayCLImage"
+            android:layout_width="12dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="20dp"
+            app:layout_constraintBottom_toBottomOf="@+id/dayCLText"
+            app:layout_constraintRight_toRightOf="0"
+            app:layout_constraintTop_toTopOf="@+id/dayCLText"
+            app:srcCompat="@drawable/ic_triangle_red" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/labelValidity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:lineSpacingExtra="12sp"
+        android:text="Select Validity"
+        android:textColor="@color/charcoal_grey_80"
+        android:textSize="16sp"
+        app:layout_constraintLeft_toLeftOf="0"
+        app:layout_constraintTop_toBottomOf="@+id/daySelectionCL" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/validitySelectionCL"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/rounded_light_red_no_fill"
+        app:layout_constraintEnd_toEndOf="0"
+        app:layout_constraintStart_toStartOf="0"
+        app:layout_constraintTop_toBottomOf="@+id/labelValidity">
+
+        <TextView
+            android:id="@+id/validityCLText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:lineSpacingExtra="9sp"
+            android:text="Select Validity"
+            android:textColor="@color/light_red"
+            android:textSize="15sp"
+            app:layout_constraintBottom_toBottomOf="0"
+            app:layout_constraintStart_toStartOf="0"
+            app:layout_constraintTop_toTopOf="0" />
+
+        <ImageView
+            android:id="@+id/validityCLImage"
+            android:layout_width="12dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="20dp"
+            app:layout_constraintBottom_toBottomOf="@+id/validityCLText"
+            app:layout_constraintRight_toRightOf="0"
+            app:layout_constraintTop_toTopOf="@+id/validityCLText"
+            app:srcCompat="@drawable/ic_triangle_red" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/labelTimeSlot"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:lineSpacingExtra="12sp"
+        android:text="Select Allowed Time Slot"
+        android:textColor="@color/charcoal_grey_80"
+        android:textSize="16sp"
+        app:layout_constraintLeft_toLeftOf="0"
+        app:layout_constraintTop_toBottomOf="@+id/validitySelectionCL" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/freqStartTimeSelectionCL"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/rounded_light_red_no_fill"
+        app:layout_constraintLeft_toLeftOf="0"
+        app:layout_constraintTop_toBottomOf="@+id/labelTimeSlot">
+
+        <TextView
+            android:id="@+id/freqStartTimeCLText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:lineSpacingExtra="6sp"
+            android:textColor="@color/light_red"
+            android:textSize="15sp"
+            app:layout_constraintBottom_toBottomOf="0"
+            app:layout_constraintHorizontal_chainStyle="0"
+            app:layout_constraintRight_toLeftOf="@+id/freqstartTimeImage"
+            app:layout_constraintStart_toStartOf="0"
+            app:layout_constraintTop_toTopOf="0" />
+
+        <ImageView
+            android:id="@+id/freqstartTimeImage"
+            android:layout_width="12dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="20dp"
+            app:layout_constraintBottom_toBottomOf="@+id/freqStartTimeCLText"
+            app:layout_constraintLeft_toRightOf="@+id/freqStartTimeCLText"
+            app:layout_constraintRight_toRightOf="0"
+            app:layout_constraintTop_toTopOf="@+id/freqStartTimeCLText"
+            app:srcCompat="@drawable/ic_triangle_red" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/freqEndTimeSelectionCL"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/rounded_light_red_no_fill"
+        app:layout_constraintLeft_toRightOf="@+id/freqStartTimeSelectionCL"
+        app:layout_constraintTop_toBottomOf="@+id/labelTimeSlot">
+
+        <TextView
+            android:id="@+id/freqEndTimeCLText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:lineSpacingExtra="6sp"
+            android:textColor="@color/light_red"
+            android:textSize="15sp"
+            app:layout_constraintBottom_toBottomOf="0"
+            app:layout_constraintHorizontal_chainStyle="0"
+            app:layout_constraintRight_toLeftOf="@+id/freqendTimeImage"
+            app:layout_constraintStart_toStartOf="0"
+            app:layout_constraintTop_toTopOf="0" />
+
+        <ImageView
+            android:id="@+id/freqendTimeImage"
+            android:layout_width="12dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="20dp"
+            app:layout_constraintBottom_toBottomOf="@+id/freqEndTimeCLText"
+            app:layout_constraintLeft_toRightOf="@+id/freqEndTimeCLText"
+            app:layout_constraintRight_toRightOf="0"
+            app:layout_constraintTop_toTopOf="@+id/freqEndTimeCLText"
+            app:srcCompat="@drawable/ic_triangle_red" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/one_entry_desc_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/one_entry_per_day"
+        android:textColor="#4a90e2"
+        android:textSize="14sp"
+        android:textStyle="italic"
+        app:layout_constrainedWidth="true"
+        app:layout_constraintLeft_toLeftOf="0"
+        app:layout_constraintTop_toBottomOf="@+id/freqStartTimeSelectionCL" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/freqcompanyFirstCL"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/complete_round_grey_nofill"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        app:layout_constraintStart_toStartOf="0"
+        app:layout_constraintTop_toBottomOf="@+id/one_entry_desc_view">
+
+        <TextView
+            android:id="@+id/freqcompanyFirstCLText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:lineSpacingExtra="7sp"
+            android:text="Company name"
+            android:textColor="@color/ubuntu_light"
+            android:textSize="15sp"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="0"
+            app:layout_constraintStart_toStartOf="0"
+            app:layout_constraintTop_toTopOf="0" />
+
+        <ImageView
+            android:id="@+id/freqcompanyFirstCLImage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            app:layout_constraintBottom_toBottomOf="0"
+            app:layout_constraintEnd_toEndOf="0"
+            app:layout_constraintHorizontal_bias="1"
+            app:layout_constraintRight_toRightOf="0"
+            app:layout_constraintStart_toEndOf="@+id/freqcompanyFirstCLText"
+            app:layout_constraintTop_toTopOf="0"
+            app:srcCompat="@drawable/menu_down" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/freqcompanySecondCL"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/rounded_light_red_no_fill"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="0"
+        app:layout_constraintTop_toBottomOf="@+id/one_entry_desc_view">
+
+        <TextView
+            android:id="@+id/freqcompanySecondCLText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/light_red"
+            android:textSize="15sp"
+            app:layout_constraintBottom_toBottomOf="0"
+            app:layout_constraintStart_toStartOf="0"
+            app:layout_constraintTop_toTopOf="0" />
+
+        <ImageView
+            android:id="@+id/companyCLImage"
+            android:layout_width="12dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            app:layout_constraintBottom_toBottomOf="@+id/freqcompanySecondCLText"
+            app:layout_constraintHorizontal_bias="1"
+            app:layout_constraintLeft_toRightOf="@+id/freqcompanySecondCLText"
+            app:layout_constraintRight_toRightOf="0"
+            app:layout_constraintTop_toTopOf="@+id/freqcompanySecondCLText"
+            app:srcCompat="@drawable/ic_triangle_red" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ImageButton
+        android:id="@+id/sendFrequent"
+        style="@style/button_bottom_gradient_fill"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="85dp"
+        android:background="@drawable/left_to_right_reddish_gradient"
+        app:layout_constraintEnd_toEndOf="0"
+        app:layout_constraintStart_toStartOf="0"
+        app:layout_constraintTop_toBottomOf="@+id/one_entry_desc_view"
+        app:srcCompat="@drawable/ic_done" />
+</androidx.constraintlayout.widget.ConstraintLayout>

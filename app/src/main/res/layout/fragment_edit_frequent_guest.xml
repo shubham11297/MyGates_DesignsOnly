@@ -1,26 +1,233 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:aapt="http://schemas.android.com/aapt" android:id="@+id/mainContent" android:clickable="true" android:layout_width="match_parent" android:layout_height="match_parent">
-    <RelativeLayout android:id="@+id/blurView" android:background="@color/charcoal_grey_two_90" android:visibility="visible" android:layout_width="match_parent" android:layout_height="match_parent"/>
-    <androidx.constraintlayout.widget.ConstraintLayout android:id="@+id/constraintLayout6" android:background="@drawable/white_fill_round_lefttop_righttop" android:clickable="true" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginLeft="32dp" android:layout_marginRight="32dp" android:elevation="20dp" app:layout_constraintBottom_toBottomOf="0" app:layout_constraintEnd_toEndOf="0" app:layout_constraintStart_toStartOf="0" app:layout_constraintTop_toTopOf="0">
-        <TextView android:textSize="18sp" android:textColor="#cc3c3c4b" android:id="@+id/startDateLabel" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="20dp" android:layout_marginTop="55dp" android:text="Select Start Date" android:lineSpacingExtra="12sp" app:layout_constraintLeft_toLeftOf="0" app:layout_constraintTop_toTopOf="0"/>
-        <androidx.constraintlayout.widget.ConstraintLayout android:id="@+id/startDateCL" android:background="@drawable/rounded_light_red_no_fill" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginLeft="20dp" android:layout_marginTop="15dp" android:layout_marginRight="20dp" android:layout_marginStart="20dp" android:layout_marginEnd="20dp" app:layout_constraintEnd_toEndOf="0" app:layout_constraintStart_toStartOf="0" app:layout_constraintTop_toBottomOf="@+id/startDateLabel">
-            <TextView android:textSize="16sp" android:textColor="@color/light_red" android:id="@+id/startDateText" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="20dp" android:layout_marginTop="10dp" android:layout_marginBottom="10dp" android:text="1 hour" android:lineSpacingExtra="5sp" app:layout_constraintBottom_toBottomOf="0" app:layout_constraintStart_toStartOf="0" app:layout_constraintTop_toTopOf="0"/>
-            <ImageView android:id="@+id/intervalCLImage" android:layout_width="12dp" android:layout_height="wrap_content" android:layout_marginRight="20dp" app:layout_constraintBottom_toBottomOf="@+id/startDateText" app:layout_constraintRight_toRightOf="0" app:layout_constraintTop_toTopOf="@+id/startDateText" app:srcCompat="@drawable/ic_triangle_red"/>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/mainContent"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clickable="true">
+
+    <RelativeLayout
+        android:id="@+id/blurView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/charcoal_grey_two_90"
+        android:visibility="visible" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout6"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="32dp"
+        android:layout_marginRight="32dp"
+        android:background="@drawable/white_fill_round_lefttop_righttop"
+        android:clickable="true"
+        android:elevation="20dp"
+        app:layout_constraintBottom_toBottomOf="0"
+        app:layout_constraintEnd_toEndOf="0"
+        app:layout_constraintStart_toStartOf="0"
+        app:layout_constraintTop_toTopOf="0">
+
+        <TextView
+            android:id="@+id/startDateLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="55dp"
+            android:lineSpacingExtra="12sp"
+            android:text="Select Start Date"
+            android:textColor="#cc3c3c4b"
+            android:textSize="18sp"
+            app:layout_constraintLeft_toLeftOf="0"
+            app:layout_constraintTop_toTopOf="0" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/startDateCL"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/rounded_light_red_no_fill"
+            app:layout_constraintEnd_toEndOf="0"
+            app:layout_constraintStart_toStartOf="0"
+            app:layout_constraintTop_toBottomOf="@+id/startDateLabel">
+
+            <TextView
+                android:id="@+id/startDateText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:lineSpacingExtra="5sp"
+                android:text="1 hour"
+                android:textColor="@color/light_red"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="0"
+                app:layout_constraintStart_toStartOf="0"
+                app:layout_constraintTop_toTopOf="0" />
+
+            <ImageView
+                android:id="@+id/intervalCLImage"
+                android:layout_width="12dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="20dp"
+                app:layout_constraintBottom_toBottomOf="@+id/startDateText"
+                app:layout_constraintRight_toRightOf="0"
+                app:layout_constraintTop_toTopOf="@+id/startDateText"
+                app:srcCompat="@drawable/ic_triangle_red" />
         </androidx.constraintlayout.widget.ConstraintLayout>
-        <TextView android:textSize="18sp" android:textColor="#cc3c3c4b" android:id="@+id/endDateLabel" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="20dp" android:layout_marginTop="20dp" android:text="Select End Date" android:lineSpacingExtra="12sp" app:layout_constraintLeft_toLeftOf="0" app:layout_constraintTop_toBottomOf="@+id/startDateCL"/>
-        <androidx.constraintlayout.widget.ConstraintLayout android:id="@+id/endDateCL" android:background="@drawable/rounded_light_red_no_fill" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginLeft="20dp" android:layout_marginTop="15dp" android:layout_marginRight="20dp" android:layout_marginStart="20dp" android:layout_marginEnd="20dp" app:layout_constraintEnd_toEndOf="0" app:layout_constraintStart_toStartOf="0" app:layout_constraintTop_toBottomOf="@+id/endDateLabel">
-            <TextView android:textSize="16sp" android:textColor="@color/light_red" android:id="@+id/endDateText" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="20dp" android:layout_marginTop="10dp" android:layout_marginBottom="10dp" android:text="1 hour" android:lineSpacingExtra="5sp" app:layout_constraintBottom_toBottomOf="0" app:layout_constraintStart_toStartOf="0" app:layout_constraintTop_toTopOf="0"/>
-            <ImageView android:id="@+id/intervalCLImage2" android:layout_width="12dp" android:layout_height="wrap_content" android:layout_marginRight="20dp" app:layout_constraintBottom_toBottomOf="@+id/endDateText" app:layout_constraintRight_toRightOf="0" app:layout_constraintTop_toTopOf="@+id/endDateText" app:srcCompat="@drawable/ic_triangle_red"/>
+
+        <TextView
+            android:id="@+id/endDateLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:lineSpacingExtra="12sp"
+            android:text="Select End Date"
+            android:textColor="#cc3c3c4b"
+            android:textSize="18sp"
+            app:layout_constraintLeft_toLeftOf="0"
+            app:layout_constraintTop_toBottomOf="@+id/startDateCL" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/endDateCL"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/rounded_light_red_no_fill"
+            app:layout_constraintEnd_toEndOf="0"
+            app:layout_constraintStart_toStartOf="0"
+            app:layout_constraintTop_toBottomOf="@+id/endDateLabel">
+
+            <TextView
+                android:id="@+id/endDateText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:lineSpacingExtra="5sp"
+                android:text="1 hour"
+                android:textColor="@color/light_red"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="0"
+                app:layout_constraintStart_toStartOf="0"
+                app:layout_constraintTop_toTopOf="0" />
+
+            <ImageView
+                android:id="@+id/intervalCLImage2"
+                android:layout_width="12dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="20dp"
+                app:layout_constraintBottom_toBottomOf="@+id/endDateText"
+                app:layout_constraintRight_toRightOf="0"
+                app:layout_constraintTop_toTopOf="@+id/endDateText"
+                app:srcCompat="@drawable/ic_triangle_red" />
         </androidx.constraintlayout.widget.ConstraintLayout>
-        <View android:id="@+id/view1" android:background="@color/white_two" android:layout_width="match_parent" android:layout_height="1dp" android:layout_marginTop="25dp" app:layout_constraintBottom_toTopOf="@+id/layout_positive_button" app:layout_constraintTop_toBottomOf="@+id/endDateCL"/>
-        <androidx.constraintlayout.widget.ConstraintLayout android:id="@+id/layout_negative_button" android:background="@drawable/bottom_left_round_background_white20" android:layout_width="0dp" android:layout_height="56dp" app:layout_constraintBottom_toBottomOf="0" app:layout_constraintHorizontal_chainStyle="0" app:layout_constraintLeft_toLeftOf="0" app:layout_constraintRight_toLeftOf="@+id/layout_positive_button" app:layout_constraintTop_toBottomOf="@+id/view1">
-            <androidx.appcompat.widget.AppCompatTextView android:textSize="@dimen/textSize_16" android:textColor="@color/charcoal_grey_80" android:gravity="center_horizontal" android:id="@+id/negative_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Cancel" app:layout_constraintBottom_toBottomOf="0" app:layout_constraintLeft_toLeftOf="0" app:layout_constraintRight_toRightOf="0" app:layout_constraintTop_toTopOf="0"/>
+
+        <View
+            android:id="@+id/view1"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="25dp"
+            android:background="@color/white_two"
+            app:layout_constraintBottom_toTopOf="@+id/layout_positive_button"
+            app:layout_constraintTop_toBottomOf="@+id/endDateCL" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layout_negative_button"
+            android:layout_width="0dp"
+            android:layout_height="56dp"
+            android:background="@drawable/bottom_left_round_background_white20"
+            app:layout_constraintBottom_toBottomOf="0"
+            app:layout_constraintHorizontal_chainStyle="0"
+            app:layout_constraintLeft_toLeftOf="0"
+            app:layout_constraintRight_toLeftOf="@+id/layout_positive_button"
+            app:layout_constraintTop_toBottomOf="@+id/view1">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/negative_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text="Cancel"
+                android:textColor="@color/charcoal_grey_80"
+                android:textSize="@dimen/textSize_16"
+                app:layout_constraintBottom_toBottomOf="0"
+                app:layout_constraintLeft_toLeftOf="0"
+                app:layout_constraintRight_toRightOf="0"
+                app:layout_constraintTop_toTopOf="0" />
         </androidx.constraintlayout.widget.ConstraintLayout>
-        <androidx.constraintlayout.widget.ConstraintLayout android:id="@+id/layout_positive_button" android:background="@drawable/bottom_right_round_background20" android:layout_width="0dp" android:layout_height="56dp" app:layout_constraintBottom_toBottomOf="0" app:layout_constraintLeft_toRightOf="@+id/layout_negative_button" app:layout_constraintRight_toRightOf="0" app:layout_constraintTop_toBottomOf="@+id/view1">
-            <androidx.appcompat.widget.AppCompatTextView android:textSize="@dimen/textSize_16" android:textColor="@color/white" android:gravity="center_horizontal" android:id="@+id/positive_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Update" app:layout_constraintBottom_toBottomOf="0" app:layout_constraintLeft_toLeftOf="0" app:layout_constraintRight_toRightOf="0" app:layout_constraintTop_toTopOf="0"/>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layout_positive_button"
+            android:layout_width="0dp"
+            android:layout_height="56dp"
+            android:background="@drawable/bottom_right_round_background20"
+            app:layout_constraintBottom_toBottomOf="0"
+            app:layout_constraintLeft_toRightOf="@+id/layout_negative_button"
+            app:layout_constraintRight_toRightOf="0"
+            app:layout_constraintTop_toBottomOf="@+id/view1">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/positive_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text="Update"
+                android:textColor="@color/white"
+                android:textSize="@dimen/textSize_16"
+                app:layout_constraintBottom_toBottomOf="0"
+                app:layout_constraintLeft_toLeftOf="0"
+                app:layout_constraintRight_toRightOf="0"
+                app:layout_constraintTop_toTopOf="0" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
-    <ImageView android:id="@+id/imageView14" android:background="@drawable/white_ring" android:padding="1dp" android:layout_width="70dp" android:layout_height="70dp" android:elevation="20dp" app:layout_constraintBottom_toTopOf="@+id/constraintLayout6" app:layout_constraintEnd_toEndOf="0" app:layout_constraintStart_toStartOf="0" app:layout_constraintTop_toTopOf="@+id/constraintLayout6" app:srcCompat="0x7f0801d8"/>
-    <ImageView android:id="@+id/closeCL" android:padding="5dp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="27dp" android:layout_marginTop="20dp" android:layout_marginStart="27dp" android:elevation="10dp" app:layout_constraintStart_toStartOf="0" app:layout_constraintTop_toTopOf="0" app:srcCompat="0x7f08018a"/>
-    <TextView android:textSize="18sp" android:textColor="@color/white" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Edit Frequent Guest" android:lineSpacingExtra="10sp" app:layout_constraintBottom_toBottomOf="@+id/closeCL" app:layout_constraintLeft_toLeftOf="0" app:layout_constraintRight_toRightOf="0" app:layout_constraintTop_toTopOf="@+id/closeCL"/>
+
+    <ImageView
+        android:id="@+id/imageView14"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:background="@drawable/white_ring"
+        android:elevation="20dp"
+        android:padding="1dp"
+        app:layout_constraintBottom_toTopOf="@+id/constraintLayout6"
+        app:layout_constraintEnd_toEndOf="0"
+        app:layout_constraintStart_toStartOf="0"
+        app:layout_constraintTop_toTopOf="@+id/constraintLayout6"
+        app:srcCompat="0x7f0801d8" />
+
+    <ImageView
+        android:id="@+id/closeCL"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="27dp"
+        android:layout_marginLeft="27dp"
+        android:layout_marginTop="20dp"
+        android:elevation="10dp"
+        android:padding="5dp"
+        app:layout_constraintStart_toStartOf="0"
+        app:layout_constraintTop_toTopOf="0"
+        app:srcCompat="0x7f08018a" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:lineSpacingExtra="10sp"
+        android:text="Edit Frequent Guest"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/closeCL"
+        app:layout_constraintLeft_toLeftOf="0"
+        app:layout_constraintRight_toRightOf="0"
+        app:layout_constraintTop_toTopOf="@+id/closeCL" />
 </androidx.constraintlayout.widget.ConstraintLayout>

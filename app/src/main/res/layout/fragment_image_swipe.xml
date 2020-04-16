@@ -1,12 +1,90 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:aapt="http://schemas.android.com/aapt" android:id="@+id/baseLayout" android:clickable="true" android:layout_width="match_parent" android:layout_height="match_parent">
-    <RelativeLayout android:id="@+id/blurView" android:background="@color/charcoal_grey_two_90" android:visibility="visible" android:layout_width="match_parent" android:layout_height="match_parent"/>
-    <androidx.constraintlayout.widget.ConstraintLayout android:layout_gravity="center" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/mediumPadding">
-        <androidx.constraintlayout.widget.ConstraintLayout android:id="@+id/main_content" android:clickable="true" android:layout_width="match_parent" android:layout_height="wrap_content" app:layout_constraintBottom_toBottomOf="0" app:layout_constraintLeft_toLeftOf="0" app:layout_constraintRight_toRightOf="0" app:layout_constraintTop_toTopOf="0">
-            <androidx.viewpager.widget.ViewPager android:id="@+id/container2" android:paddingLeft="@dimen/card_padding" android:paddingRight="@dimen/card_padding" android:clipToPadding="false" android:layout_width="match_parent" android:layout_height="420dp" app:layout_constraintLeft_toLeftOf="0" app:layout_constraintRight_toRightOf="0" app:layout_constraintTop_toTopOf="0"/>
-            <p397me.relex.circleindicator.CircleIndicator android:id="@+id/indicator" android:layout_width="match_parent" android:layout_height="30dp" android:layout_marginTop="@dimen/normalPadding" app:ci_drawable="@drawable/image_indicator_selected" app:ci_drawable_unselected="@drawable/image_indicator_unselected" app:ci_gravity="11" app:ci_orientation="0" app:layout_constraintBottom_toBottomOf="0" app:layout_constraintLeft_toLeftOf="0" app:layout_constraintRight_toRightOf="0" app:layout_constraintTop_toBottomOf="@+id/container2"/>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/baseLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clickable="true">
+
+    <RelativeLayout
+        android:id="@+id/blurView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/charcoal_grey_two_90"
+        android:visibility="visible" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/mediumPadding">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/main_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            app:layout_constraintBottom_toBottomOf="0"
+            app:layout_constraintLeft_toLeftOf="0"
+            app:layout_constraintRight_toRightOf="0"
+            app:layout_constraintTop_toTopOf="0">
+
+            <androidx.viewpager.widget.ViewPager
+                android:id="@+id/container2"
+                android:layout_width="match_parent"
+                android:layout_height="420dp"
+                android:clipToPadding="false"
+                android:paddingLeft="@dimen/card_padding"
+                android:paddingRight="@dimen/card_padding"
+                app:layout_constraintLeft_toLeftOf="0"
+                app:layout_constraintRight_toRightOf="0"
+                app:layout_constraintTop_toTopOf="0" />
+
+            <p397me.relex.circleindicator.CircleIndicator
+                android:id="@+id/indicator"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_marginTop="@dimen/normalPadding"
+                app:ci_drawable="@drawable/image_indicator_selected"
+                app:ci_drawable_unselected="@drawable/image_indicator_unselected"
+                app:ci_gravity="11"
+                app:ci_orientation="0"
+                app:layout_constraintBottom_toBottomOf="0"
+                app:layout_constraintLeft_toLeftOf="0"
+                app:layout_constraintRight_toRightOf="0"
+                app:layout_constraintTop_toBottomOf="@+id/container2" />
         </androidx.constraintlayout.widget.ConstraintLayout>
-        <androidx.appcompat.widget.AppCompatTextView android:textSize="18sp" android:textColor="@color/white" android:gravity="center_horizontal" android:id="@+id/header_text" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_marginLeft="56dp" android:layout_marginRight="56dp" android:layout_marginBottom="10dp" android:maxLines="3" android:lineSpacingExtra="2sp" android:elevation="10dp" app:layout_constraintBottom_toTopOf="@+id/main_content" app:layout_constraintLeft_toLeftOf="0" app:layout_constraintRight_toRightOf="0"/>
-        <androidx.appcompat.widget.AppCompatImageView android:id="@+id/closeImageView" android:padding="5dp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="30dp" android:layout_marginBottom="3dp" android:layout_marginStart="12dp" android:elevation="10dp" app:layout_constraintBottom_toTopOf="@+id/main_content" app:layout_constraintLeft_toLeftOf="0" app:layout_constraintStart_toStartOf="0" app:srcCompat="0x7f08018a"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/header_text"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="56dp"
+            android:layout_marginRight="56dp"
+            android:layout_marginBottom="10dp"
+            android:elevation="10dp"
+            android:gravity="center_horizontal"
+            android:lineSpacingExtra="2sp"
+            android:maxLines="3"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toTopOf="@+id/main_content"
+            app:layout_constraintLeft_toLeftOf="0"
+            app:layout_constraintRight_toRightOf="0" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/closeImageView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginBottom="3dp"
+            android:elevation="10dp"
+            android:padding="5dp"
+            app:layout_constraintBottom_toTopOf="@+id/main_content"
+            app:layout_constraintLeft_toLeftOf="0"
+            app:layout_constraintStart_toStartOf="0"
+            app:srcCompat="0x7f08018a" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

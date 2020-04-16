@@ -1,24 +1,240 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:aapt="http://schemas.android.com/aapt" android:id="@+id/constraintLayoutMain" android:background="@color/charcoal_grey_two_90" android:layout_width="match_parent" android:layout_height="match_parent">
-    <androidx.appcompat.widget.AppCompatImageView android:id="@+id/imageViewClose" android:padding="8dp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:layout_marginBottom="8dp" app:layout_constraintBottom_toBottomOf="@+id/textViewHeader" app:layout_constraintStart_toStartOf="@+id/scrollView" app:layout_constraintTop_toTopOf="@+id/textViewHeader" app:srcCompat="0x7f08018a"/>
-    <androidx.appcompat.widget.AppCompatTextView android:textSize="@dimen/spec_heading" android:textColor="@color/white" android:ellipsize="end" android:gravity="center" android:id="@+id/textViewHeader" android:padding="15dp" android:layout_width="0dp" android:layout_height="wrap_content" android:maxLines="2" android:layout_marginStart="38dp" android:layout_marginEnd="38dp" app:layout_constraintBottom_toTopOf="@+id/scrollView" app:layout_constraintEnd_toEndOf="@+id/scrollView" app:layout_constraintStart_toStartOf="@+id/scrollView"/>
-    <ScrollView android:id="@+id/scrollView" android:background="@drawable/dialog_bg_add_vehicle" android:layout_width="match_parent" android:layout_height="wrap_content" android:maxHeight="450dp" android:layout_marginStart="48dp" android:layout_marginEnd="48dp" app:layout_constraintBottom_toBottomOf="0" app:layout_constraintTop_toTopOf="0">
-        <androidx.constraintlayout.widget.ConstraintLayout android:id="@+id/constraintLayout" android:layout_width="match_parent" android:layout_height="wrap_content">
-            <androidx.appcompat.widget.AppCompatImageView android:id="@+id/imageView" android:layout_width="match_parent" android:layout_height="wrap_content" android:src="0x7f080300" android:adjustViewBounds="true" app:layout_constraintTop_toTopOf="0"/>
-            <TextView android:textSize="16sp" android:textStyle="bold" android:textColor="@color/light_red" android:gravity="center_horizontal" android:id="@+id/textViewTitle" android:layout_width="wrap_content" android:layout_height="wrap_content" android:lineSpacingExtra="2sp" app:layout_constraintEnd_toEndOf="0" app:layout_constraintStart_toStartOf="0" app:layout_constraintTop_toBottomOf="@+id/imageView"/>
-            <TextView android:textSize="16sp" android:textStyle="bold" android:textColor="@color/charcoal_grey" android:gravity="center_horizontal" android:id="@+id/textViewFlatName" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_marginTop="12dp" android:lineSpacingExtra="4sp" android:layout_marginStart="32dp" android:layout_marginEnd="32dp" app:layout_constraintEnd_toEndOf="0" app:layout_constraintStart_toStartOf="0" app:layout_constraintTop_toBottomOf="@+id/textViewTitle"/>
-            <TextView android:textSize="12sp" android:textColor="@color/charcoal_grey" android:gravity="center_horizontal" android:id="@+id/textViewSocietyName" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_marginTop="6dp" android:lineSpacingExtra="0sp" android:layout_marginStart="32dp" android:layout_marginEnd="32dp" app:layout_constraintEnd_toEndOf="0" app:layout_constraintStart_toStartOf="0" app:layout_constraintTop_toBottomOf="@+id/textViewFlatName"/>
-            <TextView android:textSize="12sp" android:textStyle="bold" android:textColor="@color/charcoal_grey" android:gravity="center_horizontal" android:id="@+id/textViewDate" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_marginTop="12dp" android:lineSpacingExtra="0sp" android:layout_marginStart="32dp" android:layout_marginEnd="32dp" app:layout_constraintEnd_toEndOf="0" app:layout_constraintStart_toStartOf="0" app:layout_constraintTop_toBottomOf="@+id/textViewSocietyName"/>
-            <View android:background="0x7f0801f3" android:layout_width="0dp" android:layout_height="0dp" app:layout_constraintBottom_toBottomOf="@+id/textViewPasscode" app:layout_constraintEnd_toEndOf="@+id/textViewPasscode" app:layout_constraintStart_toStartOf="@+id/textViewPasscode" app:layout_constraintTop_toTopOf="@+id/textViewPasscode"/>
-            <TextView android:textSize="24sp" android:textStyle="bold" android:textColor="@color/white" android:gravity="center_horizontal" android:id="@+id/textViewPasscode" android:paddingTop="16dp" android:paddingBottom="16dp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="16dp" android:lineSpacingExtra="2sp" android:paddingStart="32dp" android:paddingEnd="32dp" app:layout_constraintEnd_toEndOf="0" app:layout_constraintStart_toStartOf="0" app:layout_constraintTop_toBottomOf="@+id/textViewDate"/>
-            <TextView android:textSize="10sp" android:textStyle="italic" android:textColor="@color/charcoal_grey" android:gravity="center_horizontal" android:id="@+id/textViewValidity" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_marginTop="6dp" android:lineSpacingExtra="4sp" android:layout_marginStart="32dp" android:layout_marginEnd="32dp" app:layout_constraintEnd_toEndOf="0" app:layout_constraintStart_toStartOf="0" app:layout_constraintTop_toBottomOf="@+id/textViewPasscode"/>
-            <TextView android:textSize="9sp" android:textColor="@color/charcoal_grey" android:gravity="center_horizontal" android:id="@+id/textViewDesc" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_marginTop="18dp" android:text="@string/mimo_passcode_desc" android:lineSpacingExtra="3sp" android:layout_marginStart="32dp" android:layout_marginEnd="32dp" app:layout_constraintEnd_toEndOf="0" app:layout_constraintStart_toStartOf="0" app:layout_constraintTop_toBottomOf="@+id/textViewValidity"/>
-            <androidx.appcompat.widget.AppCompatImageView android:id="@+id/imageViewLogo" android:layout_width="wrap_content" android:layout_height="24dp" android:layout_marginTop="18dp" android:layout_marginBottom="22dp" android:src="0x7f080225" app:layout_constraintBottom_toBottomOf="0" app:layout_constraintEnd_toEndOf="0" app:layout_constraintStart_toStartOf="0" app:layout_constraintTop_toBottomOf="@+id/textViewDesc"/>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/constraintLayoutMain"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/charcoal_grey_two_90">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/imageViewClose"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:padding="8dp"
+        app:layout_constraintBottom_toBottomOf="@+id/textViewHeader"
+        app:layout_constraintStart_toStartOf="@+id/scrollView"
+        app:layout_constraintTop_toTopOf="@+id/textViewHeader"
+        app:srcCompat="0x7f08018a" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textViewHeader"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="38dp"
+        android:layout_marginEnd="38dp"
+        android:ellipsize="end"
+        android:gravity="center"
+        android:maxLines="2"
+        android:padding="15dp"
+        android:textColor="@color/white"
+        android:textSize="@dimen/spec_heading"
+        app:layout_constraintBottom_toTopOf="@+id/scrollView"
+        app:layout_constraintEnd_toEndOf="@+id/scrollView"
+        app:layout_constraintStart_toStartOf="@+id/scrollView" />
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="48dp"
+        android:layout_marginEnd="48dp"
+        android:background="@drawable/dialog_bg_add_vehicle"
+        android:maxHeight="450dp"
+        app:layout_constraintBottom_toBottomOf="0"
+        app:layout_constraintTop_toTopOf="0">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/imageView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:src="0x7f080300"
+                app:layout_constraintTop_toTopOf="0" />
+
+            <TextView
+                android:id="@+id/textViewTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:lineSpacingExtra="2sp"
+                android:textColor="@color/light_red"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="0"
+                app:layout_constraintStart_toStartOf="0"
+                app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+            <TextView
+                android:id="@+id/textViewFlatName"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="32dp"
+                android:gravity="center_horizontal"
+                android:lineSpacingExtra="4sp"
+                android:textColor="@color/charcoal_grey"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="0"
+                app:layout_constraintStart_toStartOf="0"
+                app:layout_constraintTop_toBottomOf="@+id/textViewTitle" />
+
+            <TextView
+                android:id="@+id/textViewSocietyName"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="6dp"
+                android:layout_marginEnd="32dp"
+                android:gravity="center_horizontal"
+                android:lineSpacingExtra="0sp"
+                android:textColor="@color/charcoal_grey"
+                android:textSize="12sp"
+                app:layout_constraintEnd_toEndOf="0"
+                app:layout_constraintStart_toStartOf="0"
+                app:layout_constraintTop_toBottomOf="@+id/textViewFlatName" />
+
+            <TextView
+                android:id="@+id/textViewDate"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="32dp"
+                android:gravity="center_horizontal"
+                android:lineSpacingExtra="0sp"
+                android:textColor="@color/charcoal_grey"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="0"
+                app:layout_constraintStart_toStartOf="0"
+                app:layout_constraintTop_toBottomOf="@+id/textViewSocietyName" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="0x7f0801f3"
+                app:layout_constraintBottom_toBottomOf="@+id/textViewPasscode"
+                app:layout_constraintEnd_toEndOf="@+id/textViewPasscode"
+                app:layout_constraintStart_toStartOf="@+id/textViewPasscode"
+                app:layout_constraintTop_toTopOf="@+id/textViewPasscode" />
+
+            <TextView
+                android:id="@+id/textViewPasscode"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:gravity="center_horizontal"
+                android:lineSpacingExtra="2sp"
+                android:paddingStart="32dp"
+                android:paddingTop="16dp"
+                android:paddingEnd="32dp"
+                android:paddingBottom="16dp"
+                android:textColor="@color/white"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="0"
+                app:layout_constraintStart_toStartOf="0"
+                app:layout_constraintTop_toBottomOf="@+id/textViewDate" />
+
+            <TextView
+                android:id="@+id/textViewValidity"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="6dp"
+                android:layout_marginEnd="32dp"
+                android:gravity="center_horizontal"
+                android:lineSpacingExtra="4sp"
+                android:textColor="@color/charcoal_grey"
+                android:textSize="10sp"
+                android:textStyle="italic"
+                app:layout_constraintEnd_toEndOf="0"
+                app:layout_constraintStart_toStartOf="0"
+                app:layout_constraintTop_toBottomOf="@+id/textViewPasscode" />
+
+            <TextView
+                android:id="@+id/textViewDesc"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="18dp"
+                android:layout_marginEnd="32dp"
+                android:gravity="center_horizontal"
+                android:lineSpacingExtra="3sp"
+                android:text="@string/mimo_passcode_desc"
+                android:textColor="@color/charcoal_grey"
+                android:textSize="9sp"
+                app:layout_constraintEnd_toEndOf="0"
+                app:layout_constraintStart_toStartOf="0"
+                app:layout_constraintTop_toBottomOf="@+id/textViewValidity" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/imageViewLogo"
+                android:layout_width="wrap_content"
+                android:layout_height="24dp"
+                android:layout_marginTop="18dp"
+                android:layout_marginBottom="22dp"
+                android:src="0x7f080225"
+                app:layout_constraintBottom_toBottomOf="0"
+                app:layout_constraintEnd_toEndOf="0"
+                app:layout_constraintStart_toStartOf="0"
+                app:layout_constraintTop_toBottomOf="@+id/textViewDesc" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
-    <View android:id="@+id/viewBackground" android:background="@drawable/round_mgred_fill_button" android:layout_width="0dp" android:layout_height="0dp" app:layout_constraintBottom_toBottomOf="@+id/button" app:layout_constraintEnd_toEndOf="@+id/scrollView" app:layout_constraintStart_toStartOf="@+id/scrollView" app:layout_constraintTop_toTopOf="@+id/button"/>
-    <androidx.appcompat.widget.AppCompatButton android:textSize="16sp" android:textColor="@color/white" android:gravity="center" android:id="@+id/button" android:background="@color/transparent" android:paddingTop="18dp" android:paddingBottom="18dp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/share" android:drawablePadding="8dp" android:textAllCaps="false" android:drawableStart="@drawable/ic_share_white" app:layout_constraintEnd_toEndOf="@+id/scrollView" app:layout_constraintStart_toStartOf="@+id/scrollView" app:layout_constraintTop_toBottomOf="@+id/scrollView"/>
-    <androidx.constraintlayout.widget.ConstraintLayout android:id="@+id/constraintLayoutProgressBar" android:background="@color/white_transparent_20" android:visibility="gone" android:layout_width="match_parent" android:layout_height="match_parent">
-        <ProgressBar android:layout_width="32dp" android:layout_height="32dp" android:indeterminate="true" android:indeterminateDrawable="@drawable/indeterminate_progress_bar" app:layout_constraintBottom_toBottomOf="0" app:layout_constraintEnd_toEndOf="0" app:layout_constraintStart_toStartOf="0" app:layout_constraintTop_toTopOf="0"/>
+
+    <View
+        android:id="@+id/viewBackground"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/round_mgred_fill_button"
+        app:layout_constraintBottom_toBottomOf="@+id/button"
+        app:layout_constraintEnd_toEndOf="@+id/scrollView"
+        app:layout_constraintStart_toStartOf="@+id/scrollView"
+        app:layout_constraintTop_toTopOf="@+id/button" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/transparent"
+        android:drawableStart="@drawable/ic_share_white"
+        android:drawablePadding="8dp"
+        android:gravity="center"
+        android:paddingTop="18dp"
+        android:paddingBottom="18dp"
+        android:text="@string/share"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="@+id/scrollView"
+        app:layout_constraintStart_toStartOf="@+id/scrollView"
+        app:layout_constraintTop_toBottomOf="@+id/scrollView" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayoutProgressBar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white_transparent_20"
+        android:visibility="gone">
+
+        <ProgressBar
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:indeterminate="true"
+            android:indeterminateDrawable="@drawable/indeterminate_progress_bar"
+            app:layout_constraintBottom_toBottomOf="0"
+            app:layout_constraintEnd_toEndOf="0"
+            app:layout_constraintStart_toStartOf="0"
+            app:layout_constraintTop_toTopOf="0" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

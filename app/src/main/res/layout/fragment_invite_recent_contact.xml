@@ -1,24 +1,129 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:aapt="http://schemas.android.com/aapt" android:id="@+id/main_content" android:layout_width="match_parent" android:layout_height="match_parent">
-    <RelativeLayout android:layout_width="match_parent" android:layout_height="match_parent">
-        <RelativeLayout android:id="@+id/contact_done" android:background="@drawable/left_to_right_gradient_plain" android:visibility="gone" android:layout_width="match_parent" android:layout_height="50dp" android:layout_alignParentBottom="true">
-            <RelativeLayout android:gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerInParent="true">
-                <androidx.appcompat.widget.AppCompatTextView android:textSize="@dimen/textSize_16" android:textColor="@color/white" android:id="@+id/inviteText1" android:visibility="visible" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/mediumPadding" android:text="Invite Guest" android:layout_toRightOf="@+id/send_icon"/>
-                <androidx.appcompat.widget.AppCompatImageView android:id="@+id/send_icon" android:visibility="visible" android:layout_width="wrap_content" android:layout_height="wrap_content" app:srcCompat="@drawable/ic_check_white"/>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main_content"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:id="@+id/contact_done"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/left_to_right_gradient_plain"
+            android:visibility="gone">
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:gravity="center">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/inviteText1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/mediumPadding"
+                    android:layout_toRightOf="@+id/send_icon"
+                    android:text="Invite Guest"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/textSize_16"
+                    android:visibility="visible" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/send_icon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:visibility="visible"
+                    app:srcCompat="@drawable/ic_check_white" />
             </RelativeLayout>
         </RelativeLayout>
-        <RelativeLayout android:id="@+id/proressBarLayout" android:background="@color/white_transparent" android:visibility="gone" android:clickable="true" android:layout_width="match_parent" android:layout_height="match_parent" android:elevation="1dp">
-            <ProgressBar android:id="@+id/progress_bar" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerInParent="true" style="?android:attr/progressBarStyle"/>
-            <TextView android:textColor="@color/black" android:id="@+id/errorMessageView" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="25dp" android:singleLine="false" android:drawableBottom="@drawable/layer_ic_refresh" android:layout_below="@+id/progress_bar" android:layout_centerInParent="true"/>
+
+        <RelativeLayout
+            android:id="@+id/proressBarLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white_transparent"
+            android:clickable="true"
+            android:elevation="1dp"
+            android:visibility="gone">
+
+            <ProgressBar
+                android:id="@+id/progress_bar"
+                style="?android:attr/progressBarStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true" />
+
+            <TextView
+                android:id="@+id/errorMessageView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/progress_bar"
+                android:layout_centerInParent="true"
+                android:layout_margin="25dp"
+                android:drawableBottom="@drawable/layer_ic_refresh"
+                android:singleLine="false"
+                android:textColor="@color/black"
+                android:visibility="gone" />
         </RelativeLayout>
     </RelativeLayout>
-    <include android:visibility="gone" layout="@layout/layout_bottomsheet_calender"/>
-    <include android:visibility="gone" layout="@layout/search_empty_state_layout"/>
-    <RelativeLayout android:id="@+id/listEmptyLayout" android:background="@color/white_transparent" android:paddingTop="150dp" android:visibility="visible" android:clickable="true" android:layout_width="match_parent" android:layout_height="match_parent" android:elevation="1dp">
-        <ImageView android:id="@+id/im1" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerHorizontal="true" app:srcCompat="@drawable/ic_img_guest_no" style="?android:attr/progressBarStyle"/>
-        <TextView android:textColor="@color/black" android:id="@+id/emptyMessageView" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="25dp" android:text="@string/mg_empty_recent__message" android:singleLine="false" android:layout_below="@+id/im1" android:layout_centerInParent="true"/>
+
+    <include
+        layout="@layout/layout_bottomsheet_calender"
+        android:visibility="gone" />
+
+    <include
+        layout="@layout/search_empty_state_layout"
+        android:visibility="gone" />
+
+    <RelativeLayout
+        android:id="@+id/listEmptyLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white_transparent"
+        android:clickable="true"
+        android:elevation="1dp"
+        android:paddingTop="150dp"
+        android:visibility="visible">
+
+        <ImageView
+            android:id="@+id/im1"
+            style="?android:attr/progressBarStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            app:srcCompat="@drawable/ic_img_guest_no" />
+
+        <TextView
+            android:id="@+id/emptyMessageView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/im1"
+            android:layout_centerInParent="true"
+            android:layout_margin="25dp"
+            android:singleLine="false"
+            android:text="@string/mg_empty_recent__message"
+            android:textColor="@color/black" />
     </RelativeLayout>
-    <RelativeLayout android:layout_width="match_parent" android:layout_height="match_parent" android:layout_weight="9" android:layout_above="@+id/recycleViewRL">
-        <androidx.recyclerview.widget.RecyclerView android:id="@+id/list_multi" android:background="@color/transparent" android:clipToPadding="false" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_below="@+id/searchViewButton"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/recycleViewRL"
+        android:layout_weight="9">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/list_multi"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/searchViewButton"
+            android:background="@color/transparent"
+            android:clipToPadding="false" />
     </RelativeLayout>
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
