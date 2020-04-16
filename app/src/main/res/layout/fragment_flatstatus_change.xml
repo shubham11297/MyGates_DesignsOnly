@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/baseLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clickable="true"
+    android:paddingTop="@dimen/app_bar_padding">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:layout_alignParentTop="true"
+        android:background="@drawable/toolbar_gradient"
+        android:elevation="6dp"
+        app:layout_collapseMode="1"
+        app:layout_constraintTop_toTopOf="0"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/backButton"
+            android:layout_width="wrap_content"
+            android:layout_height="56dp"
+            android:layout_gravity="start"
+            android:clickable="true"
+            android:paddingTop="16dp"
+            android:paddingRight="@dimen/padding_16"
+            android:paddingBottom="@dimen/padding_16"
+            app:srcCompat="@drawable/ic_arrow_back_white_24dp" />
+
+        <TextView
+            android:id="@+id/inviteTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="56dp"
+            android:layout_marginRight="25dp"
+            android:fontFamily="@font/ubuntu_light"
+            android:gravity="left|center_vertical|center_horizontal|center"
+            android:lineSpacingExtra="6sp"
+            android:maxLines="1"
+            android:paddingLeft="@dimen/padding_16"
+            android:text="Occupancy Status"
+            android:textColor="@color/white"
+            android:textSize="20sp" />
+    </androidx.appcompat.widget.Toolbar>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@color/white_two"
+        android:clickable="true"
+        app:layout_constraintBottom_toBottomOf="0"
+        app:layout_constraintLeft_toLeftOf="0"
+        app:layout_constraintRight_toRightOf="0"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/descLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toLeftOf="0"
+            app:layout_constraintTop_toTopOf="0">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/descCard"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/padding_16"
+                android:paddingTop="4dp"
+                android:paddingBottom="@dimen/margin_4"
+                app:cardCornerRadius="4dp"
+                app:cardElevation="3dp"
+                app:layout_constraintTop_toTopOf="0">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/residingCL"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:minHeight="45dp"
+                        android:padding="@dimen/padding_16"
+                        app:layout_constraintEnd_toEndOf="0"
+                        app:layout_constraintTop_toBottomOf="@+id/muteCL">
+
+                        <ImageView
+                            android:id="@+id/residingImg"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            app:layout_constraintBottom_toBottomOf="@+id/residingText"
+                            app:layout_constraintLeft_toLeftOf="0"
+                            app:layout_constraintTop_toTopOf="@+id/residingText"
+                            app:srcCompat="0x7f080266" />
+
+                        <TextView
+                            android:id="@+id/residingText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/mediumPadding"
+                            android:layout_marginTop="12dp"
+                            android:lineSpacingExtra="8sp"
+                            android:text="Residing Owner"
+                            android:textColor="@color/charcoal_grey"
+                            android:textSize="@dimen/textSize_14"
+                            android:textStyle="normal"
+                            app:layout_constraintHorizontal_bias="0"
+                            app:layout_constraintLeft_toRightOf="@+id/residingImg"
+                            app:layout_constraintStart_toEndOf="@+id/residingImg"
+                            app:layout_constraintTop_toTopOf="0" />
+
+                        <ImageView
+                            android:id="@+id/residingCheckImg"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:contentDescription="TODO"
+                            app:layout_constraintBottom_toBottomOf="@+id/residingText"
+                            app:layout_constraintEnd_toEndOf="0"
+                            app:layout_constraintTop_toTopOf="@+id/residingText"
+                            app:srcCompat="@drawable/ic_checkbox_on" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <View
+                        android:id="@+id/view1"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginLeft="@dimen/padding_16"
+                        android:layout_marginRight="@dimen/padding_16"
+                        android:background="@color/white_two"
+                        app:layout_constraintTop_toBottomOf="@+id/residingCL" />
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/letoutCL"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:minHeight="45dp"
+                        android:padding="@dimen/padding_16"
+                        app:layout_constraintEnd_toEndOf="0"
+                        app:layout_constraintTop_toBottomOf="@+id/residingCL">
+
+                        <ImageView
+                            android:id="@+id/letoutImg"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            app:layout_constraintBottom_toBottomOf="@+id/letoutText"
+                            app:layout_constraintLeft_toLeftOf="0"
+                            app:layout_constraintTop_toTopOf="@+id/letoutText"
+                            app:srcCompat="0x7f0801c9" />
+
+                        <TextView
+                            android:id="@+id/letoutText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/mediumPadding"
+                            android:layout_marginTop="12dp"
+                            android:lineSpacingExtra="8sp"
+                            android:text="Flat is let out"
+                            android:textColor="@color/charcoal_grey"
+                            android:textSize="@dimen/textSize_14"
+                            android:textStyle="normal"
+                            app:layout_constraintHorizontal_bias="0"
+                            app:layout_constraintLeft_toRightOf="@+id/letoutImg"
+                            app:layout_constraintStart_toEndOf="@+id/letoutImg"
+                            app:layout_constraintTop_toTopOf="0" />
+
+                        <ImageView
+                            android:id="@+id/letoutCheckImg"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:layout_constraintBottom_toBottomOf="@+id/letoutText"
+                            app:layout_constraintEnd_toEndOf="0"
+                            app:layout_constraintTop_toTopOf="@+id/letoutText"
+                            app:srcCompat="@drawable/ic_checkbox_on" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <View
+                        android:id="@+id/view2"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginLeft="@dimen/padding_16"
+                        android:layout_marginRight="@dimen/padding_16"
+                        android:background="@color/white_two"
+                        app:layout_constraintTop_toBottomOf="@+id/letoutCL" />
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/flatEmptyCL"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:minHeight="45dp"
+                        android:padding="@dimen/padding_16"
+                        app:layout_constraintEnd_toEndOf="0"
+                        app:layout_constraintTop_toBottomOf="@+id/letoutCL">
+
+                        <ImageView
+                            android:id="@+id/flatEmptyImg"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            app:layout_constraintBottom_toBottomOf="@+id/flatEmptyText"
+                            app:layout_constraintLeft_toLeftOf="0"
+                            app:layout_constraintTop_toTopOf="@+id/flatEmptyText"
+                            app:srcCompat="0x7f0801c6" />
+
+                        <TextView
+                            android:id="@+id/flatEmptyText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/mediumPadding"
+                            android:layout_marginTop="12dp"
+                            android:lineSpacingExtra="8sp"
+                            android:text="Flat is empty"
+                            android:textColor="@color/charcoal_grey"
+                            android:textSize="@dimen/textSize_14"
+                            android:textStyle="normal"
+                            app:layout_constraintHorizontal_bias="0"
+                            app:layout_constraintLeft_toRightOf="@+id/flatEmptyImg"
+                            app:layout_constraintStart_toEndOf="@+id/flatEmptyImg"
+                            app:layout_constraintTop_toTopOf="0" />
+
+                        <ImageView
+                            android:id="@+id/flatEmptyCheckImg"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:layout_constraintBottom_toBottomOf="@+id/flatEmptyText"
+                            app:layout_constraintEnd_toEndOf="0"
+                            app:layout_constraintTop_toTopOf="@+id/flatEmptyText"
+                            app:srcCompat="@drawable/ic_checkbox_on" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/descView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginRight="@dimen/padding_16"
+                android:lineSpacingExtra="8sp"
+                android:text="@string/flat_status_change_desc"
+                android:textColor="@color/soft_blue"
+                android:textSize="12sp"
+                app:layout_constraintEnd_toEndOf="0"
+                app:layout_constraintLeft_toLeftOf="0"
+                app:layout_constraintRight_toRightOf="0"
+                app:layout_constraintStart_toStartOf="0"
+                app:layout_constraintTop_toBottomOf="@+id/descCard" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <Button
+            android:id="@+id/updateButton"
+            style="@style/gradient_fill_button"
+            android:layout_width="0dp"
+            android:layout_height="56dp"
+            android:layout_marginLeft="56dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginRight="56dp"
+            android:layout_marginBottom="56dp"
+            android:gravity="center"
+            android:text="Update"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="0"
+            app:layout_constraintLeft_toLeftOf="@+id/descLayout"
+            app:layout_constraintRight_toRightOf="@+id/descLayout" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <include layout="@layout/layout_error_screen_fragment" />
+    </RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

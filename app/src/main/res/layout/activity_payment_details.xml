@@ -1,34 +1,300 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:aapt="http://schemas.android.com/aapt" android:background="@color/white_two" android:layout_width="match_parent" android:layout_height="match_parent">
-    <androidx.core.widget.NestedScrollView android:layout_width="match_parent" android:layout_height="match_parent">
-        <androidx.constraintlayout.widget.ConstraintLayout android:id="@+id/container" android:layout_width="match_parent" android:layout_height="wrap_content">
-            <androidx.constraintlayout.widget.ConstraintLayout android:id="@+id/paymentCL" android:background="@color/white" android:layout_width="match_parent" android:layout_height="wrap_content" app:layout_constraintTop_toTopOf="0">
-                <androidx.appcompat.widget.AppCompatTextView android:textSize="14sp" android:textStyle="bold" android:textColor="#4d4d4d" android:id="@+id/titleText" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/padding20" android:layout_marginTop="@dimen/padding24" android:text="Amount Need to Pay" android:lineSpacingExtra="10sp" android:inputType="number" android:fontFamily="sans-serif" app:layout_constraintLeft_toLeftOf="0" app:layout_constraintTop_toTopOf="0"/>
-                <androidx.constraintlayout.widget.ConstraintLayout android:id="@+id/amountPayCL" android:background="@color/white" android:layout_width="match_parent" android:layout_height="wrap_content" app:layout_constraintTop_toBottomOf="@+id/titleText">
-                    <com.mygate.user.modules.helpservices.p017ui.MoneyEditText android:textSize="16sp" android:textStyle="bold" android:textColor="#4d4d4d" android:id="@+id/etAmount" android:background="@drawable/edittext_background_border_rounded" android:paddingLeft="@dimen/padding_16" android:layout_width="match_parent" android:layout_height="40dp" android:layout_marginLeft="@dimen/padding20" android:layout_marginTop="@dimen/padding_16" android:layout_marginRight="@dimen/padding_16" android:hint="₹ Enter the Amount" android:maxLength="10" android:digits="0123456789" android:lineSpacingExtra="8sp" android:inputType="number" android:fontFamily="sans-serif" app:currency_symbol="₹" app:layout_constraintLeft_toLeftOf="0" app:layout_constraintTop_toTopOf="0" app:show_commas="true" app:show_currency="true"/>
-                    <EditText android:textSize="16sp" android:textStyle="normal" android:textColor="#4d4d4d" android:id="@+id/etNotes" android:background="@drawable/edittext_background_border_rounded" android:paddingLeft="@dimen/padding_16" android:paddingTop="8dp" android:paddingRight="@dimen/padding_16" android:paddingBottom="8dp" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/padding20" android:layout_marginTop="@dimen/padding_16" android:layout_marginRight="@dimen/padding_16" android:minHeight="40dp" android:hint="What’s this for? (Optional)" android:maxLength="200" android:lineSpacingExtra="8sp" android:fontFamily="sans-serif" app:layout_constraintLeft_toLeftOf="0" app:layout_constraintTop_toBottomOf="@+id/etAmount"/>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white_two">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/paymentCL"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                app:layout_constraintTop_toTopOf="0">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/titleText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/padding20"
+                    android:layout_marginTop="@dimen/padding24"
+                    android:fontFamily="sans-serif"
+                    android:inputType="number"
+                    android:lineSpacingExtra="10sp"
+                    android:text="Amount Need to Pay"
+                    android:textColor="#4d4d4d"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    app:layout_constraintLeft_toLeftOf="0"
+                    app:layout_constraintTop_toTopOf="0" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/amountPayCL"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    app:layout_constraintTop_toBottomOf="@+id/titleText">
+
+                    <com.mygate.user.modules.helpservices.p017ui.MoneyEditText
+                        android:id="@+id/etAmount"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginLeft="@dimen/padding20"
+                        android:layout_marginTop="@dimen/padding_16"
+                        android:layout_marginRight="@dimen/padding_16"
+                        android:background="@drawable/edittext_background_border_rounded"
+                        android:digits="0123456789"
+                        android:fontFamily="sans-serif"
+                        android:hint="₹ Enter the Amount"
+                        android:inputType="number"
+                        android:lineSpacingExtra="8sp"
+                        android:maxLength="10"
+                        android:paddingLeft="@dimen/padding_16"
+                        android:textColor="#4d4d4d"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        app:currency_symbol="₹"
+                        app:layout_constraintLeft_toLeftOf="0"
+                        app:layout_constraintTop_toTopOf="0"
+                        app:show_commas="true"
+                        app:show_currency="true" />
+
+                    <EditText
+                        android:id="@+id/etNotes"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/padding20"
+                        android:layout_marginTop="@dimen/padding_16"
+                        android:layout_marginRight="@dimen/padding_16"
+                        android:background="@drawable/edittext_background_border_rounded"
+                        android:fontFamily="sans-serif"
+                        android:hint="What’s this for? (Optional)"
+                        android:lineSpacingExtra="8sp"
+                        android:maxLength="200"
+                        android:minHeight="40dp"
+                        android:paddingLeft="@dimen/padding_16"
+                        android:paddingTop="8dp"
+                        android:paddingRight="@dimen/padding_16"
+                        android:paddingBottom="8dp"
+                        android:textColor="#4d4d4d"
+                        android:textSize="16sp"
+                        android:textStyle="normal"
+                        app:layout_constraintLeft_toLeftOf="0"
+                        app:layout_constraintTop_toBottomOf="@+id/etAmount" />
                 </androidx.constraintlayout.widget.ConstraintLayout>
-                <androidx.appcompat.widget.AppCompatTextView android:textSize="14sp" android:textStyle="bold" android:textColor="#4d4d4d" android:id="@+id/choosePaymnetText" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/padding20" android:layout_marginTop="@dimen/padding24" android:text="Choose Payment Mode" android:lineSpacingExtra="10sp" android:fontFamily="sans-serif" app:layout_constraintLeft_toLeftOf="0" app:layout_constraintTop_toBottomOf="@+id/amountPayCL"/>
-                <LinearLayout android:orientation="vertical" android:id="@+id/choosePaymentCL" android:background="@color/white" android:layout_width="match_parent" android:layout_height="wrap_content" app:layout_constraintTop_toBottomOf="@+id/choosePaymnetText">
-                    <androidx.constraintlayout.widget.ConstraintLayout android:id="@+id/upiCL" android:layout_width="match_parent" android:layout_height="wrap_content">
-                        <ImageView android:id="@+id/upiIcon" android:layout_width="33dp" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/padding20" android:layout_marginTop="3dp" android:src="0x7f0802a0" app:layout_constraintBottom_toBottomOf="@+id/UPIText" app:layout_constraintLeft_toLeftOf="0" app:layout_constraintTop_toTopOf="@+id/UPIText"/>
-                        <androidx.appcompat.widget.AppCompatTextView android:textSize="14sp" android:textStyle="normal" android:textColor="#4d4d4d" android:id="@+id/UPIText" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/padding20" android:layout_marginTop="@dimen/padding24" android:text="Pay via UPI" android:lineSpacingExtra="10sp" android:fontFamily="sans-serif" android:letterSpacing="-0.01" app:layout_constraintLeft_toRightOf="@+id/upiIcon" app:layout_constraintTop_toTopOf="0"/>
-                        <ImageView android:id="@+id/upiSelector" android:padding="8dp" android:layout_width="36dp" android:layout_height="36dp" android:layout_marginTop="3dp" android:layout_marginRight="12dp" android:src="@drawable/circular_check_unselect" app:layout_constraintBottom_toBottomOf="@+id/UPIText" app:layout_constraintRight_toRightOf="0" app:layout_constraintTop_toTopOf="@+id/UPIText"/>
-                        <TextView android:textSize="12sp" android:textStyle="normal" android:textColor="@color/charcoal_grey_50" android:id="@+id/upiDescText" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/padding20" android:layout_marginTop="@dimen/margin_4" android:text="Google Pay, PhonePe, BHIM or any other UPI App" android:lineSpacingExtra="6sp" android:fontFamily="sans-serif" app:layout_constraintLeft_toLeftOf="0" app:layout_constraintTop_toBottomOf="@+id/UPIText"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/choosePaymnetText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/padding20"
+                    android:layout_marginTop="@dimen/padding24"
+                    android:fontFamily="sans-serif"
+                    android:lineSpacingExtra="10sp"
+                    android:text="Choose Payment Mode"
+                    android:textColor="#4d4d4d"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    app:layout_constraintLeft_toLeftOf="0"
+                    app:layout_constraintTop_toBottomOf="@+id/amountPayCL" />
+
+                <LinearLayout
+                    android:id="@+id/choosePaymentCL"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:orientation="vertical"
+                    app:layout_constraintTop_toBottomOf="@+id/choosePaymnetText">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/upiCL"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+                            android:id="@+id/upiIcon"
+                            android:layout_width="33dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/padding20"
+                            android:layout_marginTop="3dp"
+                            android:src="0x7f0802a0"
+                            app:layout_constraintBottom_toBottomOf="@+id/UPIText"
+                            app:layout_constraintLeft_toLeftOf="0"
+                            app:layout_constraintTop_toTopOf="@+id/UPIText" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/UPIText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/padding20"
+                            android:layout_marginTop="@dimen/padding24"
+                            android:fontFamily="sans-serif"
+                            android:letterSpacing="-0.01"
+                            android:lineSpacingExtra="10sp"
+                            android:text="Pay via UPI"
+                            android:textColor="#4d4d4d"
+                            android:textSize="14sp"
+                            android:textStyle="normal"
+                            app:layout_constraintLeft_toRightOf="@+id/upiIcon"
+                            app:layout_constraintTop_toTopOf="0" />
+
+                        <ImageView
+                            android:id="@+id/upiSelector"
+                            android:layout_width="36dp"
+                            android:layout_height="36dp"
+                            android:layout_marginTop="3dp"
+                            android:layout_marginRight="12dp"
+                            android:padding="8dp"
+                            android:src="@drawable/circular_check_unselect"
+                            app:layout_constraintBottom_toBottomOf="@+id/UPIText"
+                            app:layout_constraintRight_toRightOf="0"
+                            app:layout_constraintTop_toTopOf="@+id/UPIText" />
+
+                        <TextView
+                            android:id="@+id/upiDescText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/padding20"
+                            android:layout_marginTop="@dimen/margin_4"
+                            android:fontFamily="sans-serif"
+                            android:lineSpacingExtra="6sp"
+                            android:text="Google Pay, PhonePe, BHIM or any other UPI App"
+                            android:textColor="@color/charcoal_grey_50"
+                            android:textSize="12sp"
+                            android:textStyle="normal"
+                            app:layout_constraintLeft_toLeftOf="0"
+                            app:layout_constraintTop_toBottomOf="@+id/UPIText" />
                     </androidx.constraintlayout.widget.ConstraintLayout>
-                    <androidx.constraintlayout.widget.ConstraintLayout android:id="@+id/cashCL" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/padding_16">
-                        <View android:id="@+id/view1" android:background="@color/white_two" android:layout_width="match_parent" android:layout_height="1dp" android:layout_marginLeft="@dimen/padding20" android:layout_marginRight="@dimen/padding20" app:layout_constraintLeft_toLeftOf="0" app:layout_constraintTop_toTopOf="0"/>
-                        <ImageView android:id="@+id/cashIcon" android:layout_width="33dp" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/padding20" android:layout_marginTop="3dp" android:src="0x7f080243" app:layout_constraintBottom_toBottomOf="@+id/cashText" app:layout_constraintLeft_toLeftOf="0" app:layout_constraintTop_toTopOf="@+id/cashText"/>
-                        <androidx.appcompat.widget.AppCompatTextView android:textSize="14sp" android:textStyle="normal" android:textColor="#4d4d4d" android:id="@+id/cashText" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/padding20" android:layout_marginTop="@dimen/padding_16" android:text="Paid via Cash" android:lineSpacingExtra="10sp" android:fontFamily="sans-serif" android:letterSpacing="-0.01" app:layout_constraintLeft_toRightOf="@+id/cashIcon" app:layout_constraintTop_toBottomOf="@+id/view1"/>
-                        <ImageView android:id="@+id/cashSelector" android:padding="8dp" android:layout_width="36dp" android:layout_height="36dp" android:layout_marginTop="3dp" android:layout_marginRight="12dp" android:src="@drawable/circular_check_unselect" app:layout_constraintBottom_toBottomOf="@+id/cashText" app:layout_constraintRight_toRightOf="0" app:layout_constraintTop_toTopOf="@+id/cashText"/>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/cashCL"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/padding_16">
+
+                        <View
+                            android:id="@+id/view1"
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:layout_marginLeft="@dimen/padding20"
+                            android:layout_marginRight="@dimen/padding20"
+                            android:background="@color/white_two"
+                            app:layout_constraintLeft_toLeftOf="0"
+                            app:layout_constraintTop_toTopOf="0" />
+
+                        <ImageView
+                            android:id="@+id/cashIcon"
+                            android:layout_width="33dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/padding20"
+                            android:layout_marginTop="3dp"
+                            android:src="0x7f080243"
+                            app:layout_constraintBottom_toBottomOf="@+id/cashText"
+                            app:layout_constraintLeft_toLeftOf="0"
+                            app:layout_constraintTop_toTopOf="@+id/cashText" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/cashText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/padding20"
+                            android:layout_marginTop="@dimen/padding_16"
+                            android:fontFamily="sans-serif"
+                            android:letterSpacing="-0.01"
+                            android:lineSpacingExtra="10sp"
+                            android:text="Paid via Cash"
+                            android:textColor="#4d4d4d"
+                            android:textSize="14sp"
+                            android:textStyle="normal"
+                            app:layout_constraintLeft_toRightOf="@+id/cashIcon"
+                            app:layout_constraintTop_toBottomOf="@+id/view1" />
+
+                        <ImageView
+                            android:id="@+id/cashSelector"
+                            android:layout_width="36dp"
+                            android:layout_height="36dp"
+                            android:layout_marginTop="3dp"
+                            android:layout_marginRight="12dp"
+                            android:padding="8dp"
+                            android:src="@drawable/circular_check_unselect"
+                            app:layout_constraintBottom_toBottomOf="@+id/cashText"
+                            app:layout_constraintRight_toRightOf="0"
+                            app:layout_constraintTop_toTopOf="@+id/cashText" />
                     </androidx.constraintlayout.widget.ConstraintLayout>
                 </LinearLayout>
-                <Button android:id="@+id/btnProceed" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="33dp" android:layout_marginBottom="@dimen/padding24" android:text="Proceed to Payment" app:layout_constraintBottom_toBottomOf="0" app:layout_constraintLeft_toLeftOf="0" app:layout_constraintRight_toRightOf="0" app:layout_constraintTop_toBottomOf="@+id/choosePaymentCL" app:layout_constraintVertical_bias="0" style="@style/gradient_fill_button"/>
+
+                <Button
+                    android:id="@+id/btnProceed"
+                    style="@style/gradient_fill_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="33dp"
+                    android:layout_marginBottom="@dimen/padding24"
+                    android:text="Proceed to Payment"
+                    app:layout_constraintBottom_toBottomOf="0"
+                    app:layout_constraintLeft_toLeftOf="0"
+                    app:layout_constraintRight_toRightOf="0"
+                    app:layout_constraintTop_toBottomOf="@+id/choosePaymentCL"
+                    app:layout_constraintVertical_bias="0" />
             </androidx.constraintlayout.widget.ConstraintLayout>
-            <androidx.constraintlayout.widget.ConstraintLayout android:id="@+id/transactionCL" android:background="@color/white" android:visibility="gone" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/padding_16" app:layout_constraintTop_toBottomOf="@+id/paymentCL">
-                <androidx.appcompat.widget.AppCompatTextView android:textSize="14sp" android:textStyle="bold" android:textColor="#4d4d4d" android:id="@+id/transText" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/padding20" android:layout_marginTop="@dimen/padding24" android:text="Recent Transactions" android:lineSpacingExtra="10sp" android:fontFamily="sans-serif" app:layout_constraintLeft_toLeftOf="0" app:layout_constraintTop_toTopOf="0"/>
-                <androidx.appcompat.widget.AppCompatTextView android:textSize="14sp" android:textStyle="normal" android:textColor="@color/spec_red" android:id="@+id/viewALl" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/padding24" android:layout_marginRight="@dimen/padding20" android:text="View All" android:lineSpacingExtra="10sp" android:fontFamily="sans-serif" app:layout_constraintRight_toRightOf="0" app:layout_constraintTop_toTopOf="0"/>
-                <androidx.recyclerview.widget.RecyclerView android:id="@+id/rvTransaction" android:paddingBottom="56dp" android:clipToPadding="false" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/padding24" app:layout_constraintTop_toBottomOf="@+id/transText"/>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/transactionCL"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/padding_16"
+                android:background="@color/white"
+                android:visibility="gone"
+                app:layout_constraintTop_toBottomOf="@+id/paymentCL">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/transText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/padding20"
+                    android:layout_marginTop="@dimen/padding24"
+                    android:fontFamily="sans-serif"
+                    android:lineSpacingExtra="10sp"
+                    android:text="Recent Transactions"
+                    android:textColor="#4d4d4d"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    app:layout_constraintLeft_toLeftOf="0"
+                    app:layout_constraintTop_toTopOf="0" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/viewALl"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/padding24"
+                    android:layout_marginRight="@dimen/padding20"
+                    android:fontFamily="sans-serif"
+                    android:lineSpacingExtra="10sp"
+                    android:text="View All"
+                    android:textColor="@color/spec_red"
+                    android:textSize="14sp"
+                    android:textStyle="normal"
+                    app:layout_constraintRight_toRightOf="0"
+                    app:layout_constraintTop_toTopOf="0" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvTransaction"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/padding24"
+                    android:clipToPadding="false"
+                    android:paddingBottom="56dp"
+                    app:layout_constraintTop_toBottomOf="@+id/transText" />
             </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.core.widget.NestedScrollView>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:aapt="http://schemas.android.com/aapt" android:layout_width="match_parent" android:layout_height="match_parent">
+    <RelativeLayout android:layout_width="match_parent" android:layout_height="match_parent">
+        <RelativeLayout android:id="@+id/blurView" android:background="@color/charcoal_grey_two_90" android:visibility="visible" android:layout_width="match_parent" android:layout_height="match_parent"/>
+        <RelativeLayout android:layout_gravity="center" android:id="@+id/relLay" android:background="@android:color/transparent" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_marginLeft="32dp" android:layout_marginRight="32dp">
+            <LinearLayout android:orientation="vertical" android:id="@+id/addVehicleLayout" android:background="@android:color/transparent" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_centerInParent="true">
+                <androidx.constraintlayout.widget.ConstraintLayout android:id="@+id/header_layout" android:background="@android:color/transparent" android:layout_width="match_parent" android:layout_height="wrap_content">
+                    <LinearLayout android:id="@+id/headersub_layout" android:background="@drawable/corner_top_rounder_white_20" android:layout_width="match_parent" android:layout_height="0dp" app:layout_constrainedHeight="true" app:layout_constraintBottom_toBottomOf="0" app:layout_constraintHeight_min="40dp">
+                        <com.google.android.material.tabs.TabLayout android:layout_gravity="bottom" android:id="@+id/frequencyTabLayout" android:background="@drawable/dialog_bg_add_vehicle" android:visibility="gone" android:layout_width="match_parent" android:layout_height="56dp" android:layout_marginLeft="4dp" android:layout_marginTop="6dp" android:layout_marginRight="4dp" app:tabGravity="0" app:tabIndicatorColor="@color/light_red" app:tabIndicatorHeight="3dp" app:tabMode="1" app:tabSelectedTextColor="@color/charcoal_grey_80" app:tabTextAppearance="@style/NavigationTabTextAppeareance" app:tabTextColor="@color/charcoal_grey_50"/>
+                    </LinearLayout>
+                    <androidx.appcompat.widget.AppCompatImageView android:id="@+id/imageView14" android:background="@drawable/white_ring" android:padding="1dp" android:layout_width="70dp" android:layout_height="70dp" android:layout_marginBottom="1dp" app:layout_constraintBottom_toTopOf="@+id/headersub_layout" app:layout_constraintLeft_toLeftOf="0" app:layout_constraintRight_toRightOf="0" app:layout_constraintTop_toTopOf="@+id/headersub_layout" app:srcCompat="0x7f08015a"/>
+                    <androidx.appcompat.widget.AppCompatImageView android:id="@+id/closeCL" android:padding="5dp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="5dp" android:elevation="10dp" app:layout_constraintBottom_toTopOf="@+id/imageView14" app:layout_constraintLeft_toLeftOf="0" app:srcCompat="0x7f08018a"/>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+                <androidx.core.widget.NestedScrollView android:id="@+id/nestedScrollViewLayout" android:background="@drawable/bottom_bg_half_round" android:focusable="true" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_weight="1">
+                    <androidx.constraintlayout.widget.ConstraintLayout android:id="@+id/constraintLayout6" android:paddingBottom="@dimen/normalPadding" android:layout_width="match_parent" android:layout_height="wrap_content" app:layout_constraintBottom_toBottomOf="0" app:layout_constraintEnd_toEndOf="0" app:layout_constraintStart_toStartOf="0" app:layout_constraintTop_toTopOf="0">
+                        <RelativeLayout android:id="@+id/preApproveOptionLayout" android:visibility="visible" android:layout_width="match_parent" android:layout_height="wrap_content" android:elevation="1dp" app:layout_constraintEnd_toEndOf="0" app:layout_constraintStart_toStartOf="0" app:layout_constraintTop_toTopOf="0">
+                            <include layout="@layout/layout_preapproval_option"/>
+                        </RelativeLayout>
+                        <RelativeLayout android:id="@+id/deliveryOnceLayout" android:visibility="gone" android:layout_width="match_parent" android:layout_height="wrap_content" android:elevation="1dp" app:layout_constraintEnd_toEndOf="0" app:layout_constraintStart_toStartOf="0" app:layout_constraintTop_toTopOf="0">
+                            <include layout="@layout/layout_cab_once_preapproval"/>
+                        </RelativeLayout>
+                        <RelativeLayout android:id="@+id/deliveryFrequentLayout" android:visibility="gone" android:layout_width="match_parent" android:layout_height="wrap_content" android:elevation="1dp" app:layout_constraintEnd_toEndOf="0" app:layout_constraintStart_toStartOf="0" app:layout_constraintTop_toTopOf="0">
+                            <include layout="@layout/layout_preapprove_frequent"/>
+                        </RelativeLayout>
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </androidx.core.widget.NestedScrollView>
+                <androidx.appcompat.widget.AppCompatImageButton android:id="@+id/sendCab" android:background="@drawable/left_to_right_reddish_gradient" android:visibility="gone" android:layout_width="match_parent" android:layout_height="56dp" android:layout_weight="0" app:layout_goneMarginBottom="30dp" app:layout_goneMarginTop="30dp" app:srcCompat="@drawable/ic_done" style="@style/button_bottom_gradient_fill"/>
+                <androidx.appcompat.widget.AppCompatImageButton android:id="@+id/cabFreqSend" android:background="@drawable/left_to_right_reddish_gradient" android:visibility="gone" android:layout_width="match_parent" android:layout_height="56dp" android:layout_weight="0" app:layout_goneMarginBottom="30dp" app:layout_goneMarginTop="30dp" app:srcCompat="@drawable/ic_done" style="@style/button_bottom_gradient_fill"/>
+            </LinearLayout>
+        </RelativeLayout>
+        <include layout="@layout/layout_error_screen_fragment"/>
+    </RelativeLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

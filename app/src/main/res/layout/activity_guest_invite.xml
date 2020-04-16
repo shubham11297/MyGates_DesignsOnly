@@ -1,36 +1,218 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:aapt="http://schemas.android.com/aapt" android:fitsSystemWindows="false" android:layout_width="match_parent" android:layout_height="match_parent">
-    <androidx.coordinatorlayout.widget.CoordinatorLayout android:id="@+id/main_content_base" android:background="@color/white" android:fitsSystemWindows="false" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_above="@+id/recycleViewRL">
-        <com.google.android.material.appbar.AppBarLayout android:id="@+id/appbar" android:layout_width="match_parent" android:layout_height="wrap_content" android:elevation="10dp">
-            <com.google.android.material.appbar.CollapsingToolbarLayout android:id="@+id/collapsing_toolbar" android:background="@drawable/left_to_right_gradient_plain" android:layout_width="match_parent" android:layout_height="116dp" android:elevation="10dp" app:layout_scrollFlags="7">
-                <androidx.appcompat.widget.Toolbar android:id="@+id/toolbar" android:layout_width="match_parent" android:layout_height="?attr/actionBarSize" android:layout_alignParentTop="true" app:popupTheme="@style/ThemeOverlay.AppCompat.Light"/>
-                <TextView android:textSize="20sp" android:textColor="@color/white" android:gravity="left|center_vertical|center_horizontal|center" android:id="@+id/inviteTitle" android:layout_width="wrap_content" android:layout_height="56dp" android:layout_marginLeft="56dp" android:layout_marginRight="25dp" android:text="Select Guest to Invite" android:maxLines="1" android:lineSpacingExtra="6sp" android:fontFamily="@font/ubuntu_light"/>
-                <ImageView android:layout_gravity="start" android:id="@+id/backButton" android:padding="16dp" android:clickable="true" android:layout_width="wrap_content" android:layout_height="56dp" app:srcCompat="@drawable/ic_arrow_back_white_24dp"/>
-                <com.google.android.material.tabs.TabLayout android:layout_gravity="bottom" android:id="@+id/tab_layout" android:background="#00000000" android:layout_width="match_parent" android:layout_height="?attr/actionBarSize" android:elevation="7dp" app:tabGravity="0" app:tabIndicatorColor="#ffffff" app:tabIndicatorHeight="2dp" app:tabMaxWidth="0dp" app:tabMode="1" app:tabSelectedTextColor="#ffffff" app:tabTextAppearance="@style/homeTabTextAppeareance" app:tabTextColor="#b3ffffff"/>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="false">
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:id="@+id/main_content_base"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/recycleViewRL"
+        android:background="@color/white"
+        android:fitsSystemWindows="false">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/appbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:elevation="10dp">
+
+            <com.google.android.material.appbar.CollapsingToolbarLayout
+                android:id="@+id/collapsing_toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="116dp"
+                android:background="@drawable/left_to_right_gradient_plain"
+                android:elevation="10dp"
+                app:layout_scrollFlags="7">
+
+                <androidx.appcompat.widget.Toolbar
+                    android:id="@+id/toolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="?attr/actionBarSize"
+                    android:layout_alignParentTop="true"
+                    app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+
+                <TextView
+                    android:id="@+id/inviteTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="56dp"
+                    android:layout_marginLeft="56dp"
+                    android:layout_marginRight="25dp"
+                    android:fontFamily="@font/ubuntu_light"
+                    android:gravity="left|center_vertical|center_horizontal|center"
+                    android:lineSpacingExtra="6sp"
+                    android:maxLines="1"
+                    android:text="Select Guest to Invite"
+                    android:textColor="@color/white"
+                    android:textSize="20sp" />
+
+                <ImageView
+                    android:id="@+id/backButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="56dp"
+                    android:layout_gravity="start"
+                    android:clickable="true"
+                    android:padding="16dp"
+                    app:srcCompat="@drawable/ic_arrow_back_white_24dp" />
+
+                <com.google.android.material.tabs.TabLayout
+                    android:id="@+id/tab_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="?attr/actionBarSize"
+                    android:layout_gravity="bottom"
+                    android:background="#00000000"
+                    android:elevation="7dp"
+                    app:tabGravity="0"
+                    app:tabIndicatorColor="#ffffff"
+                    app:tabIndicatorHeight="2dp"
+                    app:tabMaxWidth="0dp"
+                    app:tabMode="1"
+                    app:tabSelectedTextColor="#ffffff"
+                    app:tabTextAppearance="@style/homeTabTextAppeareance"
+                    app:tabTextColor="#b3ffffff" />
             </com.google.android.material.appbar.CollapsingToolbarLayout>
         </com.google.android.material.appbar.AppBarLayout>
-        <RelativeLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:animateLayoutChanges="true" android:elevation="6dp">
-            <include layout="@layout/layout_search_bar"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:animateLayoutChanges="true"
+            android:elevation="6dp">
+
+            <include layout="@layout/layout_search_bar" />
         </RelativeLayout>
-        <com.mygate.user.common.p011ui.SafeViewPager android:id="@+id/pager" android:layout_width="match_parent" android:layout_height="match_parent" app:layout_behavior="@string/appbar_scrolling_view_behavior"/>
-        <View android:id="@+id/background" android:background="@color/blakish_transparent" android:visibility="gone" android:layout_width="match_parent" android:layout_height="match_parent"/>
-        <include android:visibility="visible" layout="@layout/layout_bottomsheet_calender"/>
+
+        <com.mygate.user.common.p011ui.SafeViewPager
+            android:id="@+id/pager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+
+        <View
+            android:id="@+id/background"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/blakish_transparent"
+            android:visibility="gone" />
+
+        <include
+            layout="@layout/layout_bottomsheet_calender"
+            android:visibility="visible" />
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
-    <com.google.android.material.floatingactionbutton.FloatingActionButton android:id="@+id/inviteFloating" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="@dimen/padding_16" android:layout_marginBottom="85dp" android:layout_alignParentRight="true" android:layout_alignParentBottom="true" app:srcCompat="@drawable/ic_send_white_24dp"/>
-    <RelativeLayout android:id="@+id/recycleViewRL" android:background="@color/transparent" android:visibility="gone" android:layout_width="match_parent" android:layout_height="120dp" android:layout_alignParentBottom="true">
-        <View android:id="@+id/shadow" android:background="@drawable/top_shadow_gradient" android:layout_width="match_parent" android:layout_height="6dp"/>
-        <RelativeLayout android:id="@+id/relativeLayout" android:background="@color/white" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_below="@+id/shadow">
-            <TextView android:textSize="24sp" android:textColor="@color/charcoal_grey_80" android:gravity="left" android:id="@+id/text_guest_count" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="20dp" android:layout_marginTop="10dp" android:text="Allow to enter" android:layout_alignParentLeft="true" android:lineSpacingExtra="12sp"/>
-            <HorizontalScrollView android:id="@+id/intervalCLTextScroll" android:scrollbars="none" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="20dp" android:layout_marginTop="8dp" android:layout_marginRight="20dp" android:layout_below="@+id/text_guest_count">
-                <TextView android:textSize="18sp" android:textColor="@color/light_red" android:id="@+id/intervalCLText" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="today" android:lines="1" android:drawableRight="@drawable/layer_ic_triangle_red" android:drawablePadding="@dimen/normalPadding" android:lineSpacingExtra="12sp"/>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/inviteFloating"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginRight="@dimen/padding_16"
+        android:layout_marginBottom="85dp"
+        app:srcCompat="@drawable/ic_send_white_24dp" />
+
+    <RelativeLayout
+        android:id="@+id/recycleViewRL"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:layout_alignParentBottom="true"
+        android:background="@color/transparent"
+        android:visibility="gone">
+
+        <View
+            android:id="@+id/shadow"
+            android:layout_width="match_parent"
+            android:layout_height="6dp"
+            android:background="@drawable/top_shadow_gradient" />
+
+        <RelativeLayout
+            android:id="@+id/relativeLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/shadow"
+            android:background="@color/white">
+
+            <TextView
+                android:id="@+id/text_guest_count"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp"
+                android:gravity="left"
+                android:lineSpacingExtra="12sp"
+                android:text="Allow to enter"
+                android:textColor="@color/charcoal_grey_80"
+                android:textSize="24sp" />
+
+            <HorizontalScrollView
+                android:id="@+id/intervalCLTextScroll"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/text_guest_count"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginRight="20dp"
+                android:scrollbars="none">
+
+                <TextView
+                    android:id="@+id/intervalCLText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableRight="@drawable/layer_ic_triangle_red"
+                    android:drawablePadding="@dimen/normalPadding"
+                    android:lineSpacingExtra="12sp"
+                    android:lines="1"
+                    android:text="today"
+                    android:textColor="@color/light_red"
+                    android:textSize="18sp" />
             </HorizontalScrollView>
-            <View android:background="@color/coral_two" android:layout_width="wrap_content" android:layout_height="1dp" android:layout_marginTop="2dp" android:layout_below="@+id/intervalCLTextScroll" android:layout_alignLeft="@+id/intervalCLTextScroll" android:layout_alignRight="@+id/intervalCLTextScroll"/>
-            <HorizontalScrollView android:visibility="visible" android:scrollbars="none" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="15dp" android:layout_below="@+id/intervalCLTextScroll">
-                <TextView android:textSize="16sp" android:textColor="@color/light_red" android:id="@+id/invite_count" android:paddingLeft="20dp" android:paddingRight="20dp" android:paddingBottom="10dp" android:scrollbars="horizontal" android:layout_width="match_parent" android:layout_height="wrap_content" android:lines="1" android:drawableLeft="@drawable/layer_ic_arrow_up" android:drawablePadding="8dp" android:lineSpacingExtra="12sp"/>
+
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="1dp"
+                android:layout_below="@+id/intervalCLTextScroll"
+                android:layout_alignLeft="@+id/intervalCLTextScroll"
+                android:layout_alignRight="@+id/intervalCLTextScroll"
+                android:layout_marginTop="2dp"
+                android:background="@color/coral_two" />
+
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/intervalCLTextScroll"
+                android:layout_marginTop="15dp"
+                android:scrollbars="none"
+                android:visibility="visible">
+
+                <TextView
+                    android:id="@+id/invite_count"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableLeft="@drawable/layer_ic_arrow_up"
+                    android:drawablePadding="8dp"
+                    android:lineSpacingExtra="12sp"
+                    android:lines="1"
+                    android:paddingLeft="20dp"
+                    android:paddingRight="20dp"
+                    android:paddingBottom="10dp"
+                    android:scrollbars="horizontal"
+                    android:textColor="@color/light_red"
+                    android:textSize="16sp" />
             </HorizontalScrollView>
         </RelativeLayout>
     </RelativeLayout>
-    <RelativeLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="70dp" android:layout_alignTop="@+id/addVehicleLayout" android:layout_alignBottom="@+id/addVehicleLayout" android:elevation="1dp">
-        <include layout="@layout/layout_error_screen_fragment"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/addVehicleLayout"
+        android:layout_alignBottom="@+id/addVehicleLayout"
+        android:layout_marginTop="70dp"
+        android:elevation="1dp">
+
+        <include layout="@layout/layout_error_screen_fragment" />
     </RelativeLayout>
 </RelativeLayout>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    android:id="@+id/layout_no_result"
+    android:visibility="gone"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_centerHorizontal="true">
+
+    <RelativeLayout
+        android:id="@+id/top_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/normalPadding"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="@dimen/normalPadding">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:textSize="@dimen/textSize_16"
+            android:textColor="@color/soft_blue"
+            android:gravity="left"
+            android:id="@+id/text_no_result_found"
+            android:paddingRight="@dimen/mediumPadding"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/empty_icon"
+            android:layout_alignParentTop="true"
+            android:layout_centerVertical="true"
+            android:lineSpacingExtra="8sp"
+            android:letterSpacing="0.02" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/empty_icon"
+            android:padding="@dimen/normalPadding"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/normalPadding"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            app:srcCompat="@drawable/ic_info_blue" />
+    </RelativeLayout>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:textSize="@dimen/textSize_14"
+        android:textColor="@color/slate_grey_50"
+        android:gravity="left"
+        android:id="@+id/empty_state_text"
+        android:padding="@dimen/normalPadding"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_below="@+id/top_layout"
+        android:layout_centerHorizontal="true"
+        android:lineSpacingExtra="7sp" />
+</RelativeLayout>

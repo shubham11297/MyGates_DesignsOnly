@@ -1,34 +1,327 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:aapt="http://schemas.android.com/aapt" android:background="@color/white" android:layout_width="match_parent" android:layout_height="match_parent">
-    <androidx.core.widget.NestedScrollView android:layout_width="match_parent" android:layout_height="wrap_content" app:layout_constraintTop_toTopOf="0">
-        <androidx.constraintlayout.widget.ConstraintLayout android:paddingLeft="16dp" android:paddingRight="16dp" android:paddingBottom="80dp" android:layout_width="match_parent" android:layout_height="wrap_content">
-            <TextView android:textSize="14sp" android:textStyle="bold" android:textColor="@color/ubuntu_light" android:id="@+id/titleLabel" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="15dp" android:text="TITLE" android:letterSpacing="0.07" app:layout_constraintLeft_toLeftOf="0" app:layout_constraintTop_toTopOf="0"/>
-            <androidx.constraintlayout.widget.ConstraintLayout android:id="@+id/titleInputLayout" android:background="@drawable/rect_editext_background" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="15dp" app:layout_constrainedHeight="true" app:layout_constraintHeight_min="60dp" app:layout_constraintTop_toBottomOf="@+id/titleLabel">
-                <androidx.appcompat.widget.AppCompatEditText android:scrollbarStyle="insideInset" android:textSize="16sp" android:textColor="@color/charcoal_grey_80" android:gravity="top|left|center_vertical|center_horizontal|center" android:id="@+id/titleInputEditText" android:background="@null" android:paddingRight="40dp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="10dp" android:layout_marginTop="8dp" android:layout_marginBottom="9dp" android:hint="Write Title..." android:maxLines="3" android:minLines="1" android:singleLine="false" android:maxLength="512" android:lineSpacingExtra="8sp" android:inputType="textMultiLine" android:overScrollMode="always" android:textIsSelectable="true" app:layout_constraintLeft_toLeftOf="0" app:layout_constraintTop_toTopOf="0"/>
-                <TextView android:textSize="16sp" android:textColor="@color/charcoal_grey_30" android:id="@+id/limitNumberLabel" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="5dp" android:layout_marginBottom="5dp" android:text="512" android:lineSpacingExtra="8sp" app:layout_constraintBottom_toBottomOf="0" app:layout_constraintRight_toRightOf="0"/>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="0">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:paddingBottom="80dp">
+
+            <TextView
+                android:id="@+id/titleLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:letterSpacing="0.07"
+                android:text="TITLE"
+                android:textColor="@color/ubuntu_light"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:layout_constraintLeft_toLeftOf="0"
+                app:layout_constraintTop_toTopOf="0" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/titleInputLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/rect_editext_background"
+                app:layout_constrainedHeight="true"
+                app:layout_constraintHeight_min="60dp"
+                app:layout_constraintTop_toBottomOf="@+id/titleLabel">
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/titleInputEditText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="9dp"
+                    android:background="@null"
+                    android:gravity="top|left|center_vertical|center_horizontal|center"
+                    android:hint="Write Title..."
+                    android:inputType="textMultiLine"
+                    android:lineSpacingExtra="8sp"
+                    android:maxLength="512"
+                    android:maxLines="3"
+                    android:minLines="1"
+                    android:overScrollMode="always"
+                    android:paddingRight="40dp"
+                    android:scrollbarStyle="insideInset"
+                    android:singleLine="false"
+                    android:textColor="@color/charcoal_grey_80"
+                    android:textIsSelectable="true"
+                    android:textSize="16sp"
+                    app:layout_constraintLeft_toLeftOf="0"
+                    app:layout_constraintTop_toTopOf="0" />
+
+                <TextView
+                    android:id="@+id/limitNumberLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:lineSpacingExtra="8sp"
+                    android:text="512"
+                    android:textColor="@color/charcoal_grey_30"
+                    android:textSize="16sp"
+                    app:layout_constraintBottom_toBottomOf="0"
+                    app:layout_constraintRight_toRightOf="0" />
             </androidx.constraintlayout.widget.ConstraintLayout>
-            <TextView android:textSize="14sp" android:textStyle="bold" android:textColor="@color/ubuntu_light" android:id="@+id/bodyLabel" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="18dp" android:text="NOTICE BODY" android:letterSpacing="0.07" app:layout_constraintLeft_toLeftOf="0" app:layout_constraintTop_toBottomOf="@+id/titleInputLayout"/>
-            <androidx.constraintlayout.widget.ConstraintLayout android:id="@+id/bodyInputLayout" android:background="@drawable/rect_editext_background" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="15dp" app:layout_constrainedHeight="true" app:layout_constraintHeight_min="60dp" app:layout_constraintTop_toBottomOf="@+id/bodyLabel">
-                <androidx.appcompat.widget.AppCompatEditText android:scrollbarStyle="insideInset" android:textSize="16sp" android:textColor="@color/charcoal_grey_80" android:gravity="top|left|center_vertical|center_horizontal|center" android:id="@+id/bodyInputEditText" android:background="@null" android:paddingRight="40dp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="10dp" android:layout_marginTop="8dp" android:layout_marginBottom="9dp" android:hint="Write Details..." android:maxLines="6" android:minLines="3" android:singleLine="false" android:lineSpacingExtra="8sp" android:inputType="textMultiLine" android:overScrollMode="always" android:textIsSelectable="true" app:layout_constraintLeft_toLeftOf="0" app:layout_constraintTop_toTopOf="0"/>
+
+            <TextView
+                android:id="@+id/bodyLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="18dp"
+                android:letterSpacing="0.07"
+                android:text="NOTICE BODY"
+                android:textColor="@color/ubuntu_light"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:layout_constraintLeft_toLeftOf="0"
+                app:layout_constraintTop_toBottomOf="@+id/titleInputLayout" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/bodyInputLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/rect_editext_background"
+                app:layout_constrainedHeight="true"
+                app:layout_constraintHeight_min="60dp"
+                app:layout_constraintTop_toBottomOf="@+id/bodyLabel">
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/bodyInputEditText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="9dp"
+                    android:background="@null"
+                    android:gravity="top|left|center_vertical|center_horizontal|center"
+                    android:hint="Write Details..."
+                    android:inputType="textMultiLine"
+                    android:lineSpacingExtra="8sp"
+                    android:maxLines="6"
+                    android:minLines="3"
+                    android:overScrollMode="always"
+                    android:paddingRight="40dp"
+                    android:scrollbarStyle="insideInset"
+                    android:singleLine="false"
+                    android:textColor="@color/charcoal_grey_80"
+                    android:textIsSelectable="true"
+                    android:textSize="16sp"
+                    app:layout_constraintLeft_toLeftOf="0"
+                    app:layout_constraintTop_toTopOf="0" />
             </androidx.constraintlayout.widget.ConstraintLayout>
-            <androidx.constraintlayout.widget.ConstraintLayout android:id="@+id/fileAttachLayout" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="13dp" app:layout_constraintTop_toBottomOf="@+id/bodyInputLayout">
-                <androidx.appcompat.widget.AppCompatImageView android:id="@+id/attachFileImage" android:padding="5dp" android:layout_width="wrap_content" android:layout_height="wrap_content" app:layout_constraintLeft_toLeftOf="0" app:layout_constraintTop_toTopOf="0" app:srcCompat="@drawable/ic_attachment_red"/>
-                <TextView android:textSize="14sp" android:textColor="@color/light_red" android:ellipsize="end" android:id="@+id/attachFileLabel" android:padding="5dp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="5dp" android:text="@string/attach_photo_document" android:maxLines="1" android:singleLine="true" app:layout_constrainedWidth="true" app:layout_constraintLeft_toRightOf="@+id/attachFileImage" app:layout_constraintTop_toTopOf="0" app:layout_constraintWidth_max="240dp"/>
-                <androidx.appcompat.widget.AppCompatImageView android:id="@+id/fileHelpIcon" android:padding="5dp" android:layout_width="wrap_content" android:layout_height="wrap_content" app:layout_constraintRight_toRightOf="0" app:layout_constraintTop_toTopOf="0" app:srcCompat="0x7f0801da"/>
-                <TextView android:textSize="14sp" android:textColor="@color/slate_grey_80" android:id="@+id/allowedExtensionLabel" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="5dp" android:layout_marginTop="10dp" android:text="@string/allowed_extensions" android:lineSpacingExtra="3sp" app:layout_constrainedWidth="true" app:layout_constraintHorizontal_bias="0" app:layout_constraintLeft_toLeftOf="@+id/attachFileLabel" app:layout_constraintRight_toRightOf="0" app:layout_constraintTop_toBottomOf="@+id/attachFileLabel"/>
-                <androidx.appcompat.widget.AppCompatImageView android:id="@+id/fileCloseIcon" android:padding="5dp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="20dp" app:layout_constraintLeft_toRightOf="@+id/attachFileLabel" app:layout_constraintTop_toTopOf="0" app:srcCompat="0x7f08017c"/>
-                <com.mygate.user.lib.RoundRectCornerImageView android:id="@+id/thumbnailView" android:layout_width="60dp" android:layout_height="60dp" android:layout_marginTop="15dp" app:layout_constraintLeft_toLeftOf="0" app:layout_constraintTop_toTopOf="0"/>
-                <androidx.appcompat.widget.AppCompatImageView android:id="@+id/imageCloseIcon" android:padding="5dp" android:layout_width="wrap_content" android:layout_height="wrap_content" app:layout_constraintBottom_toTopOf="@+id/thumbnailView" app:layout_constraintLeft_toRightOf="@+id/thumbnailView" app:layout_constraintRight_toRightOf="@+id/thumbnailView" app:layout_constraintTop_toTopOf="@+id/thumbnailView" app:srcCompat="0x7f08017c"/>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/fileAttachLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="13dp"
+                app:layout_constraintTop_toBottomOf="@+id/bodyInputLayout">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/attachFileImage"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="5dp"
+                    app:layout_constraintLeft_toLeftOf="0"
+                    app:layout_constraintTop_toTopOf="0"
+                    app:srcCompat="@drawable/ic_attachment_red" />
+
+                <TextView
+                    android:id="@+id/attachFileLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:padding="5dp"
+                    android:singleLine="true"
+                    android:text="@string/attach_photo_document"
+                    android:textColor="@color/light_red"
+                    android:textSize="14sp"
+                    app:layout_constrainedWidth="true"
+                    app:layout_constraintLeft_toRightOf="@+id/attachFileImage"
+                    app:layout_constraintTop_toTopOf="0"
+                    app:layout_constraintWidth_max="240dp" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/fileHelpIcon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="5dp"
+                    app:layout_constraintRight_toRightOf="0"
+                    app:layout_constraintTop_toTopOf="0"
+                    app:srcCompat="0x7f0801da" />
+
+                <TextView
+                    android:id="@+id/allowedExtensionLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="10dp"
+                    android:lineSpacingExtra="3sp"
+                    android:text="@string/allowed_extensions"
+                    android:textColor="@color/slate_grey_80"
+                    android:textSize="14sp"
+                    app:layout_constrainedWidth="true"
+                    app:layout_constraintHorizontal_bias="0"
+                    app:layout_constraintLeft_toLeftOf="@+id/attachFileLabel"
+                    app:layout_constraintRight_toRightOf="0"
+                    app:layout_constraintTop_toBottomOf="@+id/attachFileLabel" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/fileCloseIcon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:padding="5dp"
+                    app:layout_constraintLeft_toRightOf="@+id/attachFileLabel"
+                    app:layout_constraintTop_toTopOf="0"
+                    app:srcCompat="0x7f08017c" />
+
+                <com.mygate.user.lib.RoundRectCornerImageView
+                    android:id="@+id/thumbnailView"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_marginTop="15dp"
+                    app:layout_constraintLeft_toLeftOf="0"
+                    app:layout_constraintTop_toTopOf="0" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/imageCloseIcon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="5dp"
+                    app:layout_constraintBottom_toTopOf="@+id/thumbnailView"
+                    app:layout_constraintLeft_toRightOf="@+id/thumbnailView"
+                    app:layout_constraintRight_toRightOf="@+id/thumbnailView"
+                    app:layout_constraintTop_toTopOf="@+id/thumbnailView"
+                    app:srcCompat="0x7f08017c" />
             </androidx.constraintlayout.widget.ConstraintLayout>
-            <androidx.constraintlayout.widget.ConstraintLayout android:id="@+id/buildingLayout" android:layout_width="match_parent" android:layout_height="wrap_content" app:layout_constraintLeft_toLeftOf="0" app:layout_constraintTop_toBottomOf="@+id/fileAttachLayout">
-                <TextView android:textSize="14sp" android:textStyle="bold" android:textColor="@color/ubuntu_light" android:id="@+id/buildingLabel" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="18dp" android:text="BUILDINGS" android:letterSpacing="0.07" app:layout_constraintLeft_toLeftOf="0" app:layout_constraintTop_toTopOf="0"/>
-                <TextView android:textSize="16sp" android:textColor="@color/light_red" android:id="@+id/allBuildingLabel" android:padding="5dp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="5dp" android:text="@string/u_all_buildings_u" android:drawableRight="@drawable/layer_ic_right_arrow_grey" android:drawablePadding="5dp" android:lineSpacingExtra="8sp" app:layout_constraintLeft_toLeftOf="0" app:layout_constraintTop_toBottomOf="@+id/buildingLabel"/>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/buildingLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintLeft_toLeftOf="0"
+                app:layout_constraintTop_toBottomOf="@+id/fileAttachLayout">
+
+                <TextView
+                    android:id="@+id/buildingLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="18dp"
+                    android:letterSpacing="0.07"
+                    android:text="BUILDINGS"
+                    android:textColor="@color/ubuntu_light"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    app:layout_constraintLeft_toLeftOf="0"
+                    app:layout_constraintTop_toTopOf="0" />
+
+                <TextView
+                    android:id="@+id/allBuildingLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:drawableRight="@drawable/layer_ic_right_arrow_grey"
+                    android:drawablePadding="5dp"
+                    android:lineSpacingExtra="8sp"
+                    android:padding="5dp"
+                    android:text="@string/u_all_buildings_u"
+                    android:textColor="@color/light_red"
+                    android:textSize="16sp"
+                    app:layout_constraintLeft_toLeftOf="0"
+                    app:layout_constraintTop_toBottomOf="@+id/buildingLabel" />
             </androidx.constraintlayout.widget.ConstraintLayout>
-            <TextView android:textSize="14sp" android:textStyle="bold" android:textColor="@color/ubuntu_light" android:id="@+id/userTypeLabel" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="18dp" android:text="RESIDENT TYPE" android:letterSpacing="0.07" app:layout_constraintLeft_toLeftOf="0" app:layout_constraintTop_toBottomOf="@+id/buildingLayout"/>
-            <TextView android:textSize="16sp" android:textColor="@color/light_red" android:id="@+id/allUserLabel" android:padding="5dp" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="5dp" android:text="@string/all_residents" android:drawableRight="@drawable/layer_ic_edit" android:drawablePadding="5dp" android:lineSpacingExtra="8sp" app:layout_constraintLeft_toLeftOf="0" app:layout_constraintTop_toBottomOf="@+id/userTypeLabel"/>
-            <androidx.appcompat.widget.AppCompatCheckBox android:textSize="16sp" android:textColor="@color/charcoal_grey_80" android:id="@+id/ownerBox" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="10dp" android:checked="true" android:text="Owners" android:lineSpacingExtra="8sp" app:layout_constraintLeft_toLeftOf="0" app:layout_constraintTop_toBottomOf="@+id/userTypeLabel"/>
-            <androidx.appcompat.widget.AppCompatCheckBox android:textSize="16sp" android:textColor="@color/charcoal_grey_80" android:id="@+id/tenantBox" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="35dp" android:layout_marginTop="10dp" android:checked="true" android:text="Tenants" android:lineSpacingExtra="8sp" app:layout_constraintLeft_toRightOf="@+id/ownerBox" app:layout_constraintTop_toBottomOf="@+id/userTypeLabel"/>
+
+            <TextView
+                android:id="@+id/userTypeLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="18dp"
+                android:letterSpacing="0.07"
+                android:text="RESIDENT TYPE"
+                android:textColor="@color/ubuntu_light"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:layout_constraintLeft_toLeftOf="0"
+                app:layout_constraintTop_toBottomOf="@+id/buildingLayout" />
+
+            <TextView
+                android:id="@+id/allUserLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:drawableRight="@drawable/layer_ic_edit"
+                android:drawablePadding="5dp"
+                android:lineSpacingExtra="8sp"
+                android:padding="5dp"
+                android:text="@string/all_residents"
+                android:textColor="@color/light_red"
+                android:textSize="16sp"
+                android:visibility="gone"
+                app:layout_constraintLeft_toLeftOf="0"
+                app:layout_constraintTop_toBottomOf="@+id/userTypeLabel" />
+
+            <androidx.appcompat.widget.AppCompatCheckBox
+                android:id="@+id/ownerBox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:checked="true"
+                android:lineSpacingExtra="8sp"
+                android:text="Owners"
+                android:textColor="@color/charcoal_grey_80"
+                android:textSize="16sp"
+                app:layout_constraintLeft_toLeftOf="0"
+                app:layout_constraintTop_toBottomOf="@+id/userTypeLabel" />
+
+            <androidx.appcompat.widget.AppCompatCheckBox
+                android:id="@+id/tenantBox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="35dp"
+                android:layout_marginTop="10dp"
+                android:checked="true"
+                android:lineSpacingExtra="8sp"
+                android:text="Tenants"
+                android:textColor="@color/charcoal_grey_80"
+                android:textSize="16sp"
+                app:layout_constraintLeft_toRightOf="@+id/ownerBox"
+                app:layout_constraintTop_toBottomOf="@+id/userTypeLabel" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.core.widget.NestedScrollView>
-    <androidx.appcompat.widget.AppCompatButton android:textStyle="bold" android:id="@+id/noticeButton" android:clickable="true" android:layout_width="wrap_content" android:layout_height="56dp" android:layout_marginBottom="15dp" android:text="@string/send_notice" android:elevation="3dp" android:letterSpacing="0.06" app:layout_constraintBottom_toBottomOf="0" app:layout_constraintLeft_toLeftOf="0" app:layout_constraintRight_toRightOf="0" style="@style/grey_fill_button"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/noticeButton"
+        style="@style/grey_fill_button"
+        android:layout_width="wrap_content"
+        android:layout_height="56dp"
+        android:layout_marginBottom="15dp"
+        android:clickable="true"
+        android:elevation="3dp"
+        android:letterSpacing="0.06"
+        android:text="@string/send_notice"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="0"
+        app:layout_constraintLeft_toLeftOf="0"
+        app:layout_constraintRight_toRightOf="0" />
 </androidx.constraintlayout.widget.ConstraintLayout>

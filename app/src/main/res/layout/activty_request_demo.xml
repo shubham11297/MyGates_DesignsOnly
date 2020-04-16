@@ -1,13 +1,120 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:aapt="http://schemas.android.com/aapt" android:background="@color/white" android:layout_width="match_parent" android:layout_height="wrap_content">
-    <TextView android:textSize="14sp" android:textColor="@color/slate_grey_80" android:gravity="center_horizontal" android:id="@+id/infoView" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="30dp" android:text="@string/info_text" android:lineSpacingExtra="7sp" app:layout_constraintLeft_toLeftOf="0" app:layout_constraintRight_toRightOf="0" app:layout_constraintTop_toTopOf="0"/>
-    <TextView android:textSize="18sp" android:textColor="@color/pale_teal" android:gravity="center_horizontal" android:id="@+id/gotItView" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="25dp" android:text="Got it!" android:lineSpacingExtra="9sp" app:layout_constraintLeft_toLeftOf="0" app:layout_constraintRight_toRightOf="0" app:layout_constraintTop_toTopOf="0"/>
-    <TextView android:textSize="14sp" android:textColor="@color/slate_grey_80" android:gravity="center" android:id="@+id/descriptionView" android:visibility="gone" android:clickable="true" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginLeft="40dp" android:layout_marginTop="11dp" android:layout_marginRight="40dp" android:text="@string/offering_desc_msg" app:layout_constraintLeft_toLeftOf="0" app:layout_constraintRight_toRightOf="0" app:layout_constraintTop_toBottomOf="@+id/gotItView"/>
-    <com.google.android.material.textfield.TextInputLayout android:id="@+id/cityViewLayout" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginLeft="40dp" android:layout_marginTop="30dp" android:layout_marginRight="40dp" android:hint="@string/city_name" app:layout_constraintLeft_toLeftOf="0" app:layout_constraintRight_toRightOf="0" app:layout_constraintTop_toBottomOf="@+id/infoView">
-        <androidx.appcompat.widget.AppCompatEditText android:textSize="@dimen/spec_subheading" android:textColor="@color/charcoal_grey_80" android:textColorHint="@color/charcoal_grey_30" android:id="@+id/cityView" android:layout_width="match_parent" android:layout_height="wrap_content" android:singleLine="true" android:lineSpacingExtra="8sp" android:inputType="textAutoComplete" android:imeOptions="actionNext" android:nextFocusForward="@+id/communityView" app:backgroundTint="@color/light_red"/>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white">
+
+    <TextView
+        android:id="@+id/infoView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:gravity="center_horizontal"
+        android:lineSpacingExtra="7sp"
+        android:text="@string/info_text"
+        android:textColor="@color/slate_grey_80"
+        android:textSize="14sp"
+        app:layout_constraintLeft_toLeftOf="0"
+        app:layout_constraintRight_toRightOf="0"
+        app:layout_constraintTop_toTopOf="0" />
+
+    <TextView
+        android:id="@+id/gotItView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:gravity="center_horizontal"
+        android:lineSpacingExtra="9sp"
+        android:text="Got it!"
+        android:textColor="@color/pale_teal"
+        android:textSize="18sp"
+        android:visibility="gone"
+        app:layout_constraintLeft_toLeftOf="0"
+        app:layout_constraintRight_toRightOf="0"
+        app:layout_constraintTop_toTopOf="0" />
+
+    <TextView
+        android:id="@+id/descriptionView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="11dp"
+        android:layout_marginRight="40dp"
+        android:clickable="true"
+        android:gravity="center"
+        android:text="@string/offering_desc_msg"
+        android:textColor="@color/slate_grey_80"
+        android:textSize="14sp"
+        android:visibility="gone"
+        app:layout_constraintLeft_toLeftOf="0"
+        app:layout_constraintRight_toRightOf="0"
+        app:layout_constraintTop_toBottomOf="@+id/gotItView" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/cityViewLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginRight="40dp"
+        android:hint="@string/city_name"
+        app:layout_constraintLeft_toLeftOf="0"
+        app:layout_constraintRight_toRightOf="0"
+        app:layout_constraintTop_toBottomOf="@+id/infoView">
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/cityView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:imeOptions="actionNext"
+            android:inputType="textAutoComplete"
+            android:lineSpacingExtra="8sp"
+            android:nextFocusForward="@+id/communityView"
+            android:singleLine="true"
+            android:textColor="@color/charcoal_grey_80"
+            android:textColorHint="@color/charcoal_grey_30"
+            android:textSize="@dimen/spec_subheading"
+            app:backgroundTint="@color/light_red" />
     </com.google.android.material.textfield.TextInputLayout>
-    <com.google.android.material.textfield.TextInputLayout android:id="@+id/communityViewLayout" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginLeft="40dp" android:layout_marginTop="8dp" android:layout_marginRight="40dp" android:hint="@string/community_name" app:layout_constraintLeft_toLeftOf="0" app:layout_constraintRight_toRightOf="0" app:layout_constraintTop_toBottomOf="@+id/cityViewLayout">
-        <com.google.android.material.textfield.TextInputEditText android:textSize="@dimen/spec_subheading" android:textColor="@color/charcoal_grey_80" android:textColorHint="@color/charcoal_grey_30" android:id="@+id/communityView" android:layout_width="match_parent" android:layout_height="wrap_content" android:inputType="textAutoComplete" android:imeOptions="actionDone" app:backgroundTint="@color/light_red"/>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/communityViewLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginRight="40dp"
+        android:hint="@string/community_name"
+        app:layout_constraintLeft_toLeftOf="0"
+        app:layout_constraintRight_toRightOf="0"
+        app:layout_constraintTop_toBottomOf="@+id/cityViewLayout">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/communityView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:imeOptions="actionDone"
+            android:inputType="textAutoComplete"
+            android:textColor="@color/charcoal_grey_80"
+            android:textColorHint="@color/charcoal_grey_30"
+            android:textSize="@dimen/spec_subheading"
+            app:backgroundTint="@color/light_red" />
     </com.google.android.material.textfield.TextInputLayout>
-    <Button android:textStyle="bold" android:id="@+id/submitButton" android:clickable="true" android:layout_width="250dp" android:layout_height="56dp" android:layout_marginTop="25dp" android:text="SUBMIT" android:elevation="6dp" android:letterSpacing="0.06" app:layout_constraintLeft_toLeftOf="0" app:layout_constraintRight_toRightOf="0" app:layout_constraintTop_toBottomOf="@+id/communityViewLayout" style="@style/gradient_fill_button"/>
+
+    <Button
+        android:id="@+id/submitButton"
+        style="@style/gradient_fill_button"
+        android:layout_width="250dp"
+        android:layout_height="56dp"
+        android:layout_marginTop="25dp"
+        android:clickable="true"
+        android:elevation="6dp"
+        android:letterSpacing="0.06"
+        android:text="SUBMIT"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toLeftOf="0"
+        app:layout_constraintRight_toRightOf="0"
+        app:layout_constraintTop_toBottomOf="@+id/communityViewLayout" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,42 +1,309 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:aapt="http://schemas.android.com/aapt" android:layout_width="match_parent" android:layout_height="match_parent">
-    <com.google.android.material.appbar.AppBarLayout android:id="@+id/dataAppBarlayout" android:background="@color/white" android:layout_width="match_parent" android:layout_height="wrap_content">
-        <com.google.android.material.appbar.CollapsingToolbarLayout android:layout_width="match_parent" android:layout_height="match_parent" app:layout_scrollFlags="3">
-            <RelativeLayout android:layout_width="match_parent" android:layout_height="wrap_content" app:layout_collapseMode="2">
-                <RelativeLayout android:id="@+id/label1" android:background="@drawable/rounded_corner_slate_grey_30_white_two_solid_rect" android:paddingLeft="20dp" android:paddingRight="20dp" android:paddingBottom="10dp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="15dp" android:layout_marginTop="20dp" android:layout_marginRight="15dp">
-                    <include android:id="@+id/detail1" layout="@layout/layout_mygate_privacy_detail"/>
-                    <TextView android:textSize="14sp" android:textColor="@color/light_red" android:id="@+id/dataLinkView" android:padding="5dp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="15dp" android:layout_marginTop="3dp" android:text="@string/data_security_description" android:layout_below="@+id/detail1"/>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/dataAppBarlayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white">
+
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_scrollFlags="3">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_collapseMode="2">
+
+                <RelativeLayout
+                    android:id="@+id/label1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginRight="15dp"
+                    android:background="@drawable/rounded_corner_slate_grey_30_white_two_solid_rect"
+                    android:paddingLeft="20dp"
+                    android:paddingRight="20dp"
+                    android:paddingBottom="10dp">
+
+                    <include
+                        android:id="@+id/detail1"
+                        layout="@layout/layout_mygate_privacy_detail" />
+
+                    <TextView
+                        android:id="@+id/dataLinkView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/detail1"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginTop="3dp"
+                        android:padding="5dp"
+                        android:text="@string/data_security_description"
+                        android:textColor="@color/light_red"
+                        android:textSize="14sp" />
                 </RelativeLayout>
-                <View android:id="@+id/divider1" android:background="@color/white_two" android:layout_width="match_parent" android:layout_height="1dp" android:layout_marginTop="15dp" android:layout_below="@+id/label1"/>
-                <TextView android:textSize="16sp" android:textStyle="bold" android:textColor="@color/charcoal_grey" android:id="@+id/right_forget_label" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="15dp" android:layout_marginTop="15dp" android:text="Right to be forgotten" android:layout_below="@+id/divider1"/>
-                <TextView android:textSize="14sp" android:textColor="@color/charcoal_grey" android:id="@+id/forgetDescription" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="15dp" android:layout_marginTop="8dp" android:text="@string/forget_me_message" android:layout_below="@+id/right_forget_label" android:lineSpacingExtra="10sp"/>
-                <TextView android:textSize="14sp" android:textColor="@color/light_red" android:id="@+id/viewDetailsLabel" android:padding="5dp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="10dp" android:layout_marginTop="3dp" android:text="@string/view_detail_arrow" android:layout_below="@+id/forgetDescription"/>
-                <View android:id="@+id/divider4" android:background="@color/white_two" android:layout_width="match_parent" android:layout_height="1dp" android:layout_marginTop="10dp" android:layout_below="@+id/viewDetailsLabel"/>
+
+                <View
+                    android:id="@+id/divider1"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_below="@+id/label1"
+                    android:layout_marginTop="15dp"
+                    android:background="@color/white_two" />
+
+                <TextView
+                    android:id="@+id/right_forget_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/divider1"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="15dp"
+                    android:text="Right to be forgotten"
+                    android:textColor="@color/charcoal_grey"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/forgetDescription"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/right_forget_label"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="8dp"
+                    android:lineSpacingExtra="10sp"
+                    android:text="@string/forget_me_message"
+                    android:textColor="@color/charcoal_grey"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/viewDetailsLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/forgetDescription"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="3dp"
+                    android:padding="5dp"
+                    android:text="@string/view_detail_arrow"
+                    android:textColor="@color/light_red"
+                    android:textSize="14sp" />
+
+                <View
+                    android:id="@+id/divider4"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_below="@+id/viewDetailsLabel"
+                    android:layout_marginTop="10dp"
+                    android:background="@color/white_two" />
             </RelativeLayout>
         </com.google.android.material.appbar.CollapsingToolbarLayout>
-        <androidx.constraintlayout.widget.ConstraintLayout android:layout_gravity="bottom" android:layout_width="match_parent" android:layout_height="wrap_content">
-            <TextView android:textSize="16sp" android:textStyle="bold" android:textColor="@color/charcoal_grey" android:id="@+id/label2" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="15dp" android:layout_marginTop="15dp" android:text="Data access logs" app:layout_constraintLeft_toLeftOf="0" app:layout_constraintTop_toTopOf="0"/>
-            <View android:id="@+id/divider2" android:background="@color/white_two" android:layout_width="match_parent" android:layout_height="1dp" android:layout_marginLeft="15dp" android:layout_marginTop="15dp" app:layout_constraintTop_toBottomOf="@+id/label2"/>
-            <androidx.constraintlayout.widget.ConstraintLayout android:id="@+id/startTimeSelectionCL" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="8dp" app:layout_constraintLeft_toLeftOf="0" app:layout_constraintTop_toBottomOf="@+id/divider2">
-                <TextView android:textSize="13sp" android:textColor="#82828c" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="From" app:layout_constraintBottom_toTopOf="@+id/startTimeCLText" app:layout_constraintLeft_toLeftOf="@+id/startTimeCLText"/>
-                <TextView android:textSize="13sp" android:textColor="@color/light_red" android:id="@+id/startTimeCLText" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="15dp" android:layout_marginTop="10dp" android:layout_marginBottom="3dp" android:text="Start Date" android:lineSpacingExtra="6sp" app:layout_constraintBottom_toBottomOf="0" app:layout_constraintHorizontal_chainStyle="0" app:layout_constraintRight_toLeftOf="@+id/startTimeImage" app:layout_constraintStart_toStartOf="0" app:layout_constraintTop_toTopOf="0"/>
-                <ImageView android:id="@+id/startTimeImage" android:layout_width="10dp" android:layout_height="wrap_content" android:layout_marginLeft="5dp" android:layout_marginRight="15dp" app:layout_constraintBottom_toBottomOf="@+id/startTimeCLText" app:layout_constraintLeft_toRightOf="@+id/startTimeCLText" app:layout_constraintRight_toRightOf="0" app:layout_constraintTop_toTopOf="@+id/startTimeCLText" app:srcCompat="@drawable/ic_triangle_red"/>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom">
+
+            <TextView
+                android:id="@+id/label2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="15dp"
+                android:text="Data access logs"
+                android:textColor="@color/charcoal_grey"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintLeft_toLeftOf="0"
+                app:layout_constraintTop_toTopOf="0" />
+
+            <View
+                android:id="@+id/divider2"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="15dp"
+                android:background="@color/white_two"
+                app:layout_constraintTop_toBottomOf="@+id/label2" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/startTimeSelectionCL"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                app:layout_constraintLeft_toLeftOf="0"
+                app:layout_constraintTop_toBottomOf="@+id/divider2">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="From"
+                    android:textColor="#82828c"
+                    android:textSize="13sp"
+                    app:layout_constraintBottom_toTopOf="@+id/startTimeCLText"
+                    app:layout_constraintLeft_toLeftOf="@+id/startTimeCLText" />
+
+                <TextView
+                    android:id="@+id/startTimeCLText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="3dp"
+                    android:lineSpacingExtra="6sp"
+                    android:text="Start Date"
+                    android:textColor="@color/light_red"
+                    android:textSize="13sp"
+                    app:layout_constraintBottom_toBottomOf="0"
+                    app:layout_constraintHorizontal_chainStyle="0"
+                    app:layout_constraintRight_toLeftOf="@+id/startTimeImage"
+                    app:layout_constraintStart_toStartOf="0"
+                    app:layout_constraintTop_toTopOf="0" />
+
+                <ImageView
+                    android:id="@+id/startTimeImage"
+                    android:layout_width="10dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="15dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/startTimeCLText"
+                    app:layout_constraintLeft_toRightOf="@+id/startTimeCLText"
+                    app:layout_constraintRight_toRightOf="0"
+                    app:layout_constraintTop_toTopOf="@+id/startTimeCLText"
+                    app:srcCompat="@drawable/ic_triangle_red" />
             </androidx.constraintlayout.widget.ConstraintLayout>
-            <androidx.constraintlayout.widget.ConstraintLayout android:id="@+id/endTimeSelectionCL" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="8dp" app:layout_constraintLeft_toRightOf="@+id/startTimeSelectionCL" app:layout_constraintTop_toBottomOf="@+id/divider2">
-                <TextView android:textSize="13sp" android:textColor="#82828c" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="To" app:layout_constraintBottom_toTopOf="@+id/endTimeCLText" app:layout_constraintLeft_toLeftOf="@+id/endTimeCLText"/>
-                <TextView android:textSize="13sp" android:textColor="@color/light_red" android:id="@+id/endTimeCLText" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="15dp" android:layout_marginTop="10dp" android:layout_marginBottom="3dp" android:text="End Date" android:lineSpacingExtra="6sp" app:layout_constraintBottom_toBottomOf="0" app:layout_constraintHorizontal_chainStyle="0" app:layout_constraintRight_toLeftOf="@+id/endTimeImage" app:layout_constraintStart_toStartOf="0" app:layout_constraintTop_toTopOf="0"/>
-                <ImageView android:id="@+id/endTimeImage" android:layout_width="10dp" android:layout_height="wrap_content" android:layout_marginLeft="5dp" android:layout_marginRight="15dp" app:layout_constraintBottom_toBottomOf="@+id/endTimeCLText" app:layout_constraintLeft_toRightOf="@+id/endTimeCLText" app:layout_constraintRight_toRightOf="0" app:layout_constraintTop_toTopOf="@+id/endTimeCLText" app:srcCompat="@drawable/ic_triangle_red"/>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/endTimeSelectionCL"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                app:layout_constraintLeft_toRightOf="@+id/startTimeSelectionCL"
+                app:layout_constraintTop_toBottomOf="@+id/divider2">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="To"
+                    android:textColor="#82828c"
+                    android:textSize="13sp"
+                    app:layout_constraintBottom_toTopOf="@+id/endTimeCLText"
+                    app:layout_constraintLeft_toLeftOf="@+id/endTimeCLText" />
+
+                <TextView
+                    android:id="@+id/endTimeCLText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="3dp"
+                    android:lineSpacingExtra="6sp"
+                    android:text="End Date"
+                    android:textColor="@color/light_red"
+                    android:textSize="13sp"
+                    app:layout_constraintBottom_toBottomOf="0"
+                    app:layout_constraintHorizontal_chainStyle="0"
+                    app:layout_constraintRight_toLeftOf="@+id/endTimeImage"
+                    app:layout_constraintStart_toStartOf="0"
+                    app:layout_constraintTop_toTopOf="0" />
+
+                <ImageView
+                    android:id="@+id/endTimeImage"
+                    android:layout_width="10dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="15dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/endTimeCLText"
+                    app:layout_constraintLeft_toRightOf="@+id/endTimeCLText"
+                    app:layout_constraintRight_toRightOf="0"
+                    app:layout_constraintTop_toTopOf="@+id/endTimeCLText"
+                    app:srcCompat="@drawable/ic_triangle_red" />
             </androidx.constraintlayout.widget.ConstraintLayout>
-            <androidx.constraintlayout.widget.ConstraintLayout android:id="@+id/emailSelectionCL" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="5dp" android:layout_marginRight="15dp" app:layout_constraintRight_toRightOf="0" app:layout_constraintTop_toBottomOf="@+id/divider2">
-                <TextView android:textSize="14sp" android:textColor="@color/charcoal_grey" android:id="@+id/emailText" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="10dp" android:layout_marginBottom="10dp" android:text="Email me" android:lineSpacingExtra="2sp" app:layout_constraintBottom_toBottomOf="0" app:layout_constraintHorizontal_chainStyle="0" app:layout_constraintLeft_toRightOf="@+id/emailImage" app:layout_constraintRight_toRightOf="0" app:layout_constraintTop_toTopOf="0"/>
-                <ImageView android:id="@+id/emailImage" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="10dp" app:layout_constraintBottom_toBottomOf="@+id/emailText" app:layout_constraintLeft_toLeftOf="0" app:layout_constraintRight_toLeftOf="@+id/emailText" app:layout_constraintTop_toTopOf="@+id/emailText" app:srcCompat="@drawable/ic_email"/>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/emailSelectionCL"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="15dp"
+                android:visibility="gone"
+                app:layout_constraintRight_toRightOf="0"
+                app:layout_constraintTop_toBottomOf="@+id/divider2">
+
+                <TextView
+                    android:id="@+id/emailText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:lineSpacingExtra="2sp"
+                    android:text="Email me"
+                    android:textColor="@color/charcoal_grey"
+                    android:textSize="14sp"
+                    app:layout_constraintBottom_toBottomOf="0"
+                    app:layout_constraintHorizontal_chainStyle="0"
+                    app:layout_constraintLeft_toRightOf="@+id/emailImage"
+                    app:layout_constraintRight_toRightOf="0"
+                    app:layout_constraintTop_toTopOf="0" />
+
+                <ImageView
+                    android:id="@+id/emailImage"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/emailText"
+                    app:layout_constraintLeft_toLeftOf="0"
+                    app:layout_constraintRight_toLeftOf="@+id/emailText"
+                    app:layout_constraintTop_toTopOf="@+id/emailText"
+                    app:srcCompat="@drawable/ic_email" />
             </androidx.constraintlayout.widget.ConstraintLayout>
-            <View android:id="@+id/divider3" android:background="@color/white_two" android:layout_width="match_parent" android:layout_height="1dp" android:layout_marginLeft="15dp" android:layout_marginTop="5dp" app:layout_constraintTop_toBottomOf="@+id/startTimeSelectionCL"/>
+
+            <View
+                android:id="@+id/divider3"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="5dp"
+                android:background="@color/white_two"
+                app:layout_constraintTop_toBottomOf="@+id/startTimeSelectionCL" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </com.google.android.material.appbar.AppBarLayout>
-    <androidx.recyclerview.widget.RecyclerView android:id="@+id/logsListView" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginLeft="15dp" app:layout_behavior="@string/appbar_scrolling_view_behavior"/>
-    <LinearLayout android:layout_gravity="top|center_vertical|center_horizontal|center" android:orientation="vertical" android:id="@+id/zeroLayout" android:paddingTop="30dp" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" app:layout_behavior="@string/appbar_scrolling_view_behavior">
-        <ImageView android:layout_gravity="center_horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" app:srcCompat="0x7f0802db"/>
-        <TextView android:textSize="16sp" android:textColor="@color/charcoal_grey" android:layout_gravity="center_horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="20dp" android:text="No data viewed logs"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/logsListView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+
+    <LinearLayout
+        android:id="@+id/zeroLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top|center_vertical|center_horizontal|center"
+        android:orientation="vertical"
+        android:paddingTop="30dp"
+        android:visibility="gone"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            app:srcCompat="0x7f0802db" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="20dp"
+            android:text="No data viewed logs"
+            android:textColor="@color/charcoal_grey"
+            android:textSize="16sp" />
     </LinearLayout>
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

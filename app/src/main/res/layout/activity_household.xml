@@ -1,54 +1,552 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:aapt="http://schemas.android.com/aapt" android:background="@color/fragments_background" android:scrollbars="none" android:layout_width="match_parent" android:layout_height="match_parent">
-    <androidx.constraintlayout.widget.ConstraintLayout android:id="@+id/constraintLayout" android:visibility="gone" android:descendantFocusability="blocksDescendants" android:layout_width="match_parent" android:layout_height="wrap_content">
-        <androidx.constraintlayout.widget.ConstraintLayout android:id="@+id/constraintLayoutFamily" android:layout_width="match_parent" android:layout_height="wrap_content" app:layout_constraintTop_toBottomOf="@+id/cardViewProfile">
-            <TextView android:textSize="14sp" android:textStyle="bold" android:textColor="@color/charcoal_grey" android:id="@+id/textViewMyFamily" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="24dp" android:text="@string/my_family" android:layout_marginStart="16dp" app:layout_constraintStart_toStartOf="0" app:layout_constraintTop_toTopOf="0"/>
-            <androidx.appcompat.widget.AppCompatButton android:theme="@style/PrimaryFlatButton" android:textSize="12sp" android:textStyle="bold" android:textColor="@color/active_pink" android:gravity="center" android:id="@+id/buttonAddFamily" android:paddingTop="12dp" android:paddingBottom="12dp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:minWidth="0dp" android:minHeight="0dp" android:text="@string/add" android:paddingStart="16dp" android:paddingEnd="16dp" android:layout_marginEnd="2dp" android:letterSpacing="0.07" app:layout_constraintBottom_toBottomOf="@+id/textViewMyFamily" app:layout_constraintEnd_toEndOf="0" app:layout_constraintTop_toTopOf="@+id/textViewMyFamily"/>
-            <androidx.cardview.widget.CardView android:id="@+id/cardViewFamily" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="12dp" android:layout_marginStart="16dp" android:layout_marginEnd="16dp" app:cardBackgroundColor="@color/white" app:cardCornerRadius="6dp" app:cardElevation="1dp" app:layout_constraintTop_toBottomOf="@+id/textViewMyFamily">
-                <androidx.constraintlayout.widget.ConstraintLayout android:id="@+id/constraintLayoutAddFamily" android:paddingBottom="12dp" android:layout_width="match_parent" android:layout_height="wrap_content">
-                    <TextView android:textSize="14sp" android:textColor="@color/slate_grey_80" android:id="@+id/textViewFamilyDesc" android:layout_width="0dp" android:layout_height="wrap_content" android:text="@string/add_family_to_help_manage_visitors_and_household" android:lineSpacingExtra="6sp" android:layout_marginStart="14dp" android:layout_marginEnd="16dp" app:layout_constraintBottom_toBottomOf="@+id/imageViewAddFamily" app:layout_constraintEnd_toEndOf="0" app:layout_constraintStart_toEndOf="@+id/imageViewAddFamily" app:layout_constraintTop_toTopOf="@+id/imageViewAddFamily"/>
-                    <androidx.appcompat.widget.AppCompatImageView android:id="@+id/imageViewAddFamily" android:layout_width="42dp" android:layout_height="42dp" android:layout_marginTop="12dp" android:src="@drawable/ic_add_family" android:layout_marginStart="16dp" app:layout_constraintStart_toStartOf="0" app:layout_constraintTop_toTopOf="0"/>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/fragments_background"
+    android:scrollbars="none">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:descendantFocusability="blocksDescendants"
+        android:visibility="gone">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayoutFamily"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/cardViewProfile">
+
+            <TextView
+                android:id="@+id/textViewMyFamily"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="24dp"
+                android:text="@string/my_family"
+                android:textColor="@color/charcoal_grey"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="0"
+                app:layout_constraintTop_toTopOf="0" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/buttonAddFamily"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="2dp"
+                android:gravity="center"
+                android:letterSpacing="0.07"
+                android:minWidth="0dp"
+                android:minHeight="0dp"
+                android:paddingStart="16dp"
+                android:paddingTop="12dp"
+                android:paddingEnd="16dp"
+                android:paddingBottom="12dp"
+                android:text="@string/add"
+                android:textColor="@color/active_pink"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                android:theme="@style/PrimaryFlatButton"
+                app:layout_constraintBottom_toBottomOf="@+id/textViewMyFamily"
+                app:layout_constraintEnd_toEndOf="0"
+                app:layout_constraintTop_toTopOf="@+id/textViewMyFamily" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardViewFamily"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="16dp"
+                app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="6dp"
+                app:cardElevation="1dp"
+                app:layout_constraintTop_toBottomOf="@+id/textViewMyFamily">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/constraintLayoutAddFamily"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="12dp">
+
+                    <TextView
+                        android:id="@+id/textViewFamilyDesc"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="14dp"
+                        android:layout_marginEnd="16dp"
+                        android:lineSpacingExtra="6sp"
+                        android:text="@string/add_family_to_help_manage_visitors_and_household"
+                        android:textColor="@color/slate_grey_80"
+                        android:textSize="14sp"
+                        app:layout_constraintBottom_toBottomOf="@+id/imageViewAddFamily"
+                        app:layout_constraintEnd_toEndOf="0"
+                        app:layout_constraintStart_toEndOf="@+id/imageViewAddFamily"
+                        app:layout_constraintTop_toTopOf="@+id/imageViewAddFamily" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/imageViewAddFamily"
+                        android:layout_width="42dp"
+                        android:layout_height="42dp"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="12dp"
+                        android:src="@drawable/ic_add_family"
+                        app:layout_constraintStart_toStartOf="0"
+                        app:layout_constraintTop_toTopOf="0" />
                 </androidx.constraintlayout.widget.ConstraintLayout>
             </androidx.cardview.widget.CardView>
-            <androidx.recyclerview.widget.RecyclerView android:id="@+id/recyclerViewFamily" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="12dp" android:nestedScrollingEnabled="false" app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" app:layout_constraintTop_toBottomOf="@+id/cardViewFamily"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerViewFamily"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:nestedScrollingEnabled="false"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintTop_toBottomOf="@+id/cardViewFamily" />
         </androidx.constraintlayout.widget.ConstraintLayout>
-        <androidx.constraintlayout.widget.ConstraintLayout android:id="@+id/constraintLayoutVehicles" android:layout_width="match_parent" android:layout_height="wrap_content" app:layout_constraintTop_toBottomOf="@+id/constraintLayoutFamily">
-            <TextView android:textSize="14sp" android:textStyle="bold" android:textColor="@color/charcoal_grey" android:id="@+id/textViewMyVehicles" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="24dp" android:text="@string/my_vehicles" android:layout_marginStart="16dp" app:layout_constraintStart_toStartOf="0" app:layout_constraintTop_toTopOf="0"/>
-            <androidx.appcompat.widget.AppCompatButton android:theme="@style/PrimaryFlatButton" android:textSize="12sp" android:textStyle="bold" android:textColor="@color/active_pink" android:gravity="center" android:id="@+id/buttonAddVehicle" android:paddingTop="12dp" android:paddingBottom="12dp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:minWidth="0dp" android:minHeight="0dp" android:text="@string/add" android:paddingStart="16dp" android:paddingEnd="16dp" android:layout_marginEnd="2dp" android:letterSpacing="0.07" app:layout_constraintBottom_toBottomOf="@+id/textViewMyVehicles" app:layout_constraintEnd_toEndOf="0" app:layout_constraintTop_toTopOf="@+id/textViewMyVehicles"/>
-            <androidx.appcompat.widget.AppCompatButton android:theme="@style/PrimaryFlatButton" android:textSize="12sp" android:textColor="@color/active_pink" android:gravity="center" android:id="@+id/buttonShowVehicle" android:paddingTop="12dp" android:paddingBottom="12dp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="4dp" android:minWidth="0dp" android:minHeight="0dp" android:text="@string/show" android:drawablePadding="6dp" android:textAllCaps="false" android:drawableStart="@drawable/ic_visibility" android:paddingStart="12dp" android:paddingEnd="12dp" android:layout_marginStart="8dp" android:layout_marginEnd="2dp" android:letterSpacing="0.07" app:layout_constraintStart_toStartOf="0" app:layout_constraintTop_toBottomOf="@+id/textViewMyVehicles"/>
-            <androidx.cardview.widget.CardView android:id="@+id/cardViewVehicle" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="12dp" android:layout_marginStart="16dp" android:layout_marginEnd="16dp" app:cardBackgroundColor="@color/white" app:cardCornerRadius="6dp" app:cardElevation="1dp" app:layout_constraintTop_toBottomOf="@+id/buttonShowVehicle">
-                <androidx.constraintlayout.widget.ConstraintLayout android:id="@+id/constraintLayoutAddVehicle" android:paddingBottom="12dp" android:layout_width="match_parent" android:layout_height="wrap_content">
-                    <TextView android:textSize="14sp" android:textColor="@color/slate_grey_80" android:id="@+id/textViewVehicleDesc" android:layout_width="0dp" android:layout_height="wrap_content" android:text="@string/add_vehicles_for_their_easy_identification_in_the_society" android:lineSpacingExtra="6sp" android:layout_marginStart="14dp" android:layout_marginEnd="16dp" app:layout_constraintBottom_toBottomOf="@+id/imageViewAddVehicle" app:layout_constraintEnd_toEndOf="0" app:layout_constraintStart_toEndOf="@+id/imageViewAddVehicle" app:layout_constraintTop_toTopOf="@+id/imageViewAddVehicle"/>
-                    <androidx.appcompat.widget.AppCompatImageView android:id="@+id/imageViewAddVehicle" android:layout_width="42dp" android:layout_height="42dp" android:layout_marginTop="12dp" android:src="@drawable/ic_add_vehicle" android:layout_marginStart="16dp" app:layout_constraintStart_toStartOf="0" app:layout_constraintTop_toTopOf="0"/>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayoutVehicles"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/constraintLayoutFamily">
+
+            <TextView
+                android:id="@+id/textViewMyVehicles"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="24dp"
+                android:text="@string/my_vehicles"
+                android:textColor="@color/charcoal_grey"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="0"
+                app:layout_constraintTop_toTopOf="0" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/buttonAddVehicle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="2dp"
+                android:gravity="center"
+                android:letterSpacing="0.07"
+                android:minWidth="0dp"
+                android:minHeight="0dp"
+                android:paddingStart="16dp"
+                android:paddingTop="12dp"
+                android:paddingEnd="16dp"
+                android:paddingBottom="12dp"
+                android:text="@string/add"
+                android:textColor="@color/active_pink"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                android:theme="@style/PrimaryFlatButton"
+                app:layout_constraintBottom_toBottomOf="@+id/textViewMyVehicles"
+                app:layout_constraintEnd_toEndOf="0"
+                app:layout_constraintTop_toTopOf="@+id/textViewMyVehicles" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/buttonShowVehicle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="2dp"
+                android:drawableStart="@drawable/ic_visibility"
+                android:drawablePadding="6dp"
+                android:gravity="center"
+                android:letterSpacing="0.07"
+                android:minWidth="0dp"
+                android:minHeight="0dp"
+                android:paddingStart="12dp"
+                android:paddingTop="12dp"
+                android:paddingEnd="12dp"
+                android:paddingBottom="12dp"
+                android:text="@string/show"
+                android:textAllCaps="false"
+                android:textColor="@color/active_pink"
+                android:textSize="12sp"
+                android:theme="@style/PrimaryFlatButton"
+                app:layout_constraintStart_toStartOf="0"
+                app:layout_constraintTop_toBottomOf="@+id/textViewMyVehicles" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardViewVehicle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="16dp"
+                app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="6dp"
+                app:cardElevation="1dp"
+                app:layout_constraintTop_toBottomOf="@+id/buttonShowVehicle">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/constraintLayoutAddVehicle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="12dp">
+
+                    <TextView
+                        android:id="@+id/textViewVehicleDesc"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="14dp"
+                        android:layout_marginEnd="16dp"
+                        android:lineSpacingExtra="6sp"
+                        android:text="@string/add_vehicles_for_their_easy_identification_in_the_society"
+                        android:textColor="@color/slate_grey_80"
+                        android:textSize="14sp"
+                        app:layout_constraintBottom_toBottomOf="@+id/imageViewAddVehicle"
+                        app:layout_constraintEnd_toEndOf="0"
+                        app:layout_constraintStart_toEndOf="@+id/imageViewAddVehicle"
+                        app:layout_constraintTop_toTopOf="@+id/imageViewAddVehicle" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/imageViewAddVehicle"
+                        android:layout_width="42dp"
+                        android:layout_height="42dp"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="12dp"
+                        android:src="@drawable/ic_add_vehicle"
+                        app:layout_constraintStart_toStartOf="0"
+                        app:layout_constraintTop_toTopOf="0" />
                 </androidx.constraintlayout.widget.ConstraintLayout>
             </androidx.cardview.widget.CardView>
-            <androidx.recyclerview.widget.RecyclerView android:id="@+id/recyclerViewVehicle" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="12dp" android:nestedScrollingEnabled="false" app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" app:layout_constraintTop_toBottomOf="@+id/cardViewVehicle"/>
-            <TextView android:textSize="12sp" android:textColor="@color/charcoal_grey" android:id="@+id/textViewHideVehicle" android:visibility="visible" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="12dp" android:text="@string/not_having_vehicles" android:lineSpacingExtra="8sp" android:layout_marginStart="16dp" app:layout_constraintStart_toStartOf="0" app:layout_constraintTop_toBottomOf="@+id/recyclerViewVehicle"/>
-            <androidx.appcompat.widget.AppCompatButton android:theme="@style/PrimaryFlatButton" android:textSize="12sp" android:textColor="@color/active_pink" android:gravity="center" android:id="@+id/buttonHideVehicle" android:paddingTop="12dp" android:paddingBottom="12dp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:minWidth="0dp" android:minHeight="0dp" android:text="@string/hide" android:drawablePadding="6dp" android:textAllCaps="false" android:drawableStart="@drawable/ic_visibility_off" android:paddingStart="12dp" android:paddingEnd="12dp" android:layout_marginStart="4dp" android:layout_marginEnd="2dp" android:letterSpacing="0.07" app:layout_constraintStart_toEndOf="@+id/textViewHideVehicle" app:layout_constraintTop_toBottomOf="@+id/recyclerViewVehicle"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerViewVehicle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:nestedScrollingEnabled="false"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintTop_toBottomOf="@+id/cardViewVehicle" />
+
+            <TextView
+                android:id="@+id/textViewHideVehicle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="12dp"
+                android:lineSpacingExtra="8sp"
+                android:text="@string/not_having_vehicles"
+                android:textColor="@color/charcoal_grey"
+                android:textSize="12sp"
+                android:visibility="visible"
+                app:layout_constraintStart_toStartOf="0"
+                app:layout_constraintTop_toBottomOf="@+id/recyclerViewVehicle" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/buttonHideVehicle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:layout_marginEnd="2dp"
+                android:drawableStart="@drawable/ic_visibility_off"
+                android:drawablePadding="6dp"
+                android:gravity="center"
+                android:letterSpacing="0.07"
+                android:minWidth="0dp"
+                android:minHeight="0dp"
+                android:paddingStart="12dp"
+                android:paddingTop="12dp"
+                android:paddingEnd="12dp"
+                android:paddingBottom="12dp"
+                android:text="@string/hide"
+                android:textAllCaps="false"
+                android:textColor="@color/active_pink"
+                android:textSize="12sp"
+                android:theme="@style/PrimaryFlatButton"
+                app:layout_constraintStart_toEndOf="@+id/textViewHideVehicle"
+                app:layout_constraintTop_toBottomOf="@+id/recyclerViewVehicle" />
         </androidx.constraintlayout.widget.ConstraintLayout>
-        <androidx.constraintlayout.widget.ConstraintLayout android:id="@+id/constraintLayoutPets" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="22dp" app:layout_constraintBottom_toBottomOf="0" app:layout_constraintTop_toBottomOf="@+id/constraintLayoutVehicles" app:layout_goneMarginBottom="22dp">
-            <TextView android:textSize="14sp" android:textStyle="bold" android:textColor="@color/charcoal_grey" android:id="@+id/textViewMyPets" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="24dp" android:text="@string/my_pets" android:layout_marginStart="16dp" app:layout_constraintStart_toStartOf="0" app:layout_constraintTop_toTopOf="0"/>
-            <androidx.appcompat.widget.AppCompatButton android:theme="@style/PrimaryFlatButton" android:textSize="12sp" android:textStyle="bold" android:textColor="@color/active_pink" android:gravity="center" android:id="@+id/buttonAddPet" android:paddingTop="12dp" android:paddingBottom="12dp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:minWidth="0dp" android:minHeight="0dp" android:text="@string/add" android:paddingStart="16dp" android:paddingEnd="16dp" android:layout_marginEnd="2dp" android:letterSpacing="0.07" app:layout_constraintBottom_toBottomOf="@+id/textViewMyPets" app:layout_constraintEnd_toEndOf="0" app:layout_constraintTop_toTopOf="@+id/textViewMyPets"/>
-            <androidx.appcompat.widget.AppCompatButton android:theme="@style/PrimaryFlatButton" android:textSize="12sp" android:textColor="@color/active_pink" android:gravity="center" android:id="@+id/buttonShowPets" android:paddingTop="12dp" android:paddingBottom="12dp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="4dp" android:minWidth="0dp" android:minHeight="0dp" android:text="@string/show" android:drawablePadding="6dp" android:textAllCaps="false" android:drawableStart="@drawable/ic_visibility" android:paddingStart="12dp" android:paddingEnd="12dp" android:layout_marginStart="8dp" android:layout_marginEnd="2dp" android:letterSpacing="0.07" app:layout_constraintStart_toStartOf="0" app:layout_constraintTop_toBottomOf="@+id/textViewMyPets"/>
-            <androidx.cardview.widget.CardView android:id="@+id/cardViewPet" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="12dp" android:layout_marginStart="16dp" android:layout_marginEnd="16dp" app:cardBackgroundColor="@color/white" app:cardCornerRadius="6dp" app:cardElevation="1dp" app:layout_constraintTop_toBottomOf="@+id/buttonShowPets">
-                <androidx.constraintlayout.widget.ConstraintLayout android:id="@+id/constraintLayoutAddPet" android:paddingBottom="12dp" android:layout_width="match_parent" android:layout_height="wrap_content">
-                    <TextView android:textSize="14sp" android:textColor="@color/slate_grey_80" android:id="@+id/textViewPetDesc" android:layout_width="0dp" android:layout_height="wrap_content" android:text="@string/add_pets_for_their_easy_identification_in_the_society" android:lineSpacingExtra="6sp" android:layout_marginStart="14dp" android:layout_marginEnd="16dp" app:layout_constraintBottom_toBottomOf="@+id/imageViewAddPet" app:layout_constraintEnd_toEndOf="0" app:layout_constraintStart_toEndOf="@+id/imageViewAddPet" app:layout_constraintTop_toTopOf="@+id/imageViewAddPet"/>
-                    <androidx.appcompat.widget.AppCompatImageView android:id="@+id/imageViewAddPet" android:layout_width="42dp" android:layout_height="42dp" android:layout_marginTop="12dp" android:src="@drawable/ic_add_pet_small" android:layout_marginStart="16dp" app:layout_constraintStart_toStartOf="0" app:layout_constraintTop_toTopOf="0"/>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayoutPets"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="22dp"
+            app:layout_constraintBottom_toBottomOf="0"
+            app:layout_constraintTop_toBottomOf="@+id/constraintLayoutVehicles"
+            app:layout_goneMarginBottom="22dp">
+
+            <TextView
+                android:id="@+id/textViewMyPets"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="24dp"
+                android:text="@string/my_pets"
+                android:textColor="@color/charcoal_grey"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="0"
+                app:layout_constraintTop_toTopOf="0" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/buttonAddPet"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="2dp"
+                android:gravity="center"
+                android:letterSpacing="0.07"
+                android:minWidth="0dp"
+                android:minHeight="0dp"
+                android:paddingStart="16dp"
+                android:paddingTop="12dp"
+                android:paddingEnd="16dp"
+                android:paddingBottom="12dp"
+                android:text="@string/add"
+                android:textColor="@color/active_pink"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                android:theme="@style/PrimaryFlatButton"
+                app:layout_constraintBottom_toBottomOf="@+id/textViewMyPets"
+                app:layout_constraintEnd_toEndOf="0"
+                app:layout_constraintTop_toTopOf="@+id/textViewMyPets" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/buttonShowPets"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="2dp"
+                android:drawableStart="@drawable/ic_visibility"
+                android:drawablePadding="6dp"
+                android:gravity="center"
+                android:letterSpacing="0.07"
+                android:minWidth="0dp"
+                android:minHeight="0dp"
+                android:paddingStart="12dp"
+                android:paddingTop="12dp"
+                android:paddingEnd="12dp"
+                android:paddingBottom="12dp"
+                android:text="@string/show"
+                android:textAllCaps="false"
+                android:textColor="@color/active_pink"
+                android:textSize="12sp"
+                android:theme="@style/PrimaryFlatButton"
+                app:layout_constraintStart_toStartOf="0"
+                app:layout_constraintTop_toBottomOf="@+id/textViewMyPets" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardViewPet"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="16dp"
+                app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="6dp"
+                app:cardElevation="1dp"
+                app:layout_constraintTop_toBottomOf="@+id/buttonShowPets">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/constraintLayoutAddPet"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="12dp">
+
+                    <TextView
+                        android:id="@+id/textViewPetDesc"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="14dp"
+                        android:layout_marginEnd="16dp"
+                        android:lineSpacingExtra="6sp"
+                        android:text="@string/add_pets_for_their_easy_identification_in_the_society"
+                        android:textColor="@color/slate_grey_80"
+                        android:textSize="14sp"
+                        app:layout_constraintBottom_toBottomOf="@+id/imageViewAddPet"
+                        app:layout_constraintEnd_toEndOf="0"
+                        app:layout_constraintStart_toEndOf="@+id/imageViewAddPet"
+                        app:layout_constraintTop_toTopOf="@+id/imageViewAddPet" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/imageViewAddPet"
+                        android:layout_width="42dp"
+                        android:layout_height="42dp"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="12dp"
+                        android:src="@drawable/ic_add_pet_small"
+                        app:layout_constraintStart_toStartOf="0"
+                        app:layout_constraintTop_toTopOf="0" />
                 </androidx.constraintlayout.widget.ConstraintLayout>
             </androidx.cardview.widget.CardView>
-            <androidx.recyclerview.widget.RecyclerView android:id="@+id/recyclerViewPet" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="12dp" android:nestedScrollingEnabled="false" app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" app:layout_constraintTop_toBottomOf="@+id/cardViewPet"/>
-            <TextView android:textSize="12sp" android:textColor="@color/charcoal_grey" android:id="@+id/textViewHidePet" android:visibility="visible" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="12dp" android:text="@string/not_having_pets" android:lineSpacingExtra="8sp" android:layout_marginStart="16dp" app:layout_constraintStart_toStartOf="0" app:layout_constraintTop_toBottomOf="@+id/recyclerViewPet"/>
-            <androidx.appcompat.widget.AppCompatButton android:theme="@style/PrimaryFlatButton" android:textSize="12sp" android:textColor="@color/active_pink" android:gravity="center" android:id="@+id/buttonHidePet" android:paddingTop="12dp" android:paddingBottom="12dp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="16dp" android:minWidth="0dp" android:minHeight="0dp" android:text="@string/hide" android:drawablePadding="6dp" android:textAllCaps="false" android:drawableStart="@drawable/ic_visibility_off" android:paddingStart="12dp" android:paddingEnd="12dp" android:layout_marginStart="4dp" android:layout_marginEnd="2dp" android:letterSpacing="0.07" app:layout_constraintBottom_toBottomOf="0" app:layout_constraintStart_toEndOf="@+id/textViewHidePet" app:layout_constraintTop_toBottomOf="@+id/recyclerViewPet"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerViewPet"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:nestedScrollingEnabled="false"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintTop_toBottomOf="@+id/cardViewPet" />
+
+            <TextView
+                android:id="@+id/textViewHidePet"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="12dp"
+                android:lineSpacingExtra="8sp"
+                android:text="@string/not_having_pets"
+                android:textColor="@color/charcoal_grey"
+                android:textSize="12sp"
+                android:visibility="visible"
+                app:layout_constraintStart_toStartOf="0"
+                app:layout_constraintTop_toBottomOf="@+id/recyclerViewPet" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/buttonHidePet"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:layout_marginEnd="2dp"
+                android:layout_marginBottom="16dp"
+                android:drawableStart="@drawable/ic_visibility_off"
+                android:drawablePadding="6dp"
+                android:gravity="center"
+                android:letterSpacing="0.07"
+                android:minWidth="0dp"
+                android:minHeight="0dp"
+                android:paddingStart="12dp"
+                android:paddingTop="12dp"
+                android:paddingEnd="12dp"
+                android:paddingBottom="12dp"
+                android:text="@string/hide"
+                android:textAllCaps="false"
+                android:textColor="@color/active_pink"
+                android:textSize="12sp"
+                android:theme="@style/PrimaryFlatButton"
+                app:layout_constraintBottom_toBottomOf="0"
+                app:layout_constraintStart_toEndOf="@+id/textViewHidePet"
+                app:layout_constraintTop_toBottomOf="@+id/recyclerViewPet" />
         </androidx.constraintlayout.widget.ConstraintLayout>
-        <androidx.cardview.widget.CardView android:id="@+id/cardViewProfile" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="20dp" android:layout_marginBottom="20dp" android:layout_marginStart="16dp" android:layout_marginEnd="16dp" app:cardBackgroundColor="@color/white" app:cardCornerRadius="6dp" app:cardElevation="2dp" app:layout_constraintBottom_toTopOf="@+id/constraintLayoutFamily" app:layout_constraintTop_toTopOf="0" app:layout_goneMarginBottom="20dp">
-            <androidx.constraintlayout.widget.ConstraintLayout android:paddingBottom="22dp" android:layout_width="match_parent" android:layout_height="wrap_content">
-                <TextView android:textSize="12sp" android:textStyle="bold" android:textColor="@color/charcoal_grey_50" android:gravity="center_horizontal" android:id="@+id/textViewEdit" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="4dp" android:text="@string/add" android:lineSpacingExtra="7sp" android:letterSpacing="0.07" app:layout_constraintBottom_toBottomOf="@+id/imageView" app:layout_constraintEnd_toEndOf="@+id/imageView" app:layout_constraintStart_toStartOf="@+id/imageView"/>
-                <TextView android:textSize="18sp" android:textColor="@color/charcoal_grey" android:ellipsize="end" android:id="@+id/textViewName" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:maxLines="1" android:lineSpacingExtra="9sp" android:layout_marginStart="16dp" android:layout_marginEnd="16dp" app:layout_constraintEnd_toStartOf="@+id/buttonEdit" app:layout_constraintStart_toEndOf="@+id/imageView" app:layout_constraintTop_toTopOf="@+id/imageView"/>
-                <TextView android:textSize="16sp" android:textColor="@color/slate_grey_80" android:id="@+id/textViewNumber" android:layout_width="wrap_content" android:layout_height="wrap_content" app:layout_constraintBottom_toTopOf="@+id/textViewEmail" app:layout_constraintStart_toStartOf="@+id/textViewName" app:layout_constraintTop_toBottomOf="@+id/textViewName"/>
-                <TextView android:textSize="16sp" android:textColor="@color/slate_grey_80" android:ellipsize="end" android:id="@+id/textViewEmail" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_marginTop="4dp" android:maxLines="1" app:layout_constraintBottom_toBottomOf="@+id/imageView" app:layout_constraintEnd_toEndOf="@+id/textViewName" app:layout_constraintStart_toStartOf="@+id/textViewNumber"/>
-                <androidx.appcompat.widget.AppCompatImageButton android:theme="@style/ThemeGrey" android:id="@+id/buttonEdit" android:paddingTop="4dp" android:paddingBottom="4dp" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/ic_edit_charcoal_grey_50" android:minWidth="0dp" android:minHeight="0dp" android:paddingStart="8dp" android:paddingEnd="8dp" android:layout_marginEnd="8dp" app:layout_constraintBottom_toBottomOf="@+id/textViewName" app:layout_constraintEnd_toEndOf="0" app:layout_constraintTop_toTopOf="@+id/textViewName" style="@style/Widget.AppCompat.Button.Borderless"/>
-                <com.mygate.user.common.p011ui.CircularImageView android:id="@+id/imageView" android:layout_width="80dp" android:layout_height="80dp" android:layout_marginTop="16dp" android:src="0x7f08013b" android:layout_marginStart="16dp" app:layout_constraintStart_toStartOf="0" app:layout_constraintTop_toTopOf="0"/>
-                <ProgressBar android:id="@+id/progressBarImage" android:visibility="gone" android:layout_width="32dp" android:layout_height="32dp" app:layout_constraintBottom_toBottomOf="@+id/imageView" app:layout_constraintEnd_toEndOf="@+id/imageView" app:layout_constraintStart_toStartOf="@+id/imageView" app:layout_constraintTop_toTopOf="@+id/imageView"/>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardViewProfile"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="20dp"
+            app:cardBackgroundColor="@color/white"
+            app:cardCornerRadius="6dp"
+            app:cardElevation="2dp"
+            app:layout_constraintBottom_toTopOf="@+id/constraintLayoutFamily"
+            app:layout_constraintTop_toTopOf="0"
+            app:layout_goneMarginBottom="20dp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="22dp">
+
+                <TextView
+                    android:id="@+id/textViewEdit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="4dp"
+                    android:gravity="center_horizontal"
+                    android:letterSpacing="0.07"
+                    android:lineSpacingExtra="7sp"
+                    android:text="@string/add"
+                    android:textColor="@color/charcoal_grey_50"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    android:visibility="gone"
+                    app:layout_constraintBottom_toBottomOf="@+id/imageView"
+                    app:layout_constraintEnd_toEndOf="@+id/imageView"
+                    app:layout_constraintStart_toStartOf="@+id/imageView" />
+
+                <TextView
+                    android:id="@+id/textViewName"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="16dp"
+                    android:ellipsize="end"
+                    android:lineSpacingExtra="9sp"
+                    android:maxLines="1"
+                    android:textColor="@color/charcoal_grey"
+                    android:textSize="18sp"
+                    app:layout_constraintEnd_toStartOf="@+id/buttonEdit"
+                    app:layout_constraintStart_toEndOf="@+id/imageView"
+                    app:layout_constraintTop_toTopOf="@+id/imageView" />
+
+                <TextView
+                    android:id="@+id/textViewNumber"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/slate_grey_80"
+                    android:textSize="16sp"
+                    app:layout_constraintBottom_toTopOf="@+id/textViewEmail"
+                    app:layout_constraintStart_toStartOf="@+id/textViewName"
+                    app:layout_constraintTop_toBottomOf="@+id/textViewName" />
+
+                <TextView
+                    android:id="@+id/textViewEmail"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:textColor="@color/slate_grey_80"
+                    android:textSize="16sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/imageView"
+                    app:layout_constraintEnd_toEndOf="@+id/textViewName"
+                    app:layout_constraintStart_toStartOf="@+id/textViewNumber" />
+
+                <androidx.appcompat.widget.AppCompatImageButton
+                    android:id="@+id/buttonEdit"
+                    style="@style/Widget.AppCompat.Button.Borderless"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="8dp"
+                    android:minWidth="0dp"
+                    android:minHeight="0dp"
+                    android:paddingStart="8dp"
+                    android:paddingTop="4dp"
+                    android:paddingEnd="8dp"
+                    android:paddingBottom="4dp"
+                    android:src="@drawable/ic_edit_charcoal_grey_50"
+                    android:theme="@style/ThemeGrey"
+                    android:visibility="gone"
+                    app:layout_constraintBottom_toBottomOf="@+id/textViewName"
+                    app:layout_constraintEnd_toEndOf="0"
+                    app:layout_constraintTop_toTopOf="@+id/textViewName" />
+
+                <com.mygate.user.common.p011ui.CircularImageView
+                    android:id="@+id/imageView"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+                    android:src="0x7f08013b"
+                    app:layout_constraintStart_toStartOf="0"
+                    app:layout_constraintTop_toTopOf="0" />
+
+                <ProgressBar
+                    android:id="@+id/progressBarImage"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:visibility="gone"
+                    app:layout_constraintBottom_toBottomOf="@+id/imageView"
+                    app:layout_constraintEnd_toEndOf="@+id/imageView"
+                    app:layout_constraintStart_toStartOf="@+id/imageView"
+                    app:layout_constraintTop_toTopOf="@+id/imageView" />
             </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.cardview.widget.CardView>
     </androidx.constraintlayout.widget.ConstraintLayout>

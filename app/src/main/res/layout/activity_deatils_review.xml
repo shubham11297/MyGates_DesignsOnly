@@ -1,32 +1,262 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:aapt="http://schemas.android.com/aapt" android:id="@+id/container" android:paddingLeft="@dimen/padding20" android:paddingRight="@dimen/padding20" android:layout_width="match_parent" android:layout_height="match_parent" android:transitionName="@string/card_transition">
-    <androidx.core.widget.NestedScrollView android:layout_width="match_parent" android:layout_height="match_parent">
-        <androidx.constraintlayout.widget.ConstraintLayout android:background="@color/white" android:layout_width="match_parent" android:layout_height="match_parent">
-            <androidx.appcompat.widget.AppCompatRatingBar android:theme="@style/RatingBarCustomYellow" android:id="@+id/rating_bar" android:clickable="true" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/padding20" android:numStars="5" android:rating="0" android:stepSize="1" android:transitionName="@string/rating_bar" app:layout_constraintLeft_toLeftOf="0" app:layout_constraintTop_toTopOf="0" style="@style/RatingBarMedium"/>
-            <androidx.constraintlayout.widget.ConstraintLayout android:id="@+id/rated_layout" android:layout_width="wrap_content" android:layout_height="wrap_content" android:transitionName="@string/rating_transition" app:layout_constraintLeft_toLeftOf="0" app:layout_constraintTop_toBottomOf="@+id/rating_bar">
-                <androidx.constraintlayout.widget.ConstraintLayout android:id="@+id/punctual_layout" android:paddingTop="10dp" android:layout_width="85dp" android:layout_height="match_parent" app:layout_constraintLeft_toLeftOf="0" app:layout_constraintRight_toLeftOf="@+id/regular_layout" app:layout_constraintTop_toTopOf="0">
-                    <androidx.appcompat.widget.AppCompatImageView android:id="@+id/punctual_image" android:layout_width="wrap_content" android:layout_height="42dp" android:layout_marginTop="20dp" android:transitionName="@string/punctual_transition" app:layout_constraintHorizontal_chainStyle="2" app:layout_constraintLeft_toLeftOf="0" app:layout_constraintRight_toRightOf="0" app:layout_constraintTop_toTopOf="0" app:srcCompat="@drawable/ic_punctual_selected"/>
-                    <androidx.appcompat.widget.AppCompatTextView android:textSize="@dimen/textSize_12" android:textStyle="bold" android:textColor="@color/charcoal_grey_30" android:gravity="center_horizontal" android:id="@+id/punctual_tv" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/padding_16" android:text="Very\10Punctual" android:lineSpacingExtra="2sp" android:fontFamily="@font/ubuntu_bold" android:letterSpacing="0.07" app:layout_constraintLeft_toLeftOf="0" app:layout_constraintRight_toRightOf="0" app:layout_constraintTop_toBottomOf="@+id/punctual_image"/>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="@dimen/padding20"
+    android:paddingRight="@dimen/padding20"
+    android:transitionName="@string/card_transition">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white">
+
+            <androidx.appcompat.widget.AppCompatRatingBar
+                android:id="@+id/rating_bar"
+                style="@style/RatingBarMedium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/padding20"
+                android:clickable="true"
+                android:numStars="5"
+                android:rating="0"
+                android:stepSize="1"
+                android:theme="@style/RatingBarCustomYellow"
+                android:transitionName="@string/rating_bar"
+                app:layout_constraintLeft_toLeftOf="0"
+                app:layout_constraintTop_toTopOf="0" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/rated_layout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:transitionName="@string/rating_transition"
+                app:layout_constraintLeft_toLeftOf="0"
+                app:layout_constraintTop_toBottomOf="@+id/rating_bar">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/punctual_layout"
+                    android:layout_width="85dp"
+                    android:layout_height="match_parent"
+                    android:paddingTop="10dp"
+                    app:layout_constraintLeft_toLeftOf="0"
+                    app:layout_constraintRight_toLeftOf="@+id/regular_layout"
+                    app:layout_constraintTop_toTopOf="0">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/punctual_image"
+                        android:layout_width="wrap_content"
+                        android:layout_height="42dp"
+                        android:layout_marginTop="20dp"
+                        android:transitionName="@string/punctual_transition"
+                        app:layout_constraintHorizontal_chainStyle="2"
+                        app:layout_constraintLeft_toLeftOf="0"
+                        app:layout_constraintRight_toRightOf="0"
+                        app:layout_constraintTop_toTopOf="0"
+                        app:srcCompat="@drawable/ic_punctual_selected" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/punctual_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/padding_16"
+                        android:gravity="center_horizontal"
+                        android:letterSpacing="0.07"
+                        android:lineSpacingExtra="2sp"
+                        android:text="Very\10Punctual"
+                        android:textColor="@color/charcoal_grey_30"
+                        android:textSize="@dimen/textSize_12"
+                        android:textStyle="bold"
+                        app:layout_constraintLeft_toLeftOf="0"
+                        app:layout_constraintRight_toRightOf="0"
+                        app:layout_constraintTop_toBottomOf="@+id/punctual_image" />
                 </androidx.constraintlayout.widget.ConstraintLayout>
-                <androidx.constraintlayout.widget.ConstraintLayout android:id="@+id/regular_layout" android:paddingTop="10dp" android:layout_width="85dp" android:layout_height="match_parent" app:layout_constraintLeft_toRightOf="@+id/punctual_layout" app:layout_constraintRight_toLeftOf="@+id/service_layout" app:layout_constraintTop_toTopOf="0">
-                    <androidx.appcompat.widget.AppCompatImageView android:id="@+id/regular_image" android:layout_width="wrap_content" android:layout_height="42dp" android:layout_marginTop="20dp" android:transitionName="@string/regular_transition" app:layout_constraintHorizontal_chainStyle="2" app:layout_constraintLeft_toLeftOf="0" app:layout_constraintRight_toRightOf="0" app:layout_constraintTop_toTopOf="0" app:srcCompat="@drawable/ic_regualr_selected"/>
-                    <androidx.appcompat.widget.AppCompatTextView android:textSize="@dimen/textSize_12" android:textStyle="bold" android:textColor="@color/charcoal_grey_30" android:gravity="center_horizontal" android:id="@+id/regular_tv" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/padding_16" android:text="Quite\10Regular" android:lineSpacingExtra="2sp" android:fontFamily="@font/ubuntu_bold" android:letterSpacing="0.07" app:layout_constraintLeft_toLeftOf="0" app:layout_constraintRight_toRightOf="0" app:layout_constraintTop_toBottomOf="@+id/regular_image"/>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/regular_layout"
+                    android:layout_width="85dp"
+                    android:layout_height="match_parent"
+                    android:paddingTop="10dp"
+                    app:layout_constraintLeft_toRightOf="@+id/punctual_layout"
+                    app:layout_constraintRight_toLeftOf="@+id/service_layout"
+                    app:layout_constraintTop_toTopOf="0">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/regular_image"
+                        android:layout_width="wrap_content"
+                        android:layout_height="42dp"
+                        android:layout_marginTop="20dp"
+                        android:transitionName="@string/regular_transition"
+                        app:layout_constraintHorizontal_chainStyle="2"
+                        app:layout_constraintLeft_toLeftOf="0"
+                        app:layout_constraintRight_toRightOf="0"
+                        app:layout_constraintTop_toTopOf="0"
+                        app:srcCompat="@drawable/ic_regualr_selected" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/regular_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/padding_16"
+                        android:gravity="center_horizontal"
+                        android:letterSpacing="0.07"
+                        android:lineSpacingExtra="2sp"
+                        android:text="Quite\10Regular"
+                        android:textColor="@color/charcoal_grey_30"
+                        android:textSize="@dimen/textSize_12"
+                        android:textStyle="bold"
+                        app:layout_constraintLeft_toLeftOf="0"
+                        app:layout_constraintRight_toRightOf="0"
+                        app:layout_constraintTop_toBottomOf="@+id/regular_image" />
                 </androidx.constraintlayout.widget.ConstraintLayout>
-                <androidx.constraintlayout.widget.ConstraintLayout android:id="@+id/service_layout" android:paddingTop="10dp" android:layout_width="85dp" android:layout_height="match_parent" app:layout_constraintLeft_toRightOf="@+id/regular_layout" app:layout_constraintRight_toLeftOf="@+id/atitude_layout" app:layout_constraintTop_toTopOf="0">
-                    <androidx.appcompat.widget.AppCompatImageView android:id="@+id/service_image" android:layout_width="wrap_content" android:layout_height="42dp" android:layout_marginTop="@dimen/padding20" android:transitionName="@string/service_transition" app:layout_constraintHorizontal_chainStyle="2" app:layout_constraintLeft_toLeftOf="0" app:layout_constraintRight_toRightOf="0" app:layout_constraintTop_toTopOf="0" app:srcCompat="@drawable/ic_service_selected"/>
-                    <androidx.appcompat.widget.AppCompatTextView android:textSize="@dimen/textSize_12" android:textStyle="bold" android:textColor="@color/charcoal_grey_30" android:gravity="center_horizontal" android:id="@+id/service_tv" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/padding_16" android:text="Exceptional\10Service" android:lineSpacingExtra="2sp" android:fontFamily="@font/ubuntu_bold" android:letterSpacing="0.07" app:layout_constraintLeft_toLeftOf="0" app:layout_constraintRight_toRightOf="0" app:layout_constraintTop_toBottomOf="@+id/service_image"/>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/service_layout"
+                    android:layout_width="85dp"
+                    android:layout_height="match_parent"
+                    android:paddingTop="10dp"
+                    app:layout_constraintLeft_toRightOf="@+id/regular_layout"
+                    app:layout_constraintRight_toLeftOf="@+id/atitude_layout"
+                    app:layout_constraintTop_toTopOf="0">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/service_image"
+                        android:layout_width="wrap_content"
+                        android:layout_height="42dp"
+                        android:layout_marginTop="@dimen/padding20"
+                        android:transitionName="@string/service_transition"
+                        app:layout_constraintHorizontal_chainStyle="2"
+                        app:layout_constraintLeft_toLeftOf="0"
+                        app:layout_constraintRight_toRightOf="0"
+                        app:layout_constraintTop_toTopOf="0"
+                        app:srcCompat="@drawable/ic_service_selected" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/service_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/padding_16"
+                        android:gravity="center_horizontal"
+                        android:letterSpacing="0.07"
+                        android:lineSpacingExtra="2sp"
+                        android:text="Exceptional\10Service"
+                        android:textColor="@color/charcoal_grey_30"
+                        android:textSize="@dimen/textSize_12"
+                        android:textStyle="bold"
+                        app:layout_constraintLeft_toLeftOf="0"
+                        app:layout_constraintRight_toRightOf="0"
+                        app:layout_constraintTop_toBottomOf="@+id/service_image" />
                 </androidx.constraintlayout.widget.ConstraintLayout>
-                <androidx.constraintlayout.widget.ConstraintLayout android:id="@+id/atitude_layout" android:paddingTop="10dp" android:layout_width="85dp" android:layout_height="match_parent" app:layout_constraintLeft_toRightOf="@+id/service_layout" app:layout_constraintTop_toTopOf="0">
-                    <androidx.appcompat.widget.AppCompatImageView android:id="@+id/atitude_image" android:layout_width="wrap_content" android:layout_height="42dp" android:layout_marginTop="@dimen/padding20" android:transitionName="@string/atitude_transition" app:layout_constraintHorizontal_chainStyle="2" app:layout_constraintLeft_toLeftOf="0" app:layout_constraintRight_toRightOf="0" app:layout_constraintTop_toTopOf="0" app:srcCompat="@drawable/ic_attitude_selected"/>
-                    <androidx.appcompat.widget.AppCompatTextView android:textSize="@dimen/textSize_12" android:textStyle="bold" android:textColor="@color/charcoal_grey_30" android:gravity="center_horizontal" android:id="@+id/atitude_tv" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/padding_16" android:text="Great\10Attitude" android:lineSpacingExtra="2sp" android:fontFamily="@font/ubuntu_bold" android:letterSpacing="0.07" app:layout_constraintLeft_toLeftOf="0" app:layout_constraintRight_toRightOf="0" app:layout_constraintTop_toBottomOf="@+id/atitude_image"/>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/atitude_layout"
+                    android:layout_width="85dp"
+                    android:layout_height="match_parent"
+                    android:paddingTop="10dp"
+                    app:layout_constraintLeft_toRightOf="@+id/service_layout"
+                    app:layout_constraintTop_toTopOf="0">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/atitude_image"
+                        android:layout_width="wrap_content"
+                        android:layout_height="42dp"
+                        android:layout_marginTop="@dimen/padding20"
+                        android:transitionName="@string/atitude_transition"
+                        app:layout_constraintHorizontal_chainStyle="2"
+                        app:layout_constraintLeft_toLeftOf="0"
+                        app:layout_constraintRight_toRightOf="0"
+                        app:layout_constraintTop_toTopOf="0"
+                        app:srcCompat="@drawable/ic_attitude_selected" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/atitude_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/padding_16"
+                        android:gravity="center_horizontal"
+                        android:letterSpacing="0.07"
+                        android:lineSpacingExtra="2sp"
+                        android:text="Great\10Attitude"
+                        android:textColor="@color/charcoal_grey_30"
+                        android:textSize="@dimen/textSize_12"
+                        android:textStyle="bold"
+                        app:layout_constraintLeft_toLeftOf="0"
+                        app:layout_constraintRight_toRightOf="0"
+                        app:layout_constraintTop_toBottomOf="@+id/atitude_image" />
                 </androidx.constraintlayout.widget.ConstraintLayout>
             </androidx.constraintlayout.widget.ConstraintLayout>
-            <androidx.appcompat.widget.AppCompatTextView android:textSize="@dimen/textSize_16" android:textColor="@color/charcoal_grey_80" android:gravity="left" android:id="@+id/review" android:paddingTop="12dp" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/padding24" android:lineSpacingExtra="8sp" app:layout_constraintTop_toBottomOf="@+id/rated_layout"/>
-            <androidx.appcompat.widget.AppCompatImageView android:id="@+id/user_icon" android:layout_width="12dp" android:layout_height="12dp" android:layout_marginTop="1dp" app:layout_constraintBottom_toBottomOf="@+id/date_text" app:layout_constraintHorizontal_bias="0" app:layout_constraintHorizontal_chainStyle="2" app:layout_constraintLeft_toLeftOf="0" app:layout_constraintRight_toLeftOf="@+id/date_text" app:layout_constraintTop_toTopOf="@+id/date_text" app:srcCompat="@drawable/ico_user"/>
-            <androidx.appcompat.widget.AppCompatTextView android:textSize="@dimen/textSize_13" android:textColor="@color/charcoal_grey_50" android:gravity="left" android:id="@+id/date_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="20dp" android:lineSpacingExtra="6sp" android:letterSpacing="0.07" app:layout_constraintLeft_toRightOf="@+id/user_icon" app:layout_constraintTop_toBottomOf="@+id/review"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/review"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/padding24"
+                android:gravity="left"
+                android:lineSpacingExtra="8sp"
+                android:paddingTop="12dp"
+                android:textColor="@color/charcoal_grey_80"
+                android:textSize="@dimen/textSize_16"
+                app:layout_constraintTop_toBottomOf="@+id/rated_layout" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/user_icon"
+                android:layout_width="12dp"
+                android:layout_height="12dp"
+                android:layout_marginTop="1dp"
+                app:layout_constraintBottom_toBottomOf="@+id/date_text"
+                app:layout_constraintHorizontal_bias="0"
+                app:layout_constraintHorizontal_chainStyle="2"
+                app:layout_constraintLeft_toLeftOf="0"
+                app:layout_constraintRight_toLeftOf="@+id/date_text"
+                app:layout_constraintTop_toTopOf="@+id/date_text"
+                app:srcCompat="@drawable/ico_user" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/date_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:gravity="left"
+                android:letterSpacing="0.07"
+                android:lineSpacingExtra="6sp"
+                android:textColor="@color/charcoal_grey_50"
+                android:textSize="@dimen/textSize_13"
+                app:layout_constraintLeft_toRightOf="@+id/user_icon"
+                app:layout_constraintTop_toBottomOf="@+id/review" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.core.widget.NestedScrollView>
-    <androidx.constraintlayout.widget.ConstraintLayout android:id="@+id/edit_review_layout" android:background="@drawable/button_background_gradient_rounded" android:paddingLeft="@dimen/normalPadding" android:paddingTop="5dp" android:paddingBottom="5dp" android:visibility="visible" android:layout_width="240dp" android:layout_height="56dp" android:layout_marginBottom="@dimen/padding24" app:layout_constraintBottom_toBottomOf="0" app:layout_constraintLeft_toLeftOf="0" app:layout_constraintRight_toRightOf="0">
-        <androidx.appcompat.widget.AppCompatTextView android:textSize="@dimen/textSize_16" android:textColor="@color/white" android:gravity="center" android:id="@+id/edit_text" android:layout_width="match_parent" android:layout_height="match_parent" android:text="Edit your review" app:layout_constraintBottom_toBottomOf="0" app:layout_constraintRight_toRightOf="0" app:layout_constraintTop_toTopOf="0"/>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/edit_review_layout"
+        android:layout_width="240dp"
+        android:layout_height="56dp"
+        android:layout_marginBottom="@dimen/padding24"
+        android:background="@drawable/button_background_gradient_rounded"
+        android:paddingLeft="@dimen/normalPadding"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="0"
+        app:layout_constraintLeft_toLeftOf="0"
+        app:layout_constraintRight_toRightOf="0">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/edit_text"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="Edit your review"
+            android:textColor="@color/white"
+            android:textSize="@dimen/textSize_16"
+            app:layout_constraintBottom_toBottomOf="0"
+            app:layout_constraintRight_toRightOf="0"
+            app:layout_constraintTop_toTopOf="0" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

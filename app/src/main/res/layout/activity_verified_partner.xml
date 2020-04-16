@@ -1,24 +1,169 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:aapt="http://schemas.android.com/aapt" android:background="@color/white" android:layout_width="match_parent" android:layout_height="match_parent">
-    <androidx.core.widget.NestedScrollView android:layout_width="match_parent" android:layout_height="wrap_content" android:fillViewport="true">
-        <androidx.constraintlayout.widget.ConstraintLayout android:background="@color/white" android:paddingBottom="20dp" android:layout_width="match_parent" android:layout_height="wrap_content">
-            <androidx.constraintlayout.widget.ConstraintLayout android:id="@+id/headerLayout" android:layout_width="match_parent" android:layout_height="wrap_content" android:animateLayoutChanges="true" app:layout_constraintTop_toTopOf="0">
-                <RelativeLayout android:id="@+id/howItWorksRL" android:background="@color/white_two" android:visibility="visible" android:layout_width="match_parent" android:layout_height="50dp" app:layout_constraintLeft_toLeftOf="0" app:layout_constraintTop_toTopOf="0">
-                    <ImageView android:id="@+id/preValidatedView" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="16dp" android:layout_alignParentLeft="true" android:layout_centerVertical="true" app:srcCompat="@drawable/ic_verified_blue"/>
-                    <TextView android:textSize="18sp" android:textColor="@color/charcoal_grey" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="18dp" android:text="@string/show_me_how_it_works" android:layout_toRightOf="@+id/preValidatedView" android:layout_alignBaseline="@+id/preValidatedView" android:layout_centerVertical="true" android:lineSpacingExtra="9sp"/>
-                    <ImageView android:layout_width="13dp" android:layout_height="8dp" android:layout_marginRight="15dp" android:layout_alignParentRight="true" android:layout_centerVertical="true" app:srcCompat="@drawable/ic_dropdown_grey"/>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fillViewport="true">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:paddingBottom="20dp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/headerLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:animateLayoutChanges="true"
+                app:layout_constraintTop_toTopOf="0">
+
+                <RelativeLayout
+                    android:id="@+id/howItWorksRL"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:background="@color/white_two"
+                    android:visibility="visible"
+                    app:layout_constraintLeft_toLeftOf="0"
+                    app:layout_constraintTop_toTopOf="0">
+
+                    <ImageView
+                        android:id="@+id/preValidatedView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="16dp"
+                        app:srcCompat="@drawable/ic_verified_blue" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBaseline="@+id/preValidatedView"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="18dp"
+                        android:layout_toRightOf="@+id/preValidatedView"
+                        android:lineSpacingExtra="9sp"
+                        android:text="@string/show_me_how_it_works"
+                        android:textColor="@color/charcoal_grey"
+                        android:textSize="18sp" />
+
+                    <ImageView
+                        android:layout_width="13dp"
+                        android:layout_height="8dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="15dp"
+                        app:srcCompat="@drawable/ic_dropdown_grey" />
                 </RelativeLayout>
-                <ImageView android:id="@+id/gifView" android:background="@drawable/rect_lightgrey_nofill" android:padding="4dp" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="282dp" android:layout_marginLeft="20dp" android:layout_marginTop="15dp" android:layout_marginRight="20dp" android:scaleType="fitXY" app:layout_constraintLeft_toLeftOf="0" app:layout_constraintRight_toRightOf="0" app:layout_constraintTop_toTopOf="0"/>
+
+                <ImageView
+                    android:id="@+id/gifView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="282dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginRight="20dp"
+                    android:background="@drawable/rect_lightgrey_nofill"
+                    android:padding="4dp"
+                    android:scaleType="fitXY"
+                    android:visibility="gone"
+                    app:layout_constraintLeft_toLeftOf="0"
+                    app:layout_constraintRight_toRightOf="0"
+                    app:layout_constraintTop_toTopOf="0" />
             </androidx.constraintlayout.widget.ConstraintLayout>
-            <RelativeLayout android:id="@+id/optiInLayout" android:paddingBottom="10dp" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginLeft="15dp" android:layout_marginTop="15dp" android:layout_marginRight="15dp" app:layout_constraintTop_toBottomOf="@+id/headerLayout">
-                <include layout="@layout/layout_validated_opt"/>
+
+            <RelativeLayout
+                android:id="@+id/optiInLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginRight="15dp"
+                android:paddingBottom="10dp"
+                app:layout_constraintTop_toBottomOf="@+id/headerLayout">
+
+                <include layout="@layout/layout_validated_opt" />
             </RelativeLayout>
-            <TextView android:textSize="14sp" android:textStyle="normal" android:textColor="@color/light_red" android:gravity="center_horizontal" android:id="@+id/faqs" android:padding="5dp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:text="@string/faqs" android:fontFamily="sans-serif" app:layout_constraintLeft_toLeftOf="0" app:layout_constraintRight_toRightOf="0" app:layout_constraintTop_toBottomOf="@+id/optiInLayout"/>
-            <TextView android:textSize="16sp" android:textStyle="normal" android:textColor="@color/charcoal_grey_80" android:id="@+id/desc_auto_approve" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginLeft="20dp" android:layout_marginTop="12dp" android:layout_marginRight="20dp" android:text="@string/auto_approve_desc" android:lineSpacingExtra="8sp" android:fontFamily="sans-serif" app:layout_constraintLeft_toLeftOf="0" app:layout_constraintTop_toBottomOf="@+id/faqs"/>
-            <TextView android:textSize="14sp" android:textColor="@color/soft_blue" android:id="@+id/desc_auto_approve2" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginLeft="20dp" android:layout_marginTop="3dp" android:layout_marginRight="10dp" android:text="(Approval valid for a single entry against each order)" android:lineSpacingExtra="7sp" app:layout_constraintLeft_toLeftOf="0" app:layout_constraintTop_toBottomOf="@+id/desc_auto_approve"/>
-            <View android:id="@+id/sep1" android:background="@color/warm_grey" android:layout_width="match_parent" android:layout_height="1dp" android:layout_marginTop="20dp" app:layout_constraintTop_toBottomOf="@+id/desc_auto_approve2"/>
-            <androidx.recyclerview.widget.RecyclerView android:id="@+id/partners_list" android:paddingBottom="20dp" android:clipToPadding="false" android:layout_width="match_parent" android:layout_height="wrap_content" android:nestedScrollingEnabled="false" app:layout_constraintTop_toBottomOf="@+id/sep1"/>
-            <RelativeLayout android:id="@+id/disableLayout" android:background="@color/white_transparent" android:visibility="gone" android:clickable="true" android:layout_width="match_parent" android:layout_height="0dp" app:layout_constraintBottom_toBottomOf="@+id/partners_list" app:layout_constraintTop_toTopOf="@+id/desc_auto_approve"/>
+
+            <TextView
+                android:id="@+id/faqs"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:fontFamily="sans-serif"
+                android:gravity="center_horizontal"
+                android:padding="5dp"
+                android:text="@string/faqs"
+                android:textColor="@color/light_red"
+                android:textSize="14sp"
+                android:textStyle="normal"
+                app:layout_constraintLeft_toLeftOf="0"
+                app:layout_constraintRight_toRightOf="0"
+                app:layout_constraintTop_toBottomOf="@+id/optiInLayout" />
+
+            <TextView
+                android:id="@+id/desc_auto_approve"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginRight="20dp"
+                android:fontFamily="sans-serif"
+                android:lineSpacingExtra="8sp"
+                android:text="@string/auto_approve_desc"
+                android:textColor="@color/charcoal_grey_80"
+                android:textSize="16sp"
+                android:textStyle="normal"
+                app:layout_constraintLeft_toLeftOf="0"
+                app:layout_constraintTop_toBottomOf="@+id/faqs" />
+
+            <TextView
+                android:id="@+id/desc_auto_approve2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="3dp"
+                android:layout_marginRight="10dp"
+                android:lineSpacingExtra="7sp"
+                android:text="(Approval valid for a single entry against each order)"
+                android:textColor="@color/soft_blue"
+                android:textSize="14sp"
+                app:layout_constraintLeft_toLeftOf="0"
+                app:layout_constraintTop_toBottomOf="@+id/desc_auto_approve" />
+
+            <View
+                android:id="@+id/sep1"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="20dp"
+                android:background="@color/warm_grey"
+                app:layout_constraintTop_toBottomOf="@+id/desc_auto_approve2" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/partners_list"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clipToPadding="false"
+                android:nestedScrollingEnabled="false"
+                android:paddingBottom="20dp"
+                app:layout_constraintTop_toBottomOf="@+id/sep1" />
+
+            <RelativeLayout
+                android:id="@+id/disableLayout"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:background="@color/white_transparent"
+                android:clickable="true"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="@+id/partners_list"
+                app:layout_constraintTop_toTopOf="@+id/desc_auto_approve" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.core.widget.NestedScrollView>
 </RelativeLayout>

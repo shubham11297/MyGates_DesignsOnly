@@ -1,5 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:aapt="http://schemas.android.com/aapt" android:background="@color/white" android:layout_width="match_parent" android:layout_height="match_parent">
-    <androidx.recyclerview.widget.RecyclerView android:scrollbarStyle="outsideOverlay" android:id="@+id/listView" android:scrollbars="vertical" android:clipToPadding="false" android:layout_width="match_parent" android:layout_height="wrap_content"/>
-    <include layout="@layout/layout_zeroscreen"/>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/listView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clipToPadding="false"
+        android:scrollbarStyle="outsideOverlay"
+        android:scrollbars="vertical" />
+
+    <include layout="@layout/layout_zeroscreen" />
 </androidx.constraintlayout.widget.ConstraintLayout>

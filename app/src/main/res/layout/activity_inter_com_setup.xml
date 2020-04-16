@@ -1,10 +1,63 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:aapt="http://schemas.android.com/aapt" android:id="@+id/main_content" android:background="@color/layout_background" android:layout_width="match_parent" android:layout_height="match_parent">
-    <androidx.core.widget.NestedScrollView android:id="@+id/scroll_view" android:paddingBottom="@dimen/padding_16" android:clipToPadding="false" android:layout_width="match_parent" android:layout_height="match_parent" android:fillViewport="true">
-        <androidx.constraintlayout.widget.ConstraintLayout android:id="@+id/container" android:layout_width="match_parent" android:layout_height="match_parent">
-            <androidx.cardview.widget.CardView android:id="@+id/step1Card" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/padding_16" android:layout_marginTop="@dimen/padding_16" android:layout_marginRight="@dimen/padding_16" android:minHeight="200dp" app:cardCornerRadius="4dp" app:cardElevation="3dp" app:layout_constraintTop_toTopOf="0"/>
-            <androidx.cardview.widget.CardView android:id="@+id/step2Card" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/padding_16" android:layout_marginTop="@dimen/padding_16" android:layout_marginRight="@dimen/padding_16" android:minHeight="200dp" app:cardCornerRadius="4dp" app:cardElevation="3dp" app:layout_constraintTop_toBottomOf="@+id/step1Card"/>
-            <androidx.cardview.widget.CardView android:id="@+id/step3Card" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/padding_16" android:layout_marginTop="@dimen/padding_16" android:layout_marginRight="@dimen/padding_16" android:layout_marginBottom="@dimen/padding_16" android:minHeight="200dp" app:cardCornerRadius="4dp" app:cardElevation="3dp" app:layout_constraintBottom_toBottomOf="0" app:layout_constraintTop_toBottomOf="@+id/step2Card" app:layout_constraintVertical_bias="0"/>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main_content"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/layout_background">
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/scroll_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipToPadding="false"
+        android:fillViewport="true"
+        android:paddingBottom="@dimen/padding_16">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/step1Card"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/padding_16"
+                android:layout_marginTop="@dimen/padding_16"
+                android:layout_marginRight="@dimen/padding_16"
+                android:minHeight="200dp"
+                app:cardCornerRadius="4dp"
+                app:cardElevation="3dp"
+                app:layout_constraintTop_toTopOf="0" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/step2Card"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/padding_16"
+                android:layout_marginTop="@dimen/padding_16"
+                android:layout_marginRight="@dimen/padding_16"
+                android:minHeight="200dp"
+                app:cardCornerRadius="4dp"
+                app:cardElevation="3dp"
+                app:layout_constraintTop_toBottomOf="@+id/step1Card" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/step3Card"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/padding_16"
+                android:layout_marginTop="@dimen/padding_16"
+                android:layout_marginRight="@dimen/padding_16"
+                android:layout_marginBottom="@dimen/padding_16"
+                android:minHeight="200dp"
+                app:cardCornerRadius="4dp"
+                app:cardElevation="3dp"
+                app:layout_constraintBottom_toBottomOf="0"
+                app:layout_constraintTop_toBottomOf="@+id/step2Card"
+                app:layout_constraintVertical_bias="0" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.core.widget.NestedScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>
