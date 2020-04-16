@@ -1,0 +1,331 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    android:orientation="vertical"
+    android:background="@color/white_two"
+    android:paddingLeft="12dp"
+    android:paddingTop="15dp"
+    android:paddingRight="12dp"
+    android:paddingBottom="10dp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:textSize="14sp"
+        android:textStyle="bold"
+        android:textColor="#2a2a2a"
+        android:id="@+id/society_label"
+        android:paddingLeft="@dimen/admin_extra_padding"
+        android:paddingRight="@dimen/admin_extra_padding"
+        android:paddingBottom="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:lineSpacingExtra="-2sp"
+        app:layout_constraintLeft_toLeftOf="0"
+        app:layout_constraintTop_toTopOf="0" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/stats_card_layout"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="@dimen/admin_card_radius"
+        app:cardElevation="@dimen/admin_card_elevation"
+        app:cardUseCompatPadding="true">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:id="@+id/adoption_stats"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:id="@+id/statsLayout"
+                android:paddingLeft="10dp"
+                android:paddingTop="14dp"
+                android:paddingRight="10dp"
+                android:paddingBottom="14dp"
+                android:clickable="true"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintLeft_toLeftOf="0"
+                app:layout_constraintTop_toTopOf="0">
+
+                <FrameLayout
+                    android:id="@+id/stats_container"
+                    android:paddingRight="14dp"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="@integer/admin_weight_Left">
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:id="@+id/home_bar_meter"
+                        android:visibility="gone"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <LinearLayout
+                            android:orientation="horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <ImageView
+                                android:layout_marginLeft="0dp"
+                                style="@style/home_icon_style" />
+
+                            <ImageView style="@style/home_icon_style" />
+
+                            <ImageView style="@style/home_icon_style" />
+
+                            <ImageView style="@style/home_icon_style" />
+
+                            <ImageView style="@style/home_icon_style" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:orientation="horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp">
+
+                            <ImageView
+                                android:id="@+id/home_0_10"
+                                android:layout_marginLeft="0dp"
+                                style="@style/home_icon_style" />
+
+                            <ImageView
+                                android:id="@+id/home_10_20"
+                                style="@style/home_icon_style" />
+
+                            <ImageView
+                                android:id="@+id/home_20_30"
+                                style="@style/home_icon_style" />
+
+                            <ImageView
+                                android:id="@+id/home_30_40"
+                                style="@style/home_icon_style" />
+
+                            <ImageView
+                                android:id="@+id/home_40_50"
+                                style="@style/home_icon_style" />
+                        </LinearLayout>
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:textSize="11sp"
+                            android:textColor="@color/charcoal_grey"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:text="Invite more residents to ensure better security"
+                            android:lineSpacingExtra="3sp" />
+                    </LinearLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:gravity="center_horizontal"
+                        android:orientation="vertical"
+                        android:id="@+id/speed_bar_meter"
+                        android:visibility="gone"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <com.progress.progressview.ProgressView
+                            android:id="@+id/speedometer"
+                            android:layout_width="wrap_content"
+                            android:layout_height="90dp"
+                            app:layout_constraintLeft_toLeftOf="0"
+                            app:layout_constraintRight_toRightOf="0"
+                            app:layout_constraintTop_toTopOf="0"
+                            app:pvBackgroundColor="@color/white_two"
+                            app:pvBackgroundWidth="10dp"
+                            app:pvDirection="0"
+                            app:pvProgress="0.5"
+                            app:pvShape="0" />
+
+                        <ImageView
+                            android:id="@+id/bestValueView"
+                            android:paddingLeft="5dp"
+                            android:paddingTop="5dp"
+                            android:paddingRight="1dp"
+                            android:paddingBottom="5dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="7dp"
+                            app:layout_constraintRight_toRightOf="@+id/speedometer"
+                            app:layout_constraintTop_toTopOf="@+id/speedometer"
+                            app:srcCompat="0x7f080156" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:textSize="16sp"
+                            android:textStyle="bold"
+                            android:textColor="#2a2a2a"
+                            android:id="@+id/speedometer_percentage_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:lineSpacingExtra="3sp"
+                            app:layout_constraintBottom_toBottomOf="@+id/speedometer"
+                            app:layout_constraintLeft_toLeftOf="@+id/speedometer"
+                            app:layout_constraintRight_toRightOf="@+id/speedometer" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:textSize="11sp"
+                            android:textColor="@color/charcoal_grey"
+                            android:id="@+id/speedometer_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:text="@string/mygates_best_message"
+                            android:lineSpacingExtra="3sp"
+                            app:layout_constraintLeft_toLeftOf="0"
+                            app:layout_constraintRight_toRightOf="0"
+                            app:layout_constraintTop_toBottomOf="@+id/speedometer" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </FrameLayout>
+
+                <View
+                    android:background="@color/white_two"
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:orientation="vertical"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_weight="0x7f0b0003">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        android:textColor="#2a2a2a"
+                        android:id="@+id/app_adoption_lable"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="App Adoption"
+                        android:lineSpacingExtra="-2sp"
+                        app:layout_constraintLeft_toLeftOf="0"
+                        app:layout_constraintTop_toTopOf="0" />
+
+                    <ImageView
+                        android:id="@+id/ic_help"
+                        android:padding="5dp"
+                        android:clickable="true"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintBottom_toBottomOf="@+id/app_adoption_lable"
+                        app:layout_constraintLeft_toRightOf="@+id/app_adoption_lable"
+                        app:layout_constraintTop_toTopOf="@+id/app_adoption_lable"
+                        app:srcCompat="0x7f080255" />
+
+                    <View
+                        android:id="@+id/ic_help_anchor"
+                        android:layout_width="wrap_content"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="5dp"
+                        app:layout_constraintRight_toLeftOf="@+id/ic_help"
+                        app:layout_constraintTop_toBottomOf="@+id/ic_help" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:textSize="13sp"
+                        android:textColor="@color/slate_grey_80"
+                        android:id="@+id/active_flat_lable"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/admin_stats_label_val_gap"
+                        android:text="MyGate Units:"
+                        app:layout_constraintLeft_toLeftOf="@+id/app_adoption_lable"
+                        app:layout_constraintTop_toBottomOf="@+id/app_adoption_lable" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:textSize="13sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/pale_teal"
+                        android:id="@+id/active_flat_val"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:lineSpacingExtra="10sp"
+                        app:layout_constraintBottom_toBottomOf="@+id/active_flat_lable"
+                        app:layout_constraintLeft_toRightOf="@+id/active_flat_lable"
+                        app:layout_constraintTop_toTopOf="@+id/active_flat_lable" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:textSize="13sp"
+                        android:textColor="@color/slate_grey_80"
+                        android:id="@+id/inactive_flat_label"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/admin_stats_label_val_gap"
+                        android:text="Non MyGate Units:"
+                        app:layout_constraintLeft_toLeftOf="@+id/active_flat_lable"
+                        app:layout_constraintTop_toBottomOf="@+id/active_flat_lable" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:textSize="13sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/coral_two"
+                        android:id="@+id/inactive_flat_val"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        app:layout_constraintBottom_toBottomOf="@+id/inactive_flat_label"
+                        app:layout_constraintLeft_toRightOf="@+id/inactive_flat_label"
+                        app:layout_constraintTop_toTopOf="@+id/inactive_flat_label" />
+
+                    <ImageView
+                        android:id="@+id/inactive_arrow"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="2dp"
+                        android:src="0x7f080060"
+                        app:layout_constraintBottom_toBottomOf="@+id/inactive_flat_val"
+                        app:layout_constraintLeft_toRightOf="@+id/inactive_flat_val"
+                        app:layout_constraintTop_toTopOf="@+id/inactive_flat_val" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </LinearLayout>
+
+            <View
+                android:background="@color/white_two"
+                android:layout_width="match_parent"
+                android:layout_height="1dp" />
+
+            <LinearLayout
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:id="@+id/share_layout"
+                android:padding="14dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:clickable="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/admin_stats_label_val_gap"
+                    app:srcCompat="0x7f080144" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:textSize="15sp"
+                    android:textColor="@color/charcoal_grey"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="14dp"
+                    android:text="Invite Residents"
+                    android:lineSpacingExtra="3sp" />
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <View
+        android:background="@color/white_two"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/admin_vertical_gap" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/content_recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+</LinearLayout>

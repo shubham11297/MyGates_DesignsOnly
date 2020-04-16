@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animation-list xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:aapt="http://schemas.android.com/aapt" android:oneshot="false">
+    <item android:duration="@integer/val_anim_duration" android:drawable="@drawable/validated_animation_01"/>
+    <item android:duration="@integer/val_anim_duration" android:drawable="@drawable/validated_animation_02"/>
+    <item android:duration="@integer/val_anim_duration" android:drawable="@drawable/validated_animation_03"/>
+    <item android:duration="@integer/val_anim_duration" android:drawable="@drawable/validated_animation_04"/>
+    <item android:duration="@integer/val_anim_duration" android:drawable="@drawable/validated_animation_05"/>
+    <item android:duration="@integer/val_anim_duration" android:drawable="@drawable/validated_animation_06"/>
+    <item android:duration="@integer/val_anim_duration" android:drawable="@drawable/validated_animation_07"/>
+    <item android:duration="@integer/val_anim_duration" android:drawable="@drawable/validated_animation_08"/>
+    <item android:duration="@integer/val_anim_duration" android:drawable="@drawable/validated_animation_09"/>
+    <item android:duration="@integer/val_anim_duration" android:drawable="@drawable/validated_animation_10"/>
+    <item android:duration="@integer/val_anim_duration" android:drawable="@drawable/validated_animation_11"/>
+    <item android:duration="@integer/val_anim_duration" android:drawable="@drawable/validated_animation_12"/>
+    <item android:duration="@integer/val_anim_duration" android:drawable="@drawable/validated_animation_13"/>
+    <item android:duration="@integer/val_anim_duration" android:drawable="@drawable/validated_animation_14"/>
+    <item android:duration="@integer/val_anim_duration" android:drawable="@drawable/validated_animation_15"/>
+    <item android:duration="@integer/val_anim_duration" android:drawable="@drawable/validated_animation_16"/>
+</animation-list>

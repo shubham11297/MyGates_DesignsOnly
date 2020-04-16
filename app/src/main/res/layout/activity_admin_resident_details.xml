@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fillViewport="true"
+        android:isScrollContainer="false">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
+
+            <RelativeLayout
+                android:id="@+id/nameBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="23dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentStart="true">
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:textSize="16sp"
+                    android:textColor="@color/charcoal_grey_80"
+                    android:textColorHint="@color/charcoal_grey_30"
+                    android:id="@+id/nameText"
+                    android:paddingRight="32dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Name"
+                    android:singleLine="true"
+                    android:layout_centerVertical="true"
+                    android:lineSpacingExtra="8sp"
+                    android:inputType="text"
+                    android:imeOptions="actionNext"
+                    android:nextFocusForward="@+id/mobileText"
+                    app:backgroundTint="@color/light_red" />
+
+                <ImageView
+                    android:id="@+id/addFromContact"
+                    android:background="@color/transparent"
+                    android:padding="5dp"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:imeOptions="actionDone"
+                    android:layout_alignParentEnd="true"
+                    app:srcCompat="@drawable/ic_contacts" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/mobileBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="23dp"
+                android:layout_below="@+id/nameBox"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true">
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:textColor="@color/charcoal_grey_80"
+                    android:textColorHint="@color/charcoal_grey_30"
+                    android:id="@+id/mobileText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Mobile Number"
+                    android:singleLine="true"
+                    android:maxLength="10"
+                    android:digits="0123456789"
+                    android:layout_centerVertical="true"
+                    android:lineSpacingExtra="8sp"
+                    android:inputType="phone"
+                    app:backgroundTint="@color/light_red" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/buildingBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="23dp"
+                android:layout_below="@+id/mobileBox"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true">
+
+                <Spinner
+                    android:textSize="16sp"
+                    android:textColor="@color/charcoal_grey"
+                    android:entries="@array/selectBuilding"
+                    android:id="@+id/aaSpinnerBuildingName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawSelectorOnTop="true"
+                    android:layout_centerVertical="true"
+                    android:lineSpacingExtra="8sp"
+                    android:spinnerMode="dialog"
+                    android:backgroundTint="@color/light_red"
+                    style="@style/Base.Widget.AppCompat.Spinner.Underlined" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/flatBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="23dp"
+                android:layout_below="@+id/buildingBox"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true">
+
+                <Spinner
+                    android:textSize="16sp"
+                    android:textColor="@color/charcoal_grey"
+                    android:entries="@array/selectFlat"
+                    android:id="@+id/aaSpinnerflat"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawSelectorOnTop="true"
+                    android:layout_centerVertical="true"
+                    android:lineSpacingExtra="8sp"
+                    android:spinnerMode="dialog"
+                    android:backgroundTint="@color/light_red"
+                    style="@style/Base.Widget.AppCompat.Spinner.Underlined" />
+            </RelativeLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/otherSettingView"
+                android:background="@color/white_two"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="10dp"
+                android:layout_below="@+id/flatBox">
+
+                <TextView
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/charcoal_grey_80"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16dp"
+                    android:text="RESIDENT IS"
+                    android:lineSpacingExtra="8sp"
+                    android:letterSpacing="0.07"
+                    app:layout_constraintBottom_toBottomOf="0"
+                    app:layout_constraintLeft_toLeftOf="0"
+                    app:layout_constraintTop_toTopOf="0" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <RadioGroup
+                android:orientation="vertical"
+                android:id="@+id/buttonGroup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="23dp"
+                android:layout_below="@+id/otherSettingView">
+
+                <RadioButton
+                    android:textSize="16sp"
+                    android:textColor="@color/charcoal_grey_80"
+                    android:id="@+id/owner"
+                    android:paddingLeft="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Owner of flat"
+                    android:lineSpacingExtra="8sp" />
+
+                <RadioButton
+                    android:textSize="16sp"
+                    android:textColor="@color/charcoal_grey_80"
+                    android:id="@+id/tenent"
+                    android:paddingLeft="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:text="Renting the flat"
+                    android:lineSpacingExtra="8sp" />
+
+                <RadioButton
+                    android:textSize="16sp"
+                    android:textColor="@color/charcoal_grey_80"
+                    android:id="@+id/multi_tenant"
+                    android:paddingLeft="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:text="Renting the flat with other tennants"
+                    android:lineSpacingExtra="8sp" />
+            </RadioGroup>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="23dp"
+                android:layout_below="@+id/buttonGroup">
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/textApprove"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Comments if any" />
+            </RelativeLayout>
+        </RelativeLayout>
+    </ScrollView>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/addButton"
+        android:background="@drawable/left_to_right_gradient_plain"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_alignParentBottom="true">
+
+        <ImageView
+            android:id="@+id/updasteButtonIcon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="0"
+            app:layout_constraintHorizontal_chainStyle="2"
+            app:layout_constraintLeft_toLeftOf="0"
+            app:layout_constraintRight_toLeftOf="@+id/updateButtonText"
+            app:layout_constraintTop_toTopOf="0"
+            app:srcCompat="@drawable/ic_check_white" />
+
+        <TextView
+            android:textSize="16sp"
+            android:textColor="@color/white"
+            android:id="@+id/updateButtonText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="6dp"
+            android:text="Add Resident"
+            app:layout_constraintBottom_toBottomOf="0"
+            app:layout_constraintLeft_toRightOf="@+id/updasteButtonIcon"
+            app:layout_constraintRight_toRightOf="0"
+            app:layout_constraintTop_toTopOf="0" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</RelativeLayout>

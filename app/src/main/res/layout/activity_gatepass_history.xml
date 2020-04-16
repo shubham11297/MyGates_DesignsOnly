@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:aapt="http://schemas.android.com/aapt" android:layout_width="match_parent" android:layout_height="match_parent">
+    <androidx.recyclerview.widget.RecyclerView android:id="@+id/gatepass_history_list" android:paddingBottom="40dp" android:clipToPadding="false" android:layout_width="match_parent" android:layout_height="0dp" app:layout_constraintBottom_toBottomOf="0" app:layout_constraintTop_toTopOf="0" app:layout_constraintVertical_bias="0"/>
+    <LinearLayout android:gravity="center" android:id="@+id/give_layout" android:background="@drawable/button_background_gradient_rounded" android:paddingLeft="@dimen/normalPadding" android:paddingTop="5dp" android:paddingBottom="5dp" android:visibility="gone" android:layout_width="240dp" android:layout_height="56dp" android:layout_marginBottom="@dimen/padding24" android:elevation="4dp" app:layout_constraintBottom_toBottomOf="0" app:layout_constraintLeft_toLeftOf="0" app:layout_constraintRight_toRightOf="0" app:layout_constraintVertical_bias="0">
+        <androidx.appcompat.widget.AppCompatImageView android:id="@+id/icon" android:layout_width="wrap_content" android:layout_height="wrap_content" app:srcCompat="@drawable/ic_gatepass_white"/>
+        <androidx.appcompat.widget.AppCompatTextView android:textSize="@dimen/textSize_16" android:textColor="@color/white" android:gravity="center" android:id="@+id/text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/margin8" android:text="Gatepass"/>
+    </LinearLayout>
+    <androidx.constraintlayout.widget.ConstraintLayout android:id="@+id/container_zero_layout" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_marginTop="80dp" app:layout_constraintBottom_toBottomOf="0" app:layout_constraintTop_toTopOf="0">
+        <include layout="@layout/layout_zeroscreen"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

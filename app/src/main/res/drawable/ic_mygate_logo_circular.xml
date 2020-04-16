@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:aapt="http://schemas.android.com/aapt" android:height="45dp" android:width="45dp" android:viewportWidth="45" android:viewportHeight="45">
+    <path android:fillColor="@drawable/$ic_mygate_logo_circular__0" android:pathData="M22.5,22.5m-22.5,0a22.5,22.5 0,1 1,45 0a22.5,22.5 0,1 1,-45 0" android:strokeColor="#00000000" android:strokeWidth="1" android:fillType="1"/>
+    <path android:fillColor="#ffffff" android:pathData="M29.6388,11L16.3613,11C13.4004,11 11,13.4003 11,16.3613L11,29.6387C11,32.5996 13.4004,35 16.3613,35L20.2344,35L20.2344,29.4688C20.2344,29.4688 22.6829,29.6803 23.0002,31.7496C23.3175,29.6803 25.766,29.4688 25.766,29.4688L25.766,35L29.6388,35C32.5998,35 35,32.5996 35,29.6387L35,16.3613C35,13.4003 32.5998,11 29.6388,11" android:strokeColor="#00000000" android:strokeWidth="1" android:fillType="1"/>
+</vector>

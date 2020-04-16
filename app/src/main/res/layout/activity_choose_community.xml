@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:scrollbars="none">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:descendantFocusability="blocksDescendants">
+
+        <Button
+            android:id="@+id/chooseCommunityButton"
+            style="@style/lightred_boundary_no_fill_button"
+            android:layout_width="250dp"
+            android:layout_height="56dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:clickable="true"
+            android:elevation="6dp"
+            android:letterSpacing="0.06"
+            android:paddingLeft="0dp"
+            android:paddingRight="0dp"
+            android:text="@string/title_activity_add_apartment"
+            android:textAllCaps="true"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="0"
+            app:layout_constraintStart_toStartOf="0"
+            app:layout_constraintTop_toBottomOf="@+id/nameView" />
+
+        <Button
+            android:id="@+id/chooseWorkplaceButton"
+            style="@style/lightred_boundary_no_fill_button"
+            android:layout_width="250dp"
+            android:layout_height="56dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:clickable="true"
+            android:elevation="6dp"
+            android:letterSpacing="0.06"
+            android:paddingLeft="0dp"
+            android:paddingRight="0dp"
+            android:text="@string/title_activity_add_workplace"
+            android:textAllCaps="true"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="0"
+            app:layout_constraintStart_toStartOf="0"
+            app:layout_constraintTop_toBottomOf="@+id/chooseCommunityButton" />
+
+        <Button
+            android:id="@+id/requestCallbackButton"
+            style="@style/slategrey_boundary_no_fill_button"
+            android:layout_width="250dp"
+            android:layout_height="56dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:clickable="true"
+            android:elevation="6dp"
+            android:letterSpacing="0.06"
+            android:paddingLeft="0dp"
+            android:paddingRight="0dp"
+            android:text="@string/request_a_callback"
+            android:textAllCaps="true"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="0"
+            app:layout_constraintStart_toStartOf="0"
+            app:layout_constraintTop_toBottomOf="@+id/leadDescView" />
+
+        <TextView
+            android:id="@+id/nameView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="8dp"
+            android:lineSpacingExtra="9sp"
+            android:textColor="@color/charcoal_grey"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="0"
+            app:layout_constraintStart_toStartOf="0"
+            app:layout_constraintTop_toBottomOf="@+id/dummyImageView" />
+
+        <TextView
+            android:id="@+id/leadDescView"
+            android:layout_width="280dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/chooseWorkplaceButton"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="50dp"
+            android:gravity="center_horizontal"
+            android:lineSpacingExtra="7sp"
+            android:text="@string/request_callback_msg"
+            android:textColor="@color/slate_grey_80"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="0"
+            app:layout_constraintStart_toStartOf="0"
+            app:layout_constraintTop_toBottomOf="@+id/chooseWorkplaceButton" />
+
+        <TextView
+            android:id="@+id/textViewFlats"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:lineSpacingExtra="16sp"
+            android:text="@string/flats_small"
+            android:textColor="@color/charcoal_grey"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="0"
+            app:layout_constraintTop_toBottomOf="@+id/dividerTop" />
+
+        <View
+            android:id="@+id/dividerTop"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_marginTop="32dp"
+            android:background="@color/white_two"
+            app:layout_constraintTop_toBottomOf="@+id/requestCallbackButton" />
+
+        <View
+            android:id="@+id/dividerBottom"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_marginTop="8dp"
+            android:background="@color/white_two"
+            app:layout_constraintTop_toBottomOf="@+id/textViewFlats" />
+
+        <androidx.constraintlayout.widget.Group
+            android:id="@+id/groupFlats"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:constraint_referenced_ids="dividerTop,dividerBottom,flatListView,textViewFlats" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/flatListView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="15dp"
+            android:background="@color/white"
+            android:nestedScrollingEnabled="false"
+            app:layout_constraintTop_toBottomOf="@+id/dividerBottom" />
+
+<!--        TODO        circular image-->
+        <com.mygate.user.common.p011ui.CircularImageView
+            android:id="@+id/dummyImageView"
+            android:layout_width="130dp"
+            android:layout_height="130dp"
+            android:layout_marginTop="20dp"
+            android:src="0x7f08030a"
+            app:layout_constraintEnd_toEndOf="0"
+            app:layout_constraintStart_toStartOf="0"
+            app:layout_constraintTop_toTopOf="0" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

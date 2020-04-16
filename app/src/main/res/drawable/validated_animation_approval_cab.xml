@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animation-list xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:aapt="http://schemas.android.com/aapt">
+    <item android:duration="@integer/val_anim_duration" android:drawable="@drawable/validated_animation_cab_01"/>
+    <item android:duration="@integer/val_anim_duration" android:drawable="@drawable/validated_animation_cab_02"/>
+    <item android:duration="@integer/val_anim_duration" android:drawable="@drawable/validated_animation_cab_03"/>
+    <item android:duration="@integer/val_anim_duration" android:drawable="@drawable/validated_animation_cab_04"/>
+    <item android:duration="@integer/val_anim_duration" android:drawable="@drawable/validated_animation_cab_05"/>
+    <item android:duration="@integer/val_anim_duration" android:drawable="@drawable/validated_animation_cab_06"/>
+    <item android:duration="@integer/val_anim_duration" android:drawable="@drawable/validated_animation_cab_07"/>
+    <item android:duration="@integer/val_anim_duration" android:drawable="@drawable/validated_animation_cab_08"/>
+    <item android:duration="@integer/val_anim_duration" android:drawable="@drawable/validated_animation_cab_09"/>
+    <item android:duration="@integer/val_anim_duration" android:drawable="@drawable/validated_animation_cab_10"/>
+    <item android:duration="@integer/val_anim_duration" android:drawable="@drawable/validated_animation_cab_11"/>
+    <item android:duration="@integer/val_anim_duration" android:drawable="@drawable/validated_animation_cab_12"/>
+    <item android:duration="@integer/val_anim_duration" android:drawable="@drawable/validated_animation_cab_13"/>
+    <item android:duration="@integer/val_anim_duration" android:drawable="@drawable/validated_animation_cab_14"/>
+    <item android:duration="@integer/val_anim_duration" android:drawable="@drawable/validated_animation_cab_15"/>
+    <item android:duration="@integer/val_anim_duration" android:drawable="@drawable/validated_animation_cab_16"/>
+</animation-list>

@@ -1,0 +1,503 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    android:orientation="vertical"
+    android:id="@+id/bottom_sheet_layout"
+    android:background="@color/blakish_transparent"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:behavior_hideable="true"
+    app:behavior_peekHeight="0dp"
+    app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
+
+    <FrameLayout
+        android:id="@+id/container_layout"
+        android:clickable="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="0">
+
+        <LinearLayout
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:id="@+id/mygate_code_content_layout"
+            android:background="@color/white"
+            android:paddingTop="12dp"
+            android:paddingBottom="30dp"
+            android:visibility="gone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="0">
+
+            <TextView
+                android:textSize="14sp"
+                android:textColor="@color/charcoal_grey_30"
+                android:gravity="center"
+                android:id="@+id/mygate_code_desc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginRight="10dp"
+                android:text="Tanya’s 6-digit MyGate Code"
+                android:lineSpacingExtra="7sp" />
+
+            <com.mygate.user.common.p011ui.PinEntryEditText
+                android:textSize="26sp"
+                android:textColor="@color/charcoal_grey_80"
+                android:id="@+id/code_edit_text"
+                android:layout_width="230dp"
+                android:layout_height="60dp"
+                android:cursorVisible="false"
+                android:maxLength="6"
+                android:digits="1234567890"
+                android:inputType="number"
+                android:textIsSelectable="false"
+                app:layout_constraintLeft_toLeftOf="0"
+                app:layout_constraintRight_toRightOf="0"
+                app:layout_constraintTop_toBottomOf="@+id/verify_slot_otp_desc"
+                app:pinAnimationType="0"
+                app:pinBackgroundIsSquare="false"
+                app:pinCharacterSpacing="10dp"
+                app:pinLineColors="@color/light_red"
+                app:pinLineStroke="1dp"
+                app:pinLineStrokeSelected="1dp" />
+
+            <TextView
+                android:textSize="14sp"
+                android:textColor="@color/light_red"
+                android:gravity="center_horizontal"
+                android:id="@+id/code_helper_error_text"
+                android:visibility="gone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:lineSpacingExtra="7sp" />
+
+            <Button
+                android:id="@+id/mygate_code_verify_details_btn"
+                android:clickable="true"
+                android:layout_width="wrap_content"
+                android:layout_height="56dp"
+                android:layout_marginTop="30dp"
+                android:text="Verify Details"
+                app:layout_constraintLeft_toLeftOf="0"
+                app:layout_constraintRight_toRightOf="0"
+                app:layout_constraintTop_toBottomOf="@+id/pinEntryView"
+                style="@style/gradient_fill_button" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:id="@+id/edit_no_content_layout"
+            android:background="@color/white"
+            android:paddingTop="12dp"
+            android:paddingBottom="30dp"
+            android:visibility="gone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/edit_no_text_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="10dp"
+                android:hint="Contact Number"
+                app:helperText="We will send an OTP on this number">
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:textSize="@dimen/spec_subheading"
+                    android:textColor="@color/charcoal_grey_80"
+                    android:textColorHint="@color/charcoal_grey_30"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:singleLine="true"
+                    android:maxLength="10"
+                    android:digits="0123456789"
+                    android:inputType="number"
+                    android:imeOptions="actionNext"
+                    app:backgroundTint="@color/light_red" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <Button
+                android:id="@+id/edit_no_request_btn"
+                android:clickable="true"
+                android:layout_width="wrap_content"
+                android:layout_height="56dp"
+                android:layout_marginTop="50dp"
+                android:text="Request OTP to Update"
+                style="@style/gradient_fill_button" />
+        </LinearLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/contact_otp_content_layout"
+            android:background="@color/white"
+            android:paddingTop="10dp"
+            android:paddingBottom="20dp"
+            android:visibility="gone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:textSize="14sp"
+                android:textColor="@color/charcoal_grey_30"
+                android:gravity="center_horizontal"
+                android:id="@+id/title1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginRight="10dp"
+                android:text="OTP has been sent to you on your mobile phone"
+                android:lineSpacingExtra="7sp"
+                app:layout_constraintLeft_toLeftOf="0"
+                app:layout_constraintRight_toRightOf="0"
+                app:layout_constraintTop_toTopOf="0" />
+
+            <TextView
+                android:textSize="18sp"
+                android:textColor="@color/charcoal_grey_30"
+                android:gravity="center_vertical"
+                android:id="@+id/mobileNumView"
+                android:layout_width="wrap_content"
+                android:layout_height="24dp"
+                android:layout_marginTop="15dp"
+                android:lineSpacingExtra="8sp"
+                app:layout_constraintLeft_toLeftOf="0"
+                app:layout_constraintRight_toLeftOf="@+id/editNumber"
+                app:layout_constraintTop_toBottomOf="@+id/title1" />
+
+            <ImageView
+                android:id="@+id/editNumber"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="15dp"
+                app:layout_constraintLeft_toRightOf="@+id/mobileNumView"
+                app:layout_constraintRight_toRightOf="0"
+                app:layout_constraintTop_toBottomOf="@+id/title1"
+                app:srcCompat="@drawable/ic_edit" />
+
+            <com.mygate.user.common.p011ui.PinEntryEditText
+                android:textSize="26sp"
+                android:textColor="@color/charcoal_grey_80"
+                android:id="@+id/pinEntryViewContactOtp"
+                android:layout_width="230dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="5dp"
+                android:cursorVisible="false"
+                android:maxLength="6"
+                android:digits="1234567890"
+                android:inputType="number"
+                android:textIsSelectable="false"
+                app:layout_constraintLeft_toLeftOf="0"
+                app:layout_constraintRight_toRightOf="0"
+                app:layout_constraintTop_toBottomOf="@+id/mobileNumView"
+                app:pinAnimationType="0"
+                app:pinBackgroundIsSquare="false"
+                app:pinCharacterSpacing="10dp"
+                app:pinLineColors="@color/light_red"
+                app:pinLineStroke="1dp"
+                app:pinLineStrokeSelected="1dp" />
+
+            <TextView
+                android:textSize="14sp"
+                android:textColor="@color/light_red"
+                android:id="@+id/contactOtpResendView"
+                android:padding="5dp"
+                android:visibility="gone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="@string/resend_otp_underline"
+                app:layout_constraintLeft_toLeftOf="0"
+                app:layout_constraintRight_toRightOf="0"
+                app:layout_constraintTop_toBottomOf="@+id/contactOtpError" />
+
+            <TextView
+                android:textSize="14sp"
+                android:textColor="@color/light_red"
+                android:id="@+id/contactOtpError"
+                android:padding="5dp"
+                android:visibility="gone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                app:layout_constraintBottom_toTopOf="@+id/contactOtpOnCallHint"
+                app:layout_constraintLeft_toLeftOf="0"
+                app:layout_constraintRight_toRightOf="0"
+                app:layout_constraintTop_toBottomOf="@+id/pinEntryViewContactOtp" />
+
+            <TextView
+                android:textSize="14sp"
+                android:textColor="@color/charcoal_grey_30"
+                android:gravity="center_horizontal"
+                android:id="@+id/contactOtpOnCallHint"
+                android:visibility="visible"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:lineSpacingExtra="7sp"
+                app:layout_constraintLeft_toLeftOf="0"
+                app:layout_constraintRight_toRightOf="0"
+                app:layout_constraintTop_toBottomOf="@+id/contactOtpError" />
+
+            <Button
+                android:id="@+id/verify_contact_otp_btn"
+                android:clickable="true"
+                android:layout_width="wrap_content"
+                android:layout_height="56dp"
+                android:layout_marginTop="20dp"
+                android:text="Enter OTP to Update"
+                app:layout_constraintLeft_toLeftOf="0"
+                app:layout_constraintRight_toRightOf="0"
+                app:layout_constraintTop_toBottomOf="@+id/contactOtpOnCallHint"
+                style="@style/gradient_fill_button" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <LinearLayout
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:id="@+id/verify_mode_content_layout"
+            android:background="@color/white"
+            android:paddingTop="12dp"
+            android:paddingBottom="30dp"
+            android:visibility="gone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:textSize="16sp"
+                android:textColor="#cc3c3c4b"
+                android:gravity="center_horizontal"
+                android:id="@+id/verify_mode_desc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:lineSpacingExtra="8sp" />
+
+            <Button
+                android:textSize="15sp"
+                android:textColor="@color/light_red"
+                android:gravity="center_horizontal"
+                android:id="@+id/mygate_code_btn"
+                android:padding="@dimen/padding_16"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:text="6-Digit MyGate Code"
+                android:letterSpacing="0.06"
+                style="@style/lightred_boundary_no_fill_button" />
+
+            <Button
+                android:textSize="15sp"
+                android:textColor="@color/light_red"
+                android:gravity="center_horizontal"
+                android:id="@+id/otp_btn"
+                android:padding="@dimen/padding_16"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:text="OTP on 9876543210"
+                android:letterSpacing="0.06"
+                style="@style/lightred_boundary_no_fill_button" />
+        </LinearLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:id="@+id/verify_slot_otp_content_layout"
+            android:background="@color/white"
+            android:paddingTop="12dp"
+            android:paddingBottom="30dp"
+            android:visibility="gone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:textSize="14sp"
+                android:textColor="@color/charcoal_grey_30"
+                android:gravity="left"
+                android:id="@+id/verify_slot_otp_desc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginRight="10dp"
+                android:text="Enter OTP received on Tanya’s Registered Mobile Number 9876543210 "
+                android:lineSpacingExtra="7sp"
+                app:layout_constraintLeft_toLeftOf="0"
+                app:layout_constraintRight_toRightOf="0"
+                app:layout_constraintTop_toTopOf="0" />
+
+            <com.mygate.user.common.p011ui.PinEntryEditText
+                android:textSize="26sp"
+                android:textColor="@color/charcoal_grey_80"
+                android:id="@+id/pinEntryView"
+                android:layout_width="230dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="10dp"
+                android:cursorVisible="false"
+                android:maxLength="6"
+                android:digits="1234567890"
+                android:inputType="number"
+                android:textIsSelectable="false"
+                app:layout_constraintLeft_toLeftOf="0"
+                app:layout_constraintRight_toRightOf="0"
+                app:layout_constraintTop_toBottomOf="@+id/verify_slot_otp_desc"
+                app:pinAnimationType="0"
+                app:pinBackgroundIsSquare="false"
+                app:pinCharacterSpacing="10dp"
+                app:pinLineColors="@color/light_red"
+                app:pinLineStroke="1dp"
+                app:pinLineStrokeSelected="1dp" />
+
+            <TextView
+                android:textSize="14sp"
+                android:textColor="@color/light_red"
+                android:id="@+id/resendSlotOtpView"
+                android:padding="5dp"
+                android:visibility="gone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="@string/resend_otp_underline"
+                app:layout_constraintLeft_toLeftOf="0"
+                app:layout_constraintRight_toRightOf="0"
+                app:layout_constraintTop_toBottomOf="@+id/freeSlotOtpError" />
+
+            <TextView
+                android:textSize="14sp"
+                android:textColor="@color/light_red"
+                android:id="@+id/freeSlotOtpError"
+                android:padding="5dp"
+                android:visibility="gone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="@string/edit_profile_otp_error"
+                app:layout_constraintBottom_toTopOf="@+id/otpOnCallHint"
+                app:layout_constraintLeft_toLeftOf="0"
+                app:layout_constraintRight_toRightOf="0"
+                app:layout_constraintTop_toBottomOf="@+id/pinEntryView" />
+
+            <TextView
+                android:textSize="14sp"
+                android:textColor="@color/charcoal_grey_30"
+                android:gravity="center_horizontal"
+                android:id="@+id/otpOnCallHint"
+                android:visibility="visible"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="@string/resend_otp_after"
+                android:lineSpacingExtra="7sp"
+                app:layout_constraintLeft_toLeftOf="0"
+                app:layout_constraintRight_toRightOf="0"
+                app:layout_constraintTop_toBottomOf="@+id/freeSlotOtpError" />
+
+            <Button
+                android:id="@+id/verify_details_btn"
+                android:clickable="true"
+                android:layout_width="wrap_content"
+                android:layout_height="56dp"
+                android:layout_marginTop="20dp"
+                android:text="Verify Details"
+                app:layout_constraintLeft_toLeftOf="0"
+                app:layout_constraintRight_toRightOf="0"
+                app:layout_constraintTop_toBottomOf="@+id/otpOnCallHint"
+                style="@style/gradient_fill_button" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:id="@+id/time_slot_content_layout"
+            android:background="@color/white"
+            android:visibility="gone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.mygate.user.utilities.ExpandableHeightGridView
+                android:gravity="center"
+                android:id="@+id/gridViewLS"
+                android:paddingBottom="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:stretchMode="columnWidth"
+                android:numColumns="3" />
+
+            <ImageButton
+                android:id="@+id/showSelected"
+                android:background="@drawable/left_to_right_gradient_plain"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                app:srcCompat="0x7f080187" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:gravity="center"
+            android:id="@+id/progress_bar_layout"
+            android:visibility="gone"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ProgressBar
+                android:id="@+id/progress_bar"
+                android:padding="10dp"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:indeterminateDrawable="@drawable/indeterminate_progress_bar"
+                android:layout_centerInParent="true" />
+        </LinearLayout>
+    </FrameLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@+id/container_layout"
+        app:layout_constraintEnd_toEndOf="0"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintStart_toStartOf="0">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginStart="25dp"
+            android:layout_marginEnd="8dp"
+            app:layout_constraintBottom_toBottomOf="0"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toStartOf="0"
+            app:layout_constraintTop_toTopOf="0"
+            app:layout_constraintVertical_bias="0"
+            app:srcCompat="0x7f08018a" />
+
+        <TextView
+            android:textSize="@dimen/spec_heading"
+            android:textColor="@color/white"
+            android:id="@+id/dialog_header"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginBottom="8dp"
+            android:text="@string/edit_profile_bottom_sheet_header2"
+            android:shadowColor="@color/charcoal_grey"
+            android:shadowRadius="15"
+            android:lineSpacingExtra="10sp"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            app:layout_constraintBottom_toBottomOf="0"
+            app:layout_constraintEnd_toEndOf="0"
+            app:layout_constraintStart_toStartOf="0"
+            app:layout_constraintTop_toTopOf="0"
+            app:layout_constraintVertical_bias="0.6" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

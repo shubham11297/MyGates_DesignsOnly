@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+<!--    TODO WEb view-->
+    <com.mygate.user.common.p011ui.LollipopFixedWebView
+        android:id="@+id/webView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/progress_bar"
+        android:background="@android:color/white" />
+
+    <include layout="@layout/layout_error_screen" />
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
