@@ -226,7 +226,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:background="@drawable/bottom_corner_rounded_background20"
-                        android:visibility="gone"
+                        android:visibility="visible"
                         app:layout_constraintTop_toBottomOf="@+id/view4">
 
                         <androidx.constraintlayout.widget.ConstraintLayout
@@ -386,7 +386,7 @@
             android:layout_marginLeft="30dp"
             android:layout_marginRight="30dp"
             android:background="@drawable/round_corners_white_20"
-            android:visibility="gone"
+            android:visibility="visible"
             app:layout_constraintBottom_toBottomOf="0"
             app:layout_constraintTop_toBottomOf="@+id/header_layout">
 
@@ -414,7 +414,7 @@
                 android:layout_width="80dp"
                 android:layout_height="80dp"
                 android:layout_marginBottom="@dimen/mediumPadding"
-                android:visibility="gone"
+                android:visibility="visible"
                 app:layout_constraintBottom_toTopOf="@+id/error_message"
                 app:layout_constraintLeft_toLeftOf="0"
                 app:layout_constraintRight_toRightOf="0"
@@ -432,7 +432,7 @@
                 android:lineSpacingExtra="7sp"
                 android:textColor="@color/charcoal_grey_80"
                 android:textSize="@dimen/textSize_15"
-                android:visibility="gone"
+                android:visibility="visible"
                 app:layout_constrainedWidth="true"
                 app:layout_constraintBottom_toBottomOf="@+id/guideline1"
                 app:layout_constraintLeft_toLeftOf="0"
@@ -448,7 +448,7 @@
                 android:clickable="true"
                 android:text="Retry"
                 android:textSize="@dimen/textSize_16"
-                android:visibility="gone"
+                android:visibility="visible"
                 app:layout_constrainedWidth="true"
                 app:layout_constraintLeft_toLeftOf="0"
                 app:layout_constraintRight_toRightOf="0"

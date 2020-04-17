@@ -57,7 +57,7 @@
                 android:layout_marginLeft="3dp"
                 android:layout_marginRight="3dp"
                 android:background="@drawable/dialog_bg_add_vehicle"
-                android:visibility="gone"
+                android:visibility="visible"
                 app:layout_constraintTop_toTopOf="0"
                 app:tabGravity="0"
                 app:tabIndicatorColor="@color/light_red"
@@ -72,7 +72,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:elevation="1dp"
-                android:visibility="gone"
+                android:visibility="visible"
                 app:layout_constraintEnd_toEndOf="0"
                 app:layout_constraintStart_toStartOf="0"
                 app:layout_constraintTop_toBottomOf="@+id/frequencyTabLayout">
@@ -85,7 +85,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:elevation="1dp"
-                android:visibility="gone"
+                android:visibility="visible"
                 app:layout_constraintEnd_toEndOf="0"
                 app:layout_constraintStart_toStartOf="0"
                 app:layout_constraintTop_toBottomOf="@+id/frequencyTabLayout">

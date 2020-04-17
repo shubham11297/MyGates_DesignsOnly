@@ -4,7 +4,7 @@
     xmlns:aapt="http://schemas.android.com/aapt"
     android:id="@+id/accessDeniedRL"
     android:background="@color/white_transparent"
-    android:visibility="gone"
+    android:visibility="visible"
     android:clickable="true"
     android:layout_width="match_parent"
     android:layout_height="match_parent"

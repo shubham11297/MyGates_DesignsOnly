@@ -105,7 +105,7 @@
 
                     <androidx.constraintlayout.widget.ConstraintLayout
                         android:id="@+id/adultLayout"
-                        android:visibility="gone"
+                        android:visibility="visible"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
 
@@ -167,7 +167,7 @@
                                 android:textColor="@color/coral_two"
                                 android:gravity="center_horizontal"
                                 android:id="@+id/lockView"
-                                android:visibility="gone"
+                                android:visibility="visible"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="6dp"
@@ -183,7 +183,7 @@
                                 android:gravity="center"
                                 android:id="@+id/lockHelpView"
                                 android:background="0x7f0801da"
-                                android:visibility="gone"
+                                android:visibility="visible"
                                 android:layout_width="16dp"
                                 android:layout_height="16dp"
                                 android:layout_marginLeft="5dp"
@@ -281,7 +281,7 @@
                                 android:id="@+id/namelockHelpView"
                                 android:background="0x7f0801da"
                                 android:padding="4dp"
-                                android:visibility="gone"
+                                android:visibility="visible"
                                 android:clickable="true"
                                 android:layout_width="20dp"
                                 android:layout_height="20dp"
@@ -294,7 +294,7 @@
 
                     <androidx.constraintlayout.widget.ConstraintLayout
                         android:id="@+id/kidLayout"
-                        android:visibility="gone"
+                        android:visibility="visible"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
 
@@ -422,7 +422,7 @@
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:id="@+id/kidAddButton"
                     android:background="@drawable/round_mgred_fill_button"
-                    android:visibility="gone"
+                    android:visibility="visible"
                     android:layout_width="match_parent"
                     android:layout_height="56dp">
 

@@ -58,7 +58,7 @@
                             android:layout_marginTop="6dp"
                             android:layout_marginRight="4dp"
                             android:background="@drawable/dialog_bg_add_vehicle"
-                            android:visibility="gone"
+                            android:visibility="visible"
                             app:tabGravity="0"
                             app:tabIndicatorColor="@color/light_red"
                             app:tabIndicatorHeight="3dp"
@@ -128,7 +128,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:elevation="1dp"
-                            android:visibility="gone"
+                            android:visibility="visible"
                             app:layout_constraintEnd_toEndOf="0"
                             app:layout_constraintStart_toStartOf="0"
                             app:layout_constraintTop_toTopOf="0">

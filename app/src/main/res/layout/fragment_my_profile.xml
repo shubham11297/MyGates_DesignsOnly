@@ -38,7 +38,7 @@
                 android:layout_marginLeft="5dp"
                 android:layout_marginTop="5dp"
                 android:padding="10dp"
-                android:visibility="gone"
+                android:visibility="visible"
                 app:layout_constraintLeft_toLeftOf="0"
                 app:layout_constraintTop_toTopOf="0"
                 app:srcCompat="@drawable/ic_edit" />
@@ -86,7 +86,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerInParent="true"
-                    android:visibility="gone" />
+                    android:visibility="visible" />
             </RelativeLayout>
 
             <TextView

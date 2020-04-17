@@ -97,7 +97,7 @@
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="24dp"
                 android:background="@color/spec_black_15"
-                android:visibility="gone"
+                android:visibility="visible"
                 app:layout_constraintTop_toBottomOf="@+id/textViewPaidDate" />
 
             <androidx.recyclerview.widget.RecyclerView
@@ -106,7 +106,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:nestedScrollingEnabled="false"
-                android:visibility="gone"
+                android:visibility="visible"
                 app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                 app:layout_constraintEnd_toEndOf="@+id/textViewAmount"
                 app:layout_constraintStart_toStartOf="@+id/textViewAmountPaid"
@@ -120,7 +120,7 @@
             android:background="@color/white"
             android:focusable="true"
             android:focusableInTouchMode="true"
-            android:visibility="gone"
+            android:visibility="visible"
             app:layout_constraintTop_toBottomOf="@+id/constraintLayoutAmountPaid">
 
             <TextView
@@ -424,7 +424,7 @@
             android:id="@+id/constraintLayoutSocietyPaymentInfo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:visibility="gone"
+            android:visibility="visible"
             app:layout_constraintTop_toBottomOf="@+id/constraintLayoutEditable">
 
             <TextView
@@ -481,7 +481,7 @@
             android:id="@+id/constraintLayoutPaymentDetails"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:visibility="gone"
+            android:visibility="visible"
             app:layout_constraintTop_toBottomOf="@+id/constraintLayoutSocietyPaymentInfo">
 
             <TextView
@@ -508,7 +508,7 @@
                 android:nestedScrollingEnabled="false"
                 android:orientation="horizontal"
                 android:overScrollMode="never"
-                android:visibility="gone"
+                android:visibility="visible"
                 app:layoutManager="com.google.android.flexbox.FlexboxLayoutManager"
                 app:layout_constraintEnd_toEndOf="0"
                 app:layout_constraintStart_toStartOf="0"

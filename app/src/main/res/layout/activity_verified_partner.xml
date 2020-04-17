@@ -65,7 +65,7 @@
 
                 <ImageView
                     android:id="@+id/gifView"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="282dp"
                     android:layout_marginLeft="20dp"
                     android:layout_marginTop="15dp"
@@ -161,7 +161,7 @@
                 android:layout_height="0dp"
                 android:background="@color/white_transparent"
                 android:clickable="true"
-                android:visibility="gone"
+                android:visibility="visible"
                 app:layout_constraintBottom_toBottomOf="@+id/partners_list"
                 app:layout_constraintTop_toTopOf="@+id/desc_auto_approve" />
         </androidx.constraintlayout.widget.ConstraintLayout>

@@ -85,7 +85,7 @@
             android:layout_height="50dp"
             android:layout_alignParentBottom="true"
             android:background="@drawable/left_to_right_gradient_plain"
-            android:visibility="gone">
+            android:visibility="visible">
 
             <RelativeLayout
                 android:layout_width="wrap_content"
@@ -120,7 +120,7 @@
             android:background="@color/white_transparent"
             android:clickable="true"
             android:elevation="1dp"
-            android:visibility="gone">
+            android:visibility="visible">
 
             <ProgressBar
                 android:id="@+id/progress_bar"
@@ -169,11 +169,11 @@
 
     <include
         layout="@layout/layout_bottomsheet_calender"
-        android:visibility="gone" />
+        android:visibility="visible" />
 
     <include
         layout="@layout/search_empty_state_layout"
-        android:visibility="gone" />
+        android:visibility="visible" />
 
     <include layout="@layout/layout_permission_denied" />
 
