@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:aapt="http://schemas.android.com/aapt" android:layout_width="match_parent" android:layout_height="match_parent">
+    <com.google.android.material.appbar.AppBarLayout android:id="@+id/appBarView" android:background="@drawable/toolbar_gradient" android:paddingTop="@dimen/app_bar_padding" android:layout_width="match_parent" android:layout_height="wrap_content" android:elevation="6dp">
+        <androidx.appcompat.widget.Toolbar android:id="@+id/toolbar" android:layout_width="match_parent" android:layout_height="?attr/actionBarSize" app:theme="@style/ThemeMyGate.Toolbar"/>
+    </com.google.android.material.appbar.AppBarLayout>
+    <RelativeLayout android:id="@+id/hostLayout" android:background="@color/white" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_below="@+id/appBarView"/>
+</RelativeLayout>

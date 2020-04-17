@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/nestedScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/title1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginRight="10dp"
+                android:gravity="center_horizontal"
+                android:lineSpacingExtra="7sp"
+                android:text="Please take a moment to verify your phone number."
+                android:textColor="@color/charcoal_grey_30"
+                android:textSize="14sp"
+                app:layout_constraintLeft_toLeftOf="0"
+                app:layout_constraintRight_toRightOf="0"
+                app:layout_constraintTop_toTopOf="0" />
+
+            <TextView
+                android:id="@+id/title2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginRight="10dp"
+                android:gravity="center_horizontal"
+                android:lineSpacingExtra="7sp"
+                android:text="We will send you a One Time Passcode."
+                android:textColor="@color/soft_blue"
+                android:textSize="14sp"
+                app:layout_constraintLeft_toLeftOf="0"
+                app:layout_constraintRight_toRightOf="0"
+                app:layout_constraintTop_toBottomOf="@+id/title1" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/numberInput"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="40dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginRight="40dp"
+                android:hint="Mobile Number"
+                android:inputType="number"
+                android:lineSpacingExtra="8sp"
+                android:maxLength="10"
+                android:textColor="@color/charcoal_grey_80"
+                android:textSize="16sp"
+                app:backgroundTint="@color/light_red"
+                app:layout_constraintLeft_toLeftOf="0"
+                app:layout_constraintRight_toRightOf="0"
+                app:layout_constraintTop_toBottomOf="@+id/title2" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/privacyLayout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="40dp"
+                android:layout_marginTop="25dp"
+                android:layout_marginRight="40dp"
+                android:background="@drawable/rounded_corner_slate_grey_30_white_two_solid_rect"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:paddingBottom="15dp"
+                app:layout_constraintLeft_toLeftOf="0"
+                app:layout_constraintRight_toRightOf="0"
+                app:layout_constraintTop_toBottomOf="@+id/numberInput">
+
+                <include
+                    android:id="@+id/detail1"
+                    layout="@layout/layout_mygate_privacy_detail"
+                    app:layout_constraintLeft_toLeftOf="0"
+                    app:layout_constraintTop_toTopOf="0" />
+
+                <TextView
+                    android:id="@+id/dataLinkView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="3dp"
+                    android:padding="5dp"
+                    android:text="@string/privacy_policy"
+                    android:textColor="@color/light_red"
+                    android:textSize="14sp"
+                    app:layout_constraintLeft_toLeftOf="0"
+                    app:layout_constraintTop_toBottomOf="@+id/detail1" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <Button
+                android:id="@+id/otpButton"
+                style="@style/grey_fill_button"
+                android:layout_width="wrap_content"
+                android:layout_height="56dp"
+                android:layout_marginTop="15dp"
+                android:clickable="true"
+                android:text="REQUEST OTP"
+                app:layout_constraintLeft_toLeftOf="0"
+                app:layout_constraintRight_toRightOf="0"
+                app:layout_constraintTop_toBottomOf="@+id/privacyLayout" />
+
+            <TextView
+                android:id="@+id/loginDescText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="36dp"
+                android:lineSpacingExtra="10sp"
+                android:text="Already have an account?"
+                android:textColor="@color/charcoal_grey_80"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toBottomOf="0"
+                app:layout_constraintHorizontal_chainStyle="2"
+                app:layout_constraintLeft_toLeftOf="0"
+                app:layout_constraintRight_toLeftOf="@+id/loginText"
+                app:layout_constraintTop_toBottomOf="@+id/otpButton" />
+
+            <TextView
+                android:id="@+id/loginText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="3dp"
+                android:layout_marginTop="36dp"
+                android:clickable="true"
+                android:gravity="center"
+                android:padding="5dp"
+                android:text="@string/log_in_underline"
+                android:textColor="@color/light_red"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toBottomOf="0"
+                app:layout_constraintLeft_toRightOf="@+id/loginDescText"
+                app:layout_constraintRight_toRightOf="0"
+                app:layout_constraintTop_toBottomOf="@+id/otpButton" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="@+id/nestedScrollView"
+        app:layout_constraintTop_toTopOf="@+id/nestedScrollView">
+
+        <include layout="@layout/layout_error_screen_fragment" />
+    </RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

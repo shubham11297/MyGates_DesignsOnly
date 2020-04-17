@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/textView"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:drawableStart="0x7f0800cd"
+    android:drawablePadding="12dp"
+    android:lineSpacingExtra="8sp"
+    android:orientation="vertical"
+    android:paddingStart="20dp"
+    android:paddingTop="6dp"
+    android:paddingEnd="20dp"
+    android:paddingBottom="6dp"
+    android:text="@string/renting_with_family"
+    android:textColor="@color/charcoal_grey_80"
+    android:textSize="@dimen/spec_subheading" />

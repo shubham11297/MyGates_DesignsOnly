@@ -1,0 +1,654 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/parent"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/gradient_background_top_to_angle">
+
+        <ImageView
+            android:id="@+id/cross"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginLeft="24dp"
+            android:layout_marginTop="16dp"
+            app:layout_constraintStart_toStartOf="0"
+            app:layout_constraintTop_toTopOf="0"
+            app:srcCompat="@drawable/ic_close_white" />
+
+        <TextView
+            android:id="@+id/visitFlat"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="60dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginRight="56dp"
+            android:layout_marginBottom="8dp"
+            android:ellipsize="end"
+            android:gravity="center_horizontal"
+            android:letterSpacing="0.07"
+            android:maxLines="2"
+            android:textAllCaps="true"
+            android:textColor="#ffffff"
+            android:textSize="13sp"
+            app:layout_constraintBottom_toBottomOf="@+id/cross"
+            app:layout_constraintEnd_toEndOf="0"
+            app:layout_constraintStart_toStartOf="0"
+            app:layout_constraintTop_toTopOf="@+id/cross" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="48dp" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintBottom_toBottomOf="0"
+            app:layout_constraintEnd_toEndOf="0"
+            app:layout_constraintStart_toStartOf="0"
+            app:layout_constraintTop_toTopOf="0">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constraint1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="0"
+                app:layout_constraintEnd_toEndOf="0"
+                app:layout_constraintStart_toStartOf="0"
+                app:layout_constraintTop_toTopOf="0">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/VisitorCL"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="32dp"
+                    android:layout_marginLeft="32dp"
+                    android:layout_marginTop="45dp"
+                    android:layout_marginEnd="32dp"
+                    android:layout_marginRight="32dp"
+                    android:background="@drawable/round_border_white_fill"
+                    android:paddingBottom="45dp"
+                    app:layout_constraintBottom_toBottomOf="0"
+                    app:layout_constraintEnd_toEndOf="0"
+                    app:layout_constraintHorizontal_bias="0"
+                    app:layout_constraintStart_toStartOf="0"
+                    app:layout_constraintTop_toTopOf="0"
+                    app:layout_constraintVertical_bias="0">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/visitorText"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginTop="45dp"
+                        android:layout_marginEnd="15dp"
+                        android:layout_marginRight="15dp"
+                        android:gravity="center_horizontal"
+                        android:lineSpacingExtra="6sp"
+                        android:textColor="@color/slate_grey_80"
+                        android:textSize="24sp"
+                        app:layout_constraintEnd_toEndOf="0"
+                        app:layout_constraintStart_toStartOf="0"
+                        app:layout_constraintTop_toTopOf="0" />
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/zen_layout"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        app:layout_constraintLeft_toLeftOf="0"
+                        app:layout_constraintRight_toRightOf="0"
+                        app:layout_constraintTop_toBottomOf="@+id/visitorText">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/zen"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            app:layout_constraintLeft_toLeftOf="0"
+                            app:layout_constraintRight_toRightOf="0"
+                            app:layout_constraintTop_toTopOf="0">
+
+                            <com.mygate.user.common.p011ui.CircularImageView
+                                android:id="@+id/img"
+                                android:layout_width="72dp"
+                                android:layout_height="72dp"
+                                android:layout_marginTop="10dp"
+                                android:src="0x7f08030a"
+                                app:layout_constraintBottom_toBottomOf="0"
+                                app:layout_constraintHorizontal_chainStyle="2"
+                                app:layout_constraintLeft_toLeftOf="0"
+                                app:layout_constraintRight_toLeftOf="@+id/detailLayout1"
+                                app:layout_constraintTop_toTopOf="0"
+                                app:layout_constraintVertical_bias="1" />
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:id="@+id/detailLayout1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                app:layout_constraintBottom_toBottomOf="0"
+                                app:layout_constraintLeft_toRightOf="@+id/img"
+                                app:layout_constraintRight_toRightOf="0"
+                                app:layout_constraintTop_toTopOf="0">
+
+                                <RelativeLayout
+                                    android:id="@+id/typeLayout1"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="12dp"
+                                    android:layout_marginRight="3dp"
+                                    app:layout_constrainedWidth="true"
+                                    app:layout_constraintBottom_toTopOf="@+id/layout_address"
+                                    app:layout_constraintLeft_toLeftOf="0"
+                                    app:layout_constraintTop_toTopOf="0"
+                                    app:layout_constraintVertical_bias="0"
+                                    app:layout_constraintVertical_chainStyle="2">
+
+                                    <androidx.appcompat.widget.AppCompatTextView
+                                        android:id="@+id/type"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_centerVertical="true"
+                                        android:layout_marginRight="5dp"
+                                        android:ellipsize="end"
+                                        android:lineSpacingExtra="4sp"
+                                        android:maxWidth="150dp"
+                                        android:textColor="@color/charcoal_grey_80"
+                                        android:textSize="18sp" />
+
+                                    <androidx.appcompat.widget.AppCompatImageView
+                                        android:id="@+id/callPhoneVisitor"
+                                        android:layout_width="48dp"
+                                        android:layout_height="48dp"
+                                        android:layout_toRightOf="@+id/type"
+                                        android:scaleType="center"
+                                        app:srcCompat="@drawable/ic_call_green_big" />
+                                </RelativeLayout>
+
+                                <RelativeLayout
+                                    android:id="@+id/layout_address"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="5dp"
+                                    android:orientation="horizontal"
+                                    app:layout_constraintBottom_toBottomOf="0"
+                                    app:layout_constraintStart_toStartOf="@+id/typeLayout1"
+                                    app:layout_constraintTop_toBottomOf="@+id/typeLayout1">
+
+                                    <com.mygate.user.common.p011ui.CircularImageView
+                                        android:id="@+id/visitorCompanyImage"
+                                        android:layout_width="24dp"
+                                        android:layout_height="24dp"
+                                        android:layout_centerVertical="true"
+                                        android:layout_marginRight="10dp" />
+
+                                    <androidx.appcompat.widget.AppCompatTextView
+                                        android:id="@+id/address"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_centerVertical="true"
+                                        android:layout_toRightOf="@+id/visitorCompanyImage"
+                                        android:lineSpacingExtra="4sp"
+                                        android:maxWidth="150dp"
+                                        android:textColor="@color/charcoal_grey_80"
+                                        android:textSize="18sp" />
+                                </RelativeLayout>
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <TextView
+                        android:id="@+id/vhelpDescTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginRight="15dp"
+                        android:background="@drawable/round_grey"
+                        android:gravity="center_horizontal"
+                        android:lineSpacingExtra="6sp"
+                        android:paddingLeft="10dp"
+                        android:paddingTop="3dp"
+                        android:paddingRight="10dp"
+                        android:paddingBottom="3dp"
+                        android:textColor="@color/slate_grey_80"
+                        android:textSize="14sp"
+                        android:visibility="gone"
+                        app:layout_constrainedWidth="true"
+                        app:layout_constraintLeft_toLeftOf="0"
+                        app:layout_constraintRight_toRightOf="0"
+                        app:layout_constraintTop_toBottomOf="@+id/zen_layout" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/otherVhListView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginRight="15dp"
+                        android:elevation="6dp"
+                        android:fadeScrollbars="true"
+                        android:scrollbars="horizontal"
+                        android:visibility="gone"
+                        app:layout_constraintLeft_toLeftOf="0"
+                        app:layout_constraintRight_toRightOf="0"
+                        app:layout_constraintTop_toBottomOf="@+id/zen_layout" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/visitorTypeImage"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginRight="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:background="@drawable/white_ring"
+                    android:elevation="1dp"
+                    android:padding="2dp"
+                    app:layout_constraintBottom_toTopOf="@+id/VisitorCL"
+                    app:layout_constraintEnd_toEndOf="0"
+                    app:layout_constraintStart_toStartOf="0"
+                    app:layout_constraintTop_toTopOf="@+id/VisitorCL"
+                    app:srcCompat="0x7f080197" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/button_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="32dp"
+                    android:layout_marginLeft="32dp"
+                    android:layout_marginEnd="32dp"
+                    android:layout_marginRight="32dp"
+                    android:background="@color/transparent"
+                    android:paddingBottom="8dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/VisitorCL"
+                    app:layout_constraintTop_toBottomOf="@+id/VisitorCL">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/denyRL"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/notifcation_button_margin_top"
+                        app:layout_constraintHorizontal_chainStyle="1"
+                        app:layout_constraintLeft_toLeftOf="0"
+                        app:layout_constraintRight_toLeftOf="@+id/delegateRL"
+                        app:layout_constraintTop_toTopOf="0">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/deny_button_icon"
+                            android:layout_width="@dimen/notifcation_button_radius"
+                            android:layout_height="@dimen/notifcation_button_radius"
+                            android:background="@drawable/circle_deny_button"
+                            android:elevation="10dp"
+                            app:layout_constraintBottom_toTopOf="@+id/gate_text_3"
+                            app:layout_constraintLeft_toLeftOf="0"
+                            app:layout_constraintRight_toRightOf="0"
+                            app:layout_constraintTop_toTopOf="0"
+                            app:layout_constraintVertical_chainStyle="1">
+
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:id="@+id/imageView102"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="8dp"
+                                android:layout_marginLeft="8dp"
+                                android:layout_marginTop="8dp"
+                                android:layout_marginEnd="8dp"
+                                android:layout_marginRight="8dp"
+                                android:layout_marginBottom="8dp"
+                                android:backgroundTint="@color/coral_two"
+                                app:layout_constraintBottom_toBottomOf="0"
+                                app:layout_constraintLeft_toLeftOf="0"
+                                app:layout_constraintRight_toRightOf="0"
+                                app:layout_constraintTop_toTopOf="0"
+                                app:srcCompat="0x7f08018a"
+                                app:tint="@color/coral_two" />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/gate_text_3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/mediumPadding"
+                            android:fontFamily="@font/ubuntu"
+                            android:gravity="center_horizontal"
+                            android:letterSpacing="0.06"
+                            android:text="Deny\10Entry"
+                            android:textAllCaps="true"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/textSize_14"
+                            app:layout_constraintBottom_toBottomOf="0"
+                            app:layout_constraintLeft_toLeftOf="0"
+                            app:layout_constraintRight_toRightOf="0"
+                            app:layout_constraintTop_toBottomOf="@+id/deny_button_icon" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/delegateRL"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/notifcation_button_margin_top"
+                        app:layout_constraintLeft_toRightOf="@+id/denyRL"
+                        app:layout_constraintRight_toLeftOf="@+id/allowRL"
+                        app:layout_constraintTop_toTopOf="0">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/leave_gate_button_icon"
+                            android:layout_width="@dimen/notifcation_button_radius"
+                            android:layout_height="@dimen/notifcation_button_radius"
+                            android:background="@drawable/circle_leave_atgate"
+                            android:elevation="10dp"
+                            app:layout_constraintBottom_toTopOf="@+id/gate_text_2"
+                            app:layout_constraintLeft_toLeftOf="0"
+                            app:layout_constraintRight_toRightOf="0"
+                            app:layout_constraintTop_toTopOf="0">
+
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:id="@+id/imageView101"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="8dp"
+                                android:layout_marginLeft="8dp"
+                                android:layout_marginTop="8dp"
+                                android:layout_marginEnd="8dp"
+                                android:layout_marginRight="8dp"
+                                android:layout_marginBottom="8dp"
+                                app:layout_constraintBottom_toBottomOf="0"
+                                app:layout_constraintLeft_toLeftOf="0"
+                                app:layout_constraintRight_toRightOf="0"
+                                app:layout_constraintTop_toTopOf="0"
+                                app:srcCompat="@drawable/ic_leaveatgate_green" />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/gate_text_2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/mediumPadding"
+                            android:fontFamily="@font/ubuntu"
+                            android:gravity="center_horizontal"
+                            android:letterSpacing="0.06"
+                            android:text="Leave\10At Gate"
+                            android:textAllCaps="true"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/textSize_14"
+                            app:layout_constraintBottom_toBottomOf="0"
+                            app:layout_constraintLeft_toLeftOf="0"
+                            app:layout_constraintRight_toRightOf="0"
+                            app:layout_constraintTop_toBottomOf="@+id/leave_gate_button_icon" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/allowRL"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/notifcation_button_margin_top"
+                        app:layout_constraintLeft_toRightOf="@+id/delegateRL"
+                        app:layout_constraintRight_toRightOf="0"
+                        app:layout_constraintTop_toTopOf="0">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/accept_button_icon"
+                            android:layout_width="@dimen/notifcation_button_radius"
+                            android:layout_height="@dimen/notifcation_button_radius"
+                            android:background="@drawable/circle_green_filled"
+                            android:elevation="10dp"
+                            app:layout_constraintBottom_toTopOf="@+id/gate_text_1"
+                            app:layout_constraintLeft_toLeftOf="0"
+                            app:layout_constraintRight_toRightOf="0"
+                            app:layout_constraintTop_toTopOf="0">
+
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:id="@+id/imageView10"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="8dp"
+                                android:layout_marginLeft="8dp"
+                                android:layout_marginTop="8dp"
+                                android:layout_marginEnd="8dp"
+                                android:layout_marginRight="8dp"
+                                android:layout_marginBottom="8dp"
+                                app:layout_constraintBottom_toBottomOf="0"
+                                app:layout_constraintLeft_toLeftOf="0"
+                                app:layout_constraintRight_toRightOf="0"
+                                app:layout_constraintTop_toTopOf="0"
+                                app:srcCompat="@drawable/ic_done" />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/gate_text_1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/mediumPadding"
+                            android:fontFamily="@font/ubuntu"
+                            android:gravity="center_horizontal"
+                            android:letterSpacing="0.06"
+                            android:text="Allow\10Entry"
+                            android:textAllCaps="true"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/textSize_14"
+                            app:layout_constraintBottom_toBottomOf="0"
+                            app:layout_constraintLeft_toLeftOf="0"
+                            app:layout_constraintRight_toRightOf="0"
+                            app:layout_constraintTop_toBottomOf="@+id/accept_button_icon" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <TextView
+                    android:id="@+id/response"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginRight="16dp"
+                    android:gravity="center_horizontal"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/textSize_16"
+                    android:visibility="gone"
+                    app:layout_constraintLeft_toLeftOf="0"
+                    app:layout_constraintRight_toRightOf="0"
+                    app:layout_constraintTop_toBottomOf="@+id/button_layout" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <ImageView
+                android:id="@+id/myGate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:layout_constraintBottom_toBottomOf="0"
+                app:layout_constraintEnd_toEndOf="0"
+                app:layout_constraintStart_toStartOf="0"
+                app:srcCompat="0x7f0802d9" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/validatedLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="0"
+                app:layout_constraintTop_toTopOf="0">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/validatedDescLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginRight="30dp"
+                    android:background="@drawable/white_bg_rounded_no_padding"
+                    app:layout_constraintBottom_toBottomOf="0"
+                    app:layout_constraintTop_toTopOf="0">
+
+                    <TextView
+                        android:id="@+id/partnerDescView"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="55dp"
+                        android:layout_marginRight="20dp"
+                        android:gravity="center_horizontal"
+                        android:textColor="@color/charcoal_grey_80"
+                        android:textSize="20sp"
+                        app:layout_constraintLeft_toLeftOf="0"
+                        app:layout_constraintRight_toRightOf="0"
+                        app:layout_constraintTop_toTopOf="0" />
+
+                    <com.mygate.user.common.p011ui.CircularImageView
+                        android:id="@+id/executiveImageView"
+                        android:layout_width="38dp"
+                        android:layout_height="38dp"
+                        android:layout_marginTop="12dp"
+                        app:layout_constraintHorizontal_chainStyle="2"
+                        app:layout_constraintLeft_toLeftOf="0"
+                        app:layout_constraintRight_toLeftOf="@+id/executiveNameView"
+                        app:layout_constraintTop_toBottomOf="@+id/partnerDescView" />
+
+                    <TextView
+                        android:id="@+id/executiveNameView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="12dp"
+                        android:gravity="center_horizontal"
+                        android:letterSpacing="0.07"
+                        android:textColor="@color/charcoal_grey_50"
+                        android:textSize="13sp"
+                        app:layout_constrainedWidth="true"
+                        app:layout_constraintBottom_toBottomOf="@+id/executiveImageView"
+                        app:layout_constraintHorizontal_chainStyle="2"
+                        app:layout_constraintLeft_toRightOf="@+id/executiveImageView"
+                        app:layout_constraintRight_toLeftOf="@+id/executiveCallView"
+                        app:layout_constraintTop_toTopOf="@+id/executiveImageView"
+                        app:layout_constraintWidth_max="200dp" />
+
+                    <ImageView
+                        android:id="@+id/executiveCallView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="12dp"
+                        android:padding="5dp"
+                        app:layout_constraintBottom_toBottomOf="@+id/executiveImageView"
+                        app:layout_constraintHorizontal_chainStyle="2"
+                        app:layout_constraintLeft_toRightOf="@+id/executiveNameView"
+                        app:layout_constraintRight_toRightOf="0"
+                        app:layout_constraintTop_toTopOf="@+id/executiveImageView"
+                        app:srcCompat="@drawable/ic_call_green" />
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/partnerAnimationLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginRight="10dp"
+                        android:background="@drawable/rect_slate_grey"
+                        app:layout_constraintTop_toBottomOf="@+id/executiveImageView">
+
+                        <ImageView
+                            android:id="@+id/partnerAnimationView"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_margin="1dp"
+                            app:layout_constraintBottom_toBottomOf="0"
+                            app:layout_constraintDimensionRatio="5:2"
+                            app:layout_constraintTop_toTopOf="0" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <View
+                        android:layout_width="1dp"
+                        android:layout_height="43dp"
+                        app:layout_constraintLeft_toLeftOf="0"
+                        app:layout_constraintTop_toBottomOf="@+id/partnerAnimationLayout" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <com.mygate.user.common.p011ui.CircularImageView
+                    android:id="@+id/partnerImageView"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:background="@drawable/white_ring"
+                    android:padding="1dp"
+                    app:layout_constraintBottom_toTopOf="@+id/validatedDescLayout"
+                    app:layout_constraintLeft_toLeftOf="0"
+                    app:layout_constraintRight_toRightOf="0"
+                    app:layout_constraintTop_toTopOf="@+id/validatedDescLayout" />
+
+                <Button
+                    android:id="@+id/approvePartner"
+                    android:layout_width="250dp"
+                    android:layout_height="56dp"
+                    android:background="@drawable/rounded_green_button_back28"
+                    android:clickable="true"
+                    android:drawableLeft="@drawable/layer_ic_check_white"
+                    android:elevation="6dp"
+                    android:letterSpacing="0.06"
+                    android:paddingLeft="20dp"
+                    android:text="Pre-Approve entry"
+                    android:textAllCaps="true"
+                    android:textColor="@color/white"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="@+id/validatedDescLayout"
+                    app:layout_constraintLeft_toLeftOf="0"
+                    app:layout_constraintRight_toRightOf="0"
+                    app:layout_constraintTop_toBottomOf="@+id/validatedDescLayout" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/declinePartner"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:padding="5dp"
+                    app:layout_constraintLeft_toLeftOf="0"
+                    app:layout_constraintRight_toRightOf="0"
+                    app:layout_constraintTop_toBottomOf="@+id/approvePartner">
+
+                    <ImageView
+                        android:id="@+id/declineImage"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintHorizontal_chainStyle="2"
+                        app:layout_constraintLeft_toLeftOf="0"
+                        app:layout_constraintRight_toLeftOf="@+id/declineText"
+                        app:layout_constraintTop_toTopOf="0"
+                        app:srcCompat="@drawable/ic_close_white" />
+
+                    <TextView
+                        android:id="@+id/declineText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:gravity="center_horizontal"
+                        android:letterSpacing="0.06"
+                        android:text="DECLINE"
+                        android:textColor="@color/white"
+                        android:textSize="15sp"
+                        app:layout_constraintBottom_toBottomOf="@+id/declineImage"
+                        app:layout_constraintLeft_toRightOf="@+id/declineImage"
+                        app:layout_constraintRight_toRightOf="0"
+                        app:layout_constraintTop_toTopOf="@+id/declineImage" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <ImageView
+                android:id="@+id/new_logo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="0"
+                app:layout_constraintLeft_toLeftOf="0"
+                app:layout_constraintRight_toRightOf="0"
+                app:srcCompat="0x7f0802d9" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

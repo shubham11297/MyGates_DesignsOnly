@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/confirmTitleView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:gravity="center"
+        android:padding="@dimen/normalPadding"
+        android:text="@string/confirm_photo"
+        android:textColor="@color/light_red"
+        android:textSize="@dimen/spec_heading"
+        android:textStyle="bold" />
+
+    <com.mygate.user.common.p011ui.CircularImageView
+        android:id="@+id/psnlImageView"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/circular_nofill_grey"
+        android:foregroundGravity="center_horizontal"
+        android:src="0x7f08030a" />
+
+    <TextView
+        android:id="@+id/confirmQuesView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="left"
+        android:layout_marginLeft="20dp"
+        android:gravity="center_horizontal"
+        android:lineSpacingExtra="9sp"
+        android:paddingTop="@dimen/normalPadding"
+        android:paddingRight="@dimen/normalPadding"
+        android:paddingBottom="@dimen/normalPadding"
+        android:text="@string/pic_upload_confirm"
+        android:textColor="@color/charcoal_grey"
+        android:textSize="18sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:orientation="horizontal"
+        android:weightSum="2">
+
+        <Button
+            android:id="@+id/cancelButton"
+            style="@style/slategrey_boundary_no_fill_button"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_gravity="center"
+            android:layout_marginRight="@dimen/normalPadding"
+            android:layout_weight="1"
+            android:paddingLeft="0dp"
+            android:paddingRight="0dp"
+            android:text="@string/cancel"
+            android:textColor="@color/spec_black" />
+
+        <Button
+            android:id="@+id/confirmButton"
+            style="@style/gradient_fill_button"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="@dimen/normalPadding"
+            android:layout_weight="1"
+            android:paddingLeft="0dp"
+            android:paddingRight="0dp"
+            android:text="@string/confirm"
+            android:textColor="@color/white" />
+    </LinearLayout>
+</LinearLayout>

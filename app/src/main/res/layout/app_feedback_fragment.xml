@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/baseLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/charcoal_grey_two_90"
+    android:clickable="true">
+
+    <RelativeLayout
+        android:id="@+id/mainDialogView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="32dp"
+        android:layout_marginRight="32dp"
+        android:background="@drawable/round_corners_white_20"
+        android:clickable="true"
+        android:elevation="20dp"
+        android:padding="16dp"
+        app:layout_constraintBottom_toBottomOf="0"
+        app:layout_constraintLeft_toLeftOf="0"
+        app:layout_constraintRight_toRightOf="0"
+        app:layout_constraintTop_toTopOf="0">
+
+        <ImageView
+            android:id="@+id/imageview_rating"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:src="0x7f08031b" />
+
+        <TextView
+            android:id="@+id/titleView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/imageview_rating"
+            android:layout_centerHorizontal="true"
+            android:fontFamily="sans-serif-medium"
+            android:gravity="center_horizontal"
+            android:lineSpacingExtra="-6sp"
+            android:text="@string/app_feedback_title"
+            android:textColor="#2a2a2a"
+            android:textSize="18sp"
+            android:textStyle="normal" />
+
+        <TextView
+            android:id="@+id/feedback_hint"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/titleView"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="8dp"
+            android:fontFamily="sans-serif"
+            android:gravity="center_horizontal"
+            android:lineSpacingExtra="10sp"
+            android:text="@string/app_feedback_hint"
+            android:textColor="#2a2a2a"
+            android:textSize="15sp"
+            android:textStyle="normal" />
+
+        <Button
+            android:id="@+id/positiveButton"
+            style="@style/gradient_fill_button"
+            android:layout_width="223dp"
+            android:layout_height="40dp"
+            android:layout_below="@+id/feedback_hint"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="25dp"
+            android:clickable="true"
+            android:text="@string/send_feedback" />
+
+        <Button
+            android:id="@+id/negativeButton"
+            style="@style/gradient_fill_button"
+            android:layout_width="223dp"
+            android:layout_height="40dp"
+            android:layout_below="@+id/positiveButton"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="12dp"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/button_background_nofill_lightred_rounded_1dp"
+            android:clickable="true"
+            android:text="@string/not_now"
+            android:textColor="#f7635b" />
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/closeImageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginTop="5dp"
+        android:clickable="true"
+        android:elevation="10dp"
+        android:padding="15dp"
+        app:layout_constraintStart_toStartOf="0"
+        app:layout_constraintTop_toTopOf="0"
+        app:srcCompat="0x7f08018a" />
+</androidx.constraintlayout.widget.ConstraintLayout>

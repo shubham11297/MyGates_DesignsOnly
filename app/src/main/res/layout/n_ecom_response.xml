@@ -1,0 +1,389 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/parent"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/gradient_background_top_to_angle">
+
+        <ImageView
+            android:id="@+id/cross"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginLeft="24dp"
+            android:layout_marginTop="16dp"
+            app:layout_constraintStart_toStartOf="0"
+            app:layout_constraintTop_toTopOf="0"
+            app:srcCompat="@drawable/ic_close_white" />
+
+        <TextView
+            android:id="@+id/visitFlat"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="60dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginRight="56dp"
+            android:layout_marginBottom="8dp"
+            android:ellipsize="end"
+            android:gravity="center_horizontal"
+            android:letterSpacing="0.07"
+            android:maxLines="2"
+            android:textAllCaps="true"
+            android:textColor="#ffffff"
+            android:textSize="13sp"
+            app:layout_constraintBottom_toBottomOf="@+id/cross"
+            app:layout_constraintEnd_toEndOf="0"
+            app:layout_constraintStart_toStartOf="0"
+            app:layout_constraintTop_toTopOf="@+id/cross" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="48dp" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="36dp"
+            android:layout_marginBottom="36dp"
+            app:layout_constraintBottom_toTopOf="@+id/response"
+            app:layout_constraintTop_toBottomOf="@+id/guideline">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/validatePreApprovalLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:background="@drawable/white_bg_rounded_no_padding"
+                android:paddingTop="32dp"
+                android:paddingBottom="32dp"
+                android:visibility="visible"
+                app:layout_constraintBottom_toBottomOf="0"
+                app:layout_constraintTop_toTopOf="0">
+
+                <com.mygate.user.common.p011ui.CircularImageView
+                    android:id="@+id/partnerImageView"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:background="@drawable/white_ring"
+                    android:padding="1dp"
+                    app:layout_constraintBottom_toTopOf="@+id/partnerDescView"
+                    app:layout_constraintLeft_toLeftOf="0"
+                    app:layout_constraintRight_toRightOf="0"
+                    app:layout_constraintTop_toTopOf="0" />
+
+                <TextView
+                    android:id="@+id/partnerDescView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginRight="20dp"
+                    android:gravity="center_horizontal"
+                    android:textColor="@color/charcoal_grey"
+                    android:textSize="21sp"
+                    app:layout_constraintBottom_toTopOf="@+id/alwaysAllow"
+                    app:layout_constraintLeft_toLeftOf="0"
+                    app:layout_constraintRight_toRightOf="0"
+                    app:layout_constraintTop_toBottomOf="@+id/partnerImageView" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/alwaysAllow"
+                    android:layout_width="250dp"
+                    android:layout_height="56dp"
+                    android:layout_marginTop="22dp"
+                    android:clickable="true"
+                    android:elevation="6dp"
+                    android:focusable="true"
+                    android:gravity="center"
+                    android:letterSpacing="0.06"
+                    android:text="@string/always_allow"
+                    android:textAllCaps="true"
+                    android:textColor="@color/white"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    app:cornerRadius="30dp"
+                    app:icon="@drawable/ic_double_check_flag_white"
+                    app:iconGravity="2"
+                    app:iconPadding="14dp"
+                    app:layout_constraintBottom_toTopOf="@+id/allowOnce"
+                    app:layout_constraintLeft_toLeftOf="0"
+                    app:layout_constraintRight_toRightOf="0"
+                    app:layout_constraintTop_toBottomOf="@+id/partnerDescView" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/allowOnce"
+                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                    android:layout_width="250dp"
+                    android:layout_height="56dp"
+                    android:layout_marginTop="22dp"
+                    android:clickable="true"
+                    android:elevation="0dp"
+                    android:focusable="true"
+                    android:gravity="center"
+                    android:letterSpacing="0.06"
+                    android:text="@string/allow_once"
+                    android:textAllCaps="true"
+                    android:textColor="@color/light_red"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    app:cornerRadius="30dp"
+                    app:icon="@drawable/ic_check_white"
+                    app:iconGravity="2"
+                    app:iconPadding="14dp"
+                    app:iconTint="@color/light_red"
+                    app:layout_constraintBottom_toTopOf="@+id/declinePartner"
+                    app:layout_constraintLeft_toLeftOf="0"
+                    app:layout_constraintRight_toRightOf="0"
+                    app:layout_constraintTop_toBottomOf="@+id/alwaysAllow"
+                    app:rippleColor="@color/white_transparent_20"
+                    app:strokeColor="@color/light_red"
+                    app:strokeWidth="2dp" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/declinePartner"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="32dp"
+                    android:padding="5dp"
+                    app:layout_constraintBottom_toBottomOf="0"
+                    app:layout_constraintLeft_toLeftOf="0"
+                    app:layout_constraintRight_toRightOf="0"
+                    app:layout_constraintTop_toBottomOf="@+id/allowOnce">
+
+                    <ImageView
+                        android:id="@+id/declineImage"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        app:layout_constraintHorizontal_chainStyle="2"
+                        app:layout_constraintLeft_toLeftOf="0"
+                        app:layout_constraintRight_toLeftOf="@+id/declineText"
+                        app:layout_constraintTop_toTopOf="0"
+                        app:srcCompat="@drawable/ic_close_charcoal_grey" />
+
+                    <TextView
+                        android:id="@+id/declineText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:gravity="center_horizontal"
+                        android:letterSpacing="0.06"
+                        android:text="DECLINE"
+                        android:textColor="@color/grey_decline"
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="@+id/declineImage"
+                        app:layout_constraintLeft_toRightOf="@+id/declineImage"
+                        app:layout_constraintRight_toRightOf="0"
+                        app:layout_constraintTop_toTopOf="@+id/declineImage" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/validatePartnerLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:background="@drawable/white_bg_rounded_no_padding"
+                android:paddingTop="32dp"
+                android:paddingBottom="32dp"
+                android:visibility="visible"
+                app:layout_constraintBottom_toBottomOf="0"
+                app:layout_constraintTop_toTopOf="0">
+
+                <ImageView
+                    android:id="@+id/validatePartnerImageView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:scaleType="fitCenter"
+                    app:layout_constraintTop_toTopOf="0" />
+
+                <TextView
+                    android:id="@+id/validatePartnerDescView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginRight="20dp"
+                    android:gravity="center_horizontal"
+                    android:textColor="@color/charcoal_grey"
+                    android:textSize="21sp"
+                    app:layout_constraintBottom_toTopOf="@+id/enableNow"
+                    app:layout_constraintLeft_toLeftOf="0"
+                    app:layout_constraintRight_toRightOf="0"
+                    app:layout_constraintTop_toBottomOf="@+id/validatePartnerImageView" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/enableNow"
+                    android:layout_width="250dp"
+                    android:layout_height="56dp"
+                    android:layout_marginTop="22dp"
+                    android:clickable="true"
+                    android:elevation="6dp"
+                    android:focusable="true"
+                    android:gravity="center"
+                    android:letterSpacing="0.06"
+                    android:text="@string/enable_now"
+                    android:textAllCaps="true"
+                    android:textColor="@color/white"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    app:cornerRadius="30dp"
+                    app:icon="@drawable/ic_check_white"
+                    app:iconGravity="2"
+                    app:iconPadding="14dp"
+                    app:layout_constraintBottom_toTopOf="@+id/declinePartnerButton"
+                    app:layout_constraintHorizontal_bias="0.495"
+                    app:layout_constraintLeft_toLeftOf="0"
+                    app:layout_constraintRight_toRightOf="0"
+                    app:layout_constraintTop_toBottomOf="@+id/validatePartnerDescView" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/declinePartnerButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:padding="5dp"
+                    app:layout_constraintBottom_toBottomOf="0"
+                    app:layout_constraintLeft_toLeftOf="0"
+                    app:layout_constraintRight_toRightOf="0"
+                    app:layout_constraintTop_toBottomOf="@+id/enableNow">
+
+                    <ImageView
+                        android:id="@+id/declineButtonImage"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        app:layout_constraintHorizontal_chainStyle="2"
+                        app:layout_constraintLeft_toLeftOf="0"
+                        app:layout_constraintRight_toLeftOf="@+id/declineButtonText"
+                        app:layout_constraintTop_toTopOf="0"
+                        app:srcCompat="@drawable/ic_close_charcoal_grey" />
+
+                    <TextView
+                        android:id="@+id/declineButtonText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:gravity="center_horizontal"
+                        android:letterSpacing="0.06"
+                        android:text="@string/decline"
+                        android:textColor="@color/grey_decline"
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="@+id/declineButtonImage"
+                        app:layout_constraintLeft_toRightOf="@+id/declineButtonImage"
+                        app:layout_constraintRight_toRightOf="0"
+                        app:layout_constraintTop_toTopOf="@+id/declineButtonImage" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/declinedPartnerLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:background="@drawable/white_bg_rounded_no_padding"
+                android:paddingTop="32dp"
+                android:paddingBottom="32dp"
+                android:visibility="visible"
+                app:layout_constraintBottom_toBottomOf="0"
+                app:layout_constraintTop_toTopOf="0">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/declineImagesLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toTopOf="0">
+
+                    <ImageView
+                        android:id="@+id/declinePartnerImageView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:scaleType="fitCenter"
+                        app:layout_constraintTop_toTopOf="0" />
+
+                    <com.mygate.user.common.p011ui.CircularImageView
+                        android:id="@+id/declinePartnerPreApprovalImageView"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:background="@drawable/white_ring"
+                        android:padding="1dp"
+                        android:visibility="visible"
+                        app:layout_constraintLeft_toLeftOf="0"
+                        app:layout_constraintRight_toRightOf="0"
+                        app:layout_constraintTop_toTopOf="0" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <TextView
+                    android:id="@+id/declinePartnerDescView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginRight="20dp"
+                    android:gravity="center_horizontal"
+                    android:text="@string/help_us_understand_why"
+                    android:textColor="@color/charcoal_grey"
+                    android:textSize="21sp"
+                    app:layout_constraintBottom_toTopOf="@+id/listViewOptions"
+                    app:layout_constraintLeft_toLeftOf="0"
+                    app:layout_constraintRight_toRightOf="0"
+                    app:layout_constraintTop_toBottomOf="@+id/declineImagesLayout" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/listViewOptions"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="18dp"
+                    android:layout_marginTop="38dp"
+                    android:layout_marginRight="18dp"
+                    android:nestedScrollingEnabled="false"
+                    app:layout_constraintHorizontal_bias="0.495"
+                    app:layout_constraintLeft_toLeftOf="0"
+                    app:layout_constraintRight_toRightOf="0"
+                    app:layout_constraintTop_toBottomOf="@+id/declinePartnerDescView" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <ImageView
+            android:id="@+id/myGate"
+            android:layout_width="wrap_content"
+            android:layout_height="21dp"
+            android:layout_marginBottom="16dp"
+            app:layout_constraintBottom_toBottomOf="0"
+            app:layout_constraintEnd_toEndOf="0"
+            app:layout_constraintStart_toStartOf="0"
+            app:srcCompat="0x7f0802d9" />
+
+        <TextView
+            android:id="@+id/response"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginBottom="24dp"
+            android:gravity="center_horizontal"
+            android:textColor="@color/white"
+            android:textSize="@dimen/textSize_16"
+            android:visibility="visible"
+            app:layout_constraintBottom_toTopOf="@+id/myGate"
+            app:layout_constraintLeft_toLeftOf="0"
+            app:layout_constraintRight_toRightOf="0" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

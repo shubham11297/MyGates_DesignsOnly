@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:aapt="http://schemas.android.com/aapt" android:orientation="vertical" android:id="@+id/item_row" android:layout_width="match_parent" android:layout_height="wrap_content">
+    <androidx.constraintlayout.widget.ConstraintLayout android:orientation="horizontal" android:paddingLeft="@dimen/admin_padding_side" android:paddingTop="@dimen/admin_padding_top" android:paddingRight="@dimen/admin_padding_side" android:paddingBottom="@dimen/admin_padding_top" android:layout_width="match_parent" android:layout_height="wrap_content">
+        <androidx.appcompat.widget.AppCompatImageView android:id="@+id/icon" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="0x7f0801c8" app:layout_constraintBottom_toBottomOf="0" app:layout_constraintLeft_toLeftOf="0" app:layout_constraintTop_toTopOf="0"/>
+        <androidx.appcompat.widget.AppCompatTextView android:textSize="18sp" android:textColor="@color/charcoal_grey" android:id="@+id/flat_name" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="14dp" android:lineSpacingExtra="9sp" app:layout_constraintBottom_toBottomOf="@+id/icon" app:layout_constraintLeft_toRightOf="@+id/icon" app:layout_constraintTop_toTopOf="@+id/icon"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    <View android:background="@color/white_two" android:layout_width="match_parent" android:layout_height="1dp"/>
+</LinearLayout>

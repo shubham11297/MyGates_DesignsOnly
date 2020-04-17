@@ -1,0 +1,907 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/societyTypeList"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="visible"
+        app:layout_constraintTop_toTopOf="0">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerViewSocietyType"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintTop_toBottomOf="@+id/divider" />
+
+        <TextView
+            android:id="@+id/selectTypeView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:letterSpacing="0.07"
+            android:lineSpacingExtra="7sp"
+            android:text="@string/select_type"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="0"
+            app:layout_constraintTop_toTopOf="0" />
+
+        <View
+            android:id="@+id/divider"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="16dp"
+            android:background="@color/white_two"
+            app:layout_constraintTop_toBottomOf="@+id/selectTypeView" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/societyTypeRl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="14dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:visibility="gone"
+        app:layout_constraintTop_toBottomOf="@+id/societyTypeList">
+
+        <TextView
+            android:id="@+id/typeHeader"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/type"
+            android:textColor="@color/charcoal_grey"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="0"
+            app:layout_constraintTop_toTopOf="0" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/background_nofill_rounded_border_new_6dp"
+            android:padding="12dp"
+            app:layout_constraintTop_toBottomOf="@+id/typeHeader">
+
+            <ImageView
+                android:id="@+id/societyTypeLoc"
+                android:layout_width="8dp"
+                android:layout_height="8dp"
+                android:layout_marginEnd="8dp"
+                app:layout_constraintBottom_toBottomOf="0"
+                app:layout_constraintEnd_toEndOf="0"
+                app:layout_constraintTop_toTopOf="0"
+                app:srcCompat="@drawable/ic_triangle_red" />
+
+            <TextView
+                android:id="@+id/aaSocietyText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="8dp"
+                android:lineSpacingExtra="8sp"
+                android:textColor="@color/charcoal_grey"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toBottomOf="0"
+                app:layout_constraintStart_toStartOf="0"
+                app:layout_constraintTop_toTopOf="0" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/locList"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="gone"
+        app:layout_constraintTop_toBottomOf="@+id/societyTypeRl">
+
+        <ImageView
+            android:id="@+id/requestCallbackIcon"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="2dp"
+            app:layout_constrainedHeight="true"
+            app:layout_constraintBottom_toBottomOf="@+id/requestCallbackText"
+            app:layout_constraintStart_toEndOf="@+id/requestCallbackText"
+            app:layout_constraintTop_toTopOf="@+id/requestCallbackText"
+            app:srcCompat="@drawable/ic_right_arrow_grey" />
+
+        <TextView
+            android:id="@+id/no_city_desc"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:lineSpacingExtra="7sp"
+            android:text="@string/city_not_found_msg"
+            android:textColor="@color/slate_grey_80"
+            android:textSize="14sp"
+            android:visibility="visible"
+            app:layout_constraintEnd_toEndOf="0"
+            app:layout_constraintStart_toStartOf="0"
+            app:layout_constraintTop_toBottomOf="@+id/recyclerViewCity" />
+
+        <TextView
+            android:id="@+id/selectCity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="12dp"
+            android:letterSpacing="0.07"
+            android:text="@string/select_city"
+            android:textAllCaps="true"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="0"
+            app:layout_constraintTop_toTopOf="0" />
+
+        <TextView
+            android:id="@+id/requestCallbackText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:text="@string/request_a_callback"
+            android:textColor="@color/light_red"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="0"
+            app:layout_constraintStart_toStartOf="0"
+            app:layout_constraintTop_toBottomOf="@+id/no_city_desc" />
+
+        <View
+            android:id="@+id/divider"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="12dp"
+            android:background="@color/white_two"
+            app:layout_constraintTop_toBottomOf="@+id/selectCity" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerViewCity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/divider" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/locationRl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingLeft="20dp"
+        android:paddingTop="15dp"
+        android:paddingRight="20dp"
+        android:visibility="gone"
+        app:layout_constraintTop_toBottomOf="@+id/locList">
+
+        <TextView
+            android:id="@+id/cityHeader"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/city_cap_first"
+            android:textColor="@color/charcoal_grey"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="0"
+            app:layout_constraintTop_toTopOf="0" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/background_nofill_rounded_border_new_6dp"
+            android:padding="12dp"
+            app:layout_constraintTop_toBottomOf="@+id/cityHeader">
+
+            <ImageView
+                android:id="@+id/delLoc"
+                android:layout_width="8dp"
+                android:layout_height="8dp"
+                android:layout_marginEnd="8dp"
+                app:layout_constraintBottom_toBottomOf="0"
+                app:layout_constraintEnd_toEndOf="0"
+                app:layout_constraintTop_toTopOf="0"
+                app:srcCompat="@drawable/ic_triangle_red" />
+
+            <TextView
+                android:id="@+id/aaLocText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="8dp"
+                android:lineSpacingExtra="8sp"
+                android:textColor="@color/charcoal_grey"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toBottomOf="0"
+                app:layout_constraintStart_toStartOf="0"
+                app:layout_constraintTop_toTopOf="0" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/societyList"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="14dp"
+        android:orientation="vertical"
+        android:visibility="gone"
+        app:layout_constraintTop_toBottomOf="@+id/locationRl">
+
+        <Button
+            android:id="@+id/requestCallbackButton"
+            style="@style/lightred_boundary_no_fill_button"
+            android:layout_width="250dp"
+            android:layout_height="56dp"
+            android:layout_marginTop="25dp"
+            android:clickable="true"
+            android:elevation="6dp"
+            android:focusable="true"
+            android:letterSpacing="0.06"
+            android:paddingLeft="0dp"
+            android:paddingRight="0dp"
+            android:text="@string/request_a_callback"
+            android:textAllCaps="true"
+            android:textStyle="bold"
+            app:layout_constraintLeft_toLeftOf="0"
+            app:layout_constraintRight_toRightOf="0"
+            app:layout_constraintTop_toBottomOf="@+id/no_society_desc_view" />
+
+        <ImageView
+            android:id="@+id/blueInfoView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="12dp"
+            app:layout_constraintLeft_toLeftOf="0"
+            app:layout_constraintTop_toBottomOf="@+id/recyclerViewSociety"
+            app:srcCompat="@drawable/ic_info_blue" />
+
+        <TextView
+            android:id="@+id/societyHeader"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:text="@string/society"
+            android:textColor="@color/charcoal_grey"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="0"
+            app:layout_constraintTop_toTopOf="0" />
+
+        <TextView
+            android:id="@+id/no_society_desc_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="48dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="20dp"
+            android:lineSpacingExtra="7sp"
+            android:text="@string/no_society_help_msg"
+            android:textColor="@color/slate_grey_80"
+            android:textSize="14sp"
+            app:layout_constraintLeft_toLeftOf="0"
+            app:layout_constraintTop_toBottomOf="@+id/no_society_view" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/no_society_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="48dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="20dp"
+            android:lineSpacingExtra="8sp"
+            android:textColor="@color/soft_blue"
+            android:textSize="16sp"
+            app:layout_constrainedWidth="true"
+            app:layout_constraintLeft_toLeftOf="0"
+            app:layout_constraintTop_toBottomOf="@+id/recyclerViewSociety" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/sNameRl"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="20dp"
+            android:background="@drawable/background_nofill_rounded_border_new_6dp"
+            android:padding="12dp"
+            app:layout_constraintTop_toBottomOf="@+id/societyHeader">
+
+            <ImageView
+                android:id="@+id/societyImg"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:visibility="gone"
+                app:layout_constrainedHeight="true"
+                app:layout_constraintBottom_toBottomOf="@+id/sNameText"
+                app:layout_constraintEnd_toEndOf="0"
+                app:layout_constraintTop_toTopOf="@+id/sNameText"
+                app:srcCompat="@drawable/ic_search_red" />
+
+            <ProgressBar
+                android:id="@+id/societyPBar"
+                style="?android:attr/progressBarStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                app:layout_constraintBottom_toBottomOf="@+id/sNameText"
+                app:layout_constraintEnd_toEndOf="0"
+                app:layout_constraintTop_toTopOf="@+id/sNameText" />
+
+            <TextView
+                android:id="@+id/sNameText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="8dp"
+                android:lineSpacingExtra="8sp"
+                android:textColor="@color/charcoal_grey"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toBottomOf="0"
+                app:layout_constraintEnd_toStartOf="@+id/societyPBar"
+                app:layout_constraintStart_toStartOf="0"
+                app:layout_constraintTop_toTopOf="0" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.Group
+            android:id="@+id/no_society_view_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:visibility="gone"
+            app:constraint_referenced_ids="blueInfoView,no_society_view,no_society_desc_view,requestCallbackButton" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerViewSociety"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="visible"
+            app:layout_constraintTop_toBottomOf="@+id/sNameRl" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/societyRl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingStart="20dp"
+        android:paddingTop="15dp"
+        android:paddingEnd="20dp"
+        android:visibility="gone"
+        app:layout_constraintTop_toBottomOf="@+id/societyList">
+
+        <TextView
+            android:id="@+id/societyHeaderFinal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/society"
+            android:textColor="@color/charcoal_grey"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="0"
+            app:layout_constraintTop_toTopOf="0" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/background_nofill_rounded_border_new_6dp"
+            android:padding="12dp"
+            app:layout_constraintTop_toBottomOf="@+id/societyHeaderFinal">
+
+            <ImageView
+                android:id="@+id/delSoc"
+                android:layout_width="8dp"
+                android:layout_height="8dp"
+                android:layout_marginEnd="8dp"
+                android:visibility="visible"
+                app:layout_constraintBottom_toBottomOf="@+id/aaSpinnerSName"
+                app:layout_constraintEnd_toEndOf="0"
+                app:layout_constraintTop_toTopOf="0"
+                app:srcCompat="@drawable/ic_triangle_red" />
+
+            <TextView
+                android:id="@+id/aaSpinnerSName"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="8dp"
+                android:lineSpacingExtra="8sp"
+                android:textColor="@color/charcoal_grey"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toBottomOf="0"
+                app:layout_constraintEnd_toStartOf="@+id/delSoc"
+                app:layout_constraintStart_toStartOf="0"
+                app:layout_constraintTop_toTopOf="0" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/buildingList"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="gone"
+        app:layout_constraintTop_toBottomOf="@+id/societyRl">
+
+        <ProgressBar
+            android:id="@+id/pBarBuild"
+            style="?android:attr/progressBarStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_marginEnd="20dp"
+            android:visibility="visible"
+            app:layout_constrainedHeight="true"
+            app:layout_constraintBottom_toBottomOf="@+id/buildText"
+            app:layout_constraintEnd_toEndOf="0"
+            app:layout_constraintTop_toTopOf="@+id/buildText" />
+
+        <TextView
+            android:id="@+id/buildText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="20dp"
+            android:letterSpacing="0.07"
+            android:lineSpacingExtra="7sp"
+            android:text="@string/select_building_cap"
+            android:textAllCaps="true"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="0"
+            app:layout_constraintTop_toTopOf="0" />
+
+        <View
+            android:id="@+id/divider"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="15dp"
+            android:background="@color/white_two"
+            app:layout_constraintTop_toBottomOf="@+id/buildText" />
+
+        <androidx.constraintlayout.widget.Group
+            android:id="@+id/buildListHeader"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:constraint_referenced_ids="buildText,divider" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycleViewBuildings"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/transparent"
+            android:divider="@null"
+            app:layout_constraintTop_toBottomOf="@+id/divider" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/buildingRl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingLeft="20dp"
+        android:paddingTop="15dp"
+        android:paddingRight="20dp"
+        android:visibility="gone"
+        app:layout_constraintTop_toBottomOf="@+id/buildingList">
+
+        <TextView
+            android:id="@+id/buildingHeader"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/building"
+            android:textColor="@color/charcoal_grey"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="0"
+            app:layout_constraintTop_toTopOf="0" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/background_nofill_rounded_border_new_6dp"
+            android:padding="12dp"
+            app:layout_constraintTop_toBottomOf="@+id/buildingHeader">
+
+            <ImageView
+                android:id="@+id/delBuild"
+                android:layout_width="8dp"
+                android:layout_height="8dp"
+                android:layout_marginEnd="8dp"
+                app:layout_constraintBottom_toBottomOf="0"
+                app:layout_constraintEnd_toEndOf="0"
+                app:layout_constraintTop_toTopOf="0"
+                app:srcCompat="@drawable/ic_triangle_red" />
+
+            <TextView
+                android:id="@+id/aaSpinnerBName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="8dp"
+                android:lineSpacingExtra="8sp"
+                android:textColor="@color/charcoal_grey"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toBottomOf="0"
+                app:layout_constraintStart_toStartOf="0"
+                app:layout_constraintTop_toTopOf="0" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/flatList"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="gone"
+        app:layout_constraintTop_toBottomOf="@+id/buildingRl">
+
+        <ImageView
+            android:id="@+id/searchFlat"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_marginEnd="20dp"
+            android:visibility="invisible"
+            app:layout_constrainedHeight="true"
+            app:layout_constraintBottom_toBottomOf="@+id/flatText"
+            app:layout_constraintEnd_toEndOf="0"
+            app:layout_constraintTop_toTopOf="@+id/flatText"
+            app:srcCompat="@drawable/ic_search_red" />
+
+        <ProgressBar
+            android:id="@+id/pBarFlat"
+            style="?android:attr/progressBarStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_marginEnd="20dp"
+            app:layout_constrainedHeight="true"
+            app:layout_constraintBottom_toBottomOf="@+id/flatText"
+            app:layout_constraintEnd_toEndOf="0"
+            app:layout_constraintTop_toTopOf="@+id/flatText" />
+
+        <TextView
+            android:id="@+id/flatText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="20dp"
+            android:letterSpacing="0.07"
+            android:lineSpacingExtra="7sp"
+            android:text="@string/flats"
+            android:textAllCaps="true"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="0"
+            app:layout_constraintTop_toTopOf="0" />
+
+        <View
+            android:id="@+id/divider"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="15dp"
+            android:background="@color/white_two"
+            app:layout_constraintTop_toBottomOf="@+id/flatText" />
+
+        <androidx.constraintlayout.widget.Group
+            android:id="@+id/flatListHeader"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:constraint_referenced_ids="flatText,divider" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycleViewFlats"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/transparent"
+            android:divider="@null"
+            app:layout_constraintTop_toBottomOf="@+id/divider" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/flatsRl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingLeft="20dp"
+        android:paddingTop="15dp"
+        android:paddingRight="20dp"
+        android:visibility="gone"
+        app:layout_constraintTop_toBottomOf="@+id/flatList">
+
+        <TextView
+            android:id="@+id/flatHeader"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/flat_no"
+            android:textColor="@color/charcoal_grey"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="0"
+            app:layout_constraintTop_toTopOf="0" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/background_nofill_rounded_border_new_6dp"
+            android:padding="12dp"
+            app:layout_constraintTop_toBottomOf="@+id/flatHeader">
+
+            <ImageView
+                android:id="@+id/delFlat"
+                android:layout_width="8dp"
+                android:layout_height="8dp"
+                android:layout_marginEnd="8dp"
+                app:layout_constraintBottom_toBottomOf="0"
+                app:layout_constraintEnd_toEndOf="0"
+                app:layout_constraintTop_toTopOf="0"
+                app:srcCompat="@drawable/ic_triangle_red" />
+
+            <TextView
+                android:id="@+id/aaSpinnerFlatNum"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="8dp"
+                android:lineSpacingExtra="8sp"
+                android:textColor="@color/charcoal_grey"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toBottomOf="0"
+                app:layout_constraintStart_toStartOf="0"
+                app:layout_constraintTop_toTopOf="0" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/typeRl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingTop="15dp"
+        android:paddingBottom="15dp"
+        android:visibility="gone"
+        app:layout_constraintTop_toBottomOf="@+id/flatsRl">
+
+        <TextView
+            android:id="@+id/typeText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:text="@string/you_are"
+            android:textColor="@color/charcoal_grey"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="0"
+            app:layout_constraintTop_toTopOf="0" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerViewOccupancyType"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="9dp"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintTop_toBottomOf="@+id/typeText" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/typeCl"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="20dp"
+            android:background="@drawable/background_nofill_rounded_border_new_6dp"
+            android:padding="12dp"
+            android:visibility="gone"
+            app:layout_constraintTop_toBottomOf="@+id/recyclerViewOccupancyType">
+
+            <ImageView
+                android:id="@+id/delType"
+                android:layout_width="8dp"
+                android:layout_height="8dp"
+                android:layout_marginEnd="8dp"
+                app:layout_constraintBottom_toBottomOf="0"
+                app:layout_constraintEnd_toEndOf="0"
+                app:layout_constraintTop_toTopOf="0"
+                app:srcCompat="@drawable/ic_triangle_red" />
+
+            <TextView
+                android:id="@+id/aaSpinnerType"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="8dp"
+                android:lineSpacingExtra="8sp"
+                android:textColor="@color/charcoal_grey"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toBottomOf="0"
+                app:layout_constraintStart_toStartOf="0"
+                app:layout_constraintTop_toTopOf="0" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/occupancyCl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingBottom="15dp"
+        android:visibility="gone"
+        app:layout_constraintTop_toBottomOf="@+id/typeRl">
+
+        <TextView
+            android:id="@+id/occupancyText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:text="@string/occupancy_status"
+            android:textColor="@color/charcoal_grey"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="0"
+            app:layout_constraintTop_toTopOf="0" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerViewOccupancyStatus"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="9dp"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintTop_toBottomOf="@+id/occupancyText" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/occupancySelectedCl"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="20dp"
+            android:background="@drawable/background_nofill_rounded_border_new_6dp"
+            android:padding="12dp"
+            android:visibility="gone"
+            app:layout_constraintTop_toBottomOf="@+id/recyclerViewOccupancyStatus">
+
+            <ImageView
+                android:id="@+id/delOccu"
+                android:layout_width="8dp"
+                android:layout_height="8dp"
+                android:layout_marginEnd="8dp"
+                app:layout_constraintBottom_toBottomOf="0"
+                app:layout_constraintEnd_toEndOf="0"
+                app:layout_constraintTop_toTopOf="0"
+                app:srcCompat="@drawable/ic_triangle_red" />
+
+            <TextView
+                android:id="@+id/aaSpinnerOccu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="8dp"
+                android:lineSpacingExtra="8sp"
+                android:textColor="@color/charcoal_grey"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toBottomOf="0"
+                app:layout_constraintStart_toStartOf="0"
+                app:layout_constraintTop_toTopOf="0" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/moveInSelectedCl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:paddingBottom="15dp"
+        android:visibility="gone"
+        app:layout_constraintTop_toBottomOf="@+id/occupancyCl">
+
+        <androidx.appcompat.widget.AppCompatCheckBox
+            android:id="@+id/agreeTermsCb"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:theme="@style/checkBoxStyle"
+            app:layout_constraintLeft_toLeftOf="0"
+            app:layout_constraintTop_toTopOf="0" />
+
+        <TextView
+            android:id="@+id/agreeTermsText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="@string/i_agree_to_move_in_rules_underlined"
+            android:textColor="@color/light_red"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="@+id/agreeTermsCb"
+            app:layout_constraintStart_toEndOf="@+id/agreeTermsCb"
+            app:layout_constraintTop_toTopOf="@+id/agreeTermsCb" />
+
+        <TextView
+            android:id="@+id/dateText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="12dp"
+            android:text="@string/move_in_date"
+            android:textColor="@color/charcoal_grey"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="0"
+            app:layout_constraintTop_toBottomOf="@+id/agreeTermsCb" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/dateCl"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="5dp"
+            android:background="@drawable/background_nofill_rounded_border_new_6dp"
+            android:padding="12dp"
+            android:visibility="visible"
+            app:layout_constraintTop_toBottomOf="@+id/dateText">
+
+            <ImageView
+                android:id="@+id/calendar"
+                android:layout_width="20dp"
+                android:layout_height="0dp"
+                android:layout_marginEnd="8dp"
+                app:layout_constrainedHeight="true"
+                app:layout_constraintBottom_toBottomOf="@+id/aaSpinnerDate"
+                app:layout_constraintStart_toStartOf="0"
+                app:layout_constraintTop_toTopOf="@+id/aaSpinnerDate"
+                app:srcCompat="@drawable/ic_filter_calendar" />
+
+            <ImageView
+                android:id="@+id/delDate"
+                android:layout_width="8dp"
+                android:layout_height="8dp"
+                android:layout_marginEnd="8dp"
+                app:layout_constraintBottom_toBottomOf="0"
+                app:layout_constraintEnd_toEndOf="0"
+                app:layout_constraintTop_toTopOf="0"
+                app:srcCompat="@drawable/ic_triangle_red" />
+
+            <TextView
+                android:id="@+id/aaSpinnerDate"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="8dp"
+                android:lineSpacingExtra="8sp"
+                android:textColor="@color/charcoal_grey"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toBottomOf="0"
+                app:layout_constraintEnd_toStartOf="@+id/delDate"
+                app:layout_constraintStart_toEndOf="@+id/calendar"
+                app:layout_constraintTop_toTopOf="0" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            android:id="@+id/textViewReadTerms"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:lineSpacingExtra="6sp"
+            android:text="@string/please_read_move_in_rules_before_proceeding"
+            android:textColor="@color/soft_blue"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="@+id/dateCl"
+            app:layout_constraintStart_toStartOf="@+id/dateCl"
+            app:layout_constraintTop_toBottomOf="@+id/dateCl" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

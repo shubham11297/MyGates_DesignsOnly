@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="14dp"
+    android:layout_marginTop="6dp"
+    android:layout_marginEnd="14dp"
+    android:layout_marginBottom="6dp"
+    android:elevation="2dp"
+    app:cardBackgroundColor="@color/white"
+    app:cardCornerRadius="6dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="14dp">
+
+        <TextView
+            android:id="@+id/textViewHeader"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="48dp"
+            android:layout_marginTop="14dp"
+            android:layout_marginEnd="12dp"
+            android:ellipsize="end"
+            android:lineSpacingExtra="8sp"
+            android:maxLines="1"
+            android:textColor="@color/charcoal_grey"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@+id/buttonEdit"
+            app:layout_constraintStart_toStartOf="0"
+            app:layout_constraintTop_toTopOf="0" />
+
+        <TextView
+            android:id="@+id/textViewSecondary"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:ellipsize="end"
+            android:lineSpacingExtra="16sp"
+            android:maxLines="2"
+            android:textColor="@color/charcoal_grey"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="@+id/textViewHeader"
+            app:layout_constraintStart_toStartOf="@+id/textViewHeader"
+            app:layout_constraintTop_toBottomOf="@+id/textViewHeader" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/buttonAttachments"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="36dp"
+            android:layout_marginTop="4dp"
+            android:drawableStart="@drawable/ic_attachment_red"
+            android:drawablePadding="8dp"
+            android:minWidth="0dp"
+            android:minHeight="0dp"
+            android:paddingStart="14dp"
+            android:paddingTop="12dp"
+            android:paddingEnd="14dp"
+            android:paddingBottom="12dp"
+            android:text="@string/upload_file_document"
+            android:textAllCaps="false"
+            android:textColor="@color/light_red"
+            android:textSize="14sp"
+            android:theme="@style/PrimaryFlatButton"
+            app:layout_constraintStart_toStartOf="0"
+            app:layout_constraintTop_toBottomOf="@+id/textViewSecondary" />
+
+        <TextView
+            android:id="@+id/textViewAttachments"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:lineSpacingExtra="10sp"
+            android:textColor="@color/slate_grey_80"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="@+id/textViewHeader"
+            app:layout_constraintStart_toStartOf="@+id/textViewHeader"
+            app:layout_constraintTop_toBottomOf="@+id/buttonAttachments" />
+
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/buttonEdit"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:minWidth="0dp"
+            android:minHeight="0dp"
+            android:paddingStart="8dp"
+            android:paddingTop="4dp"
+            android:paddingEnd="8dp"
+            android:paddingBottom="4dp"
+            android:src="@drawable/ic_edit_charcoal_grey_50"
+            android:theme="@style/ThemeGrey"
+            app:layout_constraintBottom_toBottomOf="@+id/textViewHeader"
+            app:layout_constraintEnd_toEndOf="0"
+            app:layout_constraintTop_toTopOf="@+id/textViewHeader" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imageView"
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            app:layout_constraintBottom_toBottomOf="@+id/textViewHeader"
+            app:layout_constraintEnd_toStartOf="@+id/textViewHeader"
+            app:layout_constraintStart_toStartOf="0"
+            app:layout_constraintTop_toTopOf="@+id/textViewHeader" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="42dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="20dp"
+            android:nestedScrollingEnabled="false"
+            android:orientation="horizontal"
+            android:overScrollMode="never"
+            app:layoutManager="com.google.android.flexbox.FlexboxLayoutManager"
+            app:layout_constraintEnd_toEndOf="0"
+            app:layout_constraintStart_toStartOf="0"
+            app:layout_constraintTop_toBottomOf="@+id/textViewAttachments" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>

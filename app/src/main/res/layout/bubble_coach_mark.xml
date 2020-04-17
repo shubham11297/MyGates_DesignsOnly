@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:aapt="http://schemas.android.com/aapt" android:gravity="top|left|center_vertical|center_horizontal|center" android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content">
+    <ImageView android:id="@+id/top_arrow" android:visibility="gone" android:layout_width="15dp" android:layout_height="10dp" android:src="@drawable/ic_pointy_mark_up" android:scaleType="fitXY" android:tint="@color/soft_blue"/>
+    <LinearLayout android:orientation="horizontal" android:id="@+id/coach_mark_content" android:background="@drawable/bubble_coach_mark_bg" android:padding="8dp" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+    <ImageView android:id="@+id/bottom_arrow" android:layout_width="15dp" android:layout_height="10dp" android:src="@drawable/ic_pointy_mark_down" android:scaleType="fitXY" android:tint="@color/soft_blue"/>
+</LinearLayout>

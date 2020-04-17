@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:aapt="http://schemas.android.com/aapt" android:paddingLeft="@dimen/normalPadding" android:paddingTop="@dimen/smallPadding" android:paddingRight="@dimen/normalPadding" android:paddingBottom="@dimen/smallPadding" android:layout_width="match_parent" android:layout_height="wrap_content">
+    <RelativeLayout android:background="@drawable/card_back" android:padding="@dimen/normalPadding" android:layout_width="match_parent" android:layout_height="wrap_content">
+        <com.mygate.user.common.p011ui.CircularImageView android:id="@+id/edailyHelpNGImage" android:padding="15dp" android:layout_width="50dp" android:layout_height="50dp" android:src="0x7f08030a" android:layout_alignParentLeft="false" android:layout_alignParentTop="false" android:layout_centerVertical="true" android:layout_alignParentStart="true"/>
+        <LinearLayout android:gravity="center_vertical" android:orientation="vertical" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginLeft="16dp" android:layout_toRightOf="@+id/edailyHelpNGImage" android:layout_centerVertical="true">
+            <TextView android:textAppearance="?android:attr/textAppearanceSmall" android:textSize="16sp" android:textColor="@color/textSecondaryColor" android:id="@+id/eDailyHelpNGText1" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Large Text"/>
+            <TextView android:id="@+id/eDailyHelpNGText2" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="3dp" android:text="Medium Text" style="@style/MGNormalSmaller"/>
+        </LinearLayout>
+    </RelativeLayout>
+</RelativeLayout>

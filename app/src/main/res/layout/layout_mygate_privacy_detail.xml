@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:aapt="http://schemas.android.com/aapt" android:layout_width="match_parent" android:layout_height="wrap_content">
+    <ImageView android:id="@+id/mygateLabelImage" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="20dp" android:layout_marginTop="20dp" app:layout_constraintLeft_toLeftOf="0" app:layout_constraintTop_toTopOf="0" app:srcCompat="0x7f080224"/>
+    <LinearLayout android:orientation="horizontal" android:id="@+id/privacyLine1" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="10dp" app:layout_constraintLeft_toLeftOf="0" app:layout_constraintTop_toBottomOf="@+id/mygateLabelImage">
+        <ImageView android:layout_gravity="top" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="5dp" app:srcCompat="@drawable/ic_shield_bullet"/>
+        <TextView android:textSize="14sp" android:textColor="@color/charcoal_grey" android:layout_gravity="center_vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="12dp" android:text="Does not sell or trade your data" android:lineSpacingExtra="10sp"/>
+    </LinearLayout>
+    <LinearLayout android:orientation="horizontal" android:id="@+id/privacyLine2" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="5dp" app:layout_constraintLeft_toLeftOf="0" app:layout_constraintTop_toBottomOf="@+id/privacyLine1">
+        <ImageView android:layout_gravity="top" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="5dp" app:srcCompat="@drawable/ic_shield_bullet"/>
+        <TextView android:textSize="14sp" android:textColor="@color/charcoal_grey" android:layout_gravity="center_vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="12dp" android:text="Is ISO 27001 certified for information security" android:lineSpacingExtra="10sp"/>
+    </LinearLayout>
+    <LinearLayout android:orientation="horizontal" android:id="@+id/privacyLine3" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="5dp" app:layout_constraintLeft_toLeftOf="0" app:layout_constraintTop_toBottomOf="@+id/privacyLine2">
+        <ImageView android:layout_gravity="top" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="5dp" app:srcCompat="@drawable/ic_shield_bullet"/>
+        <TextView android:textSize="14sp" android:textColor="@color/charcoal_grey" android:layout_gravity="center_vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="12dp" android:text="Encrypts and secures your data" android:lineSpacingExtra="10sp"/>
+    </LinearLayout>
+    <LinearLayout android:orientation="horizontal" android:id="@+id/privacyLine4" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="5dp" app:layout_constraintLeft_toLeftOf="0" app:layout_constraintTop_toBottomOf="@+id/privacyLine3">
+        <ImageView android:layout_gravity="top" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="5dp" app:srcCompat="@drawable/ic_shield_bullet"/>
+        <TextView android:textSize="14sp" android:textColor="@color/charcoal_grey" android:layout_gravity="center_vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="12dp" android:text="Is certified GDPR ready, the gold standard in data privacy" android:lineSpacingExtra="10sp"/>
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

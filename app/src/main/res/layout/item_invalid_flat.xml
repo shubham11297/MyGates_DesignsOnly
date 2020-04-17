@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:aapt="http://schemas.android.com/aapt" android:layout_width="match_parent" android:layout_height="wrap_content" app:cardCornerRadius="@dimen/admin_card_radius" app:cardElevation="@dimen/admin_card_elevation" app:cardUseCompatPadding="true">
+    <LinearLayout android:orientation="vertical" android:id="@+id/item_row" android:layout_width="match_parent" android:layout_height="wrap_content">
+        <androidx.constraintlayout.widget.ConstraintLayout android:orientation="horizontal" android:id="@+id/header_layout" android:paddingLeft="@dimen/admin_padding_side" android:paddingTop="@dimen/admin_padding_top" android:paddingRight="@dimen/admin_padding_side" android:paddingBottom="@dimen/admin_padding_top" android:layout_width="match_parent" android:layout_height="wrap_content">
+            <androidx.appcompat.widget.AppCompatImageView android:gravity="center" android:id="@+id/arrow_icon" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="0x7f080142" android:rotation="90" app:layout_constraintRight_toRightOf="0" app:layout_constraintTop_toTopOf="0"/>
+            <androidx.appcompat.widget.AppCompatTextView android:textSize="14sp" android:textStyle="bold" android:textColor="@color/charcoal_grey" android:id="@+id/header_name" android:visibility="visible" android:layout_width="wrap_content" android:layout_height="wrap_content" android:letterSpacing="0.07" app:layout_constraintBottom_toBottomOf="0" app:layout_constraintLeft_toLeftOf="0" app:layout_constraintTop_toTopOf="0"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+        <View android:background="@color/white_two" android:layout_width="match_parent" android:layout_height="1dp" app:layout_constraintTop_toBottomOf="@+id/header_name"/>
+        <androidx.recyclerview.widget.RecyclerView android:orientation="vertical" android:id="@+id/flat_list_layout" android:visibility="gone" android:layout_width="match_parent" android:layout_height="wrap_content"/>
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

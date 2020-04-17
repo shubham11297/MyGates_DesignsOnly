@@ -1,0 +1,800 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/margin8"
+    android:background="@color/white_transparent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/user_detials_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white_two"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline1"
+        app:layout_constraintTop_toTopOf="0">
+
+        <com.mygate.user.common.p011ui.CircularImageView
+            android:id="@+id/profile_image"
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            android:layout_marginLeft="20dp"
+            android:transitionName="@string/profile_transition"
+            app:layout_constraintLeft_toLeftOf="0"
+            app:layout_constraintTop_toTopOf="0"
+            app:srcCompat="0x7f08030a" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/user_name"
+            style="@style/MGWhiteSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/padding_16"
+            android:gravity="center_horizontal"
+            android:lineSpacingExtra="9sp"
+            android:textColor="@color/charcoal_grey"
+            android:textSize="@dimen/textSize_18"
+            android:transitionName="@string/name_transition"
+            app:layout_constraintLeft_toRightOf="@+id/profile_image"
+            app:layout_constraintTop_toTopOf="0" />
+
+        <RelativeLayout
+            android:id="@+id/layout_details"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="78dp"
+            android:layout_marginTop="@dimen/smallPadding"
+            app:layout_constraintLeft_toRightOf="@+id/profile_image"
+            app:layout_constraintTop_toBottomOf="@+id/user_name">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/icon_error"
+                android:layout_width="18dp"
+                android:layout_height="18dp"
+                android:layout_alignParentTop="true"
+                android:layout_toRightOf="@+id/user_status"
+                app:srcCompat="@drawable/ic_entry_grey" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/helper_details"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="@dimen/normalPadding"
+                android:layout_marginRight="5dp"
+                android:layout_toRightOf="@+id/icon_error"
+                android:gravity="center_horizontal"
+                android:letterSpacing="0.07"
+                android:lineSpacingExtra="6sp"
+                android:singleLine="false"
+                android:textColor="@color/charcoal_grey_50"
+                android:textSize="@dimen/textSize_13" />
+        </RelativeLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/average_rating_layout"
+        app:layout_constraintTop_toBottomOf="@+id/user_detials_layout" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/average_rating_layout"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_marginRight="1dp"
+        android:paddingTop="@dimen/padding_16"
+        android:paddingRight="@dimen/padding24"
+        app:layout_constraintHorizontal_weight="2"
+        app:layout_constraintLeft_toLeftOf="0"
+        app:layout_constraintRight_toLeftOf="@+id/specific_rating_layout"
+        app:layout_constraintTop_toBottomOf="@+id/guideline1">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/average_rating_details_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="0">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/rating_image"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                app:layout_constraintBottom_toBottomOf="0"
+                app:layout_constraintHorizontal_chainStyle="2"
+                app:layout_constraintLeft_toLeftOf="0"
+                app:layout_constraintRight_toLeftOf="@+id/rating_value"
+                app:srcCompat="@drawable/ic_rating" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/rating_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/normalPadding"
+                android:lineSpacingExtra="15sp"
+                android:textColor="@color/charcoal_grey_80"
+                android:textSize="@dimen/textSize_30"
+                app:layout_constraintBottom_toBottomOf="0"
+                app:layout_constraintLeft_toRightOf="@+id/rating_image"
+                app:layout_constraintRight_toRightOf="0" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/rating_count_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/normalPadding"
+            android:gravity="center_horizontal"
+            android:letterSpacing="0.07"
+            android:lineSpacingExtra="6sp"
+            android:textColor="@color/charcoal_grey_50"
+            android:textSize="@dimen/textSize_13"
+            app:layout_constraintLeft_toLeftOf="0"
+            app:layout_constraintRight_toRightOf="0"
+            app:layout_constraintTop_toBottomOf="@+id/average_rating_details_layout" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/reviews_count_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/smallPadding"
+            android:gravity="center_horizontal"
+            android:letterSpacing="0.07"
+            android:lineSpacingExtra="6sp"
+            android:textColor="@color/charcoal_grey_50"
+            android:textSize="@dimen/textSize_13"
+            app:layout_constraintLeft_toLeftOf="0"
+            app:layout_constraintRight_toRightOf="0"
+            app:layout_constraintTop_toBottomOf="@+id/rating_count_text" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/specific_rating_layout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:paddingTop="@dimen/normalPadding"
+        android:paddingBottom="@dimen/normalPadding"
+        app:layout_constraintBottom_toTopOf="@+id/view1"
+        app:layout_constraintHorizontal_weight="3"
+        app:layout_constraintLeft_toRightOf="@+id/average_rating_layout"
+        app:layout_constraintRight_toRightOf="0"
+        app:layout_constraintTop_toBottomOf="@+id/guideline1">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layout_rating_5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/mediumPadding"
+            android:paddingTop="@dimen/extraSmallPadding"
+            android:paddingBottom="@dimen/extraSmallPadding"
+            app:layout_constraintTop_toTopOf="0">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/rate_value_5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:letterSpacing="0.07"
+                android:lineSpacingExtra="6sp"
+                android:text="5"
+                android:textColor="@color/charcoal_grey_50"
+                android:textSize="@dimen/textSize_13"
+                app:layout_constraintBottom_toBottomOf="0"
+                app:layout_constraintLeft_toLeftOf="0"
+                app:layout_constraintTop_toTopOf="0" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/rating_filled_icon5"
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:layout_marginLeft="@dimen/smallPadding"
+                app:layout_constraintBottom_toBottomOf="0"
+                app:layout_constraintLeft_toRightOf="@+id/rate_value_5"
+                app:layout_constraintRight_toLeftOf="@+id/progress5"
+                app:layout_constraintTop_toTopOf="0"
+                app:srcCompat="@drawable/ic_rating_grey_filled" />
+
+            <ProgressBar
+                android:id="@+id/progress5"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/margin8"
+                android:layout_marginLeft="@dimen/mediumPadding"
+                android:layout_marginRight="60dp"
+                android:max="100"
+                android:progress="0"
+                android:progressDrawable="@drawable/custom_horizontal_progressbar_green"
+                app:layout_constraintBottom_toBottomOf="0"
+                app:layout_constraintLeft_toRightOf="@+id/rating_filled_icon5"
+                app:layout_constraintRight_toRightOf="0"
+                app:layout_constraintTop_toTopOf="0" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/rate_given_person_5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/normalPadding"
+                android:gravity="center"
+                android:letterSpacing="0.07"
+                android:lineSpacingExtra="6sp"
+                android:paddingRight="@dimen/extraSmallPadding"
+                android:textColor="@color/charcoal_grey_50"
+                android:textSize="@dimen/textSize_13"
+                app:layout_constraintBottom_toBottomOf="0"
+                app:layout_constraintLeft_toRightOf="@+id/progress5"
+                app:layout_constraintTop_toTopOf="0" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layout_rating_4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/mediumPadding"
+            android:paddingTop="@dimen/extraSmallPadding"
+            android:paddingBottom="@dimen/extraSmallPadding"
+            app:layout_constraintTop_toBottomOf="@+id/layout_rating_5">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/rate_value_4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:letterSpacing="0.07"
+                android:lineSpacingExtra="6sp"
+                android:text="4"
+                android:textColor="@color/charcoal_grey_50"
+                android:textSize="@dimen/textSize_13"
+                app:layout_constraintBottom_toBottomOf="0"
+                app:layout_constraintLeft_toLeftOf="0"
+                app:layout_constraintTop_toTopOf="0" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/rating_filled_icon4"
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:layout_marginLeft="@dimen/smallPadding"
+                app:layout_constraintBottom_toBottomOf="0"
+                app:layout_constraintLeft_toRightOf="@+id/rate_value_4"
+                app:layout_constraintRight_toLeftOf="@+id/progress4"
+                app:layout_constraintTop_toTopOf="0"
+                app:srcCompat="@drawable/ic_rating_grey_filled" />
+
+            <ProgressBar
+                android:id="@+id/progress4"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/margin8"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/mediumPadding"
+                android:layout_marginRight="60dp"
+                android:max="100"
+                android:progress="0"
+                android:progressDrawable="@drawable/custom_horizontal_progressbar_green"
+                app:layout_constraintBottom_toBottomOf="0"
+                app:layout_constraintLeft_toRightOf="@+id/rating_filled_icon4"
+                app:layout_constraintRight_toRightOf="0"
+                app:layout_constraintTop_toTopOf="0" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/rate_given_person_4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/normalPadding"
+                android:gravity="center"
+                android:letterSpacing="0.07"
+                android:lineSpacingExtra="6sp"
+                android:paddingRight="@dimen/extraSmallPadding"
+                android:textColor="@color/charcoal_grey_50"
+                android:textSize="@dimen/textSize_13"
+                app:layout_constraintBottom_toBottomOf="0"
+                app:layout_constraintLeft_toRightOf="@+id/progress4"
+                app:layout_constraintTop_toTopOf="0" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layout_rating_3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/mediumPadding"
+            android:paddingTop="@dimen/extraSmallPadding"
+            android:paddingBottom="@dimen/extraSmallPadding"
+            app:layout_constraintTop_toBottomOf="@+id/layout_rating_4">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/rate_value_3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:letterSpacing="0.07"
+                android:lineSpacingExtra="6sp"
+                android:text="3"
+                android:textColor="@color/charcoal_grey_50"
+                android:textSize="@dimen/textSize_13"
+                app:layout_constraintBottom_toBottomOf="0"
+                app:layout_constraintLeft_toLeftOf="0"
+                app:layout_constraintTop_toTopOf="0" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/rating_filled_icon3"
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:layout_marginLeft="@dimen/smallPadding"
+                app:layout_constraintBottom_toBottomOf="0"
+                app:layout_constraintLeft_toRightOf="@+id/rate_value_3"
+                app:layout_constraintRight_toLeftOf="@+id/progress3"
+                app:layout_constraintTop_toTopOf="0"
+                app:srcCompat="@drawable/ic_rating_grey_filled" />
+
+            <ProgressBar
+                android:id="@+id/progress3"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/margin8"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/mediumPadding"
+                android:layout_marginRight="60dp"
+                android:max="100"
+                android:progress="0"
+                android:progressDrawable="@drawable/custom_horizontal_progressbar_green"
+                app:layout_constraintBottom_toBottomOf="0"
+                app:layout_constraintLeft_toRightOf="@+id/rating_filled_icon3"
+                app:layout_constraintRight_toRightOf="0"
+                app:layout_constraintTop_toTopOf="0" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/rate_given_person_3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/normalPadding"
+                android:gravity="center"
+                android:letterSpacing="0.07"
+                android:lineSpacingExtra="6sp"
+                android:paddingRight="@dimen/extraSmallPadding"
+                android:textColor="@color/charcoal_grey_50"
+                android:textSize="@dimen/textSize_13"
+                app:layout_constraintBottom_toBottomOf="0"
+                app:layout_constraintLeft_toRightOf="@+id/progress3"
+                app:layout_constraintTop_toTopOf="0" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layout_rating_2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/mediumPadding"
+            android:paddingTop="@dimen/extraSmallPadding"
+            android:paddingBottom="@dimen/extraSmallPadding"
+            app:layout_constraintTop_toBottomOf="@+id/layout_rating_3">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/rate_value_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:letterSpacing="0.07"
+                android:lineSpacingExtra="6sp"
+                android:text="2"
+                android:textColor="@color/charcoal_grey_50"
+                android:textSize="@dimen/textSize_13"
+                app:layout_constraintBottom_toBottomOf="0"
+                app:layout_constraintLeft_toLeftOf="0"
+                app:layout_constraintTop_toTopOf="0" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/rating_filled_icon2"
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:layout_marginLeft="@dimen/smallPadding"
+                app:layout_constraintBottom_toBottomOf="0"
+                app:layout_constraintLeft_toRightOf="@+id/rate_value_2"
+                app:layout_constraintRight_toLeftOf="@+id/progress2"
+                app:layout_constraintTop_toTopOf="0"
+                app:srcCompat="@drawable/ic_rating_grey_filled" />
+
+            <ProgressBar
+                android:id="@+id/progress2"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/margin8"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/mediumPadding"
+                android:layout_marginRight="60dp"
+                android:max="100"
+                android:progress="0"
+                android:progressDrawable="@drawable/custom_horizontal_progressbar_red"
+                app:layout_constraintBottom_toBottomOf="0"
+                app:layout_constraintLeft_toRightOf="@+id/rating_filled_icon2"
+                app:layout_constraintRight_toRightOf="0"
+                app:layout_constraintTop_toTopOf="0" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/rate_given_person_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/normalPadding"
+                android:gravity="center"
+                android:letterSpacing="0.07"
+                android:lineSpacingExtra="6sp"
+                android:paddingRight="@dimen/extraSmallPadding"
+                android:textColor="@color/charcoal_grey_50"
+                android:textSize="@dimen/textSize_13"
+                app:layout_constraintBottom_toBottomOf="0"
+                app:layout_constraintLeft_toRightOf="@+id/progress2"
+                app:layout_constraintTop_toTopOf="0" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layout_rating_1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/mediumPadding"
+            android:paddingTop="@dimen/extraSmallPadding"
+            android:paddingBottom="@dimen/extraSmallPadding"
+            app:layout_constraintTop_toBottomOf="@+id/layout_rating_2">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/rate_value_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:letterSpacing="0.07"
+                android:lineSpacingExtra="6sp"
+                android:text="1"
+                android:textColor="@color/charcoal_grey_50"
+                android:textSize="@dimen/textSize_13"
+                app:layout_constraintBottom_toBottomOf="0"
+                app:layout_constraintLeft_toLeftOf="0"
+                app:layout_constraintTop_toTopOf="0" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/rating_filled_icon1"
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:layout_marginLeft="@dimen/smallPadding"
+                app:layout_constraintBottom_toBottomOf="0"
+                app:layout_constraintLeft_toRightOf="@+id/rate_value_1"
+                app:layout_constraintRight_toLeftOf="@+id/progress1"
+                app:layout_constraintTop_toTopOf="0"
+                app:srcCompat="@drawable/ic_rating_grey_filled" />
+
+            <ProgressBar
+                android:id="@+id/progress1"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/margin8"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/mediumPadding"
+                android:layout_marginRight="60dp"
+                android:max="100"
+                android:progress="0"
+                android:progressDrawable="@drawable/custom_horizontal_progressbar_red"
+                app:layout_constraintBottom_toBottomOf="0"
+                app:layout_constraintLeft_toRightOf="@+id/rating_filled_icon1"
+                app:layout_constraintRight_toRightOf="0"
+                app:layout_constraintTop_toTopOf="0" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/rate_given_person_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/normalPadding"
+                android:gravity="center"
+                android:letterSpacing="0.07"
+                android:lineSpacingExtra="6sp"
+                android:paddingRight="@dimen/extraSmallPadding"
+                android:textColor="@color/charcoal_grey_50"
+                android:textSize="@dimen/textSize_13"
+                app:layout_constraintBottom_toBottomOf="0"
+                app:layout_constraintLeft_toRightOf="@+id/progress1"
+                app:layout_constraintTop_toTopOf="0" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <View
+        android:id="@+id/view1"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/white_two"
+        app:layout_constraintBottom_toBottomOf="@+id/edit_rating_review_layout"
+        app:layout_constraintTop_toBottomOf="@+id/specific_rating_layout" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/edit_rating_review_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="@dimen/padding24"
+        android:transitionName="@string/rating_transition"
+        app:layout_constraintTop_toBottomOf="@+id/view1">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/punctual_layout"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/margin8"
+            android:paddingTop="10dp"
+            app:layout_constraintLeft_toLeftOf="0"
+            app:layout_constraintRight_toLeftOf="@+id/regular_layout"
+            app:layout_constraintTop_toBottomOf="@+id/user_rating_value">
+
+            <com.github.lzyzsd.circleprogress.ArcProgress
+                android:id="@+id/punctual_progress"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                app:arc_angle="250"
+                app:arc_finished_color="@color/soft_blue"
+                app:arc_max="100"
+                app:arc_progress="30"
+                app:arc_stroke_width="3dp"
+                app:arc_text_color="@color/transparent"
+                app:arc_unfinished_color="@color/soft_blue_30"
+                app:layout_constraintBottom_toBottomOf="@+id/punctual_image"
+                app:layout_constraintLeft_toLeftOf="0"
+                app:layout_constraintRight_toRightOf="0"
+                app:layout_constraintTop_toTopOf="@+id/punctual_image" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/punctual_image"
+                android:layout_width="wrap_content"
+                android:layout_height="42dp"
+                android:layout_marginTop="20dp"
+                app:layout_constraintHorizontal_chainStyle="2"
+                app:layout_constraintLeft_toLeftOf="0"
+                app:layout_constraintRight_toRightOf="0"
+                app:layout_constraintTop_toTopOf="0"
+                app:srcCompat="@drawable/ic_ico_very_punctual" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/punctual_value"
+                android:layout_width="34dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_6"
+                android:background="@drawable/round_charcoal_grey"
+                android:gravity="center_horizontal"
+                android:letterSpacing="0.07"
+                android:paddingTop="@dimen/extraSmallPadding"
+                android:paddingBottom="@dimen/extraSmallPadding"
+                android:textColor="@color/white"
+                android:textSize="@dimen/textSize_12"
+                app:layout_constraintLeft_toLeftOf="0"
+                app:layout_constraintRight_toRightOf="0"
+                app:layout_constraintTop_toBottomOf="@+id/punctual_image" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/punctual_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/padding_16"
+                android:fontFamily="@font/ubuntu_bold"
+                android:gravity="center_horizontal"
+                android:letterSpacing="0.07"
+                android:lineSpacingExtra="2sp"
+                android:text="Very\10Punctual"
+                android:textColor="#63636f"
+                android:textSize="@dimen/textSize_12"
+                android:textStyle="bold"
+                app:layout_constraintLeft_toLeftOf="0"
+                app:layout_constraintRight_toRightOf="0"
+                app:layout_constraintTop_toBottomOf="@+id/punctual_value" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/regular_layout"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:paddingTop="10dp"
+            app:layout_constraintLeft_toRightOf="@+id/punctual_layout"
+            app:layout_constraintRight_toLeftOf="@+id/service_layout"
+            app:layout_constraintTop_toBottomOf="@+id/user_rating_value">
+
+            <com.github.lzyzsd.circleprogress.ArcProgress
+                android:id="@+id/regular_Progress"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                app:arc_angle="250"
+                app:arc_finished_color="@color/pale_teal"
+                app:arc_max="100"
+                app:arc_progress="30"
+                app:arc_stroke_width="3dp"
+                app:arc_text_color="@color/transparent"
+                app:arc_unfinished_color="@color/pale_teal_30"
+                app:layout_constraintBottom_toBottomOf="@+id/regular_image"
+                app:layout_constraintLeft_toLeftOf="0"
+                app:layout_constraintRight_toRightOf="0"
+                app:layout_constraintTop_toTopOf="@+id/regular_image" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/regular_image"
+                android:layout_width="wrap_content"
+                android:layout_height="42dp"
+                android:layout_marginTop="20dp"
+                app:layout_constraintHorizontal_chainStyle="2"
+                app:layout_constraintLeft_toLeftOf="0"
+                app:layout_constraintRight_toRightOf="0"
+                app:layout_constraintTop_toTopOf="0"
+                app:srcCompat="@drawable/ic_quite_regular" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/regular_value"
+                android:layout_width="34dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_6"
+                android:background="@drawable/round_charcoal_grey"
+                android:gravity="center_horizontal"
+                android:letterSpacing="0.07"
+                android:paddingTop="@dimen/extraSmallPadding"
+                android:paddingBottom="@dimen/extraSmallPadding"
+                android:textColor="@color/white"
+                android:textSize="@dimen/textSize_12"
+                app:layout_constraintLeft_toLeftOf="0"
+                app:layout_constraintRight_toRightOf="0"
+                app:layout_constraintTop_toBottomOf="@+id/regular_image" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/regular_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/padding_16"
+                android:fontFamily="@font/ubuntu_bold"
+                android:gravity="center_horizontal"
+                android:letterSpacing="0.07"
+                android:lineSpacingExtra="2sp"
+                android:text="Quite\10Regular"
+                android:textColor="#63636f"
+                android:textSize="@dimen/textSize_12"
+                android:textStyle="bold"
+                app:layout_constraintLeft_toLeftOf="0"
+                app:layout_constraintRight_toRightOf="0"
+                app:layout_constraintTop_toBottomOf="@+id/regular_value" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/service_layout"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:paddingTop="10dp"
+            app:layout_constraintLeft_toRightOf="@+id/regular_layout"
+            app:layout_constraintRight_toLeftOf="@+id/atitude_layout"
+            app:layout_constraintTop_toBottomOf="@+id/user_rating_value">
+
+            <com.github.lzyzsd.circleprogress.ArcProgress
+                android:id="@+id/service_Progress"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                app:arc_angle="250"
+                app:arc_finished_color="@color/coral_two"
+                app:arc_max="100"
+                app:arc_progress="30"
+                app:arc_stroke_width="3dp"
+                app:arc_text_color="@color/transparent"
+                app:arc_unfinished_color="@color/coral_two_30"
+                app:layout_constraintBottom_toBottomOf="@+id/service_image"
+                app:layout_constraintLeft_toLeftOf="0"
+                app:layout_constraintRight_toRightOf="0"
+                app:layout_constraintTop_toTopOf="@+id/service_image" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/service_image"
+                android:layout_width="wrap_content"
+                android:layout_height="42dp"
+                android:layout_marginTop="@dimen/padding20"
+                app:layout_constraintHorizontal_chainStyle="2"
+                app:layout_constraintLeft_toLeftOf="0"
+                app:layout_constraintRight_toRightOf="0"
+                app:layout_constraintTop_toTopOf="0"
+                app:srcCompat="@drawable/ic_service" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/service_value"
+                android:layout_width="34dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_6"
+                android:background="@drawable/round_charcoal_grey"
+                android:gravity="center_horizontal"
+                android:letterSpacing="0.07"
+                android:paddingTop="@dimen/extraSmallPadding"
+                android:paddingBottom="@dimen/extraSmallPadding"
+                android:textColor="@color/white"
+                android:textSize="@dimen/textSize_12"
+                app:layout_constraintLeft_toLeftOf="0"
+                app:layout_constraintRight_toRightOf="0"
+                app:layout_constraintTop_toBottomOf="@+id/service_image" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/service_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/padding_16"
+                android:fontFamily="@font/ubuntu_bold"
+                android:gravity="center_horizontal"
+                android:letterSpacing="0.07"
+                android:lineSpacingExtra="2sp"
+                android:text="Exceptional\10Service"
+                android:textColor="#63636f"
+                android:textSize="@dimen/textSize_12"
+                android:textStyle="bold"
+                app:layout_constraintLeft_toLeftOf="0"
+                app:layout_constraintRight_toRightOf="0"
+                app:layout_constraintTop_toBottomOf="@+id/service_value" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/atitude_layout"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginRight="@dimen/margin8"
+            android:paddingTop="10dp"
+            app:layout_constraintLeft_toRightOf="@+id/service_layout"
+            app:layout_constraintRight_toRightOf="0"
+            app:layout_constraintTop_toBottomOf="@+id/user_rating_value">
+
+            <com.github.lzyzsd.circleprogress.ArcProgress
+                android:id="@+id/atitude_Progress"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                app:arc_angle="250"
+                app:arc_finished_color="@color/butterscotch"
+                app:arc_max="100"
+                app:arc_progress="30"
+                app:arc_stroke_width="3dp"
+                app:arc_text_color="@color/transparent"
+                app:arc_unfinished_color="@color/butterscotch_30"
+                app:layout_constraintBottom_toBottomOf="@+id/atitude_image"
+                app:layout_constraintLeft_toLeftOf="0"
+                app:layout_constraintRight_toRightOf="0"
+                app:layout_constraintTop_toTopOf="@+id/atitude_image" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/atitude_image"
+                android:layout_width="wrap_content"
+                android:layout_height="42dp"
+                android:layout_marginTop="@dimen/padding20"
+                app:layout_constraintHorizontal_chainStyle="2"
+                app:layout_constraintLeft_toLeftOf="0"
+                app:layout_constraintRight_toRightOf="0"
+                app:layout_constraintTop_toTopOf="0"
+                app:srcCompat="@drawable/ic_great_attitude" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/atitude_value"
+                android:layout_width="34dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_6"
+                android:background="@drawable/round_charcoal_grey"
+                android:gravity="center_horizontal"
+                android:letterSpacing="0.07"
+                android:paddingTop="@dimen/extraSmallPadding"
+                android:paddingBottom="@dimen/extraSmallPadding"
+                android:textColor="@color/white"
+                android:textSize="@dimen/textSize_12"
+                app:layout_constraintLeft_toLeftOf="0"
+                app:layout_constraintRight_toRightOf="0"
+                app:layout_constraintTop_toBottomOf="@+id/atitude_image" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/atitude_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/padding_16"
+                android:fontFamily="@font/ubuntu_bold"
+                android:gravity="center_horizontal"
+                android:letterSpacing="0.07"
+                android:lineSpacingExtra="2sp"
+                android:text="Great\10Attitude"
+                android:textColor="#63636f"
+                android:textSize="@dimen/textSize_12"
+                android:textStyle="bold"
+                app:layout_constraintLeft_toLeftOf="0"
+                app:layout_constraintRight_toRightOf="0"
+                app:layout_constraintTop_toBottomOf="@+id/atitude_value" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

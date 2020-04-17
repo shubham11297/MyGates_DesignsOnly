@@ -1,0 +1,363 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/bottom_sheet_ringtone"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="bottom"
+    android:background="@android:color/transparent"
+    android:elevation="5dp"
+    app:behavior_hideable="true"
+    app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/header_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        android:clickable="true"
+        android:paddingBottom="30dp"
+        app:layout_constraintTop_toTopOf="0">
+
+        <ImageView
+            android:id="@+id/closeCL"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/mediumPadding"
+            app:layout_constraintLeft_toLeftOf="0"
+            app:srcCompat="0x7f08018a" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/header_text"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="36dp"
+            android:gravity="center_horizontal"
+            android:text="Ringtone Setting"
+            android:textColor="@color/white"
+            android:textSize="@dimen/textSize_20"
+            app:layout_constraintLeft_toRightOf="@+id/closeCL"
+            app:layout_constraintRight_toRightOf="0" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/main_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:paddingTop="@dimen/normalPadding"
+        app:layout_constraintTop_toBottomOf="@+id/header_layout">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/muteCL"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="45dp"
+            app:layout_constraintEnd_toEndOf="0"
+            app:layout_constraintTop_toTopOf="0">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/muteIconCL"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:minHeight="45dp"
+                app:layout_constraintBottom_toBottomOf="@+id/muteCL"
+                app:layout_constraintLeft_toLeftOf="0"
+                app:layout_constraintStart_toStartOf="0"
+                app:layout_constraintTop_toTopOf="@+id/muteCL">
+
+                <ImageView
+                    android:id="@+id/muteImg"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintBottom_toBottomOf="0"
+                    app:layout_constraintLeft_toLeftOf="0"
+                    app:layout_constraintRight_toRightOf="0"
+                    app:layout_constraintTop_toTopOf="0"
+                    app:srcCompat="0x7f080221" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:id="@+id/ringtone1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:lineSpacingExtra="8sp"
+                android:text="Mute e-Intercom Sound"
+                android:textColor="@color/charcoal_grey_70"
+                android:textSize="@dimen/textSize_14"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="0"
+                app:layout_constraintEnd_toStartOf="@+id/muteCheckImg"
+                app:layout_constraintHorizontal_bias="0"
+                app:layout_constraintLeft_toRightOf="@+id/muteIconCL"
+                app:layout_constraintStart_toEndOf="@+id/muteIconCL"
+                app:layout_constraintTop_toTopOf="0" />
+
+            <ImageView
+                android:id="@+id/muteCheckImg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/padding_16"
+                android:visibility="visible"
+                app:layout_constraintBottom_toBottomOf="@+id/ringtone1"
+                app:layout_constraintEnd_toEndOf="0"
+                app:layout_constraintTop_toTopOf="@+id/ringtone1"
+                app:srcCompat="0x7f080178" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/tringCL"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="45dp"
+            app:layout_constraintEnd_toEndOf="0"
+            app:layout_constraintTop_toBottomOf="@+id/muteCL">
+
+            <View
+                android:id="@+id/view1"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/white_two"
+                app:layout_constraintTop_toTopOf="0" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/tringIconCL"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:minHeight="45dp"
+                app:layout_constraintBottom_toBottomOf="@+id/ringtone2"
+                app:layout_constraintLeft_toLeftOf="0"
+                app:layout_constraintStart_toStartOf="0"
+                app:layout_constraintTop_toTopOf="@+id/ringtone2">
+
+                <ImageView
+                    android:id="@+id/tringImg"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintBottom_toBottomOf="0"
+                    app:layout_constraintLeft_toLeftOf="0"
+                    app:layout_constraintRight_toRightOf="0"
+                    app:layout_constraintTop_toTopOf="0"
+                    app:srcCompat="@drawable/ic_play_grey" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:id="@+id/ringtone2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:lineSpacingExtra="8sp"
+                android:text="Tring Tring"
+                android:textColor="@color/charcoal_grey_70"
+                android:textSize="@dimen/textSize_14"
+                android:textStyle="bold"
+                app:layout_constraintHorizontal_bias="0"
+                app:layout_constraintLeft_toRightOf="@+id/tringIconCL"
+                app:layout_constraintStart_toEndOf="@+id/tringIconCL"
+                app:layout_constraintTop_toTopOf="0" />
+
+            <ImageView
+                android:id="@+id/tringCheckImg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/padding_16"
+                app:layout_constraintBottom_toBottomOf="@+id/ringtone2"
+                app:layout_constraintEnd_toEndOf="0"
+                app:layout_constraintTop_toTopOf="@+id/ringtone2"
+                app:srcCompat="@drawable/ic_checkbox_on" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <RelativeLayout
+            android:id="@+id/tringRL"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintLeft_toLeftOf="0"
+            app:layout_constraintTop_toBottomOf="@+id/tringCL" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/arrivalCL"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="45dp"
+            app:layout_constraintEnd_toEndOf="0"
+            app:layout_constraintTop_toBottomOf="@+id/tringRL">
+
+            <View
+                android:id="@+id/view2"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginLeft="@dimen/padding_16"
+                android:layout_marginRight="@dimen/padding_16"
+                android:background="@color/white_two"
+                app:layout_constraintTop_toTopOf="0" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/arrivalIconCL"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:minHeight="45dp"
+                app:layout_constraintBottom_toBottomOf="@+id/arrivalCL"
+                app:layout_constraintLeft_toLeftOf="0"
+                app:layout_constraintStart_toStartOf="0"
+                app:layout_constraintTop_toTopOf="@+id/arrivalCL">
+
+                <ImageView
+                    android:id="@+id/arrivalImg"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintBottom_toBottomOf="0"
+                    app:layout_constraintLeft_toLeftOf="0"
+                    app:layout_constraintRight_toRightOf="0"
+                    app:layout_constraintTop_toTopOf="0"
+                    app:srcCompat="@drawable/ic_play_grey" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:id="@+id/ringtone3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:lineSpacingExtra="8sp"
+                android:text="Arrival"
+                android:textColor="@color/charcoal_grey_70"
+                android:textSize="@dimen/textSize_14"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="0"
+                app:layout_constraintLeft_toRightOf="@+id/arrivalIconCL"
+                app:layout_constraintStart_toEndOf="@+id/arrivalIconCL"
+                app:layout_constraintTop_toTopOf="0" />
+
+            <ImageView
+                android:id="@+id/arrivalCheckImg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/padding_16"
+                app:layout_constraintBottom_toBottomOf="@+id/ringtone3"
+                app:layout_constraintEnd_toEndOf="0"
+                app:layout_constraintTop_toTopOf="@+id/ringtone3"
+                app:srcCompat="0x7f080178" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <RelativeLayout
+            android:id="@+id/arivalRL"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintLeft_toLeftOf="0"
+            app:layout_constraintTop_toBottomOf="@+id/arrivalCL" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/destinyCL"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="45dp"
+            app:layout_constraintEnd_toEndOf="0"
+            app:layout_constraintTop_toBottomOf="@+id/arivalRL">
+
+            <View
+                android:id="@+id/view3"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginLeft="@dimen/padding_16"
+                android:layout_marginRight="@dimen/padding_16"
+                android:background="@color/white_two"
+                app:layout_constraintTop_toTopOf="0" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/destinyIconCL"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:minHeight="45dp"
+                app:layout_constraintBottom_toBottomOf="@+id/destinyCL"
+                app:layout_constraintLeft_toLeftOf="0"
+                app:layout_constraintStart_toStartOf="0"
+                app:layout_constraintTop_toTopOf="@+id/destinyCL">
+
+                <ImageView
+                    android:id="@+id/destinyImg"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintBottom_toBottomOf="0"
+                    app:layout_constraintLeft_toLeftOf="0"
+                    app:layout_constraintRight_toRightOf="0"
+                    app:layout_constraintTop_toTopOf="0"
+                    app:srcCompat="@drawable/ic_play_grey" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:id="@+id/ringtone4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:lineSpacingExtra="8sp"
+                android:text="Destiny"
+                android:textColor="@color/charcoal_grey_70"
+                android:textSize="@dimen/textSize_14"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="0"
+                app:layout_constraintHorizontal_bias="0"
+                app:layout_constraintLeft_toRightOf="@+id/destinyIconCL"
+                app:layout_constraintStart_toEndOf="@+id/destinyIconCL"
+                app:layout_constraintTop_toTopOf="0" />
+
+            <ImageView
+                android:id="@+id/destinyCheckImg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/padding_16"
+                app:layout_constraintBottom_toBottomOf="@+id/ringtone4"
+                app:layout_constraintEnd_toEndOf="0"
+                app:layout_constraintTop_toTopOf="@+id/ringtone4"
+                app:srcCompat="0x7f080178" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <RelativeLayout
+            android:id="@+id/destinyRL"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintLeft_toLeftOf="0"
+            app:layout_constraintTop_toBottomOf="@+id/destinyCL" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/white_two"
+            app:layout_constraintTop_toBottomOf="@+id/destinyRL" />
+
+        <Button
+            android:id="@+id/updateButton"
+            style="@style/gradient_fill_button"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_marginTop="@dimen/padding_16"
+            android:layout_marginBottom="@dimen/padding24"
+            android:paddingLeft="98dp"
+            android:paddingRight="98dp"
+            android:text="UPDATE"
+            app:layout_constraintBottom_toBottomOf="0"
+            app:layout_constraintLeft_toLeftOf="0"
+            app:layout_constraintRight_toRightOf="0"
+            app:layout_constraintTop_toBottomOf="@+id/destinyRL"
+            app:layout_constraintVertical_bias="0" />
+
+        <RelativeLayout
+            android:id="@+id/progressBarLayout"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:background="@color/transparent"
+            android:clickable="true"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="0"
+            app:layout_constraintTop_toTopOf="0">
+
+            <ProgressBar
+                android:id="@+id/progress_bar"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_centerInParent="true"
+                android:indeterminateDrawable="@drawable/indeterminate_progress_bar"
+                android:padding="10dp" />
+        </RelativeLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/nestedScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fillViewport="true"
+        app:layout_constraintTop_toTopOf="0">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/nameViewLayout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="40dp"
+                android:layout_marginRight="40dp"
+                android:hint="Name"
+                app:layout_constraintLeft_toLeftOf="0"
+                app:layout_constraintRight_toRightOf="0"
+                app:layout_constraintTop_toTopOf="0">
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/nameView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ -_&apos;@."
+                    android:imeOptions="actionNext"
+                    android:inputType="none|text|textCapWords|textEmailAddress|textShortMessage|textPersonName"
+                    android:nextFocusForward="@+id/emailView"
+                    android:singleLine="true"
+                    android:textColor="@color/charcoal_grey_80"
+                    android:textColorHint="@color/charcoal_grey_30"
+                    android:textSize="@dimen/spec_subheading"
+                    app:backgroundTint="@color/light_red" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/emailViewLayout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="40dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginRight="40dp"
+                android:hint="Email ID"
+                app:layout_constraintLeft_toLeftOf="0"
+                app:layout_constraintRight_toRightOf="0"
+                app:layout_constraintTop_toBottomOf="@+id/nameViewLayout">
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/emailView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:imeOptions="actionNext"
+                    android:inputType="textEmailAddress"
+                    android:nextFocusForward="@+id/passwordView"
+                    android:singleLine="true"
+                    android:textColor="@color/charcoal_grey_80"
+                    android:textColorHint="@color/charcoal_grey_30"
+                    android:textSize="@dimen/spec_subheading"
+                    app:backgroundTint="@color/light_red" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <androidx.appcompat.widget.AppCompatCheckBox
+                android:id="@+id/agreeTermsView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:backgroundTint="@color/light_red"
+                app:layout_constraintLeft_toLeftOf="@+id/emailViewLayout"
+                app:layout_constraintTop_toBottomOf="@+id/emailViewLayout" />
+
+            <TextView
+                android:id="@+id/terms"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="20dp"
+                android:gravity="center_vertical"
+                android:lineSpacingExtra="10sp"
+                android:text="I agree to the"
+                android:textColor="@color/charcoal_grey_30"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toBottomOf="@+id/agreeTermsView"
+                app:layout_constraintLeft_toRightOf="@+id/agreeTermsView"
+                app:layout_constraintTop_toBottomOf="@+id/emailViewLayout" />
+
+            <TextView
+                android:id="@+id/termsConditions"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:clickable="true"
+                android:gravity="center_vertical"
+                android:lineSpacingExtra="10sp"
+                android:paddingLeft="3dp"
+                android:paddingTop="5dp"
+                android:paddingRight="3dp"
+                android:paddingBottom="5dp"
+                android:text="@string/terms_amp_conditions_underline"
+                android:textColor="@color/grapefruit_50"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toBottomOf="@+id/agreeTermsView"
+                app:layout_constraintLeft_toRightOf="@+id/terms"
+                app:layout_constraintTop_toBottomOf="@+id/privacyLayout" />
+
+            <Button
+                android:id="@+id/signUpButton"
+                style="@style/grey_fill_button"
+                android:layout_width="260dp"
+                android:layout_height="56dp"
+                android:layout_marginTop="20dp"
+                android:clickable="true"
+                android:letterSpacing="0.06"
+                android:text="SIGN UP"
+                app:layout_constraintLeft_toLeftOf="0"
+                app:layout_constraintRight_toRightOf="0"
+                app:layout_constraintTop_toBottomOf="@+id/agreeTermsView" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="@+id/nestedScrollView"
+        app:layout_constraintTop_toTopOf="@+id/nestedScrollView">
+
+        <include layout="@layout/layout_error_screen_fragment" />
+    </RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
